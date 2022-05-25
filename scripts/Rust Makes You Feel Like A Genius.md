@@ -11,16 +11,6 @@ When I write rust, I feel like a genius.
 
 I'll tell you why in a moment, but first a simple question:
 
-Plan:
-- Writing my day job code makes me feel like an idiot
-    - Json decode error at line 1
-- Here's how, say, typescript's simple static typing can solve some problems
-- Here's how simple problems are solved by Rust
-- More complex
-- More complex
-- More complex
-- You push up perfect code first time and clock off at 5pm to the sound of trumpets and job offers from google and microsoft.
-
 ---
 
 ## Is this correct?
