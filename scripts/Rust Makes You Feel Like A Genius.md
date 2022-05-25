@@ -185,12 +185,6 @@ Just look at it:
 
 Rust's errors happen at compile time, which is a fancy way of saying they MUST happen on the developers machine, not on a server somewhere.
 
-
-%%
-Sure you can get your IDE to show you these bad python or javascript errors through heuristics or linting. But can you be sure everyone is using these tools? Even open source contributors?
-You can't know, and even if they do, they're not as good as Rust's.
-%%
-
 ---
 
 ## The rust compiler
