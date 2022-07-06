@@ -439,12 +439,12 @@ So far so great, but there's more:
 %%
 ---
 
-# #![forbid(unsafe_code)
+# #![forbid(unsafe_code)]
 
 %%
 
 But We can do even better:
-- By adding the `#![forbid(unsafe_code)` directive we forbid 
+- By adding the `#![forbid(unsafe_code)]` directive we forbid 
  the `unsafe` block, and therefore any linking to operating system libraries (ie, external c code), guaranteeing our app, and all its dependencies are pure rust, and therefore do not break any of our guarantees.
 - But what about native libraries that you NEED
     - no Libpq-dev for postgres
