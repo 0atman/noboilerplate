@@ -266,7 +266,7 @@ let mut file = match File::open(&path) {
     Ok(file) => file,
 };
 
-let mut file = match File::open(&path)?; // to return the Err
+let mut file = File::open(&path)?; // to return the Err
 ```
 
 notes:
