@@ -17,7 +17,7 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 When I build an application in Rust, I feel more confidant that it will work now, and for all time, than in any other language.
 
 There's not just one reason why I feel like this, many parts of the language come together to make this feeling concrete.
-Some of these features are good practice in other languages, but Rust makes them mandatory.
+Some of these features are just good practice in other languages, but Rust makes them mandatory.
 Many of these features appear to be unique to Rust, among popular languages.
 
 Today I'm going to talk about my observations of how in other languages it's easy to start projects, but in rust, it's easy to finish them
@@ -87,7 +87,7 @@ https://github.com/kostya/benchmarks
 And due to rust's zero-cost abstraction principles, modules, generics, iterators etc do not cause additional runtime overhead.
 This means as your application expands, it does not inevitably slow down.
 
-This speed is life-changing to a web project.
+This speed is life-changing.
 Or at least, paradigm-changing.
 
 Compared to a python app you require about 72x less compute resource.
@@ -107,6 +107,11 @@ notes:
 Code you write in rust is reliable from the start, due to the way the language is deigned.
 
 All the things I've talked about in previous videos come together here.
+- The unsafe system
+- Macros
+- The rich type system
+- The cargo build system
+- The community, focused on correctness
 
 ---
 
@@ -117,7 +122,7 @@ All the things I've talked about in previous videos come together here.
 
 notes:
 
-When you program in rust, more than any other language, you can be sure that what you have built works, all the bullshit that we're conditioned to accept from other popular languages mostly just doesn't happen
+When you program in rust, more than any other popular language, you can be sure that what you have built works, all the bullshit that we're conditioned to accept from other popular languages mostly just doesn't happen
 
 ---
 
@@ -132,7 +137,7 @@ notes:
 As an illustration, here is a selection of top Rust crates.
 Half of these are in the top 10 downloads on crates.io, they have been used millions and millions of times.
 
-But look at their last updated date.
+But look at their last updated dates.
 They're not abandoned.
 They're DONE.
 
@@ -145,10 +150,11 @@ Backwards compatibility and correctness.
 ## Is about backwards compatibility
 notes:
 
-In previous videos I said that there will be no Rust 2.0 due to the macro system. I talked with a Rust maintainer, and they said this actually misses the point:
+In previous videos I said that there will be no Rust 2.0 due to the macro system. Now, I talked with a Rust maintainer, and they said this actually misses the point:
 Code written today will be compileable in 5, 10, 40 years because of the Rust team's commitment to perfect backwards compatibility.
 Code you write today, will always compile in all future versions of rust.
 The side effect of this is that code you build today benefits from ALL FUTURE OPTIMISATIONS that the rust toolchain will receive.
+With no modification by you, your build times and deployed code will get FASTER.
 
 ---
 
@@ -209,14 +215,41 @@ notes:
 Exhaustive pattern matching. In the same vein, Rust will tell you when you've forgotten to handle a match statement exhaustively.
 This is actually a compiler error, not just a warning.
 
-It's easy to keep all branches in your mind here in this example with just two values for boolean.
+In this example it's easy to keep all branches in your mind with just two values for boolean.
 But when you have modelled the entire valid state of your system with lightweight structs, using match will guarantee at compile time that you and everyone who contributes to your code, has not forgotten anything.
+
+---
+
+```rust
+// Suppose channel: Channel<Vec<String>>
+
+let mut users = Vec::new();
+// append some usernames
+
+channel.send(users);
+print_vec(&users);  // used after move 
+```
+
+Results in:
+
+```
+Error: use of moved value `vec`
+```
+
+notes:
+
+Correct concurrency.
+
+Once you've sent a variable to another thread or channel, it's GONE. It is a compiler error to even read it.
+
+We call this compiler-checked behaviour "Fearless Concurrency"
 
 ---
 
 ## Errors must be handled
 
-Quickly, with .unwrap() and .expect()
+Quickly
+
 ```js
 let mut file = File::open(&path).unwrap()
 ```
@@ -226,7 +259,7 @@ let mut file = File::open(&path)
                      .expect("this file MUST exist")
 ```
 
-Or comprehensively with matching (or the `?` operator)
+Comprehensively 
 ```js
 let mut file = match File::open(&path) {
     Err(why) => panic!("can't open {path.display()}: {why}"),
@@ -240,7 +273,7 @@ notes:
 You can either quickly tell the compiler that you KNOW the result might be a failure, and use .unwrap(), just to get something working now, optionally enriching the crash with an error message with .expect(), or you can handle the error comprehensively.
 
 When writing rust, .unwrap() is for prototyping code, so we don't have the annoyance of heavyweight error handling when we just want to get going. 
-This is why most code exmaples you will see use unwrap.
+This is why most code exmaples you will see use .unwrap().
 They're not trying to teach you error handling, they're just showing you how to open a file.
 In other languages these kinds of runtime pitfalls are hidden, at best by an exception that you have to catch, or worst, with no visible indication that the code may crash at all.
 
@@ -265,6 +298,7 @@ But productivity is nuanced.
 Rust respects your time SO MUCH.
 Many popular languages have great productivity.
 
+I keep saying "popular languages"
 Let me take a quick detour to address popularity first.
 
 ---
@@ -275,13 +309,13 @@ Let me take a quick detour to address popularity first.
 ![[redmonk-language-rankings-jan-2022-bottom10.png]]
 notes:
 
-Here are the latest RedMonk popularity rankings, according to github and stackoverflow numbers.
+Here are the latest RedMonk popularity rankings, according to github projects and stackoverflow tags.
 For space, I've cut off the top 10. 
 Don't worry, you're not missing anything, it's just the usual suspects, like languages with java in their name.
 
 No matter how theoretically good a language is, if I can't hire a team, can't buy books, can't train myself and others, it's a non-starter.
 
-Languages such as Haskell, Elixir, Common Lisp, Julia and others, are VERY EXCITING, and have lots of really great features.
+Languages such as Haskell, Elixir, Common Lisp, Julia and others, are VERY EXCITING, and have lots of really great features that I'm excited to learn.
 But they don't help me with my goal of finishing projects for this reason.
 
 Rust slipped into Redmonk's top 20 language rankings in mid 2020, right around the time I started learning Rust.
@@ -329,7 +363,7 @@ notes:
 
 Firstly you can do this in a language with a REPL, or a shell.
 You can do repl-driven development by loading data and functions into the runtime and modifying them iteratively, based on feedback from multiple experimental executions.
-If this is new, talk to your local Data Scientist.
+If this is a new technique for you, talk to your local Data Scientist to learn more.
 
 Once you have a good idea of what you need, you persist your working code into your source files. 
 
@@ -355,13 +389,13 @@ Compiler experimentation.
 
 notes:
 
-Rust's rich type system has lifetime annotations. 
-This was designed so that memory to be cleaned up when a variable falls out of scope.
+Rust's rich algebraic type system has lifetime annotations. 
+This was designed so that memory can be cleaned up when a variable falls out of scope.
 BUT IT ALSO GIVES YOU SUPERPOWERS
 
 Superpowers I will have to explain in detail in a dedicated video.
 
-The short version is that if your type system has lifetime annotations, you can describe not just what your data is, but when.
+The short version is that if your type system has lifetime annotations, you can describe not just what your data is, but WHEN.
 
 Lets see an example of compiler feedback.
 
@@ -436,7 +470,7 @@ This is the Royal Albert Bridge, the final rail link between London and Penzance
 
 notes:
 
-It's so old it pre-dates cars.
+It's so old that it pre-dates cars.
 
 ---
 
@@ -444,7 +478,7 @@ It's so old it pre-dates cars.
 ![[brunel.png]]
 
 notes:
-It was designed by the original hipster,# Isambard Kingdom Brunel.
+It was designed by the original hipster, Isambard Kingdom Brunel.
 
 ---
 
@@ -484,7 +518,7 @@ notes:
 
 There's an ugly 70s concrete road bridge next to it these days.
 
-But I know which one will be still standing in another 161 years.
+But I know which one probably still be standing in ANOTHER 161 years.
 
 
 ---
@@ -510,135 +544,3 @@ And if you'd like to watch more of my fast, technical videos, click the bottom v
 Transcripts and markdown sourcecode are available on github, links in the description, and corrections are in the pinned comment.
 
 Thank so much for watching, see you next time.
-
----
-
-
-
-%%
-# Optimise for readability
-
-notes:
-As you know, languages are read far more often than they are written.
-But there's another part to the story here.
-Your programs, if you're lucky and doing your job right, will be used by orders of magnatude more people than those who read the code.
-So it follows that some small sacrifice of readability is valid, if it benefits your program output 
-
----
-
-```rust
-fn add_two(n) {
-    return n + 2;
-}
-```
-
-notes:
-Imagine we are writing this simple function.
-Perhaps you recognise it from a previous video.
-
-I talked about the problems that typical languages can have with this sort of function.
-
-Let's see how rust fixes each of these in order:
-
----
-
-
-```rust[]
-fn add_two(n) {
-    return n + 2;
-}
-```
-
-```rust[1]
-fn add_two(n: u8) {
-    return n + 2;
-}
-```
-(does not compile)
-
-notes:
-- You'd check the type of n, erroring if it wasn't a number
-
----
-
-```rust[]
-fn add_two(n) {
-    return n + 2;
-}
-```
-
-```rust[1]
-fn add_two(n: u32) {
-    return n + 2;
-}
-```
-
-notes:
-
-- You'd Make sure n wasn't so large that it caused some kind of overflow
-
----
-
-```rust[]
-fn add_two(n) {
-    return n + 2;
-}
-```
-
-```rust[1-2]
-fn add_two(n: f32) {
-    return n + 2.0;
-}
-```
-
-notes:
-- And what about floating point numbers?
-
----
-
-```rust[]
-fn add_two(n) {
-    return n + 2;
-}
-```
-```rust[1]
-fn add_two(n: i32) {
-    return n + 2;
-}
-```
-
-notes:
-- Or negative numbers?
-
-
----
-
-### references?
-
-```rust
-fn add_two(n: i32) {
-    return n + 2;
-}
-```
-
-this is default behaviour
-
-notes:
-- Perhaps we'd ensure that n was passed by value not by reference
-
----
-
-### Memory locks?
-
-```rust
-fn add_two(n: i32) {
-    return n + 2;
-}
-```
-
-
-this is default behaviour
-notes:
-- or that we capture the lock on the part of shared memory that n was in.
-
-%%
