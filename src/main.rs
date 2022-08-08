@@ -69,7 +69,7 @@ fn template(inner: String) -> String {
                           "&nbsp;Follow on Twitter"
                         </a>
 
-                        <a class="navbar-item has-text-white" href="https://www.youtube.com/c/NoBoilerplate">
+                        <a class="navbar-item has-text-white" href="https://www.youtube.com/watch?v=Q3AhzHq8ogs&list=PLZaoyhMXgBzoM9bfb5pyUOT3zjnaDdSEP&index=1">
                           <span class="icon is-small">
                             <i class="fab fa-youtube"></i>
                           </span>
@@ -168,7 +168,7 @@ fn index() -> String {
         </span>
 
         <p class="has-text-center">
-            <a href="https://www.youtube.com/c/NoBoilerplate" class="button has-text-right">
+            <a href="https://www.youtube.com/watch?v=Q3AhzHq8ogs&list=PLZaoyhMXgBzoM9bfb5pyUOT3zjnaDdSEP&index=1" class="button has-text-right">
                 "START HERE"
             </a>
         </p>
