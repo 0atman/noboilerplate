@@ -65,22 +65,6 @@ Rust is something new, a new way to solve our problems.
 whether you're coming from low-level languages, or high-level languages, there's groundbreaking methods here.
 
 
-#tasks
-- [x] it's not just a better c - it's a new way of programming
-- [x] If you want a better C, that exists, it's called Zig.
-- [x] If you want a better C++, that exists, it's called Go.
-- [x] If you want the fastest in the world, it's still C++ (just) https://just.billywhizz.io/blog/on-javascript-performance-01/
-- [x] I speak English because I was born in England in the 80s, an I write Javascript and html for the same reason
-- [x] Big risk features:
-- [x] No runtime, no GC
-    - If you want a GC you can have one in Rust https://crates.io/crates/shredder
-    - If you have a GC, you can't get rid of it.
-- [x] First go at lifetimes explaination
-- [x] Macros
-- [x] unsafe system
-- [x] Thread everything back to Rust being different
-
-
 ---
 
 # misconceptions
@@ -274,7 +258,6 @@ fn inspect(p: Person) {
 ```
 
 notes:
-- [x] retake this slide
 Here is a bigger match expression from Rust By Example.
 
 You can see that the match can destructure deeply nested data, and structs can be inside enums, and enums be inside structs.
@@ -311,7 +294,7 @@ Strings
 ```js
 > let a = "tris"
 > let b = a
-> a = "newname"
+> b = "newname" // in the video, this was mistakeninly `a = "newname"`
 
 > console.log(a)
 ?
@@ -347,7 +330,6 @@ error:
 ```
 
 notes:
-- [x] retake this slide
 By way of example, here's what happens if you try a similar thing in Rust
 
 as usual, rust provides us with an excellent error explaining the problem.
