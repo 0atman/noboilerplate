@@ -33,7 +33,7 @@ fn template(inner: String) -> String {
                 //    background: #000 url(bg.jpg) center / cover;
                 //}
             "</style>
-        </head>
+       </head>
 
 
     <body class="is-family-monospace">
@@ -116,7 +116,7 @@ fn template(inner: String) -> String {
         <footer class="footer has-text-white has-background-black">
         <div class="content has-text-centered">
             <p>
-                    <a href="privacy.html">"Privacy Policy"</a>
+                    "I do not collect your data. Stop sending it to me."
             </p>
         </div>
         </footer>
