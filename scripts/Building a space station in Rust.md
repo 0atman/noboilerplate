@@ -139,7 +139,7 @@ use rand_derive2::RandGen;
 #[derive(Debug, RandGen, Display)]
 enum Name {
    Akira,     Californa, Daedalus,
-   Eisenberg, Interpid,  Miranda,
+   Eisenberg, Intrepid,  Miranda,
    Nova,      Reliant,   Sagan 
 }
 ```
