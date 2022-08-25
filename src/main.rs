@@ -87,16 +87,16 @@ fn template(inner: String) -> String {
 
                     </div>
                     
-                    //<div class="navbar-end">
-                    //    <div class="navbar-item">
-                    //        <div class="buttons">
-                    //            <a class="button" href="https://www.patreon.com/noboilerplate">
-                    //          <i class="fab fa-patreon"></i>
-                    //      "&nbsp;Support me on Patreon"
-                    //        </a>
-                    //        </div>
-                    //    </div>
-                    //</div>
+                    <div class="navbar-end">
+                       <div class="navbar-item">
+                           <div class="buttons">
+                               <a class="button" href="https://www.patreon.com/noboilerplate">
+                             <i class="fab fa-patreon"></i>
+                         "&nbsp;Support me on Patreon"
+                           </a>
+                           </div>
+                       </div>
+                    </div>
                 </div>
             </nav>
             <section class="hero is-fullheight-with-navbar has-background-black has-text-light">
