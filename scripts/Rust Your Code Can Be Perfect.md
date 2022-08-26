@@ -416,11 +416,11 @@ So far so great, but there's more:
 - And you get all of this with no heavyweight, slow abstractions - this all compiles down to for loops and if statements: close to C speed, running on bare metal.
 ---
 
-## #![forbid(unsafe_code)
+## #![forbid(unsafe_code)]
 
 notes:
 But We can do even better:
-- By adding the `#![forbid(unsafe_code)` directive we forbid 
+- By adding the `#![forbid(unsafe_code)]` directive we forbid 
  the `unsafe` block, and therefore any linking to operating system libraries (ie, external c code), guaranteeing our app is pure rust, and therefore does not break any of our guarantees.
 - But what about native libraries that you NEED to link to such as:
     - Libpq-dev for postgres
