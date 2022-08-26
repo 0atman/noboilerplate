@@ -176,9 +176,24 @@ fn index() -> String {
 }
 
 
+fn errata() -> String {
+    template(html!{
+
+        <span class="is-family-monospace is-size-4">
+            "ERRATA."
+
+        </span>
+
+        <p class="has-text-center">
+            "Despite my best efforts I make mistakes on my videos all the time. When I or a commenter discovers one of these, I put a summary in the pinned ERRATA comment on the video. I wish I could edit the video easily to remove them, but that's not the way youtube operates. Please always check the videos for these fixes and changes. Thank you!"
+        </p>
+    })
+}
+
 fn main() -> Result<(), Report> {
     std::fs::create_dir_all("docs")?;
     std::fs::write("docs/index.html", index())?;
+    std::fs::write("docs/errata.html", errata())?;
     println!("Built site OK!");
     Ok(())
 }
