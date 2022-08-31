@@ -82,7 +82,7 @@ Lets start with some misconceptions.
 ![[Zig.svg]]
 notes:
 
-Rust is not a better C, you're thinking of ZIG.
+Rust is not a better C, you're thinking of ZIG. %% ERRATA: or Dlang %%
 
 Zig is an INCREDIBLE language that if you love Rust, you'll also like. 
 
@@ -100,7 +100,7 @@ But is that all you want? A better C?
 
 notes:
 
-Rust also isn't a better C++, you're thinking of GO.
+Rust also isn't a better C++, you're thinking of GO. %% ERRATA: Actually, Go is more like a better Java %%
 
 Carbon might be, too, once we find out if Google's going to get bored of it it next year.
 
