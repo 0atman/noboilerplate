@@ -136,7 +136,7 @@ But for me, That. Is. Not. Enough.
 
 notes:
 
-If you want the very fastest executing language in the world, it's still C (just about) https://just.billywhizz.io/blog/on-javascript-performance-01/
+If you want the very fastest executing language in the world, it's still C (just about) (https://just.billywhizz.io/blog/on-javascript-performance-01/)
 
 But a fast-executing language that crashes all the time is like a supercar... That crashes all the time.
 
@@ -147,6 +147,8 @@ Go is about 2x slower than C, Java and Javascript are about 3 or 4 times slower,
 Getting into dynamic languages:
 Ruby is about an order of magnitude slower than C,
 and Python is at least two orders of magnitude slower.
+
+(https://github.com/kostya/benchmarks)
 
 Rust however is within 10% of C's speed.
 It often will compile to identical assembly.
