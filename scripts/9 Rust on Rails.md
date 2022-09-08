@@ -197,7 +197,8 @@ If we're never doing computation, like here, then we don't need Errors.
 This function accepts any String, and returns an integer, specifically, the integer 42.
 
 You'll remember that most Rust integers are i32, which is a 32-bit signed integer.
-32 bits is enough for most applications, and signed integers have fewer surprises than non-signed.
+32 bits is enough for most applications, and signed integers have fewer surprises than un-signed.
+
 This is why i32 is the rust default when you don't specify a type, such as in ranges.
 
 
@@ -478,7 +479,6 @@ let err = check_math(0.0); // == Err(DivisionByZero)
 ```
 
 notes:
-- [x] add line numbers to block
 
 Here we have a function that uses our new maths system we have just made.
 the `check_math()` function does some division, then square root, then log and returns the answer
@@ -617,7 +617,8 @@ I don't fully understand how it works, but by the message, I think it causes a c
 
 This means if a single branch of your code unwraps a Result unsafely, does unsafe runtime operations, or calls any crates that do so, no-panic won't allow that function to compile.
 
-It's a bit hacky, but if you want to prove important parts of your code, you now can do so.
+The github repo is archived, but I've tested it and it works!
+If you want to use it to prove important parts of your code, you can do so.
 
 ---
 
