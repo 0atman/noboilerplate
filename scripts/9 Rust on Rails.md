@@ -560,7 +560,7 @@ You might expect a function to return a string, but SURPRISE you got a null.
 
 ---
 
-unwraping at runtime
+unwrapping at runtime
 
 ```rust
 fn bad_idea(something: Option<String>) -> String {
