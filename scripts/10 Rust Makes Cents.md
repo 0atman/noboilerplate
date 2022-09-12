@@ -1,8 +1,8 @@
-%%
 <style>
 :root {--r-code-font: "FiraCode Nerd Font";}
 </style>
 
+%%
 # Cargo.toml 
 ```toml
 [package]
@@ -37,24 +37,37 @@ edition = "2021"
 
 ```rust
 fn main() {
-	println!("Rust talk");
+	println!("Rust Makes Cents");
 
 ```
 %%
 
 ![[rust-logo.png]]
 
-# RUST: TITLE
-### SUBTITLE
+# RUST Makes Cents
+### Speed is a FEATURE
 
 notes:
 
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
+Rust Makes Cents (cost is a feature)" - talking about the TCO of Rust, how it's cheap on CPU, RAM and indeed developer time, and the whole stack can be written in one language
+
 
 ---
 
-# CONTENT HERE
+- good fast cheap, pick three
+- TCO of rust
+- cheap on CPU
+- cheap on RAM
+- Cheap on developer time
+	- not at first, but over the whole lifetime of the app
+	- Fast tests
+	- whole category of errors avoided
+- The whole stack is one language
+	- down at the hardware level in unsafe rust
+	- great ergonomics like iter compile down to the same machine code as hand-crafted loops
+	- build tools aren't separate, they're macros
 
 
 
@@ -63,7 +76,7 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 ![[rust-logo.png]]
 
-# Subtitle 
+# Speed is a FEATURE
 
 
 notes:
