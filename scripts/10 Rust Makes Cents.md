@@ -56,6 +56,8 @@ Rust Makes Cents (cost is a feature)" - talking about the TCO of Rust, how it's 
 
 ---
 
+https://twitter.com/alexxubyte/status/1569348391167197185?t=J5ApLHw0xOjRBfWUJS1vgA&s=19
+
 - good fast cheap, pick three
 - TCO of rust
 - cheap on CPU
