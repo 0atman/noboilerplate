@@ -20,7 +20,6 @@ console_error_panic_hook = "0.1"
 web-sys = { version = "0.3", features = ["Window", "Document", "HtmlElement", "Node", "Text"] }
 wasm-bindgen = "=0.2.74"
 wee_alloc = "0.4"
-yew = "0.19"
 ```
 
 # Lint Tweaks
@@ -52,28 +51,45 @@ fn main() {
 
 %%
 
-![[rust-logo.png]]
+![[rust-logo.png|300]]
 
-# Rust In-Browser 
+# Rust and Wasm
 
-### Run your code everywhere
+### Safe & Fast Web Development
 
 notes:
 
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
-Today I'm going to talk about building native apps you can deploy anywhere with no installation by using Rust and web assembly.
+Today I'm going to talk about building apps you can deploy anywhere with no installation by using Rust and web assembly.
 
 ---
 
-|             |                                        |
-| ----------- | -------------------------------------- |
-| Docker      | <https://hub.docker.com/_/rust>        |
-| Game        | <https://bevyengine.org>               |
-| backend     | <https://rocket.rs>                    |
-| AWS Cloud   | <https://aws.amazon.com/sdk-for-rust/> |
-| Windows     | <https://crates.io/crates/windows>     |
-| Webassembly | <https://www.rust-lang.org/what/wasm>  |
+## Open Source Videos
+
+```sh
+$ git clone git@github.com:0atman/noboilerplate.git
+$ cd noboilerplate/scripts
+
+$ make deps  # to install literate and cargo-watch
+$ make build # produce valid cargo project
+$ cargo build
+```
+
+notes:
+
+As ever, all Rust code you see in this video is part of a literate programming document that can be extracted and compiled with native Rust tooling.
+
+---
+
+|             |                                                                     |
+| ----------- | ------------------------------------------------------------------- |
+| Docker      | [hub.docker.com/\_/rust](https://hub.docker.com/_/rust)             |
+| Games       | [bevyengine.org](https://bevyengine.org)                            |
+| Backend     | [rocket.rs](https://rocket.rs)                                      |
+| AWS Cloud   | [aws.amazon.com/sdk-for-rust](https://aws.amazon.com/sdk-for-rust/) |
+| Windows     | [crates.io/crates/windows](https://crates.io/crates/windows)       |
+| Webassembly | [rust-lang.org/what/wasm](https://www.rust-lang.org/what/wasm)     |
 
 notes:
 
@@ -106,7 +122,7 @@ For example:
 
 notes:
 
-for example, Wavacity is a port of the popular audio editor, Audacity, to webassembly.
+Wavacity is a port of the popular audio editor, Audacity, to webassembly.
 The author even ported the C++ interface library, wxWidgets, along with the app.
 
 ---
@@ -117,7 +133,7 @@ Literally my phone
 
 notes:
 
-When you write webassembly you get the mobile app for free.
+When you deploy to webassembly you get the mobile app for free.
 
 ---
 
@@ -155,14 +171,14 @@ which of course runs on your phone too.
 notes:
 
 But there is a snag with webassembly
-- Here are the languages from webassembly.org that have first class support for webasm.
+- Here are the languages from webassembly.org that have first class support.
 - Notice a problem?
 	- no python
 	- no ruby
 	- no java
 	- not even javascript
 
-That's not to say that these languages aren't in the process of being ported to webassembly. With emscripten, any C++ program can be ported, but these languages aren't a good fit for the browser due to heavyweight runtimes.
+That's not to say that these languages aren't in the process of being ported to webassembly. With emscripten, any C++ program can be ported, but these languages aren't a good fit for webassembly due to their heavyweight runtimes.
 
 - This has hampered adoption, these webasm languages are so drastically different from the popular high-level languages of the web.
 - but I spot a language in there that I DO like, and Rust was one of the earliest adopters of webassembly, more than 5 years ago.
@@ -257,10 +273,10 @@ fn main() {
 
 notes:
 
-Here's the lowest-level webassembly code you can write in Rust.
+Here's the lowest-level DOM-manipulating webassembly code you can write in Rust.
 It's so low level it's grabbing the window and document, then generating nodes and appending them to the DOM manually.
 
-But, do you recognise this kind of code?
+But, maybe you recognise this kind of code?
 Where have you seen this sort of thing before?
 
 ---
@@ -284,6 +300,7 @@ h1.appendChild(textNode);
 notes:
 
 It looks a lot like javascript doesn't it!
+Only, with no nulls, a rich type system, and an ecosystem that doesn't make you want to kill yourself.
 
 This is of course not how we'd write browser code today, in JS or in Rust, I'm showing you the fundamentals.
 
@@ -295,21 +312,48 @@ Today we're going to look at the most popular high-level frontend webasm framewo
 
 ---
 
+<!-- slide bg="rgb(37, 34, 43)" -->
+
 ![[Quadratic Logo.png]]
 
 notes:
 
 - Quadratic are building an Open Source spreadsheet for engineers and data scientists, built in Rust, Webassembly and WebGL
-- This might be the coolest spreadsheet I've ever used, and I've used emacs.
+
+---
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+![[quadratic choose cell type.png]]
+notes:
+
+- This might be the coolest spreadsheet I've ever used, and I've used emacs!
 - You can choose your formula language,
   - Either simple excel-style statements, or
   - SQL and Python, both standards in the field of Data Science
 - Because all data is evaluated in Webassembly, Quadratic is fast
 - The UI is in WebGL, with hardware acceleration in all modern browsers, allowing 60fps scrolling, complex graphics, and smooth pinch-to-zoom
 
-This is a really exciting project that I'm delighted to say are hiring.
+This is a really exciting project that I'm delighted to say is hiring.
 
 ---
+
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+# Hiring for
+
+<split even>
+
+![[rust-logo.png|100]]
+
+![[WebGL_Logo.png]]
+
+![[arrow-inverse.png|100]]
+
+![[scripts/attachments/WASM.png|90]]
+
+</split>
+
+notes:
 
 Quadratic are looking for:
 - Rust developers
@@ -319,7 +363,17 @@ Quadratic are looking for:
 
 ---
 
-Check out and star the project on github at github.com/quadrichq
+<!-- slide bg="rgb(37, 34, 43)" -->
+
+![[Quadratic Logo.png]]
+
+<https://github.com/quadratichq>
+
+<https://careers.quadratic.to>
+
+notes:
+
+Check out and star the project on github at github.com/quadratichq
 
 and view their open jobs at careers.quadratic.to
 
@@ -333,14 +387,18 @@ Let's see what high-level webassembly looks like in Yew.
 
 ![[yew.png]]
 
+```toml
+yew = "0.19"
+```
+
 notes:
 
-Yew is a framework for creating multi-threaded front-end web apps using WebAssembly.
+Yew is a rust framework for creating multi-threaded front-end web apps using WebAssembly.
 
 It is a component-based framework, like React and Elm.
 Though perhaps it is more correct to say that they're ALL functional programming - based, and React is simply the most well-known.
 
-Though webassembly is slower than javascript at the moment, yew is faster than react.
+Though webassembly is slower than javascript at the time of recording, yew is faster than react.
 
 I suspect that as webassembly is optimised in browsers more and more, we will see frameworks like Yew take the lead in performance.
 
@@ -382,9 +440,9 @@ No logic here, just a paragraph created in our DOM.
 
 This is the simplest component, but look at that html!() macro! Yes, that's actual html inside your Rust code.
 
-This isn't achieved by some kind of preprocessor like react requires with JSX, this is native Rust.
+This isn't achieved by some kind of external preprocessor like react requires with JSX, this is native Rust.
 
-At compile-time, the html!() macro re-writes that html into yew function calls that build the html and interpolate the props for us.
+At compile-time, the html!() macro re-writes that html into a yew data structure that builds valid html and interpolates the props for us.
 
 ---
 
@@ -408,7 +466,7 @@ There's no mapping of source files to built files and the loss of context you ge
 
 As I've said before, it's Rust all the way down.
 
-You build a Yew app, like react, with a tree of components, where state flows from trunk to leaf:
+We build a Yew app, like react, with a tree of components, where state flows from trunk to leaf:
 
 ---
 
@@ -447,6 +505,8 @@ Here's how they come together for the classic demo of a click counter:
 
 ---
 
+## Model
+
 ```rust
 use yew::prelude::*;
 
@@ -463,7 +523,7 @@ notes:
 
 Firstly, as ever, we define the valid states of our system.
 
-I'll pause here to point out that from this core model you could probably infer the functionality of my app, couldn't you?
+I'll pause here to point out that from this core model you, the viewer, could probably infer the functionality of my app, couldn't you?
 
 The compiler certainly could.
 
@@ -479,11 +539,13 @@ The compiler would then refuse to compile any of our code where we sent the wron
 
 Just imagine what that kind of certainty would be like in a 100k line codebase. That'd be worth waiting a few seconds to compile wouldn't it.
 
-I've built large react native apps.
+I've built large react apps.
 
 I certainly think so.
 
 ---
+
+## Model
 
 ```rust
 impl Component for Model {
@@ -500,6 +562,8 @@ We then build our component, implementing the Component trait for our Model, wit
 
 ---
 
+## Model.create()
+
 ```rust
 fn create(_ctx: &Context<Self>) -> Self {
 	Self {value: 0}
@@ -514,6 +578,8 @@ Then we define the create method, where we set the initial state for our compone
 Remember that `Self`, here, is the Model struct where we keep our component's state.
 
 ---
+
+## Model.update()
 
 ```rust
 fn update(&mut self, _ctx: &Context<Self>,
@@ -530,9 +596,11 @@ fn update(&mut self, _ctx: &Context<Self>,
 
 notes:
 
-Here is the the update method, where we receive our message, and add one to our counter, mutating our state.
+Here is the the update method, where we receive our message, and add one to our counter, mutating our component's state.
 
 ---
+
+## Model.view()
 
 ```rust
 fn view(&self, ctx: &Context<Self>) -> Html {
@@ -574,7 +642,6 @@ notes:
 
 Note that even inside the html!() macro, the rust compiler keeps us safe - our whole app is strongly typed and errors are beautiful.
 
-9:00
 
 ---
 
@@ -582,26 +649,30 @@ Note that even inside the html!() macro, the rust compiler keeps us safe - our w
 
 notes:
 
-Now, build apps with Webassembly is not without challenges.
+Now, building apps with Webassembly is not without challenges.
 
-You will read about three:
+You will often read about three in particular:
 
 ---
 
-## No Native Graphics?
+## Native Graphics?
 
-WebGL
+Yes, with WebGL
+
+![[WebGL_Logo.png]]
 
 notes:
 
 As you can probably guess, WebGL is the missing piece of the puzzle here.
 Many Rust ui libraries work inside webassembly, allowing custom native interfaces running at 60fps.
 
+Subscribe for part two where I demo this.
+
 ---
 
-## not multi threaded?
+## Multithreading?
 
-Web Workers
+Yes, with Web Workers
 
 ```rust[]
 pub use wasm_bindgen_rayon::init_thread_pool;
@@ -609,7 +680,7 @@ pub use wasm_bindgen_rayon::init_thread_pool;
 #[wasm_bindgen]
 pub fn sum_of_squares(numbers: &[i32]) -> i32 {
   numbers
-  .par_iter()
+  .par_iter() // <- computation in parallel from here
   .map(|x| x * x)
   .sum()
 }
@@ -618,28 +689,29 @@ pub fn sum_of_squares(numbers: &[i32]) -> i32 {
 notes:
 Webassembly has access to web workers, which you may know from javascript.
 
-This is difficult to integrate into most languages' runtimes, as the end developer, ie you and me, don't have access to the runtime. You either use OS threads, not available in the browser, or your languages green threads or goroutines or whatever, or you're out of luck and have to wait for the language designers to implement web workers.
+This is difficult to integrate into most languages' runtimes, as the end developer, ie you and I, don't have access to the runtime, it's written in C/C++. You either use O/S threads, not available in the browser, or your languages green threads or goroutines or whatever, or you're out of luck and have to wait for the language designers to implement web workers.
 
-Rust doesn't come with an async runtime, though we mostly use Tokio.
-But this means that excellent packages like my favourite here, Rayon, are backend agnostic, which means it's trivial to swap out the backend to one that supports webworkers, like we are doing here.
+Rust doesn't come with an async runtime, though we mostly use the crate Tokio for this.
 
+And here we see the benefit of not building in an async runtime into the standard library.
+
+this means that excellent packages like my favourite here, Rayon, are backend agnostic, which means it's trivial to swap it out for one that supports webworkers, like we are doing here.
 
 ---
 
-## no garbage collection
-(this is a feature)
+## Garbage Collection?
 
+No (it's is a feature!)
 
 notes:
 
-Not having a built-in garbage collector really harms porting efforts for other languages, meaning that the whole runtime of, say, python must be ported into webassembly, in order to run python.
+Wasm not having a built-in garbage collector really harms porting efforts for other languages that expect one, meaning that the whole runtime of, say, python must be ported into webassembly, in order to run python in the browser.
 
 But with Rust, there's no gc, meaning it works trivially inside webassembly, just as it does on every o/s, containers, and on bare metal.
 
-Write your whole stack in one language, and run your code everywhere.
+If you know rust, congratulations, you're now a frontend web developer, and you can easily write safe and fast web apps.
 
 ---
-
 
 %%
 
@@ -653,17 +725,16 @@ Write your whole stack in one language, and run your code everywhere.
 
 ![[rust-logo.png|300]]
 
-# Run your code everywhere
+# Safe & Fast Web Development
 
 notes:
 
 # OUTTRO
 
-If you'd like to see what you can write in rust, click the top video: I used it to make a fun retro computer visualisation for my hopepunk podcast, Lost Terminal.
+In the top video, I used Rust to make a fun retro computer visualisation for my hopepunk podcast, Lost Terminal.
 
 Or if urban fantasy is more your bag, click the bottom video to listen to a strange and beautiful podcast I produce called Modem Prometheus.
 
-If you would like to support my work, head to patreon.com/noboilerplate.
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
 Thank you so much for watching, talk to you on Discord.
