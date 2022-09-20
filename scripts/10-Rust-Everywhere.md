@@ -300,7 +300,7 @@ h1.appendChild(textNode);
 notes:
 
 It looks a lot like javascript doesn't it!
-Only, with no nulls, a rich type system, and an ecosystem that doesn't make you want to kill yourself.
+Only, with no nulls, a rich type system, and an ecosystem that doesn't make you want to pull your hair out.
 
 This is of course not how we'd write browser code today, in JS or in Rust, I'm showing you the fundamentals.
 
