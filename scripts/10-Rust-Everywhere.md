@@ -45,7 +45,7 @@ wee_alloc = "0.4"
 
 ```rust
 fn main() {
-	println!("Rust Everywhere");
+	println!("Rust & Wasm");
 
 ```
 
@@ -53,7 +53,7 @@ fn main() {
 
 ![[rust-logo.png|300]]
 
-# Rust and Wasm
+# Rust & Wasm
 
 ### Safe & Fast Web Development
 
@@ -72,7 +72,7 @@ $ git clone git@github.com:0atman/noboilerplate.git
 $ cd noboilerplate/scripts
 
 $ make deps  # to install literate and cargo-watch
-$ make build # produce valid cargo project
+$ make build # produce a valid cargo project
 $ cargo build
 ```
 
@@ -85,11 +85,11 @@ As ever, all Rust code you see in this video is part of a literate programming d
 |             |                                                                     |
 | ----------- | ------------------------------------------------------------------- |
 | Docker      | [hub.docker.com/\_/rust](https://hub.docker.com/_/rust)             |
-| Games       | [bevyengine.org](https://bevyengine.org)                            |
-| Backend     | [rocket.rs](https://rocket.rs)                                      |
+| Games       | [bevyengine.org](https://bevyengine.org) etc                        |
+| Backend     | [rocket.rs](https://rocket.rs) etc                                  | 
 | AWS Cloud   | [aws.amazon.com/sdk-for-rust](https://aws.amazon.com/sdk-for-rust/) |
-| Windows     | [crates.io/crates/windows](https://crates.io/crates/windows)       |
-| Webassembly | [rust-lang.org/what/wasm](https://www.rust-lang.org/what/wasm)     |
+| Windows     | [crates.io/crates/windows](https://crates.io/crates/windows)        |
+| Webassembly | [rust-lang.org/what/wasm](https://www.rust-lang.org/what/wasm)      |
 
 notes:
 
@@ -143,7 +143,7 @@ Literally DOOM
 
 notes:
 
-And with webgl being standard in all modern browsers, you can run anything, including doom.
+And with webgl being standard in all modern browsers, you can run anything, including DOOM!
 
 ---
 
@@ -180,12 +180,13 @@ But there is a snag with webassembly
 
 That's not to say that these languages aren't in the process of being ported to webassembly. With emscripten, any C++ program can be ported, but these languages aren't a good fit for webassembly due to their heavyweight runtimes.
 
-- This has hampered adoption, these webasm languages are so drastically different from the popular high-level languages of the web.
+- This has hampered wasm adoption, these wasm languages are so drastically different from the popular high-level languages of the web.
 - but I spot a language in there that I DO like, and Rust was one of the earliest adopters of webassembly, more than 5 years ago.
 
 ---
+## Wasm usage
 
-![[webasm-usage-scottlogic.png]]
+![[webasm-usage-scottlogic.png|400]]
 
 [State of Wasm 2022, ScottLogic.com](https://blog.scottlogic.com/2022/06/20/state-of-wasm-2022.html)
 
@@ -240,7 +241,7 @@ use web_sys::window;
 
 ```rust
 fn start_app() {
-	let window = window().unwrap();
+    let window = window().unwrap();
     let document = window.document().unwrap();
     let body = document.body().unwrap();
     
@@ -300,9 +301,9 @@ h1.appendChild(textNode);
 notes:
 
 It looks a lot like javascript doesn't it!
-Only, with no nulls, a rich type system, and an ecosystem that doesn't make you want to pull your hair out.
+Only, with no nulls, a rich type system, and an ecosystem that doesn't make you want to pull your hair out!
 
-This is of course not how we'd write browser code today, in JS or in Rust, I'm showing you the fundamentals.
+This is of course not how we'd write browser code today, in JS or in Rust, I'm just showing you the fundamentals.
 
 [MDN Document/createElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
 
@@ -701,11 +702,11 @@ this means that excellent packages like my favourite here, Rayon, are backend ag
 
 ## Garbage Collection?
 
-No (it's is a feature!)
+No (it's a feature!)
 
 notes:
 
-Wasm not having a built-in garbage collector really harms porting efforts for other languages that expect one, meaning that the whole runtime of, say, python must be ported into webassembly, in order to run python in the browser.
+Wasm not having a built-in garbage collector really harms porting efforts for other languages that expect one, meaning that the whole runtime of, say, python must be ported into webassembly, in order to run it in the browser.
 
 But with Rust, there's no gc, meaning it works trivially inside webassembly, just as it does on every o/s, containers, and on bare metal.
 
@@ -733,7 +734,7 @@ notes:
 
 In the top video, I used Rust to make a fun retro computer visualisation for my hopepunk podcast, Lost Terminal.
 
-Or if urban fantasy is more your bag, click the bottom video to listen to a strange and beautiful podcast I produce called Modem Prometheus.
+If urban fantasy is more your bag, click the bottom video to listen to a strange and beautiful podcast I produce called Modem Prometheus.
 
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
