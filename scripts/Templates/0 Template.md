@@ -85,7 +85,7 @@ notes:
 
 # OUTTRO
 
-If you'd like to see what you can write in rust, click the top video: I used it to make a fun retro computer visualisation for my hopepunk podcast, Lost Terminal.
+I used Rust to make a fun retro computer visualisation for my hopepunk podcast, Lost Terminal.
 
 Or if urban fantasy is more your bag, click the bottom video to listen to a strange and beautiful podcast I produce called Modem Prometheus.
 
