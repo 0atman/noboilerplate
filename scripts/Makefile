@@ -9,4 +9,4 @@ build:
 	cat "10-Rust-Everywhere.md" | literate --language toml > Cargo.toml
 
 deps:
-	cargo install --all-features literate bacon
+	cargo install --all-features literate bacon cargo-watch
