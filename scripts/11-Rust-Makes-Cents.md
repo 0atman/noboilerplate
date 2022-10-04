@@ -15,7 +15,6 @@ edition = "2021"
 [dev-dependencies]
 
 [dependencies]
-lambda_http = "0.6.1"
 tokio = "1.21.1"
 anyhow = "1.0.65"
 ```
@@ -60,12 +59,50 @@ Rust Makes Cents (cost is a feature)" - talking about the TCO of Rust, how it's 
 
 ---
 
-https://twitter.com/alexxubyte/status/1569348391167197185?t=J5ApLHw0xOjRBfWUJS1vgA&s=19
+
+---
+
+![[Pasted image 20221003210549.png]]
+
+Energy Efficiency across Programming Languages: How Do Energy, Time, and Memory Relate? (2017)
+
+&mdash; Pereira et al.
+
+notes:
+
+You may have seen this screenshot on twitter, or read the 2017 paper.
+
+In the paper, the authors postulate that the languages that benchmark fastest and use least RAM then use least electricity and therefore less CO2.
+
+They say that it's not just about speed. But looking at their results, it's basically about speed.
+
+CPU efficiency appears to be highly correlated with RAM efficiency.
+
+Anyway, Rust puts in an extraordinary showing.
+
+
+---
+
+![[Pasted image 20221003213309.png]]
+
+notes:
+
+Here's the top half of the results. 
+
+Ruby, Python, and Perl are dead last, using around 70x the energy of Rust.
+
+If energy consumption means CO2 we might be building our infrastructure using expensive, wasteful, polluting techniques.
+
+But what about Developer time, surely that counts for something too?
+
+---
+
+# Rust is also Cheap on developer time
+
+---
 
 - good fast cheap, pick three
 - TCO of rust
-- cheap on CPU
-- cheap on RAM
 - Cheap on developer time
 	- not at first, but over the whole lifetime of the app
 	- Fast tests
@@ -78,26 +115,48 @@ https://twitter.com/alexxubyte/status/1569348391167197185?t=J5ApLHw0xOjRBfWUJS1v
 
 ---
 
-# AWS Lambda
-
-https://dev.to/aviillouz/writing-a-lambda-with-rust-using-aws-lambda-rust-runtime-and-aws-sdk-rust-1aln
+## AWS Lambda Comparison
 
 ```md
 # Rust
-Duration: 358.57 ms Billed Duration: 393 ms Memory Size: 128 MB Max Memory Used: 31 MB  Init Duration: 33.60 ms 
-Duration: 39.76 ms  Billed Duration: 40 ms  Memory Size: 128 MB Max Memory Used: 31 MB  
-Duration: 52.98 ms  Billed Duration: 53 ms  Memory Size: 128 MB Max Memory Used: 31 MB  
-Duration: 49.17 ms  Billed Duration: 50 ms  Memory Size: 128 MB Max Memory Used: 31 MB  
-Duration: 50.71 ms  Billed Duration: 51 ms  Memory Size: 128 MB Max Memory Used: 31 MB  
-
-# node.js
-Duration: 915.67 ms Billed Duration: 916 ms Memory Size: 128 MB Max Memory Used: 81 MB  Init Duration: 236.67 ms
-Duration: 90.40 ms  Billed Duration: 91 ms  Memory Size: 128 MB Max Memory Used: 81 MB
-Duration: 331.29 ms Billed Duration: 332 ms Memory Size: 128 MB Max Memory Used: 81 MB
-Duration: 320.97 ms Billed Duration: 321 ms Memory Size: 128 MB Max Memory Used: 81 MB
-Duration: 267.81 ms Billed Duration: 268 ms Memory Size: 128 MB Max Memory Used: 81 MB
+Init Duration: 33.60 ms 
+Billed Duration: 393 ms Max Memory Used: 31 MB  
+Billed Duration: 51 ms  Max Memory Used: 31 MB  
+```
+```md
+# Node.js
+Init Duration: 236.67 ms
+Billed Duration: 916 ms Max Memory Used: 81 MB  
+Billed Duration: 268 ms Max Memory Used: 81 MB
 ```
 
+[@aviillouz](https://dev.to/aviillouz/writing-a-lambda-with-rust-using-aws-lambda-rust-runtime-and-aws-sdk-rust-1aln)
+
+notes:
+
+This test by @aviillouz (/avi e-louse/) is small but demonstrable of the efficiencies gained with Rust.
+
+As you can see, in this test 
+The init duration was 7x faster
+hot boot was 5x faster
+cold boot was 2x faster
+
+All while using 2.5x less memory.
+
+
+
+
+---
+
+## ARM lambdas cost 80% of x64
+
+| x64 price/ms   | ARM price/ms   |
+| -------------- | -------------- |
+| \$0.0000000021 | \$0.0000000017 |
+
+https://aws.amazon.com/lambda/pricing/
+
+(eu-west-2)
 
 ---
 
@@ -113,7 +172,12 @@ async fn main() -> Result<(), Error> {
 ```
 %%
 
+---
+
 ## Lambda http hander
+```toml
+lambda_http = "0.6.1"
+```
 
 ```rust
 async fn hi(req: Request) -> Result<impl IntoResponse> {
@@ -126,6 +190,87 @@ async fn hi(req: Request) -> Result<impl IntoResponse> {
     Ok(format!("hello {}", name))
 }
 ```
+
+
+notes:
+
+Here is an http hello world lambda handler in Rust using the official aws sdk, which contains all functions and types for interacting with the aws cloud.
+
+This compiles, the aws sdk throws up no errors, which means we can be confident about a lot of things.
+
+---
+
+
+```rust[2-3]
+async fn hi2(_: Request) -> Result<impl IntoResponse> {
+    Ok("hello there")
+} // OK
+```
+
+```rust[2-3]
+async fn hi3(_: Request) -> Result<impl IntoResponse> {
+    Ok(vec![1,2,3])
+} // OK
+```
+
+```rust[2-3]
+async fn hi4(_: Request) -> Result<impl IntoResponse> {
+    Ok(true)
+} // ERROR!
+```
+
+notes:
+
+Let's see what we can return from this lambda handler.
+- Strings, great.
+- Vectors, nice.
+- Ah, not bools.
+
+We don't have to guess what is supported the beautiful rust error message tells us:
+
+---
+
+```js
+async fn hi4(_: Request) -> Result<impl IntoResponse> {
+ _____________________________________________________^
+|     Ok(true)
+| }
+|_^ the trait `IntoResponse`is not implemented for `bool`
+```
+```js
+the following other types implement trait `IntoResponse`:
+	  &[u8]
+	  &str
+	  lambda_http::Response<B>
+	  serde_json::value::Value
+	  std::string::String
+	  std::vec::Vec<u8>
+```
+
+(error edited)
+
+notes:
+
+I've split the error up into two sections here.
+The first section is the rust compiler telling us what is wrong.
+Though the error talks about traits, because that's the language of the compiler, we know what traits MEAN and we should think of them in this way.
+
+The error is that A bool isn't a valid response from aws lambda. The interface of a foreign system, far away in the cloud, is modelled using the type system right here on our machine.
+
+I didn't have to test this ins a simulation of a lambda on my machine to find this, the type system is so rich it provides this feedback immediately, in 1ms.
+
+The second section is just an encore. 
+Because the compiler knows about the trait, it can give us a hint about what types implement this trait.
+Again, that is the language of the compiler.
+We should think of this error as telling us what valid responses are from aws lambda.
+
+Strings, any serialisable json value, thanks to serde, and some lists.
+
+All makes sense.
+And we didn't have to run a single line of code to know about it.
+
+This is the productivity gains of using Rust that I want to highlight.
+
 
 ---
 
