@@ -76,8 +76,7 @@ Rust is cheap.
 
 notes:
 
-I hope that in my Rust series so far I've explained that Rust is fast. About as fast C, often faster than C++.
-
+I hope that in my Rust series so far I've explained that Rust is fast. About as fast as C and C++.
 I've also talked about Rust's great features that you can't find together in other popular languages.
 
 Some, like lifetimes, ownership and borrowing, you may have never heard of before Rust. I certainly hadn't. Others like the unsafe system, macros, and algebraic data types, are available individually in other languages, in Swift, Lisp, and Haskell respectively. But not all together.
@@ -170,13 +169,12 @@ All while using 2.5x less memory.
 
 https://aws.amazon.com/lambda/pricing/
 
-(eu-west-2)
+(eu-west-2, price for 128MB)
 
 notes:
 
 And remember why we're talking about this.
-On lambda, you are charged by execution time.
-
+On lambda, you are charged by execution time as well as per request.
 It's worth noting that Amazon pass on the power efficiencies of the ARM architecture to you, as a cost saving over x64.
 Rust of course has support for this and many other architectures as build targets, and cross compilation from x64 machines is trivial.
 
@@ -377,8 +375,7 @@ Though the error talks about traits, because that's the language of the compiler
 
 The error is that a bool isn't a valid response from aws lambda. The interface of this foreign system, far away in the cloud, is modelled using the type system right here on our machine.
 
-I didn't have to test this in a simulation of a lambda on my machine to find this, the type system is so rich it provides this feedback immediately, in 1ms.
-
+I didn't have to test this in a simulation of a lambda on my machine to find this, the type system is so rich it provides this feedback immediately
 Now this error is simple, but the aws sdk is so comprehensive that it stops you from making interface mistakes.
 
 The second error section is just an encore.
@@ -460,7 +457,6 @@ def add_user(connection, username, password):
 notes:
 And perhaps you'd formalise this with your colleagues, into standard comments. #TODO #FIXME #RUNTIME #DBOPEN etc.
 
-
 ---
 
 ```python[]
@@ -494,6 +490,10 @@ lifetime annotations are an example of this superpower, if your language has lif
 ---
 
 # Testing
+
+(benchmarks from
+
+https://github.com/kostya/benchmarks)
 
 notes:
 
@@ -629,7 +629,7 @@ As you must know, Graydon Hoare, while working for mozilla wanted to solve the p
 
 As often happens, tech debt and bugs drown feature writing, and you miss every deadline.
 
-So Graydon wrote Rust, a language where RAII is enforced.
+So Graydon wrote Rust
 You can't trust developers to do the right thing, but you can trust a compiler.
 
 From these humble beginnings a community formed.
