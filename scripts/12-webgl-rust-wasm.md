@@ -3,7 +3,8 @@
 :root {--r-code-font: "FiraCode Nerd Font";}
 </style>
 
-# Cargo.toml 
+# Cargo.toml
+
 ```toml
 [package]
 name = "template"
@@ -17,23 +18,26 @@ edition = "2021"
 [dependencies]
 ```
 
-# Lint tweaks
+# Lint Tweaks
+
 ```rust
 #![allow(dead_code)]
 #![allow(unused_variables)]
 ```
 
-# extern crates
+# Extern Crates
 
 ```rust
 
 ```
 
-# imports
+# Imports
+
 ```rust
+use bevy::prelude::*;
 ```
 
-# setup
+# Setup
 
 ```rust
 fn main() {
@@ -47,39 +51,40 @@ fn main() {
     );
 
 ```
+
 %%
 
 ![[rust-logo.png|300]]
 
-# Web-Native Rust apps
+# Web-Native Rust Apps
 
 notes:
 
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
-A revolution happened in `2017`, the revolution of wasm.
-But it has been slow to be adopted by main stream programming languages.
+A quiet revolution happened in `2017`, the revolution of wasm.
+But it has been slow to be adopted by popular programming languages.
 
-The Rust adopted webassembly instantly, and thanks to good language design, good community attitudes, and some good luck, is the best language to write wasm apps today.
+Rust adopted webassembly instantly, and thanks to good language design, good community attitudes, and some good luck, is the best language to write wasm apps today.
 
 Let's take a step back.
 
 ---
 
-# Why is the web so popular?
+# Why is the Web so Popular?
 
 notes:
 
 Web programming used to be a frustrating place, I was there, not so long ago.
 
-Even in the early days of html embeds and bad javascript, it was obvious business had changed overnight.
+But Even in the early days of html embeds and bad javascript, it was obvious business had changed overnight.
 
 It's easy to see in hindsight, but at the time, on the ground, the technologies were so BAD.
 
 Javascript no longer is a bad programming language. It's fine, but at the TIME it was terrible!
 The web was full of frames and errors and plugins.
 
-The interface, which for most sites was times new roman, black on white with blue links, looked terrible, and was different on every computer.
+The interface, which for most sites was times new roman, black on white with blue links, looked terrible too, and was different on every computer.
 
 BEST VIEWED ON IE4, sites would tell you.
 
@@ -92,7 +97,7 @@ Nor was it easy to build apps for.
 Or fast.
 Or efficient on the client or server.
 
-What made it SO good, and still does, despite all these years past, is the ease of distrobution.
+What made it SO good, and still does, despite all these years past, is the ease of distribution.
 
 ---
 
@@ -100,28 +105,30 @@ What made it SO good, and still does, despite all these years past, is the ease 
 
 Anyone with a text editor can hand-write a text file, host it somewhere, often for free, and then BOOM your words are accessible worldwide.
 
+That's nothing short of incredible.
+
 ---
 
 `please update to continue using this app image`
 
-And for application developers, there's no installation on your customer's computers, it's the thin client dream.
+And for application developers, there's no installation on your customer's computers, it's the thin client dream of the 70s.
 
-No patching, no difficulty in supporting old version of your app, which still plagues mobile app developers
+No patching, no difficulty in supporting old versions of your app, which still plagues mobile app developers
 
 ---
 
-We put up with all the annoyances of the web, happily, to get this incredible distribution advntatge.
+We put up with all the annoyances of the web, happily, to get this incredible distribution advantage.
 
 No mailing customers disks, or CDs, or even giving google or apple a portion of your app store revenue.
 Just direct access between business and consumers.
 
-The web herelded the end of many gatekeepers.
+The web heralded the end of many gatekeepers.
 
 ---
 
 But there's a problem.
 
-It kind of sucks.
+It STILL kind of sucks.
 
 I am a web developer, and have been for 15 years, and I love the UI model inside the browser, which is called the DOM, the Document Object Model.
 
@@ -135,42 +142,43 @@ For that you need WebGL.
 
 ---
 
-
-# Real apps inside web browser
-
----
-
-## fastest web code is wasm
-## fastest web ui is webgl
-## fastest storage is on the user's computer
+# Real Apps Inside Web Browser
 
 ---
 
-## You are unconstrained by the speed of javascript
-## you are unconstrained by learning the subtleties of the browser
-## you are unconstrained by posting user date across the internet
+## Fastest Web Code is Wasm
+
+## Fastest Web Ui is Webgl
+
+## Fastest Storage is on the User's Computer
 
 ---
 
+## You Are Unconstrained by the Speed of Javascript
+
+## You Are Unconstrained by Learning the Subtleties of the Browser
+
+## You Are Unconstrained by Posting User Date Across the Internet
 
 ---
 
-# figma example
+---
+
+# Figma Example
 
 ---
 
-# egui
+# Egui
 
 ---
 
-# brackets-terminal
+# Brackets-terminal
 
 ---
 
-# Bevy engine
+# Bevy Engine
 
 ---
-
 
 > "Think about the ideal way to write a web app.
   Write the code to make it happen.”
@@ -181,49 +189,32 @@ notes:
 
 To paraphrase the late great Aaron Schwartz. Think about the ideal way to write a web app. Write the code to make it happen.
 
-Any app, game, or experience is yours to build with Rust and WebGL. 
-
+Any app, game, or experience is yours to build with Rust and WebGL.
 
 ---
+
+```toml
+bevy = "0.8.1"
+```
 
 ```rust
 fn bevy(
     mut commands: Commands,
-    mut meshes: ResMut<Assets<Mesh>>,
-    mut materials: ResMut<Assets<ColorMaterial>>,
+    meshes: ResMut<Assets<Mesh>>,
+    materials: ResMut<Assets<ColorMaterial>>,
 ) {
-    commands.spawn(Camera2dBundle::default());
-
-    // Rectangle
-    commands.spawn(SpriteBundle {
+    commands.spawn_bundle(Camera2dBundle::default());
+    commands.spawn_bundle(SpriteBundle {
         sprite: Sprite {
             color: Color::rgb(0.25, 0.25, 0.75),
             custom_size: Some(Vec2::new(50.0, 100.0)),
             ..default()
         },
-        ..default()
-    });
-
-    // Circle
-    commands.spawn(MaterialMesh2dBundle {
-        mesh: meshes.add(shape::Circle::new(50.).into()).into(),
-        material: materials.add(ColorMaterial::from(Color::PURPLE)),
-        transform: Transform::from_translation(Vec3::new(-100., 0., 0.)),
-        ..default()
-    });
-
-    // Hexagon
-    commands.spawn(MaterialMesh2dBundle {
-        mesh: meshes.add(shape::RegularPolygon::new(50., 6).into()).into(),
-        material: materials.add(ColorMaterial::from(Color::TURQUOISE)),
-        transform: Transform::from_translation(Vec3::new(100., 0., 0.)),
-        ..default()
-    });
+        ..default()});
 }
 ```
 
 ---
-
 
 # EGUI
 
@@ -266,6 +257,7 @@ To build a whole egui app, use eframe.
 impl App for MyApp {
  fn update(&mut self, ctx: &Context, _frame: &mut Frame) {
 ```
+
 ```rust
  CentralPanel::default().show(ctx, |ui| {
 	ui.heading("My egui Application");
@@ -284,9 +276,11 @@ impl App for MyApp {
 ```
 
 %%
+
 ```rust
 }} // who left these here?
 ```
+
 %%
 
 ---
@@ -295,11 +289,9 @@ impl App for MyApp {
 
 ---
 
-
 ![[rust-logo.png]]
 
-# Subtitle 
-
+# Subtitle
 
 notes:
 
