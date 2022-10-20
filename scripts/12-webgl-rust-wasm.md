@@ -96,9 +96,14 @@ It's easy to see in hindsight, but at the time, on the ground, the technologies 
 Javascript no longer is a bad programming language. It's aggressively fine, but at the TIME it was terrible!
 The web was full of frames and errors and plugins.
 
-The interface, which for most sites was times new roman, black on white with blue links, looked terrible too, and was different on every computer.
+---
+![[msn-web-browser.png]]
 
-BEST VIEWED ON IE4, sites would tell you.
+notes:
+
+The interface, which for most sites was black on white with blue links, looked terrible too, and was different on every computer.
+
+BEST VIEWED ON IE5, sites would tell you.
 
 Remember that?
 
@@ -147,10 +152,10 @@ And for application developers, there's no installation on your customer's compu
 
 There's no patching and no difficulty in supporting old versions of your app, which still plagues mobile app developers to this day.
 
-We put up with all the annoyances of the web, happily, to get this incredible distribution advantage.
+We put up with the annoyances of the web, happily, to get this incredible distribution advantage.
 
 No mailing customers disks, or CDs, or even giving Google or Apple a large portion of your app store revenue.
-Just direct access between business and consumers.
+Just direct access between apps and users.
 
 The web heralded the end of many of the old gatekeepers.
 But it's not perfect.
@@ -198,6 +203,7 @@ And when we stop thinking about 'web apps' as 'web pages' and start thinking of 
 ---
 
 # Unconstrained by
+
 ## Javascript
 
 ## DOM Quirks
@@ -206,7 +212,7 @@ And when we stop thinking about 'web apps' as 'web pages' and start thinking of 
 
 notes:
 
-There are often new, faster javascript frameworks coming out, offering more and more dom manipulations per second. Svelt compared to React, for instance.
+Every week we hear about new, faster javascript frameworks coming out, offering more and more dom manipulations per second. Svelt compared to React, for instance.
 
 They're useful for a DOM-constrained app, but we have access to native UI speeds, no latency, and 60fps with webgl.
 
@@ -259,7 +265,6 @@ notes:
 
 Quadratic are looking for:
 - Rust developers for their rewrite (the existing code is in typescript)
-- [ ] check this with David
 - People with WebGL experience, even if that's only with JavaScript
 - People with Apache Arrow experience for processing Quadratic's high-performance datasets, and,
 - Senior engineers used to working at the pace of a startup.
@@ -284,7 +289,7 @@ Let's look at another example of a large-scale webgl app that hasn't paid me to 
 
 ---
 
-# Figma 
+# Figma
 
 ![[Figma-web.png]]
 
@@ -299,19 +304,17 @@ Enough examples, what can we write in RUST today?
 
 ---
 
-# Bracket-terminal
+![[bracket-terminal-topology-demo.png|800]]
 
-- [ ] in-webbrowser demo
+```toml
+bracket-terminal = "0.8.7"
+```
 
 notes:
 
 let's start simple, with some webgl-rendered text, by the project Bracket.
 
 ---
-
-```toml
-bracket-terminal = "0.8.7"
-```
 
 ```rust
 struct State {}
@@ -333,6 +336,8 @@ notes:
 
 Bracket provides a virtual ASCII terminal, and a game loop. This frees you up from implementation difficulties, making it easy to write grid-based games and apps. It also provides assistance with keyboard and mouse input.
 
+Let's see what this example looks like:
+
 ---
 
 ![[Pasted image 20221015205628.png]]
@@ -341,12 +346,13 @@ notes:
 
 Marvellous! Now we're coding like it's 1989.
 
-But Bracket is doing an deceptively large amount of work for you here, in a deployed size of 500KB:
-- WebGL native
+But Bracket is doing an deceptively large amount of work for you here, in a deployed size of just 500KB:
+- It's WebGL native
 - 60fps
 - wasm deployment ready to go.
 - And if you've ever tried to build a terminal-based interface or game, you'll know how obnoxious the terminal can be, with poorly-documented control codes and terminal emulators having their own quirks!
 Not so with Bracket!
+It looks like a terminal, but it isn't.
 
 Next Let's build a modern interface
 
@@ -391,7 +397,7 @@ impl Default for MyApp {
 
 notes:
 EGUI is one of the biggest native UI toolkits built from the ground up for Rust.
-Yes, there's GTK and others, but they link to the C libraries, and you'll have an interesting time using the webgl ports.
+Yes, you could use GTK and others, but they link to the C libraries, and you'll have an interesting time using the webgl ports.
 As usual, I recommend keeping things pure Rust.
 
 To build a whole egui app, use eframe the EGUI Framework.
@@ -400,7 +406,7 @@ We start, as ever, with defining the valid states of our system.
 
 Then implement the Default trait for our app struct.
 
-The default trait, which defines a single method, also called `default()`, returns an instance of our struct.
+The default trait, which defines a single method, also called `default()`, returns an instance of our struct with pre-filled data.
 You will find this default method in many places in the standard library and 3rd party crates, where it makes sense to create a default configuration of a structure.
 It's like the new method pattern, in that regard.
 
@@ -412,7 +418,7 @@ notes:
 Here's the UI we are going to build, by the way.
 We've got a heading, a label and text box, a slider, a button and another label.
 
-Here's how we build that:
+Here's the code:
 
 ---
 
@@ -441,7 +447,7 @@ impl App for MyApp {
 notes:
 We implement EGUI's App trait, and define a single `update()` method.
 
-you can see the heading, label and text box, slider, button and the other label.
+you can see the heading, label and text box, slider, button and the other label, here.
 
 Persistence is through updating Self, which is passed in as the first parameter of the update method.
 
@@ -469,7 +475,19 @@ ui.collapsing("Click to see what is hidden!", |ui| {
 
 notes:
 
-Here are some of the widgets available to you in EGUI, and on their website, which of course is written in webgl and wasm, they demo a markdown editor and a curl client, too.
+Here are some of the widgets available to you in EGUI, out of the box.
+
+And on their website, which of course is written in webgl and wasm,
+
+---
+
+![[egui-kitchen-sink.png]]
+
+https://www.egui.rs
+
+notes:
+
+they demo code editors, a curl client, and loads of other widgets!
 
 ---
 
@@ -485,7 +503,7 @@ notes:
 EGUI is an Immediate Mode framework.
 This makes it simple to reason with, and simple to integrate with game or other opengl frameworks that expect to re-render every frame.
 
-Game fameworks LIKE:
+Game frameworks LIKE:
 
 ---
 
@@ -493,9 +511,9 @@ Game fameworks LIKE:
 
 notes:
 
-Bevy, which is is a mature, 2d or 3d game engine built from the ground up in Rust.
+Bevy, which is is a featureful, 2d or 3d game engine built from the ground up in Rust.
 
-There are many examples of 2d and 3d rendering on the website, all running smoothly on webgl.
+There are many examples of 2d and 3d rendering on their website, all running smoothly in webgl.
 
 ---
 
@@ -542,18 +560,36 @@ Nothing groundbreaking, but it's hardware accelerated and webgl ready.
 
 ---
 
-# The Future of Wasm
+![[bevy-model-exploded.png]]
+
+notes:
+
+Bevy features:
+- real-time 2D graphics for games and apps
+- A modern and flexible 3D renderer
+- lights, shadows, cameras, meshes, textures, materials,
+- You can load audio files and play them on demand
+- Asset changes are immediately reflected in running Bevy apps: You can hot-reload scenes, textures, and meshes
+- And all this can be recompiled in 1-3s for instant feedback.
+
+And bevy doesn't just support WebGL:
+
+---
+
+# The Future of Wasm: WebGPU
 
 notes:
 Looking forward, A new standard based on Vulkan, Metal, and Direct3d is being developed at the moment called WebGPU.
 
 It remains to be seen if it will replace webgl. If it does, and you're writing a low-level webgl app, then yes, rewriting will be needed.
 
-However, that's now how we write our apps and games mostly.
-If you use a UI library, like the ones I demoed earlier, then you are insulated somewhat against migration pain, you simply wait for the UI library to be ported over to the new underlying system.
+However, that's not how we build our apps and games.
+
+If you use a UI library, like the ones I demoed today, then you are insulated somewhat against migration pain, you simply wait for the UI library to be ported over to the new underlying system.
+
+Bevy already supports webgpu.
 
 Until then, WebGL is ready in all browsers NOW.
-
 
 ---
 
@@ -564,16 +600,15 @@ Until then, WebGL is ready in all browsers NOW.
 
 notes:
 
-To paraphrase the late great Aaron Schwartz. Think about the ideal way to write a web app. Write the code to make it happen.
+To paraphrase the late and great Aaron Schwartz. Think about the ideal way to write a web app. Write the code to make it happen.
 
 Any app, game, or experience you can dream of is yours to make with Rust and WebGL.
 
 What will you build?
-- [ ] move slide up one line
 
 ---
 
-![[rust-logo.png]]
+![[rust-logo.png|300]]
 
 # What Will YOU Build?
 
