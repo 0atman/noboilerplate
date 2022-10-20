@@ -5,8 +5,8 @@ watch:
 
 build:
 	mkdir src -p
-	cat "11-Rust-Makes-Cents.md" | literate --language rust > src/main.rs
-	cat "11-Rust-Makes-Cents.md" | literate --language toml > Cargo.toml
+	cat "12-webgl-rust-wasm.md" | literate --language rust > src/main.rs
+	cat "12-webgl-rust-wasm.md" | literate --language toml > Cargo.toml
 
 deps:
 	cargo install --all-features literate bacon cargo-watch
