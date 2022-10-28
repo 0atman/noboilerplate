@@ -66,7 +66,7 @@ Rust is the opposite of "here be dragons"
 
 
 ---
-# linus toravlds is not an easy man to please.
+# Linus Torvalds is not an easy man to please.
 
 C++ is not good enough for this man.
 
