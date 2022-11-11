@@ -1,5 +1,4 @@
-use color_eyre::Report;
-use yate::html;
+use color_eyre::Report; use yate::html;
 
 
 fn template(inner: String) -> String {
@@ -190,10 +189,29 @@ fn errata() -> String {
     })
 }
 
+
+fn discord() -> String {
+    template(html!{
+
+        <span class="is-family-monospace is-size-4">
+            <a href="https://discord.gg/mCY2bBmDKZ">
+                    <i class="fab fa-discord"></i>
+                "Join us on Discord"
+            </a>
+        </span>
+
+        <meta http-equiv="refresh" content="1000;url=https://discord.gg/mCY2bBmDKZ"/> 
+        <br/>
+        "(redirecting now...)"
+
+    })
+}
+
 fn main() -> Result<(), Report> {
     std::fs::create_dir_all("docs")?;
     std::fs::write("docs/index.html", index())?;
     std::fs::write("docs/errata.html", errata())?;
+    std::fs::write("docs/discord.html", discord())?;
     println!("Built site OK!");
     Ok(())
 }
