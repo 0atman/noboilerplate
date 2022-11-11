@@ -200,7 +200,7 @@ fn discord() -> String {
             </a>
         </span>
 
-        <meta http-equiv="refresh" content="1000;url=https://discord.gg/mCY2bBmDKZ"/> 
+        <meta http-equiv="refresh" content="1;url=https://discord.gg/mCY2bBmDKZ"/> 
         <br/>
         "(redirecting now...)"
 
