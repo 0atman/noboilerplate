@@ -70,9 +70,7 @@ Not only that, but if you're not using Rust, you're missing out on a sea-change 
 - crates.io has ~100k packages
 - First-class support on AWS, Azure, GCP
 - Most-used wasm language
-- Most-loved language since 1.0 (7 years)
 
-(stackoverflow developer survey)
 
 notes:
 First, some stats.
@@ -81,20 +79,17 @@ Rust is 16 years old, has more packages than npm did in 2012, has first-class su
 
 ---
 
-~[[stackoverflowk]]
+## Most Loved Languages '22
 
+
+![[stackoverflow-survey-22-top 5.png]]
+
+86.73%
 notes:
 
 It has been the most loved language according to the largest developer survey on the planet for 7 years, that's every single year since 1.0.
 
----
-
-> If you almost never add anything, you get C.
-> If you almost never remove anything, you get C++.
-
-&mdash;Raffi Molero, in comments
-
-notes:
+And it's not even close.
 
 I don't think Rust is perfect, but I think that Rust can allow you to write perfect code.
 
@@ -128,9 +123,9 @@ notes:
 
 Rust's compromises are EXCELLENT.
 
-The Rust team seems to have chosen the exact features I wish I had in all the other languages I used over the last 15 years.
+The Rust team seems to have chosen the exact features I wish I had in all the other languages I've used over the last 15 years.
 
-Rust has all the features I want, and none of the ones I don't.
+Rust has all the features I want, and none of the features I don't.
 
 ---
 
@@ -153,7 +148,7 @@ You know what isn't boring? seafaring in the ancient Mediterranean.
 
 If you were a sailor or at merchant, you would understand that you would just lose ships to the sea now and then.
 
-So it was, so it had always been.
+So it was, so it has always been.
 
 Most of the sea was unexplored, and there were monsters, no doubt, taking the ships.
 
@@ -181,15 +176,15 @@ some lies programmers believe about software, include, but are not limited to:
 
 - That software must be built with unknowable layers of abstraction
 - Scaling horizontally is the best way to solve your problems
-- Most bugs can only be caught in production.
+- Syntax is your enemy.
 - Low-level speed and high-level ergonomics are mutually exclusive
 - If you don't use yaml and javascript to solve your problems, you will have to use xml and java.
 
 ---
 
-## I Am Tired of Accepting Things I Cannot Change
+# I Am Tired of Accepting Things I Cannot Change
 
-I am now changing things I cannot accept
+I am now changing the things I cannot accept
 
 notes:
 
@@ -215,7 +210,7 @@ He is a detail-oriented man who cares about reliability over all else.
 
 And yet when Rust support was recently merged in to the Linux kernel, many veteran developers decried this step as bowing to a flashy, fashionable new language.
 
-The idea that Linus would approve of rust due to POPULARITY is laughable to those who know his reputation.
+The idea that Linus would approve of rust due to peer pressure is laughable to those who know his reputation.
 
 ---
 
@@ -227,7 +222,7 @@ Linus is ABSOLUTELY RIGHT to be so conservative.
 
 Nearly every computer used to show you this video, from your wifi router, to the network systems in your school, company and isp, to google's global video distribution network, is running this kernel.
 
-Yes, there are islands of mac devices. But Linux is the OCEAN.
+there are islands of mac devices. But Linux is the OCEAN.
 
 There are clouds of windows networks. But Linux is the SKY.
 
@@ -235,7 +230,10 @@ There are clouds of windows networks. But Linux is the SKY.
 
 ---
 
-![[linus-chill.png]]
+![[linus-chill.png|400]]
+
+(see, Linus is a normal chap)
+
 notes:
 
 We are not talking about your pet projects, or your company's production projects.
@@ -244,9 +242,11 @@ We're not even talking about real-time banking software and hospital systems tha
 
 We are talking about Linux.
 
+Linux has to be perfect.
+
 Rust is not the first language to be tried as an alternative to C, to write the Linux kernel.
 
-C++ was proposed 25 years ago, but failed to meet Linus and the community's extremely high standards.
+C++ was proposed 25 years ago, but failed to meet Linus's and the community's extremely high standards.
 
 C++ is not good enough for the Linux kernel, but Rust is.
 
@@ -256,7 +256,7 @@ C++ is not good enough for the Linux kernel, but Rust is.
 
 notes:
 
-And Rust, despite being a better language to write the Linux kernel then C++ is also a fantastic web development language, on the backend AND frontend, with superpowers that javascript can only dream of.
+And Rust, despite being a better language to write the Linux kernel in then C++ is also a fantastic web development language, on the backend AND frontend, with superpowers that javascript can only dream of.
 
 ---
 
@@ -298,7 +298,7 @@ If you write your web server in Rocket and your program compiles, many things ar
 - There are no invalid data pathways in your code
 - no memory errors,
 - no nullpointerexceptions,
-- no nulls anywhere, as a matter of fact,
+- no nulls anywhere, in rust as a matter of fact,
 - Rust has no heavyweight, slow abstractions - code compiles down to for loops and if statements running on bare metal.
 - Your app will have a predictable behaviour profile as you scale, unlike java, javascript and go.
 
@@ -311,6 +311,8 @@ This predictable runtime behaviour is something Discord recently adopted Rust to
 [noboilerplate.org/discord](https://noboilerplate.org/discord)
 
 notes:
+
+By the way, did you know I run a discord server? Come chat about Rust, programming or my other projects, Lost Terminal & Modem Prometheus too! 
 
 For a few years Discord's backend was mostly go and erlang, a functional concurrent language and system.
 
@@ -383,7 +385,8 @@ Rust can do it all.
 
 ---
 
-# What is Rust Good For?
+# What is Rust
+# Good For?
 
 notes:
 
@@ -456,11 +459,11 @@ But whatever benchmarks you look at, Rust DOMINATES.
 
 notes:
 
-The elephant in the room is that most of the time, pure language speed doesn't affect your app so much, because we're waiting for network, disk, or other IO.
+The elephant in the room is that most of the time, pure language speed doesn't affect your app as much as these numbers suggest, because we're waiting for network, disk, or other IO.
 
 Cloudflare were using lua until recently, for example. 
 
-But it only mostly doesn't matter in PRODUCTION.
+But a very important area that it DOES matter is in development ergonomics.
 
 ---
 
@@ -477,7 +480,7 @@ Language Speed affects development time ENORMOUSLY.
 - If your tests run in 1s,
 - pipelines deploy instantly,
 - Transpilation is all done inside the compiler,
-- and the language is rich enough that linting itself is handled inside the compiler
+- and the language is rich enough that linting itself is also handled inside the compiler
 
 Then you can iterate faster, both your team, and all external contributors.
 
@@ -525,6 +528,7 @@ struct Crate {
 notes:
 
 Rust's package registry is called Crates.io.
+And the package tool is call Cargo
 
 When running a package registry you have the problem of what to do with bad package versions that either have unacceptable bugs, or security vulnerabilities.
 
@@ -537,9 +541,31 @@ The way cargo solves this is clever.
 Package versions can't be deleted, they can only be 'yanked'.
 A yanked package can still be used if it is in your project's lock file, so existing projects will not break - but new projects cannot use this version, cargo will display an error and advise an upgrade.
 
-This is another example of Rust's commitment to backwards compatibility, without compromising new features.
+This is an example of Rust's commitment to backwards compatibility, without compromising new features.
 
 ---
+
+## No Rust 2.0
+
+> If you almost never add anything, you get C.
+> If you almost never remove anything, you get C++.
+
+&mdash;Raffi Molero, yt comment 
+
+notes:
+
+Rust has learned from both C and C++, and has a sensible middle ground, as illustrated by this comment.
+
+Code written today will be guaranteed to compile in all future versions of Rust, while still being able to be used with future code we write in new versions of Rust.
+
+This system is called Rust Editions, as of time of recording, we are using Edition 2021.
+
+This is what is meant when we say there will be no Rust 2.0, as that suggests a breaking change.
+
+Rust will never have breaking changes.
+
+---
+
 
 %% buttoner %%
 
@@ -549,13 +575,14 @@ Install here: https://rustup.rs
 
 notes:
 
-As I have said in a previous video: 
+
+As I have said in previous videos: 
 
 The last 40 years have been written in C, the next 40 years will be written in Rust.
 
-It is not a question of if you will adopt Rust, but when.
+It's not a question of if you will adopt Rust, but when.
 
-It's ready now, are you?
+Rust is ready now, are you?
 
 ---
 
@@ -569,7 +596,7 @@ notes:
 
 # OUTTRO
 
-If you'd like to see what you can write in rust, click the top video: I used it to make a fun retro computer visualisation for my hopepunk podcast, Lost Terminal.
+If you'd like to see what you can write in rust, click the top video: I used it to make a fun retro computer visualisation for my scifi podcast, Lost Terminal.
 
 Or if urban fantasy is more your bag, click the bottom video to listen to a strange and beautiful podcast I produce called Modem Prometheus.
 
