@@ -4,7 +4,8 @@
 </style>
 %%
 
-![[rust-logo.png]]
+![[tri-hex-moon-white-transparent.png|300]]
+
 
 # You're Doing
 
@@ -30,7 +31,7 @@ notes:
 
 I'm going to make some recommendations in this video, but if you're short on time you can stop here.
 
-It's not just enough to do what is valuable, you must resist doing what is not.
+It's not just enough to do only what is valuable, you must resist doing what is not.
 
 ---
 
@@ -49,7 +50,7 @@ Much of this video is inspired by the excellent blog post "Less is more agile", 
 
 Thanks, Gerald!
 
-In it, He doesn't say in so many words, but I will:
+In it, He doesn't say this, in so many words, but I will:
 
 ---
 
@@ -111,15 +112,15 @@ The values of interaction, working software, collaboration and responding to cha
 
 But where did these principles come from?
 
-It was obvious to the experienced authors, in 2001, that building software has been nothing like previous construction projects, like building bridges, railroads or cars.
+It was obvious to the experienced manifesto authors, in 2001, that building software has been nothing like previous construction projects, like building bridges, railroads or cars.
 
-And if you treat it like that, it goes wrong.
+And if you treat it like it is, it goes wrong.
 
 For all of history, construction projects were better if they were planned meticulously.
 
 If you build a house, you can't adjust the size of the walls to suit the roof if you discover that it doesn't fit when you build it.
 
-but In software, everything is malleable, and huge changes can be made in a single day, sometimes in a single hour.
+but in software, everything is malleable, and huge changes can be made in a single day, sometimes in a single hour.
 
 But the memory of history throws a long shadow:
 
@@ -133,10 +134,9 @@ We paint ourselves into a corner, again and again
 
 notes:
 
-This is the core difference of our industry, I think.
+This is the core difference in our industry, I think.
 
-Instead of taking 2 hours to plan a new feature, each engineer could build their own prototype in those 2 hours, and we'll pick the best one from the 10 choices. (and tomorrow we'll do it all again based on what 
-the customer thinks)
+Instead of taking 2 hours to plan a new feature, each engineer could build their own prototype in those 2 hours, and we'll pick the best one from the 10 choices. (and tomorrow we'll do it all again based on what the customer thinks)
 
 The cost of failure, in building software is nearly zero.
 
@@ -154,11 +154,11 @@ Not zero, but nearly zero.
 
 notes:
 
-Andy Hunt, here, sums it up clearly the problem.
+Andy Hunt, here, sums up the problem clearly.
 
 Too often when a company says 'we do agile', what they mean is they have implemented the parts of scrum they like, and are tracking projects in Jira.
 
-Or trello, I suppose. Now that the company that makes Jira bought trello.
+Or trello, I suppose. Now that the company that makes Jira owns trello.
 
 ---
 
@@ -168,9 +168,9 @@ Or trello, I suppose. Now that the company that makes Jira bought trello.
 
 notes:
 
-here's a quote by mf, and it's indicative of a sickness in our industry - a plague of frameworks sold to mangement to improve agile.
+here's a quote by mf, and it's indicative of a sickness in our industry - a plague of frameworks sold to management to supposedly improve agile.
 
-What is SAFe, by the way? it's a nightmare.
+What is SAFe, by the way? I looked it up: it's a nightmare.
 
 ---
 
@@ -178,7 +178,7 @@ What is SAFe, by the way? it's a nightmare.
 
 notes:
 
-Even in their 'lean' principles SAFe appears to me to crush the agile methodology with heavyweight processes.
+Even in their 'lean' principles here, SAFe appears to me to crush the agile methodology with heavyweight processes and tools.
 
 Which is INCREDIBLE, because let me remind you,
 
@@ -194,15 +194,56 @@ The agile manifesto directly suggests de-prioritising processes and tools, and i
 
 ---
 
-# This The Wrong Kind of Cargo Cult
+# This Is The Wrong Kind of Cargo Cult
 
 notes:
 
 I'm sure that you can find a company and team for every tool in the SAFe book, or the Lean book, or whatever course you would like to sell to gullible managers.
 
-But the whole idea is that your team is supposed to figure it out yourself, every person on this planet is unique, therefore every team of people is a permutation of those already unique attributes.
+But the whole idea is that your team is supposed to figure it out themselves
+Every person on this planet is unique, therefore every team of people is a permutation of those already unique attributes.
 
 How can scrum fit everything?
+
+My recommendations after I shout-out another Rust youtube channel, Code To The Moon!
+
+---
+
+![[cttm-smart-pointers.png]]
+
+_"Rust's Alien Data Types 👽 Box, Rc, Arc"_
+
+notes:
+
+Ken makes similar videos to me, lots of Rust as well as linked technical topics.  
+
+When I was first trying to understand Rc and ARc, his video "Rust's alien data types" explained these concepts in such clear language, I could grok it immediately.
+
+
+---
+
+![[cttm-hx-demo.png]]
+
+_"Helix 🧬 the Rust Powered Development Environment"_
+
+notes:
+
+and his video on the Helix editor was a great explanation of the new motions and config you need to know, especially coming from vim as I do.
+
+---
+
+![[cttm-errata.png]]
+- [ ] make font bigger
+
+notes:
+
+The Code To The Moon videos have great audio, great video, and Ken keeps the script TIGHT, which you know I appreciate.
+
+He's even adopted the ERRATA pinned comment, which I think shows great journalistic integrity.
+
+Check him out, search for Code To The Moon on youtube or head to cttm.io.
+
+Back to how much I love Scrum -
 
 ---
 
@@ -210,7 +251,11 @@ How can scrum fit everything?
 
 notes:
 
-Allen Holub doesn't think it's srum, either.
+I don't love scrum. Allen Holub doesn't think it's the best either.
+- [ ] check pron
+What agile does very, very well, is build the right thing, iteratively, whilest involving the customer.
+
+What it does very badly is answer the question "When will it be done?".
 
 ---
 
@@ -218,13 +263,9 @@ Allen Holub doesn't think it's srum, either.
 
 notes:
 
-What agile does very, very well, is build the right thing, iteratively, while involving the customer.
-
-What it does very badly is answer the question "When will it be done?".
-
 This is a problem, because the people with the money very reasonably want the answer to this question.
 
-Scrum evolved as a lightweight wrapper around Extreme Programming (XP), to sneak Agile into an organisation that demands deadlines.
+Scrum evolved as a lightweight wrapper around Extreme Programming (XP), to sneak Agile into an organisation that demands deadlines and project tracking.
 
 But once deployed, the ceremonies of scrum become the fixation of management, and the whole thing only gets worse when agile training companies are looking to sell courses, qualifications, and books.
 
@@ -238,7 +279,7 @@ notes:
 
 So what's the solution?
 
-Gerald and I have a few ideas for where you can start, firstly -
+I have a few ideas for where you can start, firstly -
 
 ---
 
@@ -250,7 +291,7 @@ Don't estimate!
 
 Look back at your estimates you made Last sprint.
 
-Did the estimation exercise help you do anything differently?
+- [ ] Did the estimation exercise help you build better software?
 
 Sure you might have tweaked the scope of the sprint.
 
@@ -258,9 +299,7 @@ But time and tide would have done this for you:
 
 You know how to figure out how much is in a sprint? Work as fast as you can, then in two weeks see how much you did.
 
-What would you have done differently?
-
-- [ ] punch this up
+What would you have done differently if you estimated the individual stories?
 
 Gerald likes No Bullshit estimation here, which has three sizes of estimate:
 
@@ -298,9 +337,9 @@ notes:
 
 In just a few lines of code, we can get the computer to do a set of instructions SO QUICKLY that it's indistinguishable from magic.
 
-And some people don't know that, especially if they're non-programmers.
+And some people don't know how easy this is, especially if they're non-programmers.
 
-They look at the box with the blinking lights and assume it must be built in the same way that bridges, railroads, and cars are built.
+They look at the box with the blinking lights and reasonably assume it must be built in the same way that bridges, railroads, and cars are built.
 
 ---
 
@@ -315,6 +354,7 @@ of course, you and I know, it's much, much more direct than that.
 We've got access to a sort of field-programmable daemon, who can do our bidding and basically grant wishes.
 
 We express those wishes in code.
+
 And in silicon valley, they often come true.
 
 Back to the concrete advice:
@@ -330,6 +370,7 @@ sprints are called 'ceremonies'
 (Which the dictionary defines as an action performed only formally with no deep significance)
 
 You gotta remember that sprints are a framework to make agile palatable to management.
+They don't actually help you build software.
 
 Resist, if you can, and just deliver value, getting feedback from the customer as early as you can.
 
@@ -363,7 +404,7 @@ notes:
 
 Scrum has bad incentives, like velocity, over-planning, and doing exactly 2 weeks of work.
 
-If you measure something and rate what is "good" on metrics that don't actually align with the core job of making good software that the user wants, then you have provided a metric that is in opposition to that core goal.
+If you measure something and rate what is "good" on metrics that don't actually align with your core job of making good software that the user wants, then you have provided a metric that is in opposition to that core goal.
 
 So what is the best metric?
 
@@ -380,12 +421,14 @@ notes:
 Working software is the way to judge performance.
 
 Not beautiful documentation.
+
 Or designs.
+
 Or prototypes
 
 Working software.
 
-Though there is plenty of value in the others, we value working software highest.
+Though there is plenty of value in the others, we value working software the highest.
 
 Anything that gets in the way of working software, by our user's definition of working, is a distraction.
 
@@ -407,13 +450,12 @@ notes:
 
 # OUTTRO
 
-Thank you for your time. 
+Thank you for your time.
+If you would like to support my work, get early videos and vip discord access head to patreon.com/noboilerplate.
 
 If you're interested in transhumanism and hopepunk stories, please check out my sci-fi podcast, Lost Terminal.
 
 Or if urban fantasy is more your bag, click the bottom video to listen to a strange and beautiful podcast I produce called Modem Prometheus.
-
-If you would like early videos and vip discord access head to patreon.com/noboilerplate.
 
 Transcripts and markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
