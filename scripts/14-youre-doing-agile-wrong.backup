@@ -1,0 +1,296 @@
+%%
+<style>
+:root {--r-code-font: "FiraCode Nerd Font";}
+</style>
+%%
+
+![[rust-logo.png]]
+
+# You're Doing Agile Wrong
+
+### (It's humans)
+
+notes:
+
+Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
+
+Today we're going to talk about a key part of software development that doesn't involve software development.
+
+We're going to talk about why agile at your company sucks.
+
+---
+
+## 1. Read the [manifesto](https://agilemanifesto.org)
+
+## 2. Do What is Valuable
+
+## 3. Don't Do What is Not
+
+notes:
+I'm going to make some recommendations in this video, but really you can stop here.
+
+It's not just enough to do what is valuable, you must resist doing what is not.
+
+---
+
+![[Gerald Benischke profile.png]]
+
+## [Less is more agile](https://beny23.github.io/posts/my_take_on_engineering_room_9/)
+
+- [@beny23@infosec.exchange](https://mastodon.social/@beny23)
+- [github.com/beny23](https://github.com/beny23)
+
+notes:
+
+Much of this video is inspired by the excellent blog post "Less is more agile", by Gerald Benischke.
+
+%% pron: bay neesh kuh %%
+
+Thanks, Gerald!
+
+He doesn't say it in so many words, but I will:
+
+---
+
+# Agile Sucks
+
+notes:
+
+specifically the way it is understood in companies around the world today.
+
+Probably in your company right now there are overheads that annoy you.
+
+If you are a software engineer, you might spend half your time in meetings NOT WRITING SOFTWARE.
+
+This madness must stop.
+
+---
+
+# Breathe
+
+notes:
+
+Let me take a step back
+
+This isn't going to be a pessimistic video - I don't know how to make one of those - I actually have really good news for you:
+
+---
+
+# Agile is Great
+
+notes:
+
+Agile is great.
+
+It's not just great, it's better than that.
+
+---
+
+# Agile is the Only Thing That Works
+
+notes:
+
+It's the only thing that works.
+
+The principles of agile are so simple.
+
+---
+
+**Individuals and interactions** over processes and tools
+
+**Working software** over comprehensive documentation
+
+**Customer collaboration** over contract negotiation
+
+**Responding to change** over following a plan
+
+notes:
+
+The values of interactions, software, collaboration and responding to change, are universally agreed-upon.
+
+But we paint ourselves into a corner, again and again
+
+---
+
+> Agile has come to mean doing half of scrum poorly and using Jira
+
+&mdash; Andy Hunt, `@PragmaticAndy`
+
+notes:
+
+Andy Hunt sums it up clearly in this quote.
+
+Too often when a company says 'we do agile', what they mean is they have implemented the parts of scrum they like, and are tracking projects in Jira.
+
+Or trello, I suppose. Now that the company that made Jira bought trello.
+
+---
+
+> SAFe is Shitty Agile For Enterprises
+
+&mdash; Martin Fowler
+
+notes:
+
+here's a quote by mf
+
+What is SAFe? it's a nightmare.
+
+---
+
+![[safe-lean-agile-principles-eww.png]]
+
+notes:
+
+Even in their 'lean' principle SAFe appears to me to crush the agile principles with heavyweight processes.
+
+Which is INCREDIBLE, let me remind you,
+
+---
+
+# Individuals and Interactions
+
+## Over Processes and Tools
+
+notes:
+
+The agile manifesto suggests de-prioritising processes and tools, and instead focusing on individuals an interactions.
+
+---
+
+# This The Wrong Kind of Cargo Cult
+
+notes:
+
+I'm sure that you can find a company and team for every tool in the SAFe book, or the Lean book, or whatever course you would like to sell to gullible managers.
+
+But the whole idea is that you figure it out yourself, every person on this planet is unique, therefore every team of people is a permutation of those already unique attributes.
+
+How can one process fit everything?
+
+---
+
+![[allen-holub-dont-like-scrum.png]]
+
+notes:
+
+Allen Holub doesn't think so.
+
+---
+
+# What Agile is Not
+
+notes:
+
+- The problem is that Scrum started out as a lightweight wrapper around [Extreme Programming (XP)](http://www.extremeprogramming.org) to make it palatable to management, and it is all that extra cruft that people of added that is the problem. And unfortunately Scrum means focussing on those extra parts that make it palatable to management.
+    - But because an agile practitioner can’t answer “when will it be done” right at the beginning, this makes it a difficult sell for “the business”
+
+---
+
+# Don't Estimate
+
+notes:
+
+- The solution is simple: don’t estimate! Don’t spend the time trying to work out how long something will take! If you really have to, I quite like [no bullshit estimation](https://estimation.lunarlogic.io) - basically there’s only three types of story:
+        - 1
+        - TFB (Too Fucking Big)
+        - NFC (No Fucking Clue)
+    - When estimating takes longer than coding, YOU MUST NOT ESTIMATE
+    - > If you’re not happy, you’re not doing it right
+        - That struck a chord with me. One of my favourite principles from the agile manifesto is “people over process” - this means people need to be able to make decisions on how they work. As the people who do the work, will best know how to do it.
+
+---
+
+# No Sprints
+
+notes:
+
+    - sprints are called 'ceremonies'
+    - > an action performed only formally with no deep significance
+    - CARGO CULT
+
+---
+
+# Fight Faux Agile
+
+notes:
+
+- _agile_, not _Agile_
+
+---
+
+# Use Agile to Get Agile
+
+notes:
+
+    - Allen described his work as a consultant when he goes into a new organisation:
+        - First he observes
+        - Then he would try to identify the biggest problem
+        - Then he would try change it (i.e. run an experiment)
+        - Then if that works, run another experiment
+        - If it doesn’t work, go back
+    - Important point - you can’t document that and then put it into another organisation.
+    - It is also important not to take “lean principles” to literally. In manufactoring you can’t go back, but in software engineering it is quite easy to undo.
+        - the cost of failure is zero, minus your time
+
+---
+
+# The Risk of Metrics
+
+notes:
+
+- OKRs drive sprints
+
+---
+
+![Interview vs Job Meme](https://beny23.github.io/images/my_take_on_engineering_room_9_interview_vs_job.jpg)
+
+notes:
+
+- software engineering needs smart people
+
+---
+
+# Why Can't Hiring Be Agile?
+
+notes:
+
+- proving you know everything upfront through technical exams bad
+- showing your are quick to learn and easy to work with good
+- beware talented assholes
+
+---
+
+# final thoughts
+
+notes:
+
+- So using that hook of “simplicity”, the best advice for “doing agile” is:
+
+---
+
+## 1. Read the [manifesto](https://agilemanifesto.org)
+
+## 2. Do What is Valuable
+
+## 3. Don't Do What is Not
+
+---
+
+![[rust-logo.png]]
+
+# Subtitle
+
+notes:
+
+# OUTTRO
+
+If you'd like to see what you can write in rust, click the top video: I used it to make a fun retro computer visualisation for my hopepunk podcast, Lost Terminal.
+
+Or if urban fantasy is more your bag, click the bottom video to listen to a strange and beautiful podcast I produce called Modem Prometheus.
+
+If you would like to support my work, head to patreon.com/noboilerplate.
+
+Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
+
+Thank you so much for watching, talk to you on Discord.

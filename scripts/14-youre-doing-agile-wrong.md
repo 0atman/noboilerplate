@@ -50,7 +50,7 @@ Much of this video is inspired by the excellent blog post "Less is more agile", 
 
 Thanks, Gerald!
 
-In it, He doesn't say this, in so many words, but I will:
+In it, He doesn't say this in so many words, but I will:
 
 ---
 
@@ -205,7 +205,7 @@ Every person on this planet is unique, therefore every team of people is a permu
 
 How can scrum fit everything?
 
-My recommendations after I shout-out another Rust youtube channel, Code To The Moon!
+My recommendations after I shout-out another Rust-focused youtube channel, Code To The Moon!
 
 ---
 
@@ -217,7 +217,7 @@ notes:
 
 Ken makes similar videos to me, lots of Rust as well as linked technical topics.  
 
-When I was first trying to understand Rc and ARc, his video "Rust's alien data types" explained these concepts in such clear language, I could grok it immediately.
+When I was first trying to understand Rc and ARc, his video "Rust's alien data types" explained these concepts in such clear language, I grokked it immediately.
 
 
 ---
@@ -232,9 +232,7 @@ and his video on the Helix editor was a great explanation of the new motions and
 
 ---
 
-![[cttm-errata.png]]
-- [ ] make font bigger
-
+![[errata-cttm.png]]
 notes:
 
 The Code To The Moon videos have great audio, great video, and Ken keeps the script TIGHT, which you know I appreciate.
@@ -252,8 +250,10 @@ Back to how much I love Scrum -
 notes:
 
 I don't love scrum. Allen Holub doesn't think it's the best either.
-- [ ] check pron
-What agile does very, very well, is build the right thing, iteratively, whilest involving the customer.
+
+%% pron: hol-uhb %%
+
+What agile does very, very well, is build the right thing, iteratively, whilst involving the customer.
 
 What it does very badly is answer the question "When will it be done?".
 
@@ -263,7 +263,7 @@ What it does very badly is answer the question "When will it be done?".
 
 notes:
 
-This is a problem, because the people with the money very reasonably want the answer to this question.
+And this is a problem, because the people with the money very reasonably want the answer to this question.
 
 Scrum evolved as a lightweight wrapper around Extreme Programming (XP), to sneak Agile into an organisation that demands deadlines and project tracking.
 
@@ -289,9 +289,9 @@ notes:
 
 Don't estimate!
 
-Look back at your estimates you made Last sprint.
+Look back at your estimates you made last sprint.
 
-- [ ] Did the estimation exercise help you build better software?
+Did the estimation exercise help you build better software?
 
 Sure you might have tweaked the scope of the sprint.
 
@@ -299,7 +299,7 @@ But time and tide would have done this for you:
 
 You know how to figure out how much is in a sprint? Work as fast as you can, then in two weeks see how much you did.
 
-What would you have done differently if you estimated the individual stories?
+What would you have done differently if you had estimated the individual stories?
 
 Gerald likes No Bullshit estimation here, which has three sizes of estimate:
 
@@ -307,11 +307,12 @@ Gerald likes No Bullshit estimation here, which has three sizes of estimate:
 
 ## No Bullshit Estimation
 
-- 1 point
-- TFB (Too ~~Fucking~~ Big)
-- NFC (No ~~Fucking~~ Clue)
-
+![[no-bull-estimation-cards.png]]
 notes:
+
+- 1 Point
+- Too ~~Fucking~~ Big
+- No ~~Fucking~~ Clue
 
 (I think this is actually where the name for NFCs came from, now that I see it written down)
 
@@ -424,7 +425,7 @@ Not beautiful documentation.
 
 Or designs.
 
-Or prototypes
+Or prototypes:
 
 Working software.
 
@@ -442,9 +443,10 @@ Anything that gets in the way of working software, by our user's definition of w
 
 ---
 
-![[rust-logo.png]]
+![[tri-hex-moon-white-transparent.png|300]]
 
-# Stop the Madness
+# Thank you
+## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
 
 notes:
 
