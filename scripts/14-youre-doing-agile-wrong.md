@@ -136,7 +136,7 @@ notes:
 
 This is the core difference in our industry, I think.
 
-Instead of taking 2 hours to plan a new feature, each engineer could build their own prototype in those 2 hours, and we'll pick the best one from the 10 choices. (and tomorrow we'll do it all again based on what the customer thinks)
+Instead of taking 2 hours to plan a new feature, each engineer could build their own prototype in those 2 hours, and we'll pick the best one from the 10 choices. (and tomorrow we'll do it all again based on the customer's feedback)
 
 The cost of failure, in building software is nearly zero.
 
@@ -156,7 +156,7 @@ notes:
 
 Andy Hunt, here, sums up the problem clearly.
 
-Too often when a company says 'we do agile', what they mean is they have implemented the parts of scrum they like, and are tracking projects in Jira.
+Too often when a company says 'we do agile', what they mean is they have implemented the parts of scrum that they like, and are tracking projects in Jira.
 
 Or trello, I suppose. Now that the company that makes Jira owns trello.
 
@@ -289,7 +289,7 @@ notes:
 
 Don't estimate!
 
-Look back at your estimates you made last sprint.
+Look back at the estimates you made last sprint.
 
 Did the estimation exercise help you build better software?
 
@@ -299,9 +299,9 @@ But time and tide would have done this for you:
 
 You know how to figure out how much is in a sprint? Work as fast as you can, then in two weeks see how much you did.
 
-What would you have done differently if you had estimated the individual stories?
+What would you have done better if you had estimated the individual stories?
 
-Gerald likes No Bullshit estimation here, which has three sizes of estimate:
+By contrast, Gerald likes No Bullshit estimation here, which has three sizes of estimate:
 
 ---
 
@@ -373,7 +373,7 @@ sprints are called 'ceremonies'
 You gotta remember that sprints are a framework to make agile palatable to management.
 They don't actually help you build software.
 
-Resist, if you can, and just deliver value, getting feedback from the customer as early as you can.
+Resist, and just deliver value, getting feedback from the customer as early as you can.
 
 Build something and show it to the customer.
 
@@ -453,7 +453,7 @@ notes:
 # OUTTRO
 
 Thank you for your time.
-If you would like to support my work, get early videos and vip discord access head to patreon.com/noboilerplate.
+If you would like to support my channel, get early ad-free and tracking-free videos and vip discord access head to patreon.com/noboilerplate.
 
 If you're interested in transhumanism and hopepunk stories, please check out my sci-fi podcast, Lost Terminal.
 
