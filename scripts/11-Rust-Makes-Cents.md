@@ -109,7 +109,7 @@ Anyway, Rust puts in an extraordinary showing.
 
 ---
 
-![[Pasted image 20221003213309.png]]
+![[programming-lang-efficiency-table-full.png]]
 
 notes:
 

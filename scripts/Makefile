@@ -5,8 +5,8 @@ watch:
 
 build:
 	mkdir src -p
-	cat "13-rust-is-boring.md" | literate --language rust > src/main.rs
-	cat "13-rust-is-boring.md" | literate --language toml > Cargo.toml
+	cat "15-rust-is-easy.md" | literate --language rust > src/main.rs
+	cat "15-rust-is-easy.md" | literate --language toml > Cargo.toml
 
 deps:
 	cargo install --all-features literate bacon cargo-watch
