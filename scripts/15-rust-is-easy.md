@@ -696,7 +696,7 @@ The compiler is now happy, and if the compiler is happy, I am happy.
 We have satisfied the compiler, which means many things are guaranteed about this simple function that are not guaranteed in other languages:
 - This code has no memory leaks, is thread-safe, and has no scaling surprises.
 - Memory is automatically freed when it goes out of scope, you don't have to stop execution to do garbage collection
-- There are no execution paths that cause errors in the function, you can tell this by the signature. If a Rust function can error, it returns a Result type. OUR function always returns a pure string, which means it is infallible, it will ALWAYS work because the compiler guarantees that the calling code is providing a valid UTF-8 string.
+- There are no execution paths that cause errors in the function, you can tell this by the signature. If a Rust function can error, it returns a Result type. OUR function always returns a pure string, which means it is infallible, it will ALWAYS work because the compiler guarantees that the calling code is providing a valid UTF-8 string. (panics are still possible, though rare)
 
 Not only that but these guarantees hold through concurrent code, through threads, locks, channels, high-performance web apis, and bare-metal coding.
 
@@ -733,7 +733,7 @@ https://github.com/rust-lang/rustlings
 
 notes:
 
-To take this TDD approach to learning the whole of the Rust language, try Rustlings, a simple code kata system where the compiler and unit tests teach you.
+To take this iterative approach to learning the whole of the Rust language, try Rustlings, a simple code kata system where the compiler and unit tests teach you.
 
 ---
 
