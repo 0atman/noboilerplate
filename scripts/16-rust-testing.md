@@ -3,7 +3,8 @@
 :root {--r-code-font: "FiraCode Nerd Font";}
 </style>
 
-# Cargo.toml 
+# Cargo.toml
+
 ```toml
 [package]
 name = "rust-testing"
@@ -17,29 +18,32 @@ edition = "2021"
 [dependencies]
 ```
 
-# Lint tweaks
+# Lint Tweaks
+
 ```rust
 #![allow(dead_code)]
 #![allow(unused_variables)]
 ```
 
-# extern crates
+# Extern Crates
 
 ```rust
 
 ```
 
-# imports
+# Imports
+
 ```rust
 ```
 
-# setup
+# Setup
 
 ```rust
 fn main() {
 	println!("Rust Testing");
 
 ```
+
 %%
 
 ![[rust-logo.png]]
@@ -50,15 +54,53 @@ notes:
 
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
+Today we're going to talk about Rust testing methods, and how they're different to other popular languages.
 
 ---
 
-# CONTENT HERE
+> If debugging is the process of removing software bugs, then programming must be the process of putting them in.
 
+&mdash; Dijkstra
+
+notes:
+
+Rust is so reliable because if used correctly, whole categories of bugs are imposible to express.
+
+For the remainder of the bugs that ARE possible to express, you will need to test.
+
+However, as ever, I have exceedingly good news for you.
+
+---
+
+# Rust Tests Are MAGIC
+
+notes:
+
+Rust tests are another example of why we accept more syntax than in other languages.
+
+Code is only boilerplate when it doesn't give us anything.
+
+An example:
+
+---
+
+```rust
+fn hello(name: String) -> String {
+	format!("hello {name}")
+}
+```
+
+```javascript
+function hello(name) {
+	return "hello " + name;
+}
+```
 
 ---
 %% (this is commented out to keep the ad spot under 1 minute, sdaly!)
+
 # SPONSOR QUIZ TIME
+
 - Old hardware
 - 100 MPH
 - Dynamic Data Centre Combinations
@@ -125,7 +167,6 @@ notes:
 
 [RazorSecure.com](https://www.razorsecure.com/)
 
-
 [RazorSecure.com/careers](https://www.razorsecure.com/careers)
 
 notes:
@@ -135,14 +176,11 @@ open positions at RazorSecure.com/careers, and remember to mention No Boilerplat
 
 My thanks to RazorSecure for their support of this channel.
 
-
 ---
-
 
 ![[rust-logo.png]]
 
-# Subtitle 
-
+# Subtitle
 
 notes:
 
