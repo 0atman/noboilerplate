@@ -70,11 +70,12 @@ notes:
 
 # OUTTRO
 
-If you'd like to see what you can write in rust, click the top video: I used it to make a fun retro computer visualisation for my hopepunk podcast, Lost Terminal.
+If you would like to support my channel, get early ad-free and tracking-free videos and vip discord access head to patreon.com/noboilerplate.
+
+If you're interested in transhumanism and hopepunk stories, please check out my sci-fi podcast, Lost Terminal.
 
 Or if urban fantasy is more your bag, click the bottom video to listen to a strange and beautiful podcast I produce called Modem Prometheus.
 
-If you would like to support my work, head to patreon.com/noboilerplate.
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
 Thank you so much for watching, talk to you on Discord.
