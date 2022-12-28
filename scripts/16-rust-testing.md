@@ -59,8 +59,7 @@ notes:
 
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
-Today we're going to talk about how to test Rust, and how this is different to other popular languages.
-
+Today we're going to talk about how to test Rust, and how this is different to testing in other popular languages.
 
 ---
 
@@ -76,33 +75,13 @@ For the remainder of the bugs that ARE possible to express, you will indeed need
 
 ---
 
-| Happy        | Unhappy   | Random     | Proxy    |
-| ------------ | --------- | ---------- | -------- |
-| Assertations | Black Box | QuickCheck | Mocking  |
-| Doctests     | White Box | Proptest   | Doubling |
-| Examples     | Compiler  | Fuzzing    | Contract |
+| Happy Path   | Unhappy Path | Random     |
+| ------------ | ------------ | ---------- |
+| Assertations | Black Box    | QuickCheck |
+| Doctests     | White Box    | Proptest   |
+| Examples     |              | Fuzzing    |
 
 notes:
-
-Happy path
-- assertion
-- doctests
-- examples
-
-Unhappy path
-- black box test in `tests/`
-- white box test in-file using mod test with cfg(test) conditional compilation
-- compile failures using `compiletest`
-
-Random
-- quickcheck
-- proptest
-- fuzzing
-
-proxy
-- Mocking with mockall
-- Doubling
-- Contract tests
 
 we have a lot of ground to cover today, I won't spend more than a minute on each of these, with crate recommendations and tips.
 
@@ -120,7 +99,131 @@ Rust tests are another example of why we accept more syntax in Rust than in othe
 
 Code is only boilerplate when it doesn't give us anything.
 
-Rust syntax gives us superpowers.
+Rust's syntax gives us superpowers because the COMPILER can do so much work for us.
+
+---
+
+```rust
+// Create an `enum` to classify a web event
+enum WebEvent {
+    // An `enum` may either be `unit-like`,
+    PageLoad,
+    PageUnload,
+    // like tuple structs,
+    KeyPress(char),
+    Paste(String),
+    // or c-like structures.
+    Click { x: i64, y: i64 },
+}
+```
+
+(from _Rust By Example_)
+
+notes:
+Here we are modelling a browser web event.
+We have events for the page loading and unloading, and user interaction.
+
+In enums, names and type information together specify the variant:
+PageLoad != PageUnload and KeyPress(char) != Paste(String)`.
+Each of these enumerations is independent, and the compiler knows they mean different things.
+
+---
+
+```js
+// A function which takes a `WebEvent` enum as an argument
+fn inspect(event: WebEvent) {
+    match event {
+        WebEvent::PageLoad => println!("page loaded"),
+        WebEvent::PageUnload => println!("page unloaded"),
+        // Destructure `c` from inside the `enum`.
+        WebEvent::KeyPress(c) => println!("pressed {c}."),
+        // Destructure `Click` into `x` and `y`.
+        WebEvent::Click { x, y } => {
+            println!("clicked at x={x}, y={y}.");
+        },
+    }
+}
+```
+
+notes:
+
+Then in our code, instead of writing spaghetti if statements, we match the current state of the application, and execute different behaviours based on this state.
+No other actions are possible, because we're responding to exactly the state we are given.
+If more nuance is needed, then don't write an if statement, add more detail to the model.
+
+This keeps us safe.
+
+You might not have noticed that we've not handled all cases of the WebEvent enum.
+Paste is unhanded.
+It's easy for a human to miss, even in this little example.
+
+But the compiler didn't miss it.
+
+---
+
+```js
+error[E0004]: non-exhaustive patterns:
+  --> src/main.rs:24:11  
+|
+|    match event {  
+|          ^^^^^ pattern `WebEvent::Paste(_)` not covered
+  
+help: ensure that all possible cases are being handled by
+adding a match arm with a wildcard pattern or
+an explicit pattern as shown
+| 
+|        WebEvent::Paste(_) => todo!(),  
+|
+```
+
+notes:
+
+If you model your whole application state using enums and structs it becomes very difficult to make logic errors.
+The incredibly thorough compiler, powered by the extra syntax Rust has compared to other languages, allows us to express our intentions in a machine-readable way.
+
+I explained this in more detail in my previous video "Rust Makes Cents", so for now, we will move on from language to tooling.
+
+---
+
+# Clippy
+
+```sh
+cargo clippy --fix -- \
+-W clippy::pedantic \
+-W clippy::nursery \
+-W clippy::unwrap_used \
+```
+
+notes:
+
+When used right, rust's built-in linter won't just make your code cleaner and more idiomatic, but with the unwrap_used warning, here, safer and more correct, too.
+
+The unwrap_used warning reminds you that while `.unwrap()`ing a result is fine for prototype code, you must not let it creep into your production code.
+
+In fact, I recommend in your CI pipeline, you configure this warning to be an error, and fail the build.
+Force you and your team to explain why they are so sure the result is safe, using the `.expect("reason")` method.
+
+More details in my previous video about Rust errors.
+
+---
+
+```sql
+$ cargo clippy --fix
+```
+
+```md
+error:
+the working directory has uncommitted changes,
+and `cargo fix` can potentially perform destructive changes
+if you'd like to suppress this error pass `--allow-dirty`,
+`--allow-staged`, or commit the changes to these files
+```
+
+notes:
+
+If you run clippy with the --fix option, which can change your code if it is safe to do so, by default you will see this warning if you are not checked-in in version control.
+
+The cargo developers really have thought of everything!
 
 ---
 
@@ -135,15 +238,15 @@ These are minimal sanity checks you might do anyway, poking your code with sensi
 ## Assertions
 
 ```rust
-fn assertion_test(){
+fn assertion_test() {
 	assert!(0 == 0);
-	debug_assert!(0 == 1);
+	debug_assert!(0 == 1, "Maths is hard");
 }
 ```
 
 ```md
 The application panicked (crashed).  
-Message:  assertion failed: 0 == 1  
+Message:  Maths is hard
 Location: src/main.rs:12
 ```
 
@@ -154,61 +257,221 @@ color-eyre = "0.6.2" # if you want coloured errors
 notes:
 Assertions are the bread and butter of code testing, we've used them in every language, and they're built in to Rust.
 
+Note that here I'm using both the assert! macro, which always runs, and debug_assert!, which is bypassed in release builds. Due to the nature of the macro system, it is not even included in the final binary, causing no overhead in production.
+
+On to my favourite kind of tests
+
 ---
 
-## Doctests
+## Doctest
+
+```rust[]
+/// ```
+/// /// Some documentation for this function.
+/// my_adder(1, 2)
+///
+/// use std::io;
+/// let mut input = String::new();
+/// io::stdin().read_line(&mut input)?;
+/// # Ok::<(), io::Error>(())
+/// ```
+fn my_adder(x: i32, y: i32) -> i32 {
+	x + y	
+}
+```
+
+[doc.rust-lang.org/rustdoc/](https://doc.rust-lang.org/rustdoc/)
+
+notes:
+
+Doctests rule. Combining documentation and testing into one feature, it was my favourite in Python, and I'm delighted they're here in Rust.
+
+I recommend choosing doctests for the lightest-touch testing, before moving on to the heavier strategies we're going to talk about later.
+
+In your doctest, you can test the annotated function, see line 3, but also test anything you want to bring into scope, such as the read_line code in the second half of this doctest.
+
+Note that you can avoid using a main method inside doctests by using the turbofish syntax for the ok result, as on line 8.
+
+There's a few more cool features, head to the rust doc website to learn them.
 
 ---
 
 ## Examples
+
+```clojure
+bevy/examples    
+❯ : ls  
+  -  2022-12-28 11:27  2d  
+  -  2022-12-28 11:27  3d  
+  -  2022-12-28 11:27  android  
+  -  2022-12-28 11:27  ui  
+  -  2022-12-28 11:27  wasm  
+  -  2022-12-28 11:27  window  
+148  2022-12-28 11:27  hello_world.rs  
+28k  2022-12-28 11:27  README.md  
+9.8k 2022-12-28 11:27  README.md.tpl
+
+❯ : cargo run --example breakout
+```
+
+[github.com/bevyengine/bevy](https://github.com/bevyengine/bevy)
+
+notes:
+(hello reader, the ls output is rendered by the crate exa, and my shell is nushell)
+
+It can be useful, especially if you are building a framework or library to build some small examples of using your code.
+
+examples that terminate after running, or can be made to terminate after a pause, in the case of UI or server code, can be run as part of your CI pipeline to ensure core functionality works as expected.
+This technique can be a very powerful and fast way to avoid regressions when combined with assertions.
+
+Testing our code works how we expect is only one side of the coin, of course.
+For more confidence in our code, we must also show that it doesn't work how we don't expect so that bad actors or incorrect usage is handled correctly.
+
+This is vital in public-facing and security-focused projects, like today's sponsor, Razor Secure.
+
+---
+
+<!-- slide bg="[[rs-train.jpg]]" -->
+
+![[rs-logo.png|400]]
+notes:
+_(disclosure: The company's CTO is my brother!)_
+
+- As with previous sponsors, Razor Secure don't want your money, they actually want to pay you.
+- This is because they've asked me to tell you about their open full-stack positions at their company.
+
+---
+
+# Razor Secure
+
+---
+
+<!-- slide bg="[[rs-train.jpg]]" -->
+
+![[rs-logo.png|200]]
+
+1. Cross-platform Rust Agent
+2. Cloud microservices
+3. Embedded hardware platform
+
+notes:
+
+- RazorSecure is a 50-person startup bringing cutting-edge security tech to the rapidly-advancing world of trains
+- They do this through:
+   - A Rust intrusion detection and monitoring agent running on whatever hardware is installed on-board.
+   - A cloud environment running K8s, Python microservices, and event-based data processing, and
+   - A yocto hardware platform running custom embedded linux.
+- Their team members and customers are based across Europe and North America, so if you have taken a train journey in any of those areas you may have already been kept safe by their security systems.
+
+---
+
+<!-- slide bg="[[rs-train2.jpg]]" -->
+<split even>
+
+![[Python_logo_icon.png|200]]
+![[kubernetes-logo.png|200]]
+![[rust-logo.png|200]]
+
+</split>
+
+notes:
+
+- If you are a Python full-stack developer and are excited by this challenge and tech, then they are VERY interested in speaking to you as they are hiring NOW.
+- The company is fully remote, so wherever you are based they offer challenging work in an interesting field with some awesome technology.
+
+---
+
+![[rs-logo.png|200]]
+
+[RazorSecure.com](https://www.razorsecure.com/)
+
+[RazorSecure.com/careers](https://www.razorsecure.com/careers)
+
+notes:
+
+Find out more about RazorSecure at RazorSecure.com, and see their
+open positions at RazorSecure.com/careers, and remember to mention No Boilerplate as your referrer so they know I sent you.
+
+My thanks to RazorSecure for their support of this channel.
 
 ---
 
 # Unhappy Path Testing
 
+notes:
+
+You might be able to stop after testing just the happy path.
+
+Not every project needs comprehensive testing, especially if you are just building on top of well-understood fundamentals.
+
+A brochure website, for instance, if built in rust doesn't need to be tested through counter-example, the compiler has already told you that every page has valid html, no missing closing tags, no sql injection or memory bugs, and if using a rust frontend framework like Yew, the messages passed between your components are type checked and can't be misused as easily as other language's string-based frameworks.
+
+However, if you've got a complex database and you're building a big webapp, you will want test comprehensively.
+
+---
+
 ## Black Box
+
+```rust
+#[test]
+#[should_panic(expected = "InvalidDigit")]
+fn bad_string() {
+	"twenty".parse::<i32>().unwrap();
+}
+```
+
+```sh
+running 1 test
+test bad_string - should panic ... ok  
+
+test result: ok. 1 passed; 0 failed; finished in 0.15s
+```
+
+notes:
+Unit tests can be divided neatly in two: Those that have no knowledge of library internals, and those that do.
+
+Public interface testing, and private unit testing.
+
+Black box tests typically import a crate and use the same public API that end-users, or other modules of your app use.
+Code examples use this method.
+
+White box tests are defined in the same module as the code under test. We've already seen doctests use this method.
 
 ---
 
 ## White Box
 
----
+```rust
+pub fn my_function() {}
+struct User {
+	name: String
+}
 
-## Compile Failures
+#[cfg(test)]
+mod test {
+    use super::{my_function, User};
+
+    #[test]
+    fn test_my_function() {}
+    #[test]
+    fn test_user() {}
+}
+```
+
+notes:
+
+While Black box tests reside simply inside the `test/` folder, white box tests can be defined alongside your code, in a submodule in the same file.
+
+Conditional compilation, the `#[cfg(test)]` line here, means the whole module is stripped out of your release executable, only running in your debug test builds.
+
+Here we have a public function, a private User struct, and then a submodule called test that contains our test code.
+
+Though you are required to re-import any code you are testing into your test module, unlike in black box testing the functions and structs do not need to be labelled public.
+Both this public function and private struct work fine.
 
 ---
 
 # Random
-
-## Quickcheck
-
----
-
-## Proptest
-
----
-
-## Fuzzing
-
----
-
-# Proxy
-
-- [ ] better name?
-
-## Assertations
-
----
-
-## Doctests
-
----
-
-## Examples
-
-An example:
-
----
 
 ```python
 def hello(name):
@@ -220,9 +483,11 @@ notes:
 If we want to generate random test input for this hello function in python, we still have work to do.
 This is because we don't know what kind of data the input to the function is, the `name` parameter could be anything.
 You and I might reasonably guess it's a string, but it could equally be an object, list, or even an integer.
-More work is needed.
+In Python, more work is needed.
 
 ---
+
+# Random
 
 ```rust
 fn hello(name: String) -> String {
@@ -260,7 +525,7 @@ proptest! {
 
 notes:
 
-This is proptest, a property testing framework inspired by the [Hypothesis](http://hypothesis.works/) framework for Python.
+This is proptest, a property testing framework inspired by the [Hypothesis](http://hypothesis.works/) framework for Python, which was in turn inspired by QuickCheck for haskell.
 It allows us to test that certain properties of our code hold for randomised inputs, and if a failure is found, it automatically finds the minimal test case to reproduce the problem.
 
 Note that Proptest is taking advantage of two features of Rust that are not available in other popular languages:
@@ -270,8 +535,8 @@ Note that Proptest is taking advantage of two features of Rust that are not avai
 ---
 
 ```rust[1]
-fn hello_with_strings(a: String) {
-	hello(a);
+fn hello_with_strings(name: String) {
+	hello(name);
 }
 ```
 
@@ -279,149 +544,87 @@ fn hello_with_strings(a: String) {
 
 ```python[1]
 @given(text())
-def hello_with_strings(a):
-    hello(a)
+def hello_with_strings(name):
+    hello(name)
 ```
 
 [pypi.org/project/hypothesis](https://pypi.org/project/hypothesis/)
 
 notes:
 
-Proptest, and the python test framework it is taking inspiration from, Hypothesis, are extremely similar in operation.
+Proptest, and Python's Hypothesis, are extremely similar in operation.
 But Proptest requires no wrapping of the test function at runtime, due to Rust's type system already encoding that data.
 
-In the python example, the Hypothesis framework must be told what kind of data `a` contains, text, for it to be generated.
+In the python example, the Hypothesis framework must be told what kind of data `name` contains, text, for it to be generated.
 
-Note that even this simple example is wrong, in Python's case.
-`a` is supposedly text, but it could be any type at run time, python makes no guarantees.
+In order to do fuzz testing, hypothosis had to overlay a type system on top of python.
 
-The tests assumes `a` will quack like a string when it is in use. Rust, however, guarantees it.
+Note that even this simple example is kinda wrong, in Python's case.
+`name` is supposedly text, but it could be any type at run time, python makes no guarantees.
+
+We might not be testing the right thing!
+In python, more work is needed.
+
+The tests *assumes* that `name` will quack like a string when it is in use. Rust, however, guarantees it.
 
 ---
 
-- [ ] proptest-regressions
+## Fuzzing
 
----
+```rust[]
+#![no_main]
+#[macro_use] extern crate libfuzzer_sys;
+extern crate url;
 
-# Clippy
-
-```sh
-cargo clippy --fix -- \
--W clippy::pedantic \
--W clippy::nursery \
--W clippy::unwrap_used \
+fuzz_target!(|data: &[u8]| {
+    if let Ok(s) = std::str::from_utf8(data) {
+        let _ = url::Url::parse(s);
+    }
+});
 ```
 
-notes:
-
-When used right, rust's built-in linter won't just make your code cleaner and more idiomatic, but with unwrap_used, here, safer and more correct, too.
-
-The unwrap_used warning reminds you that while `.unwrap()`ing a result is fine for prototype code, you must not let it creep into your production code.
-
-More details in my previous video about Rust errors.
-
----
-
-```sql
-$ cargo clippy --fix
+```js
+$ cargo fuzz demo_fuzz
+#58397 NEW    cov: 2069  corp: 111/4755b 
+exec/s: 11679 rss: 176Mb L: 42 MS: 1 EraseBytes-
+[...]
+thread panicked at 'index out of bounds: [...]'
 ```
 
-```md
-error:
-the working directory has uncommitted changes,
-and `cargo fix` can potentially perform destructive changes
-if you'd like to suppress this error pass `--allow-dirty`,
-`--allow-staged`, or commit the changes to these files
-```
+[rust-fuzz.github.io](https://rust-fuzz.github.io/book/cargo-fuzz.html)
 
 notes:
 
-If you run clippy with --fix, which can change your code if it is safe to do so, by default you will see this warning if you are not checked-in in version control.
+The most comprehensive, though heavyweight, tool for this kind of randomised testing is cargo fuzz.
 
-The cargo developers really have thought of everything!
+Cargo-fuzz uses LLVM's libFuzzer runtime library to generate psudorandom data and keep track of what has been tested.
+
+This means that, unlike with proptest, you can stop the test, and resume it later, and it won't re-test the same randomised input twice.
+
+This is important in fuzz testing very large systems, as the state space could be effectively infinite - the testing will never complete.
+
+Resuming it later, perhaps on a powerful server, is very handy.
 
 ---
 
-%% (this is commented out to keep the ad spot under 1 minute, sdaly!)
+# Testing Rust
 
-# SPONSOR QUIZ TIME
-
-- Old hardware
-- 100 MPH
-- Dynamic Data Centre Combinations
-- No grid power
-- No fibre internet
-
-notes:
-
-- What data centre contains 100 decade-old servers
-- re-configures its entire network when it merges or splits with another data centre
-- must operate without a reliable power source or internet connection,
-- And travels at over 100 MPH?
-
-To answer this, I will introduce Today's sponsor, Razor Secure
-%%
-
-<!-- slide bg="[[rs-train.jpg]]" -->
-
-![[rs-logo.png|400]]
-notes:
-_(disclosure: The company's CTO is my brother!)_
-
-- As with previous sponsors, Razor Secure don't want your money, they actually want to pay you.
-- This is because they've asked me to tell you about their open full-stack positions at their company.
-
----
-
-<!-- slide bg="[[rs-train.jpg]]" -->
-
-![[rs-logo.png|200]]
-
-1. Cross-platform Rust Agent
-2. Cloud microservices
-3. Embedded hardware platform
+- Clippy
+- Assertions
+- Doctests
+- Examples
+- Black Box
+- White Box
+- Proptest
+- Fuzzing
 
 notes:
 
-- RazorSecure is a 50-person startup bringing cutting-edge security tech to the rapidly-advancing world of trains
-- They do this through:
-   - A Rust intrusion detection and monitoring agent running on whatever hardware is installed on-board.
-   - A cloud environment running K8s, Python microservices, and event-based data processing, and
-   - A yocto hardware platform running custom embedded linux.
-- Their team members and customers are based across Europe and North America, so if you have taken a train journey in any of those areas you may have already been kept safe by their security systems.
+You will know how far down this list you need to go for your project and you team.
 
----
+Integration and end-to-end testing will be next, but that's for a future video.
 
-<!-- slide bg="[[rs-train2.jpg]]" -->
-<split even>
-
-![[Python_logo_icon.png|200]]
-![[kubernetes-logo.png|200]]
-![[rust-logo.png|200]]
-
-</split>
-
-notes:
-
-- If you are a Python full-stack developer and are excited by this challenge and stack, then they are VERY interested in speaking to you as they are hiring NOW.
-- The company is fully remote, so wherever you are based they offer challenging work in an interesting field with some awesome technology and a dynamic team.
-
----
-
-![[rs-logo.png|200]]
-
-[RazorSecure.com](https://www.razorsecure.com/)
-
-[RazorSecure.com/careers](https://www.razorsecure.com/careers)
-
-notes:
-
-Find out more about RazorSecure at RazorSecure.com, and see their
-open positions at RazorSecure.com/careers, and remember to mention No Boilerplate as your referrer so they know I sent you.
-
-My thanks to RazorSecure for their support of this channel.
-
----
+Rust and the community is extremely focussed on correctness, and that shines through in the testing ecosystem.
 
 ---
 

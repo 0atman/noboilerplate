@@ -1,0 +1,15 @@
+
+# Rebuild project when rs and toml files change
+watch:
+	just build
+	cargo watch -c -i "*.rs" -i "*.toml" -s "just build"
+
+# Pull out rust and toml code fences into their files
+build:
+	mkdir src -p
+	cat "16-rust-testing.md" | literate --language rust > src/main.rs
+	cat "16-rust-testing.md" | literate --language toml > Cargo.toml
+
+# make-compatible bootstrap
+deps:
+	cargo install --all-features literate bacon cargo-watch just
