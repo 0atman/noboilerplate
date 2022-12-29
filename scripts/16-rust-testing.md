@@ -75,11 +75,11 @@ For the remainder of the bugs that ARE possible to express, you will indeed need
 
 ---
 
-| Happy Path   | Unhappy Path | Random     |
-| ------------ | ------------ | ---------- |
-| Assertations | Black Box    | QuickCheck |
-| Doctests     | White Box    | Proptest   |
-| Examples     |              | Fuzzing    |
+| Happy Path   | Comprehensive | Probabilistic |
+| ------------ | ------------- | ------------- |
+| Assertations | Black Box     | QuickCheck    |
+| Doctests     | White Box     | Proptest      |
+| Examples     |               | Fuzzing       |
 
 notes:
 
@@ -121,7 +121,7 @@ enum WebEvent {
 
 notes:
 Here we are modelling a browser web event.
-We have events for the page loading and unloading, and user interaction.
+We have variants for the page loading and unloading, and user interaction.
 
 In enums, names and type information together specify the variant:
 PageLoad != PageUnload and KeyPress(char) != Paste(String)`.
@@ -149,7 +149,7 @@ notes:
 
 Then in our code, instead of writing spaghetti if statements, we match the current state of the application, and execute different behaviours based on this state.
 No other actions are possible, because we're responding to exactly the state we are given.
-If more nuance is needed, then don't write an if statement, add more detail to the model.
+If more nuance is needed, then don't write an if statement, add more detail to your model.
 
 This keeps us safe.
 
@@ -198,7 +198,7 @@ notes:
 
 When used right, rust's built-in linter won't just make your code cleaner and more idiomatic, but with the unwrap_used warning, here, safer and more correct, too.
 
-The unwrap_used warning reminds you that while `.unwrap()`ing a result is fine for prototype code, you must not let it creep into your production code.
+The unwrap_used warning reminds you that while `.unwrap()`ing a result is fine for prototype code, you must not let it creep into production.
 
 In fact, I recommend in your CI pipeline, you configure this warning to be an error, and fail the build.
 Force you and your team to explain why they are so sure the result is safe, using the `.expect("reason")` method.
@@ -221,7 +221,7 @@ if you'd like to suppress this error pass `--allow-dirty`,
 
 notes:
 
-If you run clippy with the --fix option, which can change your code if it is safe to do so, by default you will see this warning if you are not checked-in in version control.
+If you run clippy with the --fix option, which can correct your code if it is safe to do so, by default you will see this warning if you are not checked-in in version control.
 
 The cargo developers really have thought of everything!
 
@@ -288,7 +288,7 @@ Doctests rule. Combining documentation and testing into one feature, it was my f
 
 I recommend choosing doctests for the lightest-touch testing, before moving on to the heavier strategies we're going to talk about later.
 
-In your doctest, you can test the annotated function, see line 3, but also test anything you want to bring into scope, such as the read_line code in the second half of this doctest.
+In your doctests, you can test the annotated function, see line 3, but also test anything you want to bring into scope, such as the read_line code in the second half of this doctest.
 
 Note that you can avoid using a main method inside doctests by using the turbofish syntax for the ok result, as on line 8.
 
@@ -319,7 +319,7 @@ bevy/examples  
 notes:
 (hello reader, the ls output is rendered by the crate exa, and my shell is nushell)
 
-It can be useful, especially if you are building a framework or library to build some small examples of using your code.
+It can be useful, especially if you are building a framework or library to build some small, working examples of using your code.
 
 examples that terminate after running, or can be made to terminate after a pause, in the case of UI or server code, can be run as part of your CI pipeline to ensure core functionality works as expected.
 This technique can be a very powerful and fast way to avoid regressions when combined with assertions.
@@ -327,7 +327,11 @@ This technique can be a very powerful and fast way to avoid regressions when com
 Testing our code works how we expect is only one side of the coin, of course.
 For more confidence in our code, we must also show that it doesn't work how we don't expect so that bad actors or incorrect usage is handled correctly.
 
-This is vital in public-facing and security-focused projects, like today's sponsor, Razor Secure.
+This is vital in public-facing and security-focused projects, like today's sponsor, Razor Secure, who are hiring.
+
+---
+
+# Razor Secure
 
 ---
 
@@ -337,12 +341,12 @@ This is vital in public-facing and security-focused projects, like today's spons
 notes:
 _(disclosure: The company's CTO is my brother!)_
 
-- As with previous sponsors, Razor Secure don't want your money, they actually want to pay you.
-- This is because they've asked me to tell you about their open full-stack positions at their company.
+A quiz: What data-centre:
+- travels at 100 miles-per-hour
+- re-configures every IP when it attaches or detaches to other data-centres
+- all without a reliable power source or internet connection, and must never fail?
 
----
-
-# Razor Secure
+The Answer: A train.
 
 ---
 
@@ -356,12 +360,12 @@ _(disclosure: The company's CTO is my brother!)_
 
 notes:
 
-- RazorSecure is a 50-person startup bringing cutting-edge security tech to the rapidly-advancing world of trains
+- RazorSecure is a 50-person startup bringing cutting-edge security tech to the rapidly-advancing world of rail
 - They do this through:
-   - A Rust intrusion detection and monitoring agent running on whatever hardware is installed on-board.
-   - A cloud environment running K8s, Python microservices, and event-based data processing, and
-   - A yocto hardware platform running custom embedded linux.
-- Their team members and customers are based across Europe and North America, so if you have taken a train journey in any of those areas you may have already been kept safe by their security systems.
+   - A Rust intrusion detection and monitoring agent running on-board.
+   - A cloud environment running K8s, Python micro-services, and event-based data processing, and
+   - A Yocto hardware platform running custom embedded linux.
+- Their team and customers span Europe and North America, so if you have taken a train journey here, then RazorSecure's security systems may have already kept you safe.
 
 ---
 
@@ -383,20 +387,19 @@ notes:
 
 ![[rs-logo.png|200]]
 
-[RazorSecure.com](https://www.razorsecure.com/)
-
 [RazorSecure.com/careers](https://www.razorsecure.com/careers)
+
+[razorsecure.noboilerplate.org](http://razorsecure.noboilerplate.org)
 
 notes:
 
-Find out more about RazorSecure at RazorSecure.com, and see their
-open positions at RazorSecure.com/careers, and remember to mention No Boilerplate as your referrer so they know I sent you.
+Find out more about jobs at RazorSecure at RazorSecure.com/careers, and if you want to apply, use the link, razorsecure.noboilerplate.org, so they know I sent you.
 
 My thanks to RazorSecure for their support of this channel.
 
 ---
 
-# Unhappy Path Testing
+# Comprehensive Testing
 
 notes:
 
@@ -404,7 +407,7 @@ You might be able to stop after testing just the happy path.
 
 Not every project needs comprehensive testing, especially if you are just building on top of well-understood fundamentals.
 
-A brochure website, for instance, if built in rust doesn't need to be tested through counter-example, the compiler has already told you that every page has valid html, no missing closing tags, no sql injection or memory bugs, and if using a rust frontend framework like Yew, the messages passed between your components are type checked and can't be misused as easily as other language's string-based frameworks.
+A brochure website, for instance, if built in rust doesn't need to be tested through counter-example, the compiler has already told you that every page has valid html, no missing closing tags, no sql injection or memory bugs, and if using a rust frontend framework like Yew, the messages passed between your components are type checked and can't be misused as easily as in other language's string-based frameworks.
 
 However, if you've got a complex database and you're building a big webapp, you will want test comprehensively.
 
@@ -432,7 +435,7 @@ Unit tests can be divided neatly in two: Those that have no knowledge of library
 
 Public interface testing, and private unit testing.
 
-Black box tests typically import a crate and use the same public API that end-users, or other modules of your app use.
+Black box tests in rust typically import a crate and use the same public API that end-users, or other modules of your app use.
 Code examples use this method.
 
 White box tests are defined in the same module as the code under test. We've already seen doctests use this method.
@@ -471,7 +474,7 @@ Both this public function and private struct work fine.
 
 ---
 
-# Random
+# Probabilistic
 
 ```python
 def hello(name):
@@ -479,6 +482,9 @@ def hello(name):
 ```
 
 notes:
+Probabalistic testing is a great way to shine a light into the dusty corners of our app that we may have forgotten about.
+
+However, in other languages, it often requires boilerplate code.
 
 If we want to generate random test input for this hello function in python, we still have work to do.
 This is because we don't know what kind of data the input to the function is, the `name` parameter could be anything.
@@ -487,7 +493,7 @@ In Python, more work is needed.
 
 ---
 
-# Random
+# Probabilistic
 
 ```rust
 fn hello(name: String) -> String {
@@ -499,8 +505,8 @@ notes:
 
 With Rust, we know exactly what to do, and more importantly, the compiler also knows exactly what to do.
 
-The name is a String, which in Rust means a valid UTF-8 string, and not only that, we also notate the return value.
-This is something we would have had to infer or annotate from the python example.
+The name param is a String, which in Rust means a valid UTF-8 string, and not only that, we also notate the return value.
+This is something we would have had to infer or annotate in the python example.
 
 Here we have more syntax, but it's not boilerplate, we can now use it to give us superpowers.
 
@@ -557,15 +563,14 @@ But Proptest requires no wrapping of the test function at runtime, due to Rust's
 
 In the python example, the Hypothesis framework must be told what kind of data `name` contains, text, for it to be generated.
 
-In order to do fuzz testing, hypothosis had to overlay a type system on top of python.
+In order to do this probabilistic testing, hypothesis had to overlay it's own propitiatory type system on top of python.
 
 Note that even this simple example is kinda wrong, in Python's case.
 `name` is supposedly text, but it could be any type at run time, python makes no guarantees.
-
 We might not be testing the right thing!
 In python, more work is needed.
 
-The tests *assumes* that `name` will quack like a string when it is in use. Rust, however, guarantees it.
+The test *assumes* that `name` will quack like a string when it is in use. Rust, however, guarantees it.
 
 ---
 
@@ -595,7 +600,7 @@ thread panicked at 'index out of bounds: [...]'
 
 notes:
 
-The most comprehensive, though heavyweight, tool for this kind of randomised testing is cargo fuzz.
+The most comprehensive, though heavyweight, tool for this kind of randomised testing in Rust is cargo fuzz.
 
 Cargo-fuzz uses LLVM's libFuzzer runtime library to generate psudorandom data and keep track of what has been tested.
 
@@ -604,6 +609,101 @@ This means that, unlike with proptest, you can stop the test, and resume it late
 This is important in fuzz testing very large systems, as the state space could be effectively infinite - the testing will never complete.
 
 Resuming it later, perhaps on a powerful server, is very handy.
+
+---
+
+# Integration Tests
+
+```rust[]
+struct Country { country: String, count: i64 }
+
+let countries = sqlx::query_as!(
+	Country,
+	"SELECT country, COUNT(*) as count
+	FROM users
+	GROUP BY country
+	WHERE organization = ?",
+	organization
+)
+    .fetch_all(&pool) // -> Vec<Country>
+    .await?;
+```
+
+notes:
+
+While it deserves it's own entire video, I will briefly mention integration testing here, because there's some magic still to be found.
+
+You may recognise my favourite SQL framework for Rust, here, SQLx.
+
+Both better than an ORM and a DSL, SQLx runs all your queries against your actual dev database during rust compilation inside a rolled-back transaction.
+Parametarised data, like the string, `organization`, here, because it's type is known at compile time, can have random valid data inserted into the query.
+
+This is all very wonderful and magic.
+However, you have just coupled your application's compilation to an external service, the database, and therefore have complicated your building and testing infrastructure.
+
+Or have you.
+
+---
+
+# Test Double
+
+1. `sqlx = { features = ["offline"] }`
+2. `cargo sqlx prepare`
+
+
+More info:
+[martinfowler.com/bliki/TestDouble.html](https://martinfowler.com/bliki/TestDouble.html)
+
+notes:
+SQLx has an offline schema feature which is a great example of doubling, or mocking, or stubbing. You will have heard many names for this technique, but Martin Fowler calls it a Double, so that is good enough for me.
+
+To double your SQLx database validation, and decouple it from a real database you do two things:
+
+1. Enable the SQLx's Cargo feature `offline`
+2. Save query metadata for offline usage using `cargo sqlx prepare`
+
+And now any cargo Build will use the schema double saved to `sqlx-data.json` for compile-time verification
+
+For your interest, this schema double looks like this:
+
+---
+
+```json
+"3a39bed220618e2f59edb65dc9f8": {
+"describe": {
+  "columns": [
+	{
+	  "name": "id",
+	  "ordinal": 0,
+	  "type_info": "Int4"
+	},
+  ],
+  "nullable": [false],
+  "parameters": {
+	"Left": []
+  }
+},
+```
+
+notes:
+
+It's simply a description of your database's schema, and all features, in machine-readable JSON.
+
+You'd check this in when you modify the database, probably when creating a migration, and then your CI pipeline can compile-check the project's SQL without a SQL database
+
+It's also MUCH faster.
+
+---
+
+# Further Reading
+
+> Do you [set your house on fire to test your smoke alarm?](https://dius.com.au/2014/05/20/simplifying-microservice-testing-with-pacts/) No, you test the contract it holds with your ears by using the testing button.
+
+[crates.io/crates/pact_consumer](https://crates.io/crates/pact_consumer)
+
+notes:
+
+I am writing a follow-up video expanding on Integration, Doubling, and Contract testing, but for now, I'd point you at Pact, which has a comprehensive Reqwest contract tooling for microservices in Rust.
 
 ---
 
@@ -620,9 +720,9 @@ Resuming it later, perhaps on a powerful server, is very handy.
 
 notes:
 
-You will know how far down this list you need to go for your project and you team.
+You will know how far down this list you need to go for your project and your team.
 
-Integration and end-to-end testing will be next, but that's for a future video.
+Integration and end-to-end testing will be next, in future video.
 
 Rust and the community is extremely focussed on correctness, and that shines through in the testing ecosystem.
 
@@ -630,7 +730,7 @@ Rust and the community is extremely focussed on correctness, and that shines thr
 
 ![[rust-logo.png]]
 
-# Subtitle
+# (Kind of)
 
 notes:
 
