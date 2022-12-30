@@ -829,7 +829,7 @@ Ok(())
 notes:
 Or you can bubble up the error, returning it to the calling function, which then handles it.
 This pattern of unwrapping the value inside a result if it's OK, or returning it if it's an error is so common that rust has dedicated syntax to do it.
-- [ ] fix final t on 'do it'
+- [x] fix final t on 'do it'
 ---
 
 ```rust[2]

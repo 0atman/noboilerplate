@@ -46,7 +46,9 @@ fn main() {
 ![[rust-logo.png]]
 
 # RUST: TITLE
-### SUBTITLE
+Compiler-checked markdown video scripts:
+[github.com/0atman/noboilerplate](github.com/0atman/noboilerplate)
+
 
 notes:
 

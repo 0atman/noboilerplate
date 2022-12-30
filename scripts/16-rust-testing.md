@@ -54,6 +54,9 @@ fn main() -> color_eyre::eyre::Result<()> {
 
 # RUST Tests Itself
 
+Compiler-checked markdown video scripts:
+[github.com/0atman/noboilerplate](github.com/0atman/noboilerplate)
+
 %% Kind of %%
 notes:
 
@@ -187,11 +190,11 @@ I explained this in more detail in my previous video "Rust Makes Cents", so for 
 
 # Clippy
 
-```sh
-cargo clippy --fix -- \
+```sh[4]
+$ cargo clippy --fix -- \
 -W clippy::pedantic \
 -W clippy::nursery \
--W clippy::unwrap_used \
+-W clippy::unwrap_used
 ```
 
 notes:
@@ -465,7 +468,10 @@ notes:
 
 While Black box tests reside simply inside the `test/` folder, white box tests can be defined alongside your code, in a submodule in the same file.
 
-Conditional compilation, the `#[cfg(test)]` line here, means the whole module is stripped out of your release executable, only running in your debug test builds.
+- [ ] re-record this
+Conditional compilation, the `#[cfg(test)]` line here, means 
+
+the whole module is stripped out of your release executable, only running in your debug test builds.
 
 Here we have a public function, a private User struct, and then a submodule called test that contains our test code.
 
@@ -647,14 +653,18 @@ Or have you.
 
 # Test Double
 
+0. `cargo install sqlx-cli`
 1. `sqlx = { features = ["offline"] }`
 2. `cargo sqlx prepare`
 
+<br/>
 
-More info:
+More info on doubling:
+
 [martinfowler.com/bliki/TestDouble.html](https://martinfowler.com/bliki/TestDouble.html)
 
 notes:
+
 SQLx has an offline schema feature which is a great example of doubling, or mocking, or stubbing. You will have heard many names for this technique, but Martin Fowler calls it a Double, so that is good enough for me.
 
 To double your SQLx database validation, and decouple it from a real database you do two things:
@@ -665,6 +675,8 @@ To double your SQLx database validation, and decouple it from a real database yo
 And now any cargo Build will use the schema double saved to `sqlx-data.json` for compile-time verification
 
 For your interest, this schema double looks like this:
+
+
 
 ---
 
@@ -685,7 +697,11 @@ For your interest, this schema double looks like this:
 },
 ```
 
+[github.com/launchbadge/sqlx/](https://github.com/launchbadge/sqlx/)
+
 notes:
+
+- [x] retake this screenshot
 
 It's simply a description of your database's schema, and all features, in machine-readable JSON.
 

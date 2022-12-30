@@ -67,7 +67,7 @@ fn main() {
 
 notes:
 
-- [ ] put a pause after each slide
+- [x] put a pause after each slide
 
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
