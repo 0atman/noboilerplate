@@ -50,6 +50,15 @@ fn main() -> color_eyre::eyre::Result<()> {
 
 %%
 
+
+# Don't 
+<!-- element style="font-size: 4em;color: white; text-shadow: 5px 5px black;" -->
+
+# Test Me
+<!-- element style="font-size: 4em;color: white; text-shadow: 5px 5px black;" -->
+
+---
+
 ![[rust-logo.png]]
 
 # RUST Tests Itself
@@ -469,7 +478,7 @@ notes:
 While Black box tests reside simply inside the `test/` folder, white box tests can be defined alongside your code, in a submodule in the same file.
 
 - [ ] re-record this
-Conditional compilation, the `#[cfg(test)]` line here, means 
+Conditional compilation, the `#[cfg(test)]` line here, means
 
 the whole module is stripped out of your release executable, only running in your debug test builds.
 
@@ -675,8 +684,6 @@ To double your SQLx database validation, and decouple it from a real database yo
 And now any cargo Build will use the schema double saved to `sqlx-data.json` for compile-time verification
 
 For your interest, this schema double looks like this:
-
-
 
 ---
 
