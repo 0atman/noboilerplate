@@ -1,4 +1,4 @@
-My scripts are licensed under the following CC0 license.
+My scripts and their embedded source code are licensed under the following CC0 license.
 Images in `scripts/attachments/` may be owned by their respective owners and are not part of this license, as may be the wording of advertising copy.
 
 Creative Commons Legal Code
