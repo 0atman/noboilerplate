@@ -477,7 +477,7 @@ notes:
 
 While Black box tests reside simply inside the `test/` folder, white box tests can be defined alongside your code, in a submodule in the same file.
 
-- [ ] re-record this
+- [x] re-record this
 Conditional compilation, the `#[cfg(test)]` line here, means
 
 the whole module is stripped out of your release executable, only running in your debug test builds.
