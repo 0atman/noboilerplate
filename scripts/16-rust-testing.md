@@ -744,9 +744,14 @@ Rust and the community is extremely focussed on correctness, and that shines thr
 
 ---
 
-![[rust-logo.png]]
+![[rust-logo.png|300]]
 
-# (Kind of)
+
+```php
+$ cargo build  
+   Finished target in 0.42s
+```
+<!-- element style="font-size: 1.16em;" -->
 
 notes:
 

@@ -1,6 +1,7 @@
 %%
 <style>
 :root {--r-code-font: "FiraCode Nerd Font";}
+.reveal .hljs {min-height: 50%;}
 </style>
 %%
 
@@ -447,6 +448,20 @@ Anything that gets in the way of working software, by our user's definition of w
 
 # Thank you
 ## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
+
+---
+
+
+# AGILE
+# `!=`
+# SCRUM
+
+
+<!-- element style="font-size: 2.6em;" -->
+
+
+
+
 
 notes:
 
