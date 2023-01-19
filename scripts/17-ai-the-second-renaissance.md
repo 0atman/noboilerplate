@@ -232,8 +232,6 @@ But also:
 
 The tool finds patterns in existing data, and has been given the largest corpus of data we've ever accumulated: The Internet, circa 2021, or large portions of it.
 
-- [x] re-record 'largest corpus'
-
 ---
 
 ```txt
@@ -366,8 +364,6 @@ And it gets much worse.
 ```
 
 notes:
-- [x] re-take this screenshot
-
 The results of the algorithm are given with no context, no thought to fairness or even correctness.
 
 This is a very powerful tool, but an amoral one.
@@ -578,8 +574,6 @@ If you would like to support my channel, get early ad-free and tracking-free vid
 If you're interested in transhumanism and hopepunk stories, please check out my sci-fi podcast, Lost Terminal.
 
 Or if urban fantasy is more your bag, click the bottom video to listen to a strange and beautiful podcast I produce called Modem Prometheus.
-
-- [x] add 's' to transcripts recording
 
 Transcripts and markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 

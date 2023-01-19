@@ -4,6 +4,8 @@
 </style>
 %%
 
+f7f7f7 background slide colour
+
 # Cargo.toml 
 ```toml
 [package]
@@ -53,6 +55,25 @@ Compiler-checked markdown video scripts:
 notes:
 
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
+
+
+---
+
+
+## Open Source Videos
+
+```sh
+$ git clone git@github.com:0atman/noboilerplate.git
+$ cd noboilerplate/scripts
+
+$ make deps  # to install literate and cargo-watch
+$ make build # produce a valid cargo project
+$ cargo build
+```
+
+notes:
+
+As ever, all Rust code you see in this video is part of a literate programming document that can be extracted and compiled with native Rust tooling.
 
 
 ---
