@@ -17,6 +17,7 @@ watch = ["tests", "benches", "examples"]
 [jobs.clippy]
 command = ["cargo", "clippy", "--color", "always", "--", "-W", "clippy::pedantic"]
 need_stdout = false
+apply_gitignore = false
 
 [jobs.clippy-all]
 command = ["cargo", "clippy", "--all-targets", "--color", "always"]

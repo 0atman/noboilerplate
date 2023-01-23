@@ -1,4 +1,4 @@
-video := "17-ai-the-second-renaissance.md"
+video := "18-rusts-magic-macros.md"
 
 
 # Rebuild project when rs and toml files change

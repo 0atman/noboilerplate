@@ -53,7 +53,11 @@ Compiler-checked markdown video scripts:
 
 
 notes:
-
+%%
+Tell them what you're going to tell them,
+tell them,
+then tell them what you told them.
+%%
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
 
