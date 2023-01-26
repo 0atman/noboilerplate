@@ -121,141 +121,60 @@ That's what a macro is, a function that runs at compile time, with full access t
 
 ---
 
-# Examples of ~~Witchcraft~~
-
-# Macros
-
-notes:
-
-Here are 4 examples of features that are difficult in other languages that Rust can do before breakfast.
-
----
-
-# Simple Syntax Rewriting
-
-notes:
-
-Macros are the ultimate boilerplate killer. Where other languages have to invent new syntax or force boilerplate on the user through copy and paste, rust's macros can use a simple template syntax to maximise code reuse at compile time.
-
-Anything you can write you can template.
-
----
-
-```html
-let page = html! {
-  <html>
-  <head>
-	  <title>"My blog"</title>
-  </head>
-  <body>
-	  <div id="my_div"></div>
-  </body>
-  </html>
-};
-```
-
-<https://crates.io/crates/html-to-string-macro/>
-
-notes:
-
-Would you like to write html inside your rust code?
-Of course you would, and you get syntax highlighting and compile checking for FREE.
-
-Let me break this code a little to show you:
-
----
-
-```js
-1  error: close tag has no corresponding open tag  
-  --> src/main.rs:15:21  
-   |  
-15 |       <div id="my_div"></badtag>  
-   |                        ^
+```c[]
+#include <stdio.h>
+ 
+// Macro definition
+#define AREA(l, b) (l * b)
+ 
+int main()
+{
+    int l1 = 10, l2 = 5, area;
+    area = AREA(l1, l2);
+ 
+    printf("Area of rectangle is: %d", area);
+    return 0;
+}
 ```
 
 notes:
+Other languages have things they call macros, like here with C.
 
-Beautiful!
-
-I'll remind you Rust does not have native html or xml literals. We BUILT one with the macro system.
-
-The dream of scala is alive in Rust.
-
-But it gets BETTER: html is just data, a markup language, but what if you want to embed an entirely different programming language inside Rust?
+This is simple text manipulation.
+It's good for code reuse, but extremely surprising because there's no indication that you're using a macro, the macro invocation on line 9 looks just like the function invocation on line 11.
 
 ---
-
-# Entirely New Languages
 
 ```rust
-lisp!(defun factorial ((n i32)) i32
-  (if (<= n 1)
-    1
-    (* n (factorial (- n 1)))));
+macro_rules! say_hello {
+    () => {
+        println!("Hello!")
+    };
+}
 
-let graydons_way  = factorial(5 + 5);
-let mccarthys_way = lisp!(factorial (+ 5 5));
-assert!(graydons_way == mccarthys_way);
+
+say_hello!(); // replaced with `println!("Hello!")`
+
 ```
 
-<https://crates.io/crates/macro_lisp>
+<https://doc.rust-lang.org/rust-by-example/macros.html>
 
 notes:
+Rust DOES indeed have this kind of macro, and they're so common that a very simple definition is possible with macro_rules here.
 
-making a lisp is a common toy project for computer science learners.
-I recommend giving Make A Lisp. a go.
-But this lisp isn't written WITH rust, it's embedded INSIDE rust as a macro.
+This is a simple macro named `say_hello`.
+It takes no arguments and will expand into the contents of the inner block.
 
-The lisp macro block defines a function called `factorial`, which is expanded into a normal rust fn at compile time.
+This call will expand into `println!("Hello");` at compile time.
+Note that the print statement isn't executed at compile time, it's just being inserted into the code at compile time, ready to be executed at runtime like all functions.
 
-In this example Rust code looks like it can call lisp code and lisp can call rust, because what's happening is that it's all being compiled down to normal rust function syntax before being fed into the regular compiler.
+You may note that this looks exactly like a match statement.
 
-Let me break it a bit:
+macro_rules! are like match statements that are executed at compile time.
 
----
-
-```sql
- error[E0369]: cannot add `{integer}` to `&str`  
---> src/main.rs:16:21  
- |  
- | let mccarthys_way = lisp!(factorial (+ "five" 5));  
- |                     ^^^^^^^^^^^^^^^^^^^------^-^^  
- |                                        |      |  
- |                                        |      {integer}
- |                                        &str  
-```
-
-notes:
-Don't misunderstand this error, this looks like a normal rust error BUT THE ERROR OCCURS INSIDE LISP, inside our new language. And we get this feature FOR FREE.
-
-I can't stress enough how incredible this is, even thought most of us won't write whole new languages with it.
-
-If you build your new DSL, language, or new syntax inside a rust macro, you don't throw away the whole language to do it, like you have to do if you build external source pre-processors.
+Let's look at a real-world example
 
 ---
-
-## Counter-example: JSX
-
-```js
-$ node jsxtest.js    
-/home/deck/projects/jsxtest.js:2  
- <h1>  
- ^  
-  
-SyntaxError: Unexpected token '<'
-```
-
-notes:
-
-JSX requires extra IDE support on top of javascript because it's not javascript, it's just a well-supported templating language that you must build with babel or whatever.
-
-And you better hope you've configured your source maps correctly or errors will happen on different lines than you expect
-
-Let's dig into how to write your own declarative rust macro. It's very simple.
-
----
-
-## Zero-cost Code Reuse
 
 ```rust[]
 macro_rules! bounded_impl {
@@ -274,6 +193,8 @@ macro_rules! bounded_impl {
 
 ```rust[]
 bounded_impl!(u8, u8::MIN, u8::MAX);
+bounded_impl!(usize, usize::MIN, usize::MAX);
+bounded_impl!(u16, u16::MIN, u16::MAX);
 ```
 
 <https://crates.io/crates/num-traits>
@@ -424,6 +345,132 @@ notes:
 
 Now that you're familiar with how macros execute and can re-write syntax in-place, it's time to do impossible things.
 
+There are two kinds of Rust macros, declarative macros that do simple syntax rewriting using macro_rules that you've just seen, and procedural macros that can do all that, AND execute at compile time.
+
+---
+
+# Simple Syntax Rewriting
+
+notes:
+
+Macros are the ultimate boilerplate killer. Where other languages have to invent new syntax or force boilerplate on the user through copy and paste, rust's macros maximise code reuse at compile time.
+
+Anything you can write you can template, and for procedural macros it doesn't even have to be valid rust.
+
+---
+
+```html
+let page = html! {
+  <html>
+  <head>
+	  <title>"My blog"</title>
+  </head>
+  <body>
+	  <div id="my_div"></div>
+  </body>
+  </html>
+};
+```
+
+<https://crates.io/crates/html-to-string-macro/>
+
+notes:
+
+Would you like to write html inside your rust code?
+Of course you would, and you get syntax highlighting and compile checking for FREE.
+
+Let me break this code a little to show you:
+
+---
+
+```js
+1  error: close tag has no corresponding open tag  
+  --> src/main.rs:15:21  
+   |  
+15 |       <div id="my_div"></badtag>  
+   |                        ^
+```
+
+notes:
+
+Beautiful!
+
+I'll remind you Rust does not have native html or xml literals. We BUILT one with the macro system.
+
+The dream of scala is alive in Rust.
+
+But it gets BETTER: html is just data, a markup language, but what if you want to embed an entirely different programming language inside Rust?
+
+---
+
+# Entirely New Languages
+
+```rust
+lisp!(defun factorial ((n i32)) i32
+  (if (<= n 1)
+    1
+    (* n (factorial (- n 1)))));
+
+let graydons_way  = factorial(5 + 5);
+let mccarthys_way = lisp!(factorial (+ 5 5));
+assert!(graydons_way == mccarthys_way);
+```
+
+<https://crates.io/crates/macro_lisp>
+
+notes:
+
+making a lisp is a common toy project for computer science learners.
+I recommend giving Make A Lisp. a go.
+But this lisp isn't written WITH rust, it's embedded INSIDE rust as a macro.
+
+The lisp macro block defines a function called `factorial`, which is expanded into a normal rust fn at compile time.
+
+In this example Rust code looks like it can call lisp code and lisp can call rust, because what's happening is that it's all being compiled down to normal rust function syntax before being fed into the regular compiler.
+
+Let me break it a bit:
+
+---
+
+```sql
+ error[E0369]: cannot add `{integer}` to `&str`  
+--> src/main.rs:16:21  
+ |  
+ | let mccarthys_way = lisp!(factorial (+ "five" 5));  
+ |                     ^^^^^^^^^^^^^^^^^^^------^-^^  
+ |                                        |      |  
+ |                                        |      {integer}
+ |                                        &str  
+```
+
+notes:
+Don't misunderstand this error, this looks like a normal rust error BUT THE ERROR OCCURS INSIDE LISP, inside our new language. And we get this feature FOR FREE.
+
+I can't stress enough how incredible this is, even thought most of us won't write whole new languages with it.
+
+If you build your new DSL, language, or new syntax inside a rust macro, you don't throw away the whole language to do it, like you have to do if you build external source pre-processors.
+
+---
+
+## Counter-example: JSX
+
+```js
+$ node jsxtest.js    
+/home/deck/projects/jsxtest.js:2  
+ <h1>  
+ ^  
+  
+SyntaxError: Unexpected token '<'
+```
+
+notes:
+
+JSX requires extra IDE support on top of javascript because it's not javascript, it's just a well-supported templating language that you must build with babel or whatever.
+
+And you better hope you've configured your source maps correctly or errors will happen on different lines than you expect
+
+Let's dig into how to write your own declarative rust macro. It's very simple.
+
 ---
 
 # Arbitary Compile-time Execution
@@ -537,7 +584,7 @@ command!(mkv --fs);
 notes:
 
 In Rust there are 4 ways of defining a macro depending on what you want to do.
-The first and easiest that I just demoed is declarative macros, where you use the templating system to write code by example.
+The first and easiest is declarative macros, where you use the templating system to write code by example.
 
 Next are three procedural macros:
 - Custom `#[derive]` macros that add code to structs and enums with the `derive` attribute
