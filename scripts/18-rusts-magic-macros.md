@@ -84,6 +84,7 @@ notes:
 Most articles about macros minimise their most powerful feature, compile-time code execution, and instead focus on their ability to DRY up your code, as if they were just metaprogramming or a way to save keystrokes.
 
 This is because most languages don't have a way to run arbiatry code at compile time.
+And those that do, limit this to just syntax rewriting.
 
 If you're used to staring at the shadows of metaprogramming flickering on the wall, you will have no concept of the world available to you outside of the cave.
 
@@ -107,7 +108,7 @@ _"What Made Lisp Different"_
 
 notes:
 
-Let's be clear, macros ARE the most powerful metaprogramming technique to decrease boilerplate we have.
+Let's be clear, proper macros ARE the most powerful metaprogramming technique to decrease boilerplate we have.
 No other language feature is as powerful or as flexible.
 
 We've known this for half a century, macros were one of the key innovations in lisp.
@@ -326,7 +327,7 @@ impl Bounded for u8 {
 	}
 	#[inline]
 	fn max_value() -> u8 {
-		u8::MIN
+		u8::MAX
 	}
 }
 ```
@@ -337,6 +338,8 @@ This is the macroexpansion.
 
 If you've ever used a templating language, and I think perhaps every programmer has, this should feel right at home.
 
+But in Rust we can do so much more.
+
 ---
 
 # The Secret Sauce
@@ -346,6 +349,8 @@ notes:
 Now that you're familiar with how macros execute and can re-write syntax in-place, it's time to do impossible things.
 
 There are two kinds of Rust macros, declarative macros that do simple syntax rewriting using macro_rules that you've just seen, and procedural macros that can do all that, AND execute at compile time.
+
+Let's talk about a few examples of what you can do with Procedural Macros.
 
 ---
 
@@ -478,7 +483,7 @@ Let's dig into how to write your own declarative rust macro. It's very simple.
 ```rust[]
 // let mut conn = <impl sqlx::Executor>;
 let account = sqlx::query!(
-    "select name id, from account")
+    "SELECT name id, FROM account")
     .fetch_one(&mut conn)
     .await?;
 
@@ -516,7 +521,7 @@ notes:
 When you compile your code, the query!() macro executes, taking in the string literal of your sql query, parsing it and adding in random type-valid parameterised data.
 random strings or numbers, perhaps.
 
-Then this query is executed on your local dev database, perhaps posgres, inside a transaction.
+Then this query is executed on your local dev database, perhaps postgres, inside a transaction.
 
 This will either execute cleanly or fail, perhaps because you've got the type or name of parameters or table wrong.
 
