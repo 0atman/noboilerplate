@@ -196,6 +196,7 @@ macro_rules! bounded_impl {
 bounded_impl!(u8, u8::MIN, u8::MAX);
 bounded_impl!(usize, usize::MIN, usize::MAX);
 bounded_impl!(u16, u16::MIN, u16::MAX);
+// 15 more...
 ```
 
 <https://crates.io/crates/num-traits>
@@ -348,7 +349,7 @@ notes:
 
 Now that you're familiar with how macros execute and can re-write syntax in-place, it's time to do impossible things.
 
-There are two kinds of Rust macros, declarative macros that do simple syntax rewriting using macro_rules that you've just seen, and procedural macros that can do all that, AND execute at compile time.
+There are two kinds of Rust macros, declarative macros that do simple syntax rewriting using macro_rules that you've just seen, and procedural macros that can do all that, AND execute arbitrary code at compile time.
 
 Let's talk about a few examples of what you can do with Procedural Macros.
 
@@ -455,6 +456,8 @@ I can't stress enough how incredible this is, even thought most of us won't writ
 
 If you build your new DSL, language, or new syntax inside a rust macro, you don't throw away the whole language to do it, like you have to do if you build external source pre-processors.
 
+Like jsx
+
 ---
 
 ## Counter-example: JSX
@@ -474,7 +477,7 @@ JSX requires extra IDE support on top of javascript because it's not javascript,
 
 And you better hope you've configured your source maps correctly or errors will happen on different lines than you expect
 
-Let's dig into how to write your own declarative rust macro. It's very simple.
+Let's look at compile-time execution.
 
 ---
 
@@ -588,13 +591,13 @@ command!(mkv --fs);
 
 notes:
 
-In Rust there are 4 ways of defining a macro depending on what you want to do.
+In Rust, as we've seen, there are 4 ways of defining a macro depending on what you want to do.
 The first and easiest is declarative macros, where you use the templating system to write code by example.
 
 Next are three procedural macros:
 - Custom `#[derive]` macros that add code to structs and enums with the `derive` attribute
 - Attribute-like macros that define custom attributes usable on any item, and
-- Function-like macros that look like function calls but operate on the tokens specified as their argument and therefore do not need to ingest valid rust syntax
+- Function-like macros that look like function calls but operate on the tokens specified as their arguments and therefore do not need to ingest valid rust syntax
 
 You and I will probably seldom have to write a macro, but our code will be given superpowers by the libraries we use that do.
 
