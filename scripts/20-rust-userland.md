@@ -47,7 +47,7 @@ fn main() {
 
 ![[rust-logo.png]]
 
-# RUST: TITLE
+# Oxidise your life 
 
 
 
@@ -90,7 +90,7 @@ As ever, all Rust code you see in this video is part of a literate programming d
 
 ![[rust-logo.png]]
 
-# Subtitle 
+# With Rust! 
 
 
 notes:
