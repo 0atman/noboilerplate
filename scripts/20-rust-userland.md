@@ -67,11 +67,6 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 ```sh
 $ git clone git@github.com:0atman/noboilerplate.git
-$ cd noboilerplate/scripts
-
-$ make deps  # to install literate and cargo-watch
-$ make build # produce a valid cargo project
-$ cargo build
 ```
 
 notes:
@@ -81,8 +76,36 @@ As ever, all Rust code you see in this video is part of a literate programming d
 
 ---
 
-# CONTENT HERE
 
+
+
+# Shell and userland 
+## nu 
+## starship 
+## exa 
+## du-dust 
+## bat 
+## zellij 
+## ripgrep 
+
+
+
+# Development
+
+## bob-nvim 
+## gitui 
+## irust 
+## bacon 
+## evcxr_jupyter 
+## cargo-info 
+
+# Applications
+
+## ncspot 
+## porsmo 
+## speedtest-rs 
+## wiki-tui 
+## rtx-cli 
 
 
 ---
