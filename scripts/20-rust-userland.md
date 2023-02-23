@@ -65,7 +65,7 @@ notes:
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
 Today I'm going to show you how to oxidise your entire toolkit, from editors down to the shell.
-Your whole userspace could be written in rust, and be a single cargo install line away.
+Your whole userspace could be written in rust, and be a single cargo install away.
 
 I've been thinking about writing this video for some time, but the final push was when I read an article about the uutils project, which I will tell you about in a moment.
 
@@ -145,7 +145,7 @@ Nu is a shell built around the language of the same name.
 
 ---
 
-## Nu's Strucutured Pipelins
+## Nu's Structured Pipelins
 
 ![[nu-post-httpbin.png]]
 notes:
@@ -373,7 +373,7 @@ A theme you will see more of today.
 
 When I read that bob is cargo installable, my life was complete.
 
-Or it will be once my ARM64 patch has been accepted for M1 linux.
+Or it will be once my aarch64 patch has been accepted for M1 linux.
 
 ---
 
@@ -450,7 +450,7 @@ And finally some FUN.
 
 ---
 
-## Ncspot
+## `cargo install ncspot`
 
 ![[ncspot-namtao.png]]
 
@@ -465,7 +465,7 @@ It integrates with desktop hotkeys, and if you have plugins showing nowplaying, 
 
 ---
 
-## Porsmo
+## `cargo install porsmo`
 
 ![[porsmo-pomodoro.png]]
 
@@ -480,20 +480,20 @@ It also has stopwatch and timer subcommands, which are nice little extras.
 
 ---
 
-## Speedtest-rs
+### `cargo install speedtest-rs`
 
 ![[speedtest-rs-demo.png]]
 
 notes:
 
 While pinging can give you a sense of if your connection is up, it doesn't tell you the speed.
-You can use standard unix tools to do this, but not many are as easy or have the local infrastructure already available as speedtest.
+You can use standard unix tools to do this, but not many are as easy or have the national infrastructure already available as speedtest.
 
 You don't have to go to the website if you use speedtest-rs
 
 ---
 
-## Wiki-tui
+## `cargo install wiki-tui`
 
 ![[wiki-tui-rust.png]]
 
@@ -505,7 +505,7 @@ Wiki-tui fixes that particular firehose in a way that is 10x faster than looking
 
 ---
 
-## Rtx-cli
+## `cargo install rtx-cli`
 
 ![[rtx-cli-usage.png]]
 
@@ -516,9 +516,9 @@ rtx is a faster, pure-rust asdf clone.
 One of the tools I use in all my projects, no matter what language is asdf for a version manager.
 It switches version of python, node, ruby, ANYTHING that I need day-to-day.
 
-It is a drop-in replacement for asdf plugins and .tool-versions files, compatible with any language, so no more installing nvm, nodenv, pyenv, etc and it's about 20x-200x faster than asdf.
+It is a drop-in replacement for asdf with plugins and .tool-versions file support, compatible with any language, so no more installing nvm, nodenv, pyenv, etc and it's about 20x-200x faster than asdf.
 
-It's the final piece in the puzzle of oxidising my entire life.
+It was the final piece in the puzzle of oxidising my entire life.
 
 ---
 
@@ -541,7 +541,7 @@ Thank you for your time, and please tell me about cool rust tools I have missed 
 ---
 
 ## Future Tools I want to Be Able to Cargo install
-- An editor (Helix might work here but WEIRD)
+- An editor (Helix might work here but it's WEIRD)
 - A web browser (a w3m/links clone)
 - A Mastodon client
 
@@ -558,7 +558,7 @@ notes:
 
 # OUTTRO
 
-If you would like to support my channel, get early ad-free and tracking-free videos and vip discord access head to patreon.com/noboilerplate.
+If you would like to support my channel, get early ad-free and tracking-free videos, vip discord access or 1:1 mentoring head to patreon.com/noboilerplate.
 
 If you're interested in transhumanism and hopepunk stories, please check out my sci-fi podcast, Lost Terminal.
 
