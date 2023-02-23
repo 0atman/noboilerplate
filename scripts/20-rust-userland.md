@@ -52,7 +52,7 @@ fn main() {
 
 ![[rust-logo.png]]
 
-# Oxidise Your Life with Rust
+# Oxidise Your Life
 
 notes:
 
@@ -65,7 +65,7 @@ notes:
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
 Today I'm going to show you how to oxidise your entire toolkit, from editors down to the shell.
-Your entire userspace could be written in rust, and be a single cargo install line away.
+Your whole userspace could be written in rust, and be a single cargo install line away.
 
 I've been thinking about writing this video for some time, but the final push was when I read an article about the uutils project, which I will tell you about in a moment.
 
@@ -95,7 +95,6 @@ As ever, everything you see in this video is part of a literate programming docu
 cargo install sccache
 ```
 
-- [ ] add a demo benchmark of ripgrep
 
 ```sh
 RUSTC_WRAPPER=sccache cargo install {package}
@@ -105,7 +104,7 @@ notes:
 
 Actually before you install all this you should use sccache to dramatically reduce your compile times.
 
-sccache re-uses already-compiled artifices to skip redundant compilation.
+sccache re-uses already-compiled artifices to skip redundant compilation. and in production can use a cloud-backed cache.
 
 When you're installing system tools that very often are built by people that always use the stable version of a dependency, you might unnecessarily re-compile that dependency very often.
 
@@ -114,28 +113,6 @@ With sccache, you wont.
 ---
 
 ## `cargo install nu`
-
-`screens`
-
-notes:
-
-Let's start with the shell.
-
-Most shells are stuck in the 80s, bash and zsh certainly are, only giving slight improvements on sh in the name of backwards compatibility.
-
----
-
-`fish screenshot`
-
-notes:
-
-Fish has the right idea, finally a shell for the 90s, and you can configure it in a web browser, even! But we are Rust developer we are not so timid.
-
-Nu is a shell built around the language of the same name.
-
----
-
-## Nu's Strucutured Pipelins
 
 ```sql
 $ ps | where cpu > 0
@@ -152,13 +129,34 @@ $ ps | where cpu > 0
 
 notes:
 
+Let's start with the shell.
+
+Most shells are stuck in the 80s, bash and zsh certainly are, only giving slight improvements over sh in the name of backwards compatibility.
+
+---
+
+![[fish-shell.png]]
+
+notes:
+
+Fish has the right idea, finally a shell for the 90s, and you can configure it in a web browser, even! But we are Rust developer we are not so timid.
+
+Nu is a shell built around the language of the same name.
+
+---
+
+## Nu's Strucutured Pipelins
+
+![[nu-post-httpbin.png]]
+notes:
+
 > Nu draws inspiration from projects like PowerShell, functional programming languages, and modern CLI tools. Rather than thinking of files and data as raw streams of text, Nu looks at each input as something with structure.
 
 One of the stealth benefits you get from breaking with traditional tooling is that Nu works everywhere cargo does.
 
-Mac, Linux, ARM computers like raspberry pi and (my setup) M1s running asahi linux, even on vanilla windows, in addition to wsl.
+Mac, Linux, ARM computers like raspberry pi and (my setup) M1s running asahi linux, even vanilla windows, in addition to wsl.
 
-The tools I'm going to tell you today about compile across all these architectures
+The tools I'm going to tell you about today compile across all these architectures
 
 ---
 
@@ -182,13 +180,13 @@ notes:
 
 In fact, your whole userland could be uniform wherever you work, as the uutils project shows.
 
-> uutils aims to work on as many platforms as possible, to be able to use the same utils on Linux, Mac, Windows and other platforms. This ensures, for example, that scripts can be easily transferred between platforms. Rust was chosen not only because it is fast and safe, but is also excellent for writing cross-platform code.
+> uutils aims to work on as many platforms as possible, to be able to use the same utils on Linux, Mac, Windows and other platforms. This ensures, for example, that scripts can be easily transferred between platforms. they chose Rust not only because it is fast and safe, but is also excellent for writing cross-platform code.
 
-If anyone has used cygwin, it reminds me a bit of that project.
+If anyone has used cygwin on windows, it reminds me a bit of that project.
 
 The chief reason that everything you see today works nearly everywhere is that Rust developers tend to re-write the platform-dependant C libraries that other language have to rely upon.
 
-The rewrite it in rust meme exists for a reason.
+The "rewrite it in rust meme" exists for a reason.
 
 This makes our applications more portable, coreutils has no dependencies other than rust, for example, but comes with an interoperability cost.
 
@@ -251,9 +249,7 @@ But you can craft the exact prompt you want, with low latency, as it's built wit
 
 notes:
 
-Exa is a gorgeous replacement for ls, the command we type all the time,
-
-giving it more features and better defaults. It uses colours to distinguish file types and metadata. It knows about symlinks, extended attributes, and Git. it’s **small**, **fast**, and like everything I'm showing you today just **one single binary that you can compile anywhere**.
+Exa is a gorgeous replacement for ls, the command we type all the time, giving it more features and better defaults. It uses colours to distinguish file types and metadata. It knows about symlinks, extended attributes, and Git. it’s **small**, **fast**, and like everything I'm showing you today just **one single binary that you can compile anywhere**.
 
 ---
 
@@ -291,7 +287,7 @@ while we're replacing standard unix tools we might as well keep going with a cat
 
 Bat, the cat with wings, allows rich syntax highlighting of files when you don't want to open up a full editor.
 
-if there is more than a screenful of text, bat will hand over to a pager such as less EXCEPT if a terminal is not detected, then it does not.
+if there is more than a screenful of text, bat will hand over to a pager such as less EXCEPT if a terminal is not detected.
 
 Bat transparently acts like cat when it detects non-interactive use, so is safe to alias to cat.
 
@@ -320,7 +316,7 @@ Zellij is ostentatious, colourful, wasteful of screen-space and I love it.
 ![[mprocs-bacon.png]]
 notes:
 
-mprocs is similar to zellij, tmux, or screen, but it's optimised for long-running single processes, like dev servers, databases, or streaming service logs.
+mprocs is similar to zellij, tmux, or screen, but it's optimised for long-running non-interactive single processes, like dev servers, databases, or streaming service logs.
 
 With a config or just by listing the commands on the command line, mprocs runs each of them in its own vertical tab, with a simple colour-coded UP or DOWN showing if the command is still running or not.
 
@@ -368,11 +364,12 @@ installed in /home/oatman/.local/share/bob
 
 notes:
 
-> Bob is a cross-platform and easy-to-use Neovim version manager, allowing for easy switching between versions right from the command line.
+> Bob is a cross-platform and easy-to-use Neovim version manager, allowing for switching between versions right from the command line.
 
 I found it after discovering that the ubuntu repos did not have neovim verion 0.8, which is the minimum version that my preferred distribution, astronvim, supports.
 
-Though the neovim team build comprehsnive packages and installers for every system, I try not to do in a web browser what I can do on the command line.
+Though the neovim team build comprehensive packages and installers for every system, I try not to do in a web browser what I can do on the command line.
+A theme you will see more of today.
 
 When I read that bob is cargo installable, my life was complete.
 
@@ -388,7 +385,7 @@ notes:
 
 Though I have used the excellent terminal ui lazygit for many years, it started to slow down for me on extremely large repositories.
 
-While gitui is still under development and has not yet reached parity with lazygit, it's got everything I need for day to day use, and is FASTER and pure rust.
+While gitui is still under development and has not yet reached parity with lazygit, it's got everything I need for day to day use, and is FAST and pure rust.
 
 ---
 
@@ -425,7 +422,7 @@ notes:
 Bacon is your constant companion while learning and writing Rust at all levels.
 On the surface, it just re-runs cargo clippy, build, test or run, and you get those errors from your LSP-capable IDE, right?
 
-Not as nicely as they are in bacon, it refreshes instantly, is flicker-free, and I find it a complament to an LSP editor, not a replacement.
+Not as nicely as they are in bacon, it refreshes instantly, is flicker-free, and I find it a complement to an LSP editor, not a replacement.
 
 A bonus is that in the run mode, it acts as an auto-reloading server, when your program is a long-running service. Change the code, and bacon will kill it and run it again. 
 
@@ -445,7 +442,7 @@ cargo info does is exactly what I want, and has options to show the features whe
 
 ---
 
-# Applications
+# Part 3: Applications
 
 notes:
 And finally some FUN.
@@ -455,23 +452,101 @@ And finally some FUN.
 
 ## Ncspot
 
+![[ncspot-namtao.png]]
+
+notes:
+
+ncspot is an ncurses spotify client with vim bindings.
+first launch it asks you for your credentials, then saves them.
+
+It even remembers your settings and position in a track between executions, allowing you to listen to long-form content like podcasts and pick up where you left off.
+
+It integrates with desktop hotkeys, and if you have plugins showing nowplaying, it'll show up there too!
+
 ---
 
 ## Porsmo
+
+![[porsmo-pomodoro.png]]
+
+notes:
+
+Porsmo is a tiny pomodoro timer for the command line.
+It defaults to 25 minutes work, 5 minutes break, with a longer break after a few iterations.
+
+I have found the pomodoro technique essential for training my focus over the years.
+
+It also has stopwatch and timer subcommands, which are nice little extras.
 
 ---
 
 ## Speedtest-rs
 
+![[speedtest-rs-demo.png]]
+
+notes:
+
+While pinging can give you a sense of if your connection is up, it doesn't tell you the speed.
+You can use standard unix tools to do this, but not many are as easy or have the local infrastructure already available as speedtest.
+
+You don't have to go to the website if you use speedtest-rs
+
 ---
 
 ## Wiki-tui
+
+![[wiki-tui-rust.png]]
+
+notes:
+
+I imagine that fully half of the time I open a browser while I'm supposed to be working on either no boilerplate scripts or my fiction podcasts, is because of wikipedia.
+
+Wiki-tui fixes that particular firehose in a way that is 10x faster than looking something up on the web.
 
 ---
 
 ## Rtx-cli
 
+![[rtx-cli-usage.png]]
+
+notes:
+
+rtx is a faster, pure-rust asdf clone.
+
+One of the tools I use in all my projects, no matter what language is asdf for a version manager.
+It switches version of python, node, ruby, ANYTHING that I need day-to-day.
+
+It is a drop-in replacement for asdf plugins and .tool-versions files, compatible with any language, so no more installing nvm, nodenv, pyenv, etc and it's about 20x-200x faster than asdf.
+
+It's the final piece in the puzzle of oxidising my entire life.
+
 ---
+
+## Oxidise Your Life
+
+```sh
+$ curl https://sh.rustup.rs | sh
+```
+
+```sh
+$ cargo install cargo-info ripgrep ncspot du-dust exa \
+bat irust nu starship zellij bacon cargo-watch porsmo \
+speedtest-rs gitui wiki-tui evcxr_jupyter rtx-cli mprocs
+```
+
+notes:
+
+Thank you for your time, and please tell me about cool rust tools I have missed in the comments below.
+
+---
+
+## Future Tools I want to Be Able to Cargo install
+- An editor (Helix might work here but WEIRD)
+- A web browser (a w3m/links clone)
+- A Mastodon client
+
+notes:
+
 
 ---
 
