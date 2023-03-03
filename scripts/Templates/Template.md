@@ -6,7 +6,8 @@
 
 f7f7f7 background slide colour
 
-# Cargo.toml 
+# Cargo.toml
+
 ```toml
 [package]
 name = "template"
@@ -20,36 +21,37 @@ edition = "2021"
 [dependencies]
 ```
 
-# Lint tweaks
+# Lint Tweaks
+
 ```rust
 #![allow(dead_code)]
 #![allow(unused_variables)]
 ```
 
-# extern crates
+# Extern Crates
 
 ```rust
 
 ```
 
-# imports
+# Imports
+
 ```rust
 ```
 
-# setup
+# Setup
 
 ```rust
 fn main() {
 	println!("Rust talk");
 
 ```
+
 %%
 
 ![[rust-logo.png]]
 
 # RUST: TITLE
-
-
 
 notes:
 %%
@@ -59,39 +61,24 @@ notes:
 %%
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
-
 ---
-
 
 ## Open Source Videos
 
-```sh
-$ git clone git@github.com:0atman/noboilerplate.git
-$ cd noboilerplate/scripts
-
-$ make deps  # to install literate and cargo-watch
-$ make build # produce a valid cargo project
-$ cargo build
-```
+[github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
 notes:
-
-As ever, all Rust code you see in this video is part of a literate programming document that can be extracted and compiled with native Rust tooling.
-
+Everything you see in this video from the script to the images are part of a markdown document available on github under a public domain license.
 
 ---
 
 # CONTENT HERE
 
-
-
 ---
-
 
 ![[rust-logo.png]]
 
-# Subtitle 
-
+# Subtitle
 
 notes:
 
