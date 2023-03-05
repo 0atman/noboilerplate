@@ -284,7 +284,7 @@ You need hardly any equipment or space to do yoga.
 (not sponsored)
 
 notes:
-And you need NO equipment or space to do meditation.
+And you need NO equipment or space to meditate.
 
 Try reading Practical Zen, I've read a lot of good books introducing meditation and this one is my favourite.
 
