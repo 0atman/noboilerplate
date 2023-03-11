@@ -613,7 +613,7 @@ Make the compiler's job easy, and you'll make your job, your team's job, and you
 
 %%%%
 
-# OUTTRO
+# OUTRO
 
 
 If you'd like to see what you can write in rust, click the top video: I used it to make a fun retro computer visualisation for my hopepunk podcast, Lost Terminal.
