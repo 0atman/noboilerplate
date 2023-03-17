@@ -337,7 +337,7 @@ notes:
 
 notes:
 
-- If you are a developer and are excited by this challenge and tech, then they are VERY interested in speaking to you as they are hiring NOW.
+- If you are excited by this challenge and tech, then they are VERY interested in speaking to you as they are hiring NOW.
 - The company is fully remote, so wherever you are based they offer challenging work in an interesting field with some awesome technology in a highly collaborative team with flexible working practises.
 
 ---
