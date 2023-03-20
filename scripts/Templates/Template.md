@@ -82,7 +82,7 @@ Everything you see in this video from the script to the images are part of a mar
 
 notes:
 
-# OUTTRO
+# OUTRO
 
 If you would like to support my channel, get early ad-free and tracking-free videos and vip discord access head to patreon.com/noboilerplate.
 
