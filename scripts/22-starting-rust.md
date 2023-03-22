@@ -435,9 +435,6 @@ notes:
 You might even learn what a monad is.
 
 ---
-test
-
----
 
 # How to think about Rust syntax
 
@@ -544,13 +541,10 @@ The intermediate way to think about lifetimes are not as an annoying piece of sy
 
 Other languages allow you to model WHAT your data is. Rust, through lifetimes, allows you to model WHEN.
 
-9:00
 
 ---
 
-
-
----
+# wrap-up slide and CTA
 
 ---
 
