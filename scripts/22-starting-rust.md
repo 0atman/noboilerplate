@@ -61,7 +61,7 @@ notes:
 %%
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
-This video is a guide on how to learn Rust, and is the way I teach it to my patreons in mentoring sessions.
+This video is a guide on how to learn Rust, and is the way I teach it to my patreons in our mentoring sessions.
 
 I have lots of tips on how to get up to speed FAST, and we'll start with the primary sources.
 
@@ -86,6 +86,10 @@ Most comments on my videos are by total Rust newbies. Some are even new to progr
 
 ---
 
+![[redmonk-graph-q322.png|600]]
+
+notes:
+
 Rust is the [#19th most popular language](https://redmonk.com/sogrady/2022/03/28/language-rankings-1-22/), but the scale is not linear. There is a lot of work to do if it is not to suffer the same fate as Haskell.
 
 **I want Rust to achieve escape velocity.**
@@ -99,9 +103,9 @@ Rust is the [#19th most popular language](https://redmonk.com/sogrady/2022/03/28
 
 notes:
 
-Back in 2020 I crashed out of learning Rust twice. First time due to multiple string types (haskell's biggest mistake made again, I thought to myself) and the second due to lifetimes. At the time I had a great mentor (Shout-out to Alex!) who picked me up and helped me back on the path. Most people don't have this. They need the excitement that I try to help with in my hype videos to break through.
+Back in 2020 I crashed out of learning Rust twice. First time due to multiple string types (haskell's biggest mistake made again, I thought to myself) and the second due to lifetimes. At the time I had a great mentor (Shout-out to Alex!) who picked me up and helped me back on the path. Most people don't have this luxury. They need the excitement that I try to help with in my hype videos to break through.
 
-I will eventually run out of hype topics and move on to slightly more detail. But first, there's a few million developers more I want to send to [rustup.rs](http://rustup.rs).
+I will eventually run out of hype topics and move on to slightly more detail. But first, there's a few million developers I want to send to [rustup.rs](http://rustup.rs).
 
 Let's start there.
 
@@ -132,11 +136,12 @@ Next you need the core triumverate that is required learning for my students.
 &nbsp;
 &nbsp;
 
-![[rust-by-example.png|200]]
+![[rust-by-example-web.png|200]]
 
 </split>
 
 ![[rustlings-badge.png|460]]
+
 
 notes:
 
@@ -166,7 +171,7 @@ Though there are many other great ways to learn Rust, I recommend starting with 
 
 notes:
 
-Starting with Rustlings, it's written almost the same order as The Book.
+Starting with Rustlings, it's written in almost the same order as The Book.
 This is by design, they are made to be consumed together.
 
 ---
@@ -188,12 +193,84 @@ notes:
 
 Rust By Example is less linearly linked to The Book.
 Though it's partially in the same order, I read it as a supplement to The Book.
-It includes high-level tips on idomatic error handling, how to organise your code into modules, and testing strategies.
-These are all covered in the book, but Rust By Example is more opinionated on HOW to use them.
+It includes high-level tips on idiomatic error handling, how to organise your code into modules, and testing strategies.
+These are all covered in The Book, but Rust By Example is more opinionated on HOW to use them.
 
 Keep all three of these tools together.
 
-We'll get back to the main quest in a moment, but I have a side quest for you:
+We'll get back to the main quest in a moment, but after the Ad I have a side quest for you:
+
+
+---
+
+<!-- slide bg="[[rs-train.jpg]]" -->
+
+![[rs-logo.png|400]]
+notes:
+_(disclosure: The company's CTO is my brother!)_
+
+A quiz: What data-centre:
+- travels at 100 miles-per-hour
+- re-configures every IP when it attaches or detaches to other data-centres
+- all without a reliable power source or internet connection, and must never fail?
+
+The Answer: A train.
+
+---
+
+<!-- slide bg="[[rs-train.jpg]]" -->
+
+![[rs-logo.png|200]]
+
+1. Cross-platform Rust Agent
+2. Cloud microservices
+3. Embedded hardware platform
+
+notes:
+
+- RazorSecure is a 50-person startup bringing cutting-edge security tech to the rapidly-advancing world of rail
+- They do this through:
+   - A Rust intrusion detection and monitoring agent running on-board.
+   - A cloud environment running K8s, Python micro-services, and event-based data processing, and
+   - A Yocto hardware platform running custom embedded linux.
+- Their team and customers span Europe and North America, so if you have taken a train journey here, then RazorSecure's security systems may have already kept you safe.
+
+---
+
+<!-- slide bg="[[rs-train2.jpg]]" -->
+<split even>
+
+&nbsp;
+&nbsp;
+![[Python_logo_icon.png|200]]
+&nbsp;
+&nbsp;
+![[kubernetes-logo.png|200]]
+
+&nbsp;
+&nbsp;
+![[rust-logo.png|200]]
+
+</split>
+
+notes:
+
+- If you are excited by this challenge and tech, then they are VERY interested in speaking to you as they are hiring NOW.
+- The company is fully remote, so wherever you are based they offer challenging work in an interesting field with some awesome technology in a highly collaborative team with flexible working practises.
+
+---
+
+![[rs-logo.png|200]]
+
+[RazorSecure.com/careers](https://www.razorsecure.com/careers)
+
+[razorsecure.noboilerplate.org](http://razorsecure.noboilerplate.org)
+
+notes:
+
+Find out more about jobs at RazorSecure at RazorSecure.com/careers.
+
+My thanks to RazorSecure for their support of this channel.
 
 ---
 
@@ -234,8 +311,6 @@ Keep this in mind when I tell you my next tip:
 
 notes:
 
-Read the book twice.
-
 I recommend reading the rust book from cover to cover as fast as possible, and without stopping to do the exercises.
 If you come across something you don't understand, note it, and move on to the next chapter.
 The point is to pass the words through you eyeball compiler, and not worry too much about how many errors you get.
@@ -266,14 +341,38 @@ Rustlings will check that you've got everything set up correctly, git, rust, car
 
 notes:
 
-rustlings explo
+rustling is a code kata style system that you can think of as a suite of failing unit tests that you slowly work through, fixing in a test driven development way. 
 
 ---
 
-- quizes are katas
+![[rustlings-failing.png]]
 
+notes:
+
+Here is the first exercise, fixing a hello world.
+
+Rustlings starts out extremely simply, and ramps up slowly.
+Even non-programmers could start this way, and veteran programmers will speed through the early questions quickly.
+
+Though starting simple, they follow the book all the way through ,lifetimes, smart pointers, and threads.
+
+Note that the rustlings watcher, the output of which we are seeing here, has some extra functionality, not just the output from the compiler.
+
+Each exercise has a hint, accessed by simply typing hint into the watcher, as I am doing here.
+
+Rustlings are katas.
+Katas, a term borrowed from Japanese martial arts, are something you practice over and over again, to build muscle memory.
+
+At time of writing there are 95 Rustlings katas, when you have done them all, it is time to choose your favourites to re-do regularly.
+I recommend weekly.
+
+Keep your muscle memory.
 
 ---
+
+# Object Orientation
+
+notes:
 
 - Object oriented design isn't easy or intuitive or optimal
 	- it's easy to teach, and is taught at every university
@@ -281,7 +380,8 @@ rustlings explo
 	- structs are real
 	- THE EXPERIMENTATION HAS NOT BEEN A SUCCESS
 
-a lot of the literature i've seen on Rust's design systems very heavily emphasizes that the problems people attribute to inheritance are specifically caused by structural inheritance, and thus Rust only supports behavioral inheritance -- which has almost all of the value of structural inheritance and none of the problems.
+a lot of the literature i've seen on Rust's design systems very heavily emphasises that the problems people attribute to inheritance are specifically caused by structural inheritance, and thus Rust only supports behavioural inheritance -- which has almost all of the value of structural inheritance and none of the problems.
+- [ ] rewrite
 
 
 ---
@@ -347,9 +447,10 @@ notes:
 A huge turn-off for me, coming from Python, was Rust's syntax.
 There's SO MUCH MORE than I was used to!
 
-in other languages the compiler can't help you, so moving fast and breaking things is the best way to do it.
+in other languages the compiler can't help you, so moving fast and breaking things is the best way develope.
 (any syntax gets in thye way)
 In rust the compiler is your best friend.
+But you must be nice to it for it to be nice to you.
 
 
 ---
@@ -367,7 +468,7 @@ And in making you deal with them at the start, the language debt doesn't spiral 
 
 ---
 
-> In other languages simple things are easy and complex things are possible, in rust simple things are possible and complex things are EASY.
+> In other languages simple things are easy and complex things are possible, in Rust simple things are possible and complex things are EASY.
 
 
 ---
@@ -377,16 +478,18 @@ And in making you deal with them at the start, the language debt doesn't spiral 
 notes:
 And this is as it should be.
 I don't care how easy it is to do simple things, that doesn't impress me any more.
-I want a language that can stay by my side as I make extremely complex  distributed systems that also run at C speed.
+I want a language that can stay by my side as I make extremely complex distributed systems that also run at C speed.
 
-Keep in mind through all your early learning, you only have to learn Rust once.
+Keep in mind through all your early learning, YOU only have to learn Rust once.
 Javascript developers have to keep learning javascript every single day.
 
 Edge case after edge case after edge case.
 Framework after framework to try and manage these edge cases.
 
 It's exhausting.
-Rust offers is another way. But you have to work for it.
+Rust offers another way. But you have to work for it.
+
+For example
 
 ---
 
@@ -415,7 +518,9 @@ This example is from Chapter 10 of The Book, which states:
 
 It's very unfamiliar stuff, right?
 
-There's two ways to think about Lifetimes As a liability and an asset.
+There's two ways to think about Lifetimes 
+1. As a liability and 
+2. an asset.
 
 I started off thinking about them as a liability - something annoying I HAD to do to satisfy the compiler. This is a totally fine way to start off with, and I have some suggestions as a beginner, in order
 
@@ -446,64 +551,6 @@ Other languages allow you to model WHAT your data is. Rust, through lifetimes, a
 
 
 ---
-
-# Razor Secure
-
----
-
-<!-- slide bg="[[rs-train.jpg]]" -->
-
-![[rs-logo.png|200]]
-
-1. Cross-platform Rust Agent
-2. Cloud microservices
-3. Embedded hardware platform
-
-notes:
-
-- RazorSecure is a 50-person startup bringing cutting-edge security tech to the rapidly-advancing world of rail
-- They do this through:
-   - A Rust intrusion detection and monitoring agent running on-board.
-   - A cloud environment running K8s, Python micro-services, and event-based data processing, and
-   - A Yocto hardware platform running custom embedded linux.
-- Their team and customers span Europe and North America, so if you have taken a train journey here, then RazorSecure's security systems may have already kept you safe.
-
----
-
-<!-- slide bg="[[rs-train2.jpg]]" -->
-<split even>
-
-&nbsp;
-&nbsp;
-![[Python_logo_icon.png|200]]
-&nbsp;
-&nbsp;
-![[kubernetes-logo.png|200]]
-
-&nbsp;
-&nbsp;
-![[rust-logo.png|200]]
-
-</split>
-
-notes:
-
-- If you are excited by this challenge and tech, then they are VERY interested in speaking to you as they are hiring NOW.
-- The company is fully remote, so wherever you are based they offer challenging work in an interesting field with some awesome technology in a highly collaborative team with flexible working practises.
-
----
-
-![[rs-logo.png|200]]
-
-[RazorSecure.com/careers](https://www.razorsecure.com/careers)
-
-[razorsecure.noboilerplate.org](http://razorsecure.noboilerplate.org)
-
-notes:
-
-Find out more about jobs at RazorSecure at RazorSecure.com/careers.
-
-My thanks to RazorSecure for their support of this channel.
 
 ---
 
