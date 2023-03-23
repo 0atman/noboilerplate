@@ -61,7 +61,7 @@ notes:
 %%
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
-This video is a guide on how to learn Rust, and is the way I teach it to my patreons in our mentoring sessions.
+This is my guide on how to learn Rust, and is the way I teach it to my patreons in our mentoring sessions.
 
 I have lots of tips on how to get up to speed FAST, and we'll start with the primary sources.
 
@@ -80,17 +80,20 @@ Everything you see in this video from the script to the images are part of a mar
 
 notes:
 
+Rust isn't difficult, it's unfamiliar.
+This is the first lesson.
+
 You may have noticed that **My videos are mostly hype by design.**
 
-Most comments on my videos are by total Rust newbies. Some are even new to programming and yet are so excited by what they see. If you don't understand Rust, and someone explains it clearly, as I try to, it seems like magic. 
+Most comments on my videos are by total Rust newbies. Some are even new to programming and yet are so excited by what they see. If you don't yet understand Rust, and someone explains it clearly, as I try to, it seems like magic. 
 
 ---
 
-![[redmonk-graph-q322.png|600]]
+![[redmonk-graph-q322.png|700]]
 
 notes:
 
-Rust is the [#19th most popular language](https://redmonk.com/sogrady/2022/03/28/language-rankings-1-22/), but the scale is not linear. There is a lot of work to do if it is not to suffer the same fate as Haskell.
+Rust is the [#19th most popular language](https://redmonk.com/sogrady/2022/03/28/language-rankings-1-22/), according to github projects and stackoverflow tags, but the scale is not linear. There is a lot of work to do if it is not to suffer the same fate as Haskell and common lisp.
 
 **I want Rust to achieve escape velocity.**
 
@@ -122,7 +125,7 @@ If you're on windows and can't run WSL, then download and run the installer, pro
 
 Linux is the native operating system of the internet, and I would recommend that windows users install Microsoft's Windows Subsystem for Linux, WSL, to get access to this incredible world.
 
-Next you need the core triumverate that is required learning for my students. 
+Next you need the core triumvirate that is required learning for my students. 
 
 ---
 
@@ -153,21 +156,20 @@ The three pillars of my recommended syllabus are:
 
 Though there are many other great ways to learn Rust, I recommend starting with these three because they are so tightly bound together, in a way that you might have missed.
 
-02:30
 
 ---
 
 
 | Rustlings Exercise | Book Chapter |
 | ------------------ | ------------ |
-| variables          | §3.1         |
-| functions          | §3.3         |
-| if                 | §3.5         |
-| primitive_types    | §3.2, §4.3   |
-| vecs               | §8.1         |
-| move_semantics     | §4.1-2       |
-| structs            | §5.1, §5.3   |
-| enums              | §6, §18.3    |
+| 1. variables       | §3.1         |
+| 2. functions       | §3.3         |
+| 3. if              | §3.5         |
+| 4. primitive_types | §3.2, §4.3   |
+| 5. vecs            | §8.1         |
+| 6. move_semantics  | §4.1-2       |
+| 7. structs         | §5.1, §5.3   |
+| 8. enums           | §6, §18.3    |
 
 notes:
 
@@ -198,7 +200,7 @@ These are all covered in The Book, but Rust By Example is more opinionated on HO
 
 Keep all three of these tools together.
 
-We'll get back to the main quest in a moment, but after the Ad I have a side quest for you:
+We'll get back to the main quest in a moment, but first, a quiz, from today's sponsor, Razor Secure:
 
 
 ---
@@ -209,7 +211,7 @@ We'll get back to the main quest in a moment, but after the Ad I have a side que
 notes:
 _(disclosure: The company's CTO is my brother!)_
 
-A quiz: What data-centre:
+What data-centre:
 - travels at 100 miles-per-hour
 - re-configures every IP when it attaches or detaches to other data-centres
 - all without a reliable power source or internet connection, and must never fail?
@@ -264,13 +266,13 @@ notes:
 
 [RazorSecure.com/careers](https://www.razorsecure.com/careers)
 
-[razorsecure.noboilerplate.org](http://razorsecure.noboilerplate.org)
-
 notes:
 
 Find out more about jobs at RazorSecure at RazorSecure.com/careers.
 
 My thanks to RazorSecure for their support of this channel.
+
+Back to the side quest:
 
 ---
 
@@ -284,7 +286,7 @@ This is Ultralearning by Scott H Young.
 (not sponsored)
 A very good book on the meta process of learning to learn.
 
-You should read it, or listen to it on audiobook.
+You should read it, or listen to it on audiobook as I did.
 
 ---
 
@@ -312,7 +314,7 @@ Keep this in mind when I tell you my next tip:
 notes:
 
 I recommend reading the rust book from cover to cover as fast as possible, and without stopping to do the exercises.
-If you come across something you don't understand, note it, and move on to the next chapter.
+If you come across something you don't understand, mentally note it, and move on to the next chapter.
 The point is to pass the words through you eyeball compiler, and not worry too much about how many errors you get.
 
 Then when you have finished, go back to the start and work through at your normal pace, doing examples and researching topics as you find them.
@@ -321,7 +323,7 @@ You can now install Rustlings.
 
 ---
 
-# Rustlings
+## [rust-lang/Rustlings](https://github.com/rust-lang/rustlings)
 
 ```sh
 curl -L https://raw.githubusercontent.com
@@ -332,7 +334,6 @@ notes:
 
 Rustlings will check that you've got everything set up correctly, git, rust, cargo, the installer is a great sanity check to avoid pain later.
 
-04:30
 
 ---
 
@@ -352,39 +353,32 @@ notes:
 Here is the first exercise, fixing a hello world.
 
 Rustlings starts out extremely simply, and ramps up slowly.
-Even non-programmers could start this way, and veteran programmers will speed through the early questions quickly.
+Even non-programmers could start this way, and veterans will speed through the early questions quickly.
 
-Though starting simple, they follow the book all the way through ,lifetimes, smart pointers, and threads.
+Though starting simple, they follow the book all the way through lifetimes, smart pointers, and threads.
 
-Note that the rustlings watcher, the output of which we are seeing here, has some extra functionality, not just the output from the compiler.
+Note that the rustlings watcher, the output of which we are seeing here, has some extra functionality, not just auto-refreshing output from the compiler.
 
-Each exercise has a hint, accessed by simply typing hint into the watcher, as I am doing here.
+Each exercise has a hint, accessed by simply typing hint into the watcher, as I did here.
 
-Rustlings are katas.
+---
+
+![[kata.png|700]]
+
+notes:
+
+Rustlings exercises are katas.
+
 Katas, a term borrowed from Japanese martial arts, are something you practice over and over again, to build muscle memory.
+Musicians do the same thing.
 
 At time of writing there are 95 Rustlings katas, when you have done them all, it is time to choose your favourites to re-do regularly.
 I recommend weekly.
 
-Keep your muscle memory.
+Keep your muscle memory fresh.
 
 ---
 
-# Object Orientation
-
-notes:
-
-- Object oriented design isn't easy or intuitive or optimal
-	- it's easy to teach, and is taught at every university
-	- structs are like tables in a database
-	- structs are real
-	- THE EXPERIMENTATION HAS NOT BEEN A SUCCESS
-
-a lot of the literature i've seen on Rust's design systems very heavily emphasises that the problems people attribute to inheritance are specifically caused by structural inheritance, and thus Rust only supports behavioural inheritance -- which has almost all of the value of structural inheritance and none of the problems.
-- [ ] rewrite
-
-
----
 
 ### SIDE QUEST #3
 
@@ -394,11 +388,11 @@ notes:
 
 Rust is a hybrid imperative and functional language.
 The compiler was originally written in OCaml
-This means, in addition to the punched-card analogue of statements we can also use many features of functional languages, the most obvious of these is the pervasive use of the iterator pattern in the language.
+This means, in addition to the punched-card analogue of statements we can also use many features of functional languages, the most obvious of these is the pervasive use of the iterator pattern.
 
 It is possible to write Rust mostly in the way you have been writing Python, or Javascript or Java. But you'll get most out of it if you adopt the functional principles of higher-order functions and immutability.
 
-Rust is flexible, and doesn't force you to write in a functional style. Haskell, however is inflexible, and you have no choice but to learn it, and learn it fast.
+Rust is flexible, and doesn't force you to write in a functional style. Haskell, however is inflexible in the extreme, and you have no choice but to learn it, and learn it fast.
 
 ---
 
@@ -421,14 +415,16 @@ Rust is flexible, and doesn't force you to write in a functional style. Haskell,
 
 notes:
 
-Have a look at either Learn You A Haskell or Real World Haskell.
+Have a look at either Learn You A Haskell or Real World Haskell or both.
 Again, you can mostly read through these quickly. Your package manger will have the haskell repl, which is called GHCI, and any version it installs will be fine for experimentation.
 
-Learning Haskell will teach you about mapping, filtering, folding, currying, matching, and many other words to describe your algorithms, which are abandoned in other languages that just use for loops and if statements.
+Learning Haskell will teach you about mapping, filtering, folding, currying, matching, and many other words to describe your algorithms in rust, which are abandoned in other languages that just use for loops and if statements.
 
 ---
 
-### One of Rust's smartest decisions is to USE monads but not call them monads
+_(One of Rust's smartest decisions is_
+
+_to USE monads but not CALL them monads)_
 
 notes:
 
@@ -444,8 +440,9 @@ notes:
 A huge turn-off for me, coming from Python, was Rust's syntax.
 There's SO MUCH MORE than I was used to!
 
-in other languages the compiler can't help you, so moving fast and breaking things is the best way develope.
-(any syntax gets in thye way)
+in other languages the compiler can't help you very much, so moving fast and breaking things is the best way develop.
+(any syntax gets in the way)
+
 In rust the compiler is your best friend.
 But you must be nice to it for it to be nice to you.
 
@@ -456,8 +453,8 @@ But you must be nice to it for it to be nice to you.
 ![[22-starting-rust 2023-03-20 20.38.27.excalidraw]]
 notes:
 
-Here's how I feel the difficulty in learning, say Javascript and Rust compares to each other.
-I've picked Javascript because I want to make as many friends as possible, but the general curves are the same for Python and Java, too
+Here's how I think the difficulty in learning, say Javascript and Rust compares to each other.
+I've picked Javascript because I want to make as many friends as possible, but the general relationship is the same for Python and Java, and many others too
 
 Rust up-fronts all the work that you would need to do in other languages later on to get scalability and performance and safety.
 
@@ -467,7 +464,6 @@ And in making you deal with them at the start, the language debt doesn't spiral 
 
 > In other languages simple things are easy and complex things are possible, in Rust simple things are possible and complex things are EASY.
 
-
 ---
 
 ![[22-starting-rust 2023-03-20 20.49.45.excalidraw]]
@@ -475,7 +471,7 @@ And in making you deal with them at the start, the language debt doesn't spiral 
 notes:
 And this is as it should be.
 I don't care how easy it is to do simple things, that doesn't impress me any more.
-I want a language that can stay by my side as I make extremely complex distributed systems that also run at C speed.
+I want a language that can stay by my side as I make extremely complex distributed systems that run at C speed and don't wake me up at night.
 
 Keep in mind through all your early learning, YOU only have to learn Rust once.
 Javascript developers have to keep learning javascript every single day.
@@ -505,12 +501,11 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 notes:
 
 Lifetime annotations specify how long a reference should live.
-It's a MINIMUM value that the borrow checker needs to know how long the reference can live before it knows it is safe to clean up.
+It's a MINIMUM value that the variable must live for, before the borrow checker knows it is safe to clean up.
 
 This example is from Chapter 10 of The Book, which states:
 
 > the returned reference will be valid as long as both the parameters are valid. 
-> This is the relationship between lifetimes of the parameters and the return value. 
 > We'll name the lifetime `'a` and then add it to each reference
 
 It's very unfamiliar stuff, right?
@@ -519,7 +514,9 @@ There's two ways to think about Lifetimes
 1. As a liability and 
 2. an asset.
 
-I started off thinking about them as a liability - something annoying I HAD to do to satisfy the compiler. This is a totally fine way to start off with, and I have some suggestions as a beginner, in order
+I started off thinking about them as a liability - something annoying I HAD to do to satisfy the compiler. This is a totally fine way to start off with, and I have some suggestions on how to learn lifetimes gradually.
+
+In order
 
 ---
 
@@ -533,7 +530,7 @@ notes:
 
 2. Copy and clone everything. Rust is 80x faster than python, you're probably not going to notice the performance hit!
 
-3. Only use references when the compiler tells you to. This will eventually teach you how to use them.
+3. Only use references when the compiler tells you to. This will eventually teach you how to use them properly.
 
 When you've done (3) a few times you're ready to move on  
 
@@ -541,10 +538,23 @@ The intermediate way to think about lifetimes are not as an annoying piece of sy
 
 Other languages allow you to model WHAT your data is. Rust, through lifetimes, allows you to model WHEN.
 
+That's worth learning!
 
 ---
 
-# wrap-up slide and CTA
+# [rustup.rs](https://rustup.rs)
+
+## The Book
+## Rust By Example
+## Rustlings
+
+notes:
+
+Rust is shaping up to be the only language we may need for systems development, frontend and backend web development, and bare metal too.
+
+Please ask questions in the comments and I'll try to help, and do join my Discord.
+
+Have fun! Talk to you next time.
 
 ---
 
@@ -560,7 +570,7 @@ If you would like to support my channel, get early ad-free and tracking-free vid
 
 If you're interested in transhumanism and hopepunk stories, please check out my sci-fi podcast, Lost Terminal.
 
-Or if urban fantasy is more your bag, click the bottom video to listen to a strange and beautiful podcast I produce called Modem Prometheus.
+Or if urban fantasy is more your bag, do listen to a strange and beautiful podcast I produce called Modem Prometheus.
 
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
