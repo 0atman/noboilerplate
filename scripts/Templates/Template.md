@@ -63,7 +63,7 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 ---
 
-## Open Source Videos
+## Public Domain Videos
 
 [github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 

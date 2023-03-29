@@ -66,11 +66,12 @@ This is my guide on how to learn Rust, and is the way I teach it to my patreons 
 I have lots of tips on how to get up to speed FAST, and we'll start with the primary sources.
 
 ---
-## Open Source Videos
+## Public Domain Videos
 
 [github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
 notes:
+- [ ] retake this screenshot
 Everything you see in this video from the script to the images are part of a markdown document available on github under a public domain license.
 
 ---
@@ -102,7 +103,7 @@ Rust is the [#19th most popular language](https://redmonk.com/sogrady/2022/03/28
 # My Experience
 
 - Multiple string types
-- lifetimes
+- Lifetimes
 
 notes:
 
@@ -114,7 +115,7 @@ Let's start there.
 
 ---
 
-![[rustup-website.png]]
+![[rustup-website.png|500]]
 <https://rustup.rs>
 
 notes:
@@ -311,13 +312,16 @@ Keep this in mind when I tell you my next tip:
 
 # Read the book twice
 
+(second time: https://rust-book.cs.brown.edu)
+
 notes:
 
 I recommend reading the rust book from cover to cover as fast as possible, and without stopping to do the exercises.
 If you come across something you don't understand, mentally note it, and move on to the next chapter.
 The point is to pass the words through you eyeball compiler, and not worry too much about how many errors you get.
 
-Then when you have finished, go back to the start and work through at your normal pace, doing examples and researching topics as you find them.
+Then when you have finished, go back to the start and work through at your normal pace, but read the Brown University version with interactive quizzes.
+- [ ] re-record this take and use the new slide
 
 You can now install Rustlings.
 
@@ -384,8 +388,14 @@ Keep your muscle memory fresh.
 
 # HASKELL
 
-notes:
+```haskell
+divide :: Double -> Double -> Maybe Double
+divide x 0 = Nothing
+divide x y = Just (x / y)
+```
 
+notes:
+- [ ] re-take this screenshot
 Rust is a hybrid imperative and functional language.
 The compiler was originally written in OCaml
 This means, in addition to the punched-card analogue of statements we can also use many features of functional languages, the most obvious of these is the pervasive use of the iterator pattern.
@@ -560,7 +570,8 @@ Have fun! Talk to you next time.
 
 ![[rust-logo.png]]
 
-# Subtitle
+# Maximum effort
+# Maximum reward
 
 notes:
 
