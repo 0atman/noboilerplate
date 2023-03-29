@@ -72,7 +72,133 @@ Everything you see in this video from the script to the images are part of a mar
 
 ---
 
+# 📻
+# 2E1OAT
+(that's me!)
+
+---
+
+![[hackers-blades.png]]
+
+---
+
+![[hoff-car.png]]
+
+---
+
 # CONTENT HERE
+
+- [ ] outline amateur radio with core concept
+- [ ] dream of the 90s
+- [ ] amateur radio license is like a driving license, you don't need it, but your options are much better if you have it
+- [ ] ISS
+- [ ] moon bounce 2.5s
+- [ ] POTA
+- [ ] SOTA
+- [ ] morse code - no longer a requirement for most low-liscences but gives 100% power efficiency and cuts through noise very well
+- [ ] DX
+- [ ] frequencies across the bands
+- [ ] where to start? VHF
+	- [ ] baofeng
+- [ ] disaster recovery
+- [ ] radio repeaters in your city
+	- [ ] USA
+	- [ ] UK
+	- [ ] India
+	- [ ] Canada
+	- [ ] Germany
+- [ ] DIGITAL
+	- [ ] no crypto
+	- [ ] low power modes
+	- [ ] TCP fine
+	- [ ] UDP fine
+	- [ ] lora
+	- [ ] 
+
+---
+
+
+
+![[paris-skyline.jpg]]
+
+
+notes:
+There is an invisible force in every city
+
+---
+
+
+![[london-skyline.png]]
+
+
+
+---
+![[berlin-skyline.png]]
+
+---
+
+![[car-radios.png]]
+
+---
+
+![[loft-antenna.png]]
+
+
+---
+
+![[building-antennas-on-roof.png]]
+
+---
+
+![[baofeng.png]]
+
+---
+
+
+---
+
+
+---
+
+
+
+
+
+
+
+
+# USA
+
+![[usa-repeaters.png]]
+
+---
+
+# Germany
+
+![[germany-repeaters.png]]
+
+---
+
+# (rest of Europe)
+
+![[eu-repeaters.png]]
+
+---
+
+# UK
+
+![[uk-repeaters.png]]
+
+---
+
+# India
+![[india-repeaters.png]]
+
+---
+
+# Canada
+
+![[canada-repeaters.png]]
 
 ---
 
