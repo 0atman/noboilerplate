@@ -1,5 +1,7 @@
 Code for my talks on the No Boilerplate channel is in `scripts/`
 
+I build these using [obsidian.md](https://obsidian.md/) and the [advanced-slides plugin](https://github.com/MSzturc/obsidian-advanced-slides): I take each slide, printscreen it, and splice it with my audio using [reaper.fm](http://reaper.fm/).
+
 ---
 
 [![Screenshot from 2022-07-13 17-49-52](https://user-images.githubusercontent.com/114097/178788174-86a6e745-a5cb-4d0c-820f-85cedfe9618d.png)](https://www.youtube.com/c/NoBoilerplate)
