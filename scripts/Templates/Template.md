@@ -63,7 +63,7 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 ---
 
-## Open Source Videos
+## Public Domain Videos
 
 [github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
@@ -82,13 +82,13 @@ Everything you see in this video from the script to the images are part of a mar
 
 notes:
 
-# OUTTRO
+# OUTRO
 
 If you would like to support my channel, get early ad-free and tracking-free videos and vip discord access head to patreon.com/noboilerplate.
 
 If you're interested in transhumanism and hopepunk stories, please check out my sci-fi podcast, Lost Terminal.
 
-Or if urban fantasy is more your bag, click the bottom video to listen to a strange and beautiful podcast I produce called Modem Prometheus.
+Or if urban fantasy is more your bag, do listen to a strange and beautiful podcast I produce called Modem Prometheus.
 
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
