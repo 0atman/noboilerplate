@@ -76,9 +76,10 @@ Everything you see in this video from the script to the images are part of a mar
 
 ---
 
-![[rust-logo.png]]
+![[tri-hex-moon-white-transparent.png|300]]
 
-# Subtitle
+# Thank you
+## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
 
 notes:
 
