@@ -69,7 +69,7 @@ I've mentioned them in the past, but today I'm going to explain why they're SO P
 
 ## Open Source Videos
 
-<https://github.com:0atman/noboilerplate/>
+<https://github.com/0atman/noboilerplate/>
 
 notes:
 
