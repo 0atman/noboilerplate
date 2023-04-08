@@ -71,7 +71,6 @@ I have lots of tips on how to get up to speed FAST, and we'll start with the pri
 [github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
 notes:
-- [ ] retake this screenshot
 Everything you see in this video from the script to the images are part of a markdown document available on github under a public domain license.
 
 ---
@@ -151,9 +150,9 @@ notes:
 
 The three pillars of my recommended syllabus are:
 
-1. The Rust Programming language book, which from now on we just call The Book
-2. Rust By Example, excellent supplementary reading, and
-3. Rustlings, an interactive code kata system, one of the best I've ever used.
+1. [The Rust Programming language book](https://doc.rust-lang.org/stable/book/), which from now on we just call The Book
+2. [Rust By Example](https://doc.rust-lang.org/stable/rust-by-example/), excellent supplementary reading, and
+3. [Rustlings](https://github.com/rust-lang/rustlings), an interactive code kata system, one of the best I've ever used.
 
 Though there are many other great ways to learn Rust, I recommend starting with these three because they are so tightly bound together, in a way that you might have missed.
 
