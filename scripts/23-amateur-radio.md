@@ -2,66 +2,40 @@
 :root {--r-code-font: "FiraCode Nerd Font";}
 .reveal .hljs {min-height: 50%;}
 </style>
-%%
 
-f7f7f7 background slide colour
+<split even>
 
-# Cargo.toml
+![[amateur-radio-logo.png|300]]
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+# &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Open-Source Airwaves
+</split>
 
-```toml
-[package]
-name = "template"
-version = "0.1.0"
-edition = "2021"
-
-[build-dependencies]
-
-[dev-dependencies]
-
-[dependencies]
-```
-
-# Lint Tweaks
-
-```rust
-#![allow(dead_code)]
-#![allow(unused_variables)]
-```
-
-# Extern Crates
-
-```rust
-
-```
-
-# Imports
-
-```rust
-```
-
-# Setup
-
-```rust
-fn main() {
-	println!("Rust talk");
-
-```
-
-%%
-
-![[rust-logo.png]]
-
-# Off-Grid communication
+%% lol look at all that %%
 
 notes:
+
+# Amateur Radio: Open-Source Airwaves
 %%
 - Tell them what you're going to tell them
 - Tell them
 - Tell them what you told them
 %%
-Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
-Today I'm going to talk about a new world I've discovered, a world that predated the internet and that will be here after the internet as we know it is gone.
+---
+
+
+# 📻
+# 2E1OAT
+(that's my radio callsign!)
+
+notes:
+
+Hi friends my name is Tris 2E1OAT and this is No Boilerplate, focusing on fast, technical videos.
+
+Today I'm going to talk about a whole world I've discovered, a world that predated the internet and that will be here after the internet as we know it is gone.
 
 That world is called Amateur Radio.
 
@@ -96,7 +70,7 @@ You won't find them online, they don't have an ip address, not on the public int
 
 notes:
 
-You can some times catch glimpses of this society on rooftops.
+You can sometimes catch glimpses of this society on rooftops.
 If you know what to look for, there is evidence on every street.
 
 ---
@@ -119,7 +93,9 @@ Sometimes the equipment is hidden, either from prying eyes or protected from nat
 
 ![[building-antennas-on-roof.png]]
 
-In every city in the world, there are amatuer radio operators.
+notes:
+
+In every city in the world, there are amateur radio operators.
 Millions of us.
 
 ---
@@ -127,9 +103,8 @@ Millions of us.
 ![[baofeng.png|700]]
 
 notes:
-
-The price of admission is very low.
-$25 on amazon, you can have a simple radio delivered tomorrow.
+If you want to become a ham, which is what we call ourselves, the price of admission is very low.
+for $25 on amazon, you can have a simple radio delivered tomorrow.
 
 ---
 
@@ -137,23 +112,10 @@ $25 on amazon, you can have a simple radio delivered tomorrow.
 
 notes:
 
-If you've heard of CB radio, and you're thinking oh this sounds similar.
+If you've heard of CB radio, and you're thinking "oh this sounds similar".
 You're getting there, but Amateur radio is so much more.
 
----
-
-# VHF 144-146MHz
-# UHF 430-440MHz
-
-notes:
-
-We'll start with the two most common amateur radio bands, VHF and UHF.
-
-They are simple to start with, only requiring inexpensive radios.
-The signals don't tend to go over the horizon, but 
-
-With just these two bands, you can do SO MUCH FUN STUFF.
-
+A short list of things you can do with amatuer radio include but are not limited to:
 
 ---
 
@@ -166,7 +128,7 @@ With just these two bands, you can do SO MUCH FUN STUFF.
 
 notes:
 
-On this band you can communicate with amateur radio satellites.
+Communicate with amateur radio satellites.
 
 ---
 
@@ -182,7 +144,10 @@ https://www.amsat.org/
 ---
 
 ![[earth-moon-earth-antenna-with-moon.png]]
-- [ ] moon bounce 2.5s
+notes:
+
+You can bounce your signal off the moon and hear it come back 2 and a half seconds later.
+If you coordinate, you can have a conversation across the world using the moon as a reflector.
 
 ---
 
@@ -205,102 +170,219 @@ https://www.amsat.org/
 
 [POTA Field Report, Thomas Witherspoon](https://qrper.com/2021/02/pota-field-report-pairing-the-icom-ic-705-with-the-elecraft-ax1-pocket-antenna/)
 
+https://parksontheair.com/
+
 notes:
 
-- [ ] POTA
+Because height means good reception, and many national parks are up high, there are regular organised events combining hiking and radio.
+In the USA there's Parks On The Air, and if you want to go further -
+
 ---
 
 ![[pota-mountaineering-radio.jpg]]
 
-notes:
-
-- [ ] SOTA
-
----
-
-# Repeaters
-
-notes:
-Cell phones don't have very long range.
-In fact, you need towers in every neibourhood to support them.
-It's a clever idea, and one that Amateur Radio operators were experimenting with even before the first commercial cell phone in 1983.
-
-There are repeaters EVERYWHERE, no matter where you live.
-
-In decending order of my youtube audience stats, here are the repeater maps for -
-
----
-
-
-# USA
-
-![[usa-repeaters.png]]
+https://www.sota.org.uk/
 
 notes:
 
-The United States.
+There's summits on the air!
+The reception from the top of a mountain is quite something!
+
+Let's go back to school.
 
 ---
 
-# Germany
+![[rf-spectrum.png]]
 
-![[germany-repeaters.png]]
+|        |                  |
+| ------ | ---------------- |
+| 2.4GHz | WiFi & Bluetooth |
+| 27MHz  | CB Radio         |
+| ?      | Amateur Radio?   |
+
+
+notes:
+You might have seen something like this in a science textbook at some point.
+
+Low frequency radio on the left, high frequency radio on the right.
+
+The frequency you'll be most familiar with is 2.4GHz, which is what both WiFi and Bluetooth run on, for the most part.
+
+CB radio operates at about 27MHz, at the top of the HF band.
+CB is much better in an urban environment than WiFi, and can travel up to about 4km.
+
+Where does Amateur radio operate? 
+
+EVERYWHERE
+
+---
+
+<split even>
+
+![[arrl-license-book.png|400]]
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+![[rsgb-test-example.png|400]]
+
+</split>
 
 notes:
 
-Germany.
+Anyone can listen to any frequency - shortwave radio listening or even aircraft and marine listening is just a radio purchase away.
+The radio waves were inside your house already, after all!
+But if you want to transmit, you must have a license.
+
+License procedures vary from country to country, but certainly in the UK and US the barrier to entry is very low.
+You do not need to know morse code or understand complex radio jargon.
+For the foundation exam in the UK I did just an hour of study, and then completed the exam entirely online in half an hour.
+
+License restrictions vary slightly from country to country, but because it is by definition a global hobby, they are broadly aligned across the world.
+
 
 ---
 
-# (rest of Europe)
-
-![[eu-repeaters.png]]
-
-notes:
-Oh and the rest of Europe obviously.
-
----
-
-# UK
-
-![[uk-repeaters.png]]
+![[january_2016_spectrum_wall_chart.jpg]]
 
 notes:
 
-My home country of the UK has a few.
+Amateur radio is one of the great commons of our society, and it is nothing short of a miracle that we have them for our use.
+
+Here is a graph of the whole frequency spectrum, from 0Hz all the way up to 300GHz.
+
+This is the license space in the US, but it's about the same in every country - you can listen to any band, but you can't transmit.
+The airwaves are cut up and divided.
+Just like land use, someone owns it, or in this case, is licensing it from the government.
+TV, Broadcast radio, military, and lots and lots of commercial areas.
+You can use it, but you have to pay. Millions of dollars a year, in licensing fees, to the government.
+
+There's no free space. Even the unlicensed areas you might have heard of, wifi, bluetooth, lora, CB and so on, are tiny slices of the airwaves with strict transmit power and antenna size limitations.
+
+There's no free areas. except the Amateur Radio bands.
 
 ---
 
-# India
-![[india-repeaters.png]]
+![[ham-january_2016_spectrum_wall_chart.jpg]]
 
-India.
+notes:
+Let me colour in the ham bands for you to make it clear.
+They're EVERYWHERE, little slices of every single section, from low-frequency all the way up to microwave.
 
----
-
-# Canada
-
-![[canada-repeaters.png]]
-
-And Canada.
+these areas aren't free to use, it's better than that, they are PROTECTED.
 
 ---
 
+# Licence restrictions
 
-![[global-repeaters.png]]
+1. No commercial use
+2. No encryption
+3. No broadcasting
+4. Transmitter and receivers must be licensed. 
 
 notes:
 
-You might note that as usual, this kind of map approximates a population map.
+they are protected by the Amateur Radio License.
 
-Wherever there are towns and cities there are repeaters!
+Broadly speaking here are the core limits of the amateur radio bands.
 
-If you want access to this world, it's cheap and easy, but like driving a car, there's a test and a license.
-And just like driving a car it augments any outdoor activity you might want to do.
+These restrictions prevent the tragedy of the commons occurring on our airwaves.
 
-I've not even talked about the lower frequencies, where you can get worldwide propogation without using repeaters!
+---
+
+| Closed Source    | Open Source   |
+| ---------------- | ------------- |
+| WiFi & Bluetooth | Amateur Radio |
+
+notes:
+
+You can think of this as the distinction between closed source software and Open Source software.
+
+Amateur radio, because it can not be encrypted, can be analysed 
+it's source, so to speak, is open.
+If an amateur invents a new encoding method that uses less bandwidth or is higher quality (as happens all the time!) anyone listening can hear it and figure it out.
+
+The primary activities on the ham bands are learning, experimentation, and teaching.
+
+---
+
+# Code vs Encryption
+
+notes:
+
+Morse code is an encoding of data.
+It's allowed on the ham bands because it's not designed to hide information, and even though most people don't know morse code, it's freely understandable by anyone who wants to learn.
+
+SSL, RSA, even Enigma cyphers are all designed to hide information.
+They are not allowed on the ham bands.
+
+If you want to tunnel HTTP traffic through the amateur bands, you can, but you can't use SSL.
+
+---
+## Aside: Morse is COOL
+ `−− −−− ·−· ··· ·` &nbsp; &nbsp; &nbsp; `−·−· −−− −·· ·`
+
+![[morse.png]]
+
+_(thanks @laund on discord for this awesome graphic!)_
+
+notes:
+BTW
+I didn't think I'd ever be interested in Morse Code.
+I'm delighted the basic exams don't require it any more.
+But now that I understand a bit about how radio works, I see that the reason we're still using Morse, 186 years later, is because it's a really efficient use of the radio power.
+
+I don't have time to explain in this short video, but for weak signal propagation between two humans, Morse can out-perform nearly every fancy computer-generated mode we have.
+All without a microprocessor.
+
+After the apocalypse, I want to know a Morse operator.
+Or I suppose, before the apocalypse I SHOULD LEARN MORSE.
+
+Let's talk about the apocalypse a little more.
+
+---
+
+<split even>
+
+![[radio-ambulance.png|400]]
+![[field-radio-operation.png|400]]
+
+</split>
+
+<split even>
+![[car-radio-operation.png|400]]
+![[field-radio-team.png|400]]
+
+</split>
+
+
+notes:
+
+ARES RAYNET
+
+the first thing that goes down in an emergency is the cell phone system.
+Either through damage or congestion.
+
+This is something that amateur radio clubs practice for.
+When there is a disaster, perhaps an earthquake, hams are ready to spring into action, and set up field bases in the disaster site.
+They then coordinate with hams back at the hospitals or wherever, to bridge the communications gap.
+
+For example, they are currently helping the humanitarian effort in Ukraine.
+
+The two organisations I am aware of are ARES in the US, and RAYNET here in the UK.
+
+But your country will have something similar too.
+
+
+But what if you live in a city, with all the buildings in the way?
+
+
 
 More on that after I tell you about returning sponsor, Quadratic.
+2:45
 
 ---
 
@@ -316,8 +398,7 @@ Quadratic are building an Open Source spreadsheet for engineers and data scienti
 ---
 
 <!-- slide bg="rgb(37, 34, 43)" -->
-![[quadratic-formula-python-selection.png|700]]
-
+![[cell.png]]
 notes:
 
 Quadratic combines the functional data visualisation of a spreadsheet with the power of full programming languages, starting with Python
@@ -360,8 +441,7 @@ Because all of python is running locally inside webassembly, complex work, such 
 
 notes:
 
-This is all running at 60fps using webgl, with smooth scrolling and pinch to zoom.
-All inside your browser.
+This is all running at 60fps on the gpu using webgl, all inside your browser.
 
 
 ---
@@ -376,6 +456,15 @@ Quadratic built their infinite canvas on webgl, allowing for smooth scrolling an
 
 ---
 
+<!-- slide bg="rgb(37, 34, 43)" -->
+![[quadratic-gpt.png|500]]
+
+notes:
+
+And just before I published this video, they released GPT integration, giving you a copilot or pair programmer while you're writing. Fantastic!
+
+---
+
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 
@@ -385,7 +474,7 @@ https://github.com/quadratichq/quadratic
 
 notes:
 
-Quadratic is open source and free to use.
+it's open source and free to use.
 
 ---
 
@@ -402,120 +491,155 @@ notes:
 -   Signup today!
 -   Head to QuadraticHQ.com to try it out.
 
-My thank to quadratic for their support of this channel.
+My thanks to quadratic for their support of this channel.
 
 ---
 
-![[kx3-morse-headset-desk.png]]
+![[repeater-on-mountain.png]]
 
 notes:
 
-- [ ] morse code - no longer a requirement for most low-liscences but gives 100% power efficiency and cuts through noise very well
+To get your hand-held radio's signal across town, or over a hill you might need a repeater.
 
+Cell phones don't have very long range.
+In fact, you need towers in every neighbourhood to support them.
+It's a clever idea, and one that Amateur Radio operators were experimenting with even before the first commercial cell phone in 1983.
 
+There are repeaters EVERYWHERE, no matter where you live.
 
----
-
-- [ ] DX
-
-
-- [ ] frequencies across the bands
-- [ ] Compare to wifi and bluetooth power and range
-- [ ] where to start? VHF
-	- [ ] baofeng
-- [ ] disaster recovery
-
-# 📻
-# 2E1OAT
-(that's me!)
-
----
-
-![[hackers-blades.png]]
-
----
-
----
-
-# CONTENT HERE
-
-```
-〉why would normal people get excited for amateur radio in a world where cell phones are ubiquitous
-1. Emergency Communication: Amateur radio operators can communicate in times of natural disasters, emergencies, and other situations where traditional communication methods may fail. During such instances, amateur radio offers an alternative communication method and can potentially save lives.
-
-2. Hobby: Amateur radio operation can be a fun and engaging hobby for people, especially those interested in electronics and communication technologies. Operators can contact people from all over the world, participate in contests, and explore different communication modes.
-
-3. Local Community: Amateur radio clubs can bring together people with shared interests, and foster relationships among local communities. This can lead to social interactions, friendships and a sense of community that is not possible with cell phone use.
-
-4. Exploration and Innovation: Amateur radio operators can experiment and come up with new ways of communication, modes of transmission, and receive certification for their achievements.
-
-5. Low Cost: While cell phones require paid subscriptions, amateur radio only requires a very low amount of money for equipment purchase, and no ongoing fees.
-
-In conclusion, while cell phones have become ubiquitous and offer instant communication, amateur radio provides a distinct offering for those interested in communication as a hobby, emergency communications, or seeking a unique social alternative to using cell phones.
-```
-
-- [ ] outline amateur radio with core concept
-- [ ] dream of the 90s
-- [ ] amateur radio license is like a driving license, you don't need it, but your options are much better if you have it
-
-- [ ] radio repeaters in your city
-	- [ ] USA
-	- [ ] UK
-	- [ ] India
-	- [ ] Canada
-	- [ ] Germany
-- [ ] DIGITAL
-	- [ ] no crypto
-	- [ ] low power modes
-	- [ ] TCP fine
-	- [ ] UDP fine
-	- [ ] lora
-	- [ ] 
-
----
-
----
-
-
----
-
+In decending order of my youtube audience , here are the repeater maps for -
 
 ---
 
 
 
+![[usa-repeaters.png]]
+
+notes:
+
+The United States.
+
+---
+
+
+![[germany-repeaters.png]]
+
+notes:
+
+Germany.
+
+---
+
+
+![[eu-repeaters.png]]
+
+notes:
+Oh and the rest of Europe obviously.
+
+---
+
+
+![[uk-repeaters.png]]
+
+notes:
+
+My home country of the UK has a few.
+
+---
+
+![[india-repeaters.png]]
 
 
 ---
 
 
+![[canada-repeaters.png]]
 
-Let's go back to school.
 
 ---
 
-![[rf-spectrum.png]]
 
-|        |                  |
-| ------ | ---------------- |
-| 2.4GHz | WiFi & Bluetooth |
-| 27MHz  | CB Radio         |
-| ?      | Amateur Radio?   |
+![[global-repeaters.png]]
+
+notes:
+
+You might note that as usual, this kind of map approximates a population map.
+
+Wherever there are towns and cities there are repeaters!
+
+If you want access to this world, it's cheap and easy, but like driving a car, there's a test and a license.
+And just like driving a car it augments any outdoor activity you might want to do.
+
+I've not even talked about the lower frequencies, where you can get worldwide propogation without using repeaters!
+
+---
+
+![[hackers-blades.png|700]]
+
+(If you've not seen Hackers (1995), you're missing out!)
+
+notes:
+The dream of the 90s is alive and well in the Amateur Radio community.
+
+---
+
+![[qrz-tris.png]]
+
+notes:
+
+We even have our own 90s style social network that is so early-myspace-looking I'm surprised Tom hasn't started litigation.
+this is qrz.com, the most popular ham log book site.
+The name qrz comes from Q codes, which are short control codes originally used by Morse telegraph operators.
+
+https://en.wikipedia.org/wiki/Q_code#Amateur_radio
+QRZ means "Who is calling me?"
+
+Everyone, including me, as you see, registers so you can log your contacts, which is an important part of the hobby, because you can't know if you're being heard unless someone tells you!
+
+---
+
+![[prop-report.jpg]]
+
+notes:
+There are a few people who set up automated propagation reports for some digital modes of operation.
+Here's my report for a day last September when I was testing out my new antenna, for example.
+
+Because I got these reports back, I can be reasonably sure my antenna was set up correctly
+
+---
+
+![[atmo-prop-handdrawn.png]]
+
 
 
 notes:
-You might have seen something like this in a science textbook at some point.
 
-Low frequency radio on the left, high frequency radio on the right.
+# Personal communications
 
-The frequency you'll be most familiar with is 2.4GHz, which is what both WiFi and Bluetooth run on.
+When you talk to someone on radio without a repeater, you are talking directly to them at the speed of light, from your microphone to their speaker, with no intermediaries.
+Using the right frequency and antenna, this can be local in your city, or transcontinental, bouncing off the atmosphere or ground.
 
-CB radio operates at about 27MHz, at the bottom of the VHF band.
-CB is much better in an urban environment than WiFi, and can travel up to about 4km.
+This direct communication feels much more personal - your voice is being mixed with a radio carrier signal or similar and broadcast in an analogue signal, then the reciever reverses the process to demodulate your voice.
 
-Where does Amateur radio operate? 
+It's analogue all the way, no bits, no bytes.
 
-EVERYWHERE
+Isn't that wonderful?
+
+---
+
+> 73 - 2E1OAT
+
+| Code | Meaning                 | Code | Meaning                |
+| ---- | ----------------------- | ---- | ---------------------- |
+| 1    | wait a minute           | 25   | busy on another wire   |
+| 2    | Very important          | 26   | Put on ground wire     |
+| 18   | What's the trouble?     | **73**   | **Best regards**           |
+
+notes:
+
+Have fun, get licenced, and maybe I'll chat to you on the air soon!
+
+2E1OAT going clear, 73
 
 ---
 ![[tri-hex-moon-white-transparent.png|300]]
@@ -530,7 +654,7 @@ If you would like to support my channel, get early ad-free and tracking-free vid
 
 If you're interested in transhumanism and hopepunk stories, please check out my sci-fi podcast, Lost Terminal.
 
-Or if urban fantasy is more your bag, do listen to a strange and beautiful podcast I produce called Modem Prometheus.
+Or if urban fantasy is more your bag, do listen to a strange and beautiful podcast I produce called Modem Prometheus. Season 2 premiered YESTERDAY!
 
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
@@ -540,3 +664,20 @@ Thank you so much for watching, talk to you on Discord.
   println!("That's all folks!");
 } 
 ```
+
+
+
+
+---
+
+# VHF 144-146MHz
+# UHF 430-440MHz
+
+notes:
+
+We'll start with the two most common amateur radio bands, VHF and UHF.
+
+They are simple to start with, only requiring inexpensive radios.
+The signals don't tend to go over the horizon, but 
+
+With just these two bands, you can do SO MUCH FUN STUFF.
