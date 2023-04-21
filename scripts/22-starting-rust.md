@@ -320,7 +320,7 @@ If you come across something you don't understand, mentally note it, and move on
 The point is to pass the words through you eyeball compiler, and not worry too much about how many errors you get.
 
 Then when you have finished, go back to the start and work through at your normal pace, but read the Brown University version with interactive quizzes.
-- [ ] re-record this take and use the new slide
+- [x] re-record this take and use the new slide
 
 You can now install Rustlings.
 
@@ -394,7 +394,7 @@ divide x y = Just (x / y)
 ```
 
 notes:
-- [ ] re-take this screenshot
+- [x] re-take this screenshot
 Rust is a hybrid imperative and functional language.
 The compiler was originally written in OCaml
 This means, in addition to the punched-card analogue of statements we can also use many features of functional languages, the most obvious of these is the pervasive use of the iterator pattern.
