@@ -55,11 +55,7 @@ edition = "2021"
 # unrepresentable
 
 notes:
-%%
-- Tell them what you're going to tell them
-- Tell them
-- Tell them what you told them
-%%
+
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
 one of my favourite features in rust is the rich type system
@@ -134,7 +130,7 @@ enum RealCat {
 ```
 
 notes:
-- [x] rewrite for new cat
+
 The difference between sum and product types is simple.
 
 a Fake cat, here, could be written in any popular language with a normal class, or a struct in Rust.
