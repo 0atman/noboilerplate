@@ -301,7 +301,7 @@ If you have an algebraic type system, like Rust has with enums, you just don't n
 
 ---
 
-## OO features that can be replace with enums
+## OO features that can be replaced with enums
 
 - Inheritance
 - Hierarchies
