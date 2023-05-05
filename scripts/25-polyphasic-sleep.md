@@ -10,11 +10,7 @@
 ##### (All times in this video are in 24h time eg "18:30")
 
 notes:
-%%
-- Tell them what you're going to tell them
-- Tell them
-- Tell them what you told them
-%%
+
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
 Let me take you back to April 2020, where for a 2 month experiment, I successfully tried Polyphasic sleep.
