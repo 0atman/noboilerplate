@@ -551,7 +551,7 @@ pub fn sum_loops(n: i32) -> i32 {
 }
 ```
 
-IS equivalent TO
+IS EQUIVALENT TO
 
 ```rust
 pub fn sum_iterators(n: i32) -> i32 {
