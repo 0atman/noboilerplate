@@ -1,4 +1,4 @@
-video := "24-rust-data-modelling.md"
+video := "26-shuttle-tutorial.md"
 
 
 # Rebuild project when rs and toml files change
