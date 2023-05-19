@@ -12,7 +12,7 @@ fn template(inner: String) -> String {
                 <link rel="icon" href="favicon.png"/>
                 <link href="bulma-min.css" rel="stylesheet"/>
                 <script src="https://kit.fontawesome.com/333f3de551.js" crossorigin="anonymous"></script>
-
+                
                 <meta charset="utf-8"/>
                 <meta name="description" content="No Boilerplate is a youtube channel of fast, technical videos"/>
                 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -61,11 +61,11 @@ fn template(inner: String) -> String {
                               "&nbsp;Store"
                             </a>
     */
-                            <a class="navbar-item has-text-white" href="https://twitter.com/NoBoilerplate">
+                            <a rel="me" class="navbar-item has-text-white" href="https://tech.lgbt/@noboilerplate">
                                 <span class="icon is-small">
-                              <i class="fab fa-twitter"></i>
+                              <i class="fab fa-mastodon"></i>
                             </span>
-                              "&nbsp;Follow on Twitter"
+                              "&nbsp;Follow on Mastodon"
                             </a>
 
                             <a class="navbar-item has-text-white" href="https://www.youtube.com/watch?v=Q3AhzHq8ogs&list=PLZaoyhMXgBzoM9bfb5pyUOT3zjnaDdSEP&index=1">
