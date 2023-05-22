@@ -65,7 +65,7 @@ Rust is a very new language, existing CI and production pipelines are ill-suited
 
 Rust's type system is so powerful you can encode infrastructure inside it.
 
-Statically typed infrastructure, validated by your local rust compiler is possible, and it's a technique you can use today with shuttle.rs, who are both subject and sponsor of today's video.
+Infrastructure from code, validated by your local rust compiler is possible, and it's a technique you can use today with shuttle.rs, who are both subject and sponsor of today's video.
 
 ---
 
@@ -78,19 +78,40 @@ Everything you see in this video from the script to the images are part of a mar
 
 ---
 
+# What is shuttle.rs?
+
+notes:
+
+Think heroku but only for rust projects.
+No config, just pure rust, leave infrastructure to the experts.
+
+---
+
 ![[shuttle-tutorial.png|700]]
 https://docs.shuttle.rs/introduction/quick-start
 
 notes:
 
-We're going to follow the shuttle quickstart in the first part of this video, logging in to shuttle using github, generating an api key, and deploying a hello world app.
+To get up and running fast, we're going to follow the 5-part shuttle quickstart in the first part of this video, logging in to shuttle using github, generating an api key, and deploying a hello world app.
 
 ---
 
 ```bash
-cargo install cargo-binstall
-cargo binstall cargo-shuttle
-cargo shuttle login
+$ cargo install cargo-binstall  # first get binstall
+```
+```bash
+$ cargo binstall cargo-shuttle  # then binstall shuttle!
+
+ INFO resolve: Resolving package: 'cargo-shuttle'
+ WARN The package cargo-shuttle v0.16.0 
+      will be downloaded from github.com
+ INFO This will install the following binaries:
+ INFO   - cargo-shuttle 
+ INFO Installing binaries...
+ INFO Done in 4.5s
+```
+```bash
+$ cargo shuttle login
 ```
 
 notes:
@@ -98,6 +119,7 @@ notes:
 Assuming you've installed rust from rustup.rs, installing shuttle is easy, as there is a binary install for it.
 
 If you're not familiar with cargo-binstall, it is a wrapper around cargo install that checks github releases and a few other sensible places for pre-built binaries for your version and architecture.
+If there isn't a matching binary for your system, it falls back to compiling as normal.
 
 ---
 
@@ -118,8 +140,107 @@ Shared database docs: [https://docs.shuttle.rs/resources/shuttle-shared-db](http
 Static folder docs: [https://docs.shuttle.rs/resources/shuttle-static-folder](https://docs.shuttle.rs/resources/shuttle-static-folder)  
 %%
 
+---
 
 
+```md
+❯ cargo shuttle init
+How do you want to name your project? It will be hosted at ${project_name}.shuttleapp.rs.
+✔ Project name · shuttest3
+Where should we create this project?
+✔ Directory · /home/oatman/projects
+Shuttle works with a range of web frameworks. Which one do you want to use?
+· axum
+    Creating project "shuttest3" in "/home/oatman/projects"
+✔ Do you want to create the project environment on Shuttle? · yes
+
+project 'shuttest3' is ready
+```
+
+notes:
+
+Shuttle has a setup wizard to start a new template project so you can get to hello world with no code.
+At time of recording they support
+  - axum
+  - poise
+  - poem
+  - rocket
+  - salvo
+  - serenity
+  - tide
+  - thruster
+  - tower, and
+  - warp
+frameworks.
+
+We'll make a simple Axum project today.
+
+Initial compilation, as always with Rust is slow, but subsequent builds are fast.
+
+2.5 minute initial and 40 seconds for subsequent builds I saw in my tests while making this video.
+
+---
+
+![[axum-shuttle-hello-world.png]]
+
+notes: 
+well that was easy.
+We've got a hello world with a self-signed ssl certificate up on the internet without any code so far.
+
+What ELSE can we do?
+
+---
+
+## Everything is Rust,
+## Rust is everything
+
+> "Get a database by just asking for one in your Rust code."
+
+&mdash; shuttle.rs docs
+
+notes:
+
+Over at shuttle.rs they are not shy about their dedication to Rust which I love to see.
+They say you can get a database by just by asking for one, let's see what that looks like.
+
+---
+
+```rust[]
+#[shuttle_runtime::main]
+async fn axum() -> ShuttleAxum
+```
+
+```rust[]
+#[shuttle_runtime::main]
+async fn axum(#[Postgres] pool: PgPool) -> ShuttleAxum
+```
+
+(psudocode)
+
+notes:
+
+Here is the signature of our main entrypoint that shuttle init created.
+The only change is the return value, which uses the wrapped shuttle axum value for the axum router.
+
+I'll show you all the code in the full example, but I want to show you how easy it is to request a database from shuttle.
+
+In the second codeblock, I've added a new param to the main function which is a sqlx pgPool struct.
+Normally we'd have to create this pool ourselves, with a database uri or similar.
+
+The postgres annotation here builds this pool for us with sensible defaults. You can configure them, of course.
+
+Now, either locally or when built on shuttle's servers, your code will be passed a valid connection pool, connected transparently to a shuttle-managed docker database.
+
+If you would like to manage your own dev database, you can configure it to do that too.
+
+---
+
+
+![[shuttle-run-output.png]]
+
+notes:
+
+Here's the output from `cargo shuttle run`, you can see the databases connected, extra plugins like the static plugin here, and then the output from the server log.
 
 ---
 
@@ -134,6 +255,18 @@ notes:
     
 2.  **Shuttle Next** - [https://docs.shuttle.rs/examples/shuttle-next](https://docs.shuttle.rs/examples/shuttle-next) (experimental at this moment and limited)
 
+---
+
+
+| AWS      | PERSIST         | SHARED DB         |
+| -------- | --------------- | ----------------- |
+| Postgres | shuttle-persist | Postgres          |
+| MySql    |                 | Postgres (RusTLS) |
+| MariaDB  |                 | Mongo             |
+
+notes:
+
+There are three main1
 
 ---
 
@@ -172,7 +305,7 @@ todo!()
 
 ---
 
-# Future features
+# Shuttle.rs Feature Roadmap
 
 
 notes:
