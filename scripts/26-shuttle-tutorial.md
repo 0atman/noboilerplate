@@ -113,6 +113,8 @@ $ cargo shuttle login
 
 notes:
 
+## Installing shuttle
+
 Assuming you've installed rust from rustup.rs, installing shuttle is easy, as there is a binary install for it.
 
 If you're not familiar with cargo-binstall, it is a wrapper around cargo install that checks github releases and a few other sensible places for pre-built binaries for your version and architecture.
@@ -155,6 +157,8 @@ project 'shuttest3' is ready
 ```
 
 notes:
+
+## Creating a new shuttle project
 
 Shuttle has a setup wizard to start a new template project so you can get to hello world with no code.
 
@@ -217,6 +221,8 @@ async fn axum(#[Postgres] pool: PgPool) -> ShuttleAxum
 
 notes:
 
+## Introduction to "infrastructure from code"
+
 Here is the signature of our main axum entrypoint that shuttle init created.
 The only change to vanilla axum is the return value, which uses the wrapped shuttle axum value for the axum router.
 
@@ -262,7 +268,11 @@ notes:
 | MySql    | Postgres (RusTLS) |                 |
 | MariaDB  | Mongo             |                 |
 
+(Upcoming: Memcache, DynamoDB, Turso)
+
 notes:
+
+## Supported and future databases
 
 There are three main databases Shuttle supports at time of recording.
 There are three main ways to persist your data: AWS integration, and two native shuttle methods, shareddb, and persisst.
@@ -295,6 +305,8 @@ let restored_data = state.persist.load()
 
 notes:
 
+## shuttle-persist demo
+
 Here's a simple rocket.rs demo of shuttle persist.
 
 The persist struct that is passed in inside our MyState wrapper can load and save ANY serde serialisable struct. 
@@ -312,6 +324,9 @@ Let's talk more about shuttle the service.
 https://github.com/shuttle-hq/shuttle
 
 notes:
+
+## Github CTA
+
 Shuttle manage their development on github, and based on their response to an issue I filed, they're very responsive to contribution.
 
 ---
@@ -321,6 +336,9 @@ Shuttle manage their development on github, and based on their response to an is
 https://discord.gg/shuttle
 
 notes:
+
+## Discord CTA
+
 Support and community organising is over on their Discord, where I immediately found some old friends, which was a delight.
 
 ---
@@ -393,6 +411,10 @@ struct Todo {
 ```
 
 
+notes:
+
+## 'todo' Data model
+
 ---
 
 
@@ -408,6 +430,11 @@ async fn todos(State(pool): State<PgPool>) -> String {
     serde_json::to_string(&todo).unwrap()
 }
 ```
+
+
+notes:
+
+## `todos` route
 
 ---
 
@@ -426,6 +453,9 @@ async fn axum(
 ```
 
 notes:
+
+## Shuttle main annotations deep-dive
+
 you can learn a lot about a rust function from it's signature.
 let's focus on that.
 
@@ -508,6 +538,10 @@ async fn axum(
 ```
 
 (some keys missing)
+
+notes:
+
+## sqlx offline demo
 
 ---
 
