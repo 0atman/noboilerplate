@@ -42,9 +42,6 @@ edition = "2021"
 # Setup
 
 ```rust
-fn main() {
-	println!("Rust talk");
-
 ```
 
 %%
@@ -160,6 +157,7 @@ project 'shuttest3' is ready
 notes:
 
 Shuttle has a setup wizard to start a new template project so you can get to hello world with no code.
+
 At time of recording they support
   - axum
   - poise
@@ -175,7 +173,7 @@ frameworks.
 
 We'll make a simple Axum project today.
 
-Initial compilation, as always with Rust is slow, but subsequent builds are fast.
+Initial compilation, as always with Rust is slower, but subsequent builds are fast.
 
 2.5 minute initial and 40 seconds for subsequent builds I saw in my tests while making this video.
 
@@ -219,10 +217,10 @@ async fn axum(#[Postgres] pool: PgPool) -> ShuttleAxum
 
 notes:
 
-Here is the signature of our main entrypoint that shuttle init created.
-The only change is the return value, which uses the wrapped shuttle axum value for the axum router.
+Here is the signature of our main axum entrypoint that shuttle init created.
+The only change to vanilla axum is the return value, which uses the wrapped shuttle axum value for the axum router.
 
-I'll show you all the code in the full example, but I want to show you how easy it is to request a database from shuttle.
+I'll demo you all the code in a moment, but I want to show you how easy it is to request a database from shuttle.
 
 In the second codeblock, I've added a new param to the main function which is a sqlx pgPool struct.
 Normally we'd have to create this pool ourselves, with a database uri or similar.
@@ -258,37 +256,88 @@ notes:
 ---
 
 
-| AWS      | PERSIST         | SHARED DB         |
-| -------- | --------------- | ----------------- |
-| Postgres | shuttle-persist | Postgres          |
-| MySql    |                 | Postgres (RusTLS) |
-| MariaDB  |                 | Mongo             |
+| AWS      | SHARED DB         | PERSIST         |
+| -------- | ----------------- | --------------- |
+| Postgres | Postgres          | shuttle-persist |
+| MySql    | Postgres (RusTLS) |                 |
+| MariaDB  | Mongo             |                 |
 
 notes:
 
-There are three main1
+There are three main databases Shuttle supports at time of recording.
+There are three main ways to persist your data: AWS integration, and two native shuttle methods, shareddb, and persisst.
+Shared db uses a large database that shuttle provides for you, shared with other users.
+You get your own private section of the database, but the server is managed by shuttle.
+
+Persist is interesting, and deserves a demo
 
 ---
 
-# GH Stars
+```rust[]
+struct MyState {persist: PersistInstance}
+
+#[shuttle_runtime::main]
+async fn rocket(
+    #[Persist] persist: PersistInstance, // <--
+) -> ShuttleRocket {
+    let state = MyState { persist };
+    let rocket = rocket::build()
+        .mount("/", routes![retrieve, add])
+        .manage(state); // state is now available
+    Ok(rocket.into())
+}
+```
+
+```rust[]
+state.persist.save(data_to_be_saved)
+let restored_data = state.persist.load()
+```
 
 notes:
 
-- if viewers would like to keep up-to-date with Shuttle & would like to show support, they can/should give us a star on GitHub.
+Here's a simple rocket.rs demo of shuttle persist.
+
+The persist struct that is passed in inside our MyState wrapper can load and save ANY serde serialisable struct. 
+
+This is a genius simple persistance option for when managing a database is overkill.
+
+- [ ] what does persist use behind the scenes
+
+Let's talk more about shuttle the service.
 
 ---
 
-# Discord 
+![[shuttle-github-org.png]]
+
+https://github.com/shuttle-hq/shuttle
 
 notes:
-
-our community has been thriving lately and we'd love if your viewers hopped over to our Discord to have a good time!
+Shuttle manage their development on github, and based on their response to an issue I filed, they're very responsive to contribution.
 
 ---
 
-# Newsletter
+![[shuttle-discord.png]]
+
+https://discord.gg/shuttle
 
 notes:
+Support and community organising is over on their Discord, where I immediately found some old friends, which was a delight.
+
+---
+
+# Shuttle Launchpad
+
+A Rust course written by Stefan Baumgartner
+(organiser of [Rust Linz](https://rust-linz.at/))
+
+https://www.shuttle.rs/launchpad
+
+notes:
+Master Rust easily with our engaging, tutorial-style lessons and real-world examples in our Launchpad newsletter.
+
+## Embark on your Rust learning journey with Shuttle Launchpad
+
+Master Rust easily with our engaging, tutorial-style lessons and real-world examples in our Launchpad newsletter.
 
 by Wed, we should already have setup a landing page where users can subscribe but in short; we are doing a education newsletter called Shuttle Launchpad. The main idea behind it is to provide users with bite-sized tutorials/guides/resources on their path to learning Rust Web.
 
@@ -298,10 +347,167 @@ by Wed, we should already have setup a landing page where users can subscribe bu
 
 # Tutorial part 2
 
+Axum + DB + Static files demo
+
 notes:
 
-todo!()
+A hello world is all very well, but lets build something with persistance showing how to use the shuttle infrastructure from code principles.
 
+---
+
+```toml
+axum = "0.6.10"
+axum-extra = { version = "0.4.2", features = ["spa"] }
+serde = "1.0.148"
+serde_json = "1.0.96"
+
+shuttle-axum = { version = "0.16.0" }
+shuttle-runtime = { version = "0.16.0" }
+shuttle-static-folder = "0.16.0"
+
+tokio = { version = "1.26.0" }
+```
+```toml
+[dependencies.sqlx]
+version = "0.6.2"
+features = [
+	"runtime-tokio-native-tls",
+	"postgres", 
+	"offline"] 
+[dependencies.shuttle-shared-db]
+version = "0.16.0"
+features = ["postgres"]
+```
+
+---
+
+```rust
+use serde::Serialize;
+use sqlx::FromRow;
+
+#[derive(Serialize, FromRow)]
+struct Todo {
+    pub id: i32,
+    pub text: String,
+}
+```
+
+
+---
+
+
+```rust
+use axum::extract::State;
+use sqlx::{PgPool, query_as};
+
+async fn todos(State(pool): State<PgPool>) -> String {
+    let todo = query_as!(Todo, "SELECT * FROM todos")
+        .fetch_all(&pool)
+        .await
+        .unwrap();
+    serde_json::to_string(&todo).unwrap()
+}
+```
+
+---
+
+```rust
+use axum::{routing::get, Router};
+use axum_extra::routing::SpaRouter;
+use std::path::PathBuf;
+use shuttle_shared_db::Postgres;
+use shuttle_static_folder::StaticFolder;
+
+#[shuttle_runtime::main]
+async fn axum(
+    #[Postgres] pool: PgPool,
+    #[StaticFolder] static_folder: PathBuf,
+) -> shuttle_axum::ShuttleAxum {
+```
+
+notes:
+you can learn a lot about a rust function from it's signature.
+let's focus on that.
+
+---
+
+```rust[1]
+#[shuttle_runtime::main]
+async fn axum(
+    #[Postgres] pool: PgPool,
+    #[StaticFolder] static_folder: PathBuf,
+) -> shuttle_axum::ShuttleAxum {
+```
+
+notes:
+This first line annotates the shuttle entrypoint, this macro expands differently depening on if it is built on your dev machine or shuttle's build system, handling the differences in environment.
+
+
+---
+
+```rust[3]
+#[shuttle_runtime::main]
+async fn axum(
+    #[Postgres] pool: PgPool,
+    #[StaticFolder] static_folder: PathBuf,
+) -> shuttle_axum::ShuttleAxum {
+```
+
+---
+
+```rust[4]
+#[shuttle_runtime::main]
+async fn axum(
+    #[Postgres] pool: PgPool,
+    #[StaticFolder] static_folder: PathBuf,
+) -> shuttle_axum::ShuttleAxum {
+```
+
+---
+
+```rust[5]
+#[shuttle_runtime::main]
+async fn axum(
+    #[Postgres] pool: PgPool,
+    #[StaticFolder] static_folder: PathBuf,
+) -> shuttle_axum::ShuttleAxum {
+```
+
+---
+
+```rust
+    let router = Router::new()
+        .route("/todos", get(todos))
+        .merge(SpaRouter::new(
+	        "/assets", static_folder)
+		        .index_file("index.html"))
+        .with_state(pool);
+
+    Ok(router.into())
+}
+```
+
+---
+
+
+```json
+{ // sql-data.json
+    "db": "PostgreSQL",
+    "describe": {
+	  "query": "SELECT * FROM todos",
+      "columns": [
+        {
+          "name": "id",
+          "type_info": "Int4"
+        },
+        {
+          "name": "note",
+          "type_info": "Text"
+        }
+...
+```
+
+(some keys missing)
 
 ---
 
@@ -360,7 +566,3 @@ Transcripts and compile-checked markdown sourcecode are available on github, lin
 
 Thank you so much for watching, talk to you on Discord.
 
-```rust
-  println!("That's all folks!");
-} 
-```
