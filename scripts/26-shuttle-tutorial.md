@@ -119,6 +119,7 @@ Assuming you've installed rust from rustup.rs, installing shuttle is easy, as th
 
 If you're not familiar with cargo-binstall, it is a wrapper around cargo install that checks github releases and a few other sensible places for pre-built binaries for your version and architecture.
 If there isn't a matching binary for your system, it falls back to compiling as normal.
+There will be for shuttle, as shuttle even build binaries for my asahi linux running on arm apple silicon.
 
 ---
 
@@ -189,7 +190,7 @@ notes:
 well that was easy.
 We've got a hello world with a self-signed ssl certificate up on the internet without any code so far.
 
-What ELSE can we do?
+What ELSE can we do with shuttle?
 
 ---
 
@@ -229,11 +230,11 @@ The only change to vanilla axum is the return value, which uses the wrapped shut
 I'll demo you all the code in a moment, but I want to show you how easy it is to request a database from shuttle.
 
 In the second codeblock, I've added a new param to the main function which is a sqlx pgPool struct.
-Normally we'd have to create this pool ourselves, with a database uri or similar.
+Normally we'd have to create this postgres pool ourselves, with a database uri or similar.
 
 The postgres annotation here builds this pool for us with sensible defaults. You can configure them, of course.
 
-Now, either locally or when built on shuttle's servers, your code will be passed a valid connection pool, connected transparently to a shuttle-managed docker database.
+Now, either locally or when built on shuttle's servers, your code will be passed a valid connection pool, connected transparently in dev to a local shuttle-managed docker database.
 
 If you would like to manage your own dev database, you can configure it to do that too.
 
@@ -275,7 +276,7 @@ notes:
 ## Supported and future databases
 
 There are three main databases Shuttle supports at time of recording.
-There are three main ways to persist your data: AWS integration, and two native shuttle methods, shareddb, and persisst.
+AWS integration, and two native shuttle methods, shareddb, and persist.
 Shared db uses a large database that shuttle provides for you, shared with other users.
 You get your own private section of the database, but the server is managed by shuttle.
 
@@ -309,7 +310,7 @@ notes:
 
 Here's a simple rocket.rs demo of shuttle persist.
 
-The persist struct that is passed in inside our MyState wrapper can load and save ANY serde serialisable struct. 
+The persist struct that is passed in inside our MyState wrapper can load and save ANY serde serialisable struct trasparently. 
 
 This is a genius simple persistance option for when managing a database is overkill.
 
