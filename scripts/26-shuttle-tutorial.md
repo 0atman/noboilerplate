@@ -79,8 +79,10 @@ Everything you see in this video from the script to the images are part of a mar
 
 notes:
 
-Think heroku but only for rust projects.
-No config, just pure rust, leave infrastructure to the experts.
+Think Heroku, but with an actual free tier, or like Vercel for backends.
+No yaml, no terraform, just pure rust, if you need some infra, you can just have it.
+
+It's quite a impressive claim, let's try it out.
 
 ---
 
