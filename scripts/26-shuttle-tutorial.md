@@ -312,9 +312,8 @@ Here's a simple rocket.rs demo of shuttle persist.
 
 The persist struct that is passed in inside our MyState wrapper can load and save ANY serde serialisable struct trasparently. 
 
+Behind the scenes, shuttle have told me that this is implemented with a persistant docker volume attached to your project.
 This is a genius simple persistance option for when managing a database is overkill.
-
-- [ ] what does persist use behind the scenes
 
 Let's talk more about shuttle the service.
 
@@ -550,35 +549,83 @@ notes:
 
 
 notes:
-(some exclusive plans for the future)
+Shuttle's pace of development is extremely fast, and they have shared with me some extremely promising upcoming features.
+
+---
+
+# The road to Beta
+
+notes:
+Shuttle is currently still in Alpha, papercuts & stability issues, among other things, are somewhat expected. 
+They are planning to hit beta this summer with new features and a step towards being able to support production-ready apps .
 
 
-1.  **​Pricing** - we are actively working on a pricing model in the upcoming weeks (aligned with Beta). So the current state of things is that we have a very generous free tier and a per-use-case pricing depending on what the need is (also flexible and generous)
-2.  **Events** - we have a couple of events coming up such as a workshop that combines Next.js, Rust & interacting with GPT, a hackathon, etc.
+---
 
-What Shuttle will have soon that's worth mentioning**
+![[infra-from-code.gif]]
 
-1.  **​Console** - we will be releasing a console in the upcoming weeks which will allow users to visualize and manage their projects & resources (see which resources you have as part of your project, add additional resources via IfC, logs both project-based and resource-based, enhanced getting started experience, etc.). I've attached a showcase video below because it performed really well across all different channels where we dropped it (Reddit, HN, etc.)
-2.  **Going Beta** - since Shuttle is currently still in Alpha, papercuts & stability issues, among other things, are somewhat expected. We are planning to hit beta soon (this summer) with new features and a step towards being able to support production-ready apps (production use cases)
-3.  **Framework (Shuttle Next)** - further developments on the framework mentioned above
-4.  **Other (tbd)**
-5.  We have a "loose" roadmap for the rest of the year that covers things such as:
-6.  Horizontal Scaling
-7.  Backward Compatibility
-8.  Advanced Workload isolation
-9.  AWS Memcached Integration
-10.  Multiple Resources per Crate & Multi-service Networking
-11.  AWS Lambda Resource & Router Resource
-12.  S3 & CloudFront Resources
-13.  EBS Storage for Persistent Services
-14.  SSR Backend Integration
-15.  Event Producers & MSK Consumers
-16.  AWS MSK & RDS HA
-17.  Shuttle Own-Cloud Integration
-18.  (potential) SurrealDB support
-19.  (potential) Turso support
-20.  Feel free to pick what you consider most appealing to your audience.
+(mockup of Shuttle Console)
 
+notes:
+
+## Shuttle Console
+
+In the upcoming weeks Shuttle will be releasing a web console to allow you to visualise and manage projects and resources, logs, and so forth.
+
+This will expose the details that are already availble on the command line, but in an alternative way.
+
+You know I love the command line, but I also love options.
+
+
+---
+
+```rust[]
+shuttle_next::app! {
+    #[shuttle_next::endpoint(method = get, route = "/hello")]
+    async fn hello() -> &'static str {
+        "Hello, World!"
+    }
+}
+```
+
+https://docs.shuttle.rs/examples/shuttle-next
+
+notes:
+
+Shuttle-next is a batteries-included, WASM-based backend web-framework.
+Based on Axum and Hyper, but with the isolation and built-in containerisation of webassembly.
+
+Wasm is the lightest container format we have, and we're starting to see it used more and more on the server, as shuttle are doing here.
+
+Shuttle Next is available for alpha testing and feedback, at the moment the only resource available is an http stream to and from your project.
+
+---
+
+## The Rest!
+
+Roadmap: https://github.com/orgs/shuttle-hq/projects/4
+
+
+notes:
+
+shuttle have have a loose roadmap for the rest of the year they are working towards including:
+-  Horizontal Scaling
+-  AWS Memcached Integration
+-  Multi-service Networking
+-  AWS Lambda Resource 
+-  S3 & CloudFront Resources
+-  EBS Storage for Persistent Services
+
+
+---
+
+# Events
+
+notes:
+
+Shuttle have a couple of events coming up such as a workshop that combines Next.js, Rust & interacting with GPT, a hackathon, etc.
+
+- [ ] when are these events? how do people apply?
 
 ---
 
