@@ -129,32 +129,24 @@ There will be for shuttle, as shuttle even build binaries for my asahi linux run
 
 notes:
 
-- 10 minutes of building a simple axum/postgres app and pushing it up to shuttle  
-
-%%
-Getting started with Shuttle: [https://docs.shuttle.rs/introduction/quick-start](https://docs.shuttle.rs/introduction/quick-start)  
-Local run: [https://docs.shuttle.rs/introduction/local-run](https://docs.shuttle.rs/introduction/local-run)
-
-Axum & Static files example: [https://github.com/shuttle-hq/examples/tree/54e3617a528dc32e5b9a1fe8514fc4f57bd0a4a9/axum/static-files](https://github.com/shuttle-hq/examples/tree/54e3617a528dc32e5b9a1fe8514fc4f57bd0a4a9/axum/static-files)
-
-Shared database docs: [https://docs.shuttle.rs/resources/shuttle-shared-db](https://docs.shuttle.rs/resources/shuttle-shared-db) (Postgres)
-
-Static folder docs: [https://docs.shuttle.rs/resources/shuttle-static-folder](https://docs.shuttle.rs/resources/shuttle-static-folder)  
-%%
+Let's get a hello world working quickly.
 
 ---
 
 
 ```md
 ❯ cargo shuttle init
-How do you want to name your project? It will be hosted at ${project_name}.shuttleapp.rs.
+How do you want to name your project?
+It will be hosted at ${project_name}.shuttleapp.rs.
 ✔ Project name · shuttest3
 Where should we create this project?
 ✔ Directory · /home/oatman/projects
-Shuttle works with a range of web frameworks. Which one do you want to use?
+Shuttle works with a range of web frameworks.
+Which one do you want to use?
 · axum
-    Creating project "shuttest3" in "/home/oatman/projects"
-✔ Do you want to create the project environment on Shuttle? · yes
+    Creating project "shuttest3" in "~/projects"
+✔ Do you want to create the project on Shuttle?
+· yes
 
 project 'shuttest3' is ready
 ```
@@ -220,7 +212,7 @@ async fn axum() -> ShuttleAxum
 async fn axum(#[Postgres] pool: PgPool) -> ShuttleAxum
 ```
 
-(psudocode)
+(signature-valid psudocode)
 
 notes:
 
@@ -234,7 +226,7 @@ I'll demo you all the code in a moment, but I want to show you how easy it is to
 In the second codeblock, I've added a new param to the main function which is a sqlx pgPool struct.
 Normally we'd have to create this postgres pool ourselves, with a database uri or similar.
 
-The postgres annotation here builds this pool for us with sensible defaults. You can configure them, of course.
+The shuttle-provided postgres annotation here builds this pool for us with sensible defaults. You can configure them, of course.
 
 Now, either locally or when built on shuttle's servers, your code will be passed a valid connection pool, connected transparently in dev to a local shuttle-managed docker database.
 
@@ -251,16 +243,37 @@ Here's the output from `cargo shuttle run`, you can see the databases connected,
 
 ---
 
-# Mid-roll 30s break
+# Shuttle features
+
+notes:
+## Mid-roll 30s break
+
+(A mid-roll breakaway, perhaps 30s, explaining shuttle's offering  
+**What Shuttle has right now that's worth mentioning
+
+---
+
+```bash
+$ npx create-shuttle-app
+
+✔ What is your project named? … npx-shuttle-app
+✔ Use TypeScript with this project? … No / Yes
+✔ Use ESLint with this project? … No / Yes
+✔ Use `src/` directory with this project? … No / Yes
+✔ What import alias would you like configured? … @/*
+Creating a new Next.js app in ./npx-shuttle-app.
+
+$ npm run start  # start dev server
+$ npm run deploy # deploy to shuttle
+```
 
 notes:
 
-- A mid-roll breakaway, perhaps 30s, explaining shuttle's offering  
-**What Shuttle has right now that's worth mentioning
-
-1.  **create-shuttle-app** - 'create-shuttle-app' is an NPM package that, upon running the 'init' command, generates everything you need to deploy your first "full-stack" Next.js/Axum/Shuttle app (Diagram attached).
-    
-2.  **Shuttle Next** - [https://docs.shuttle.rs/examples/shuttle-next](https://docs.shuttle.rs/examples/shuttle-next) (experimental at this moment and limited)
+Run the `npx create-shuttle-app` command
+A new Shuttle Project gets initialized which contains:
+A new project with Shuttle, Axum and other dependencies installed, 
+a static folder with a Next.js app inside
+and all relevant code required to instantly deploy the full-stack app with `npm run deploy`, which uses cargo shuttle deploy behind the scenes.
 
 ---
 
