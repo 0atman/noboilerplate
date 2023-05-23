@@ -62,7 +62,7 @@ Rust is a very new language, existing CI and production pipelines are ill-suited
 
 Rust's type system is so powerful you can encode infrastructure inside it.
 
-Infrastructure from code, validated by your local rust compiler is possible, and it's a technique you can use today with shuttle.rs, who are both subject and sponsor of today's video.
+Infrastructure from code, validated by your local rust compiler is possible, and it's a technique you can use with shuttle.rs, who are both subject and sponsor of today's video.
 
 ---
 
@@ -120,8 +120,10 @@ notes:
 Assuming you've installed rust from rustup.rs, installing shuttle is easy, as there is a binary install for it.
 
 If you're not familiar with cargo-binstall, it is a wrapper around cargo install that checks github releases and a few other sensible places for pre-built binaries for your version and architecture.
+This cuts down install time to seconds.
+
 If there isn't a matching binary for your system, it falls back to compiling as normal.
-There will be for shuttle, as shuttle even build binaries for my asahi linux running on arm apple silicon.
+There will be for shuttle, as shuttle even build binaries for my weird setup: asahi linux running on arm apple silicon.
 
 ---
 
@@ -174,7 +176,7 @@ We'll make a simple Axum project today.
 
 Initial compilation, as always with Rust is slower, but subsequent builds are fast.
 
-2.5 minute initial and 40 seconds for subsequent builds I saw in my tests while making this video.
+2.5 minute initial and 40 seconds for subsequent deploys I saw in my tests while making this video.
 
 ---
 
@@ -268,10 +270,11 @@ $ npm run deploy # deploy to shuttle
 ```
 
 notes:
+Shuttle have created an quistart template, requiring just node and rust to be installed
 
-Run the `npx create-shuttle-app` command
-A new Shuttle Project gets initialized which contains:
-A new project with Shuttle, Axum and other dependencies installed, 
+You Run the `npx create-shuttle-app` command, and
+A new project gets initialized which contains:
+Shuttle, Axum and other dependencies installed, 
 a static folder with a Next.js app inside
 and all relevant code required to instantly deploy the full-stack app with `npm run deploy`, which uses cargo shuttle deploy behind the scenes.
 
@@ -291,7 +294,7 @@ notes:
 ## Supported and future databases
 
 There are three main databases Shuttle supports at time of recording.
-AWS integration, and two native shuttle methods, shareddb, and persist.
+AWS integration, and two native shuttle methods, shared db, and persist.
 Shared db uses a large database that shuttle provides for you, shared with other users.
 You get your own private section of the database, but the server is managed by shuttle.
 
@@ -342,7 +345,8 @@ notes:
 
 ## Github CTA
 
-Shuttle manage their development on github, and based on their response to an issue I filed, they're very responsive to contribution.
+Shuttle manage their development on github, and based on their response to an issue I filed while writing this video, they're very responsive to contribution.
+Do star the project on github, it really helps them out.
 
 ---
 
@@ -366,14 +370,9 @@ A Rust course written by Stefan Baumgartner
 https://www.shuttle.rs/launchpad
 
 notes:
-Master Rust easily with our engaging, tutorial-style lessons and real-world examples in our Launchpad newsletter.
+They are also just starting a education newsletter called Shuttle Launchpad. The main idea behind it is to provide users with bite-sized tutorials/guides/resources on their path to learning Rust Web.
 
-## Embark on your Rust learning journey with Shuttle Launchpad
-
-Master Rust easily with our engaging, tutorial-style lessons and real-world examples in our Launchpad newsletter.
-
-by Wed, we should already have setup a landing page where users can subscribe but in short; we are doing a education newsletter called Shuttle Launchpad. The main idea behind it is to provide users with bite-sized tutorials/guides/resources on their path to learning Rust Web.
-
+This is extremely new, so sign up if you'd like to learn more.
 
 ---
 
@@ -572,8 +571,7 @@ Shuttle's pace of development is extremely fast, and they have shared with me so
 
 notes:
 Shuttle is currently still in Alpha, papercuts & stability issues, among other things, are somewhat expected. 
-They are planning to hit beta this summer with new features and a step towards being able to support production-ready apps .
-
+They are planning to hit beta this summer with new features and a step towards being able to support production-ready apps.
 
 ---
 
@@ -585,7 +583,7 @@ notes:
 
 ## Shuttle Console
 
-In the upcoming weeks Shuttle will be releasing a web console to allow you to visualise and manage projects and resources, logs, and so forth.
+In a few weeks Shuttle plan to release a web console to allow you to visualise and manage projects, resources, logs, and so forth.
 
 This will expose the details that are already availble on the command line, but in an alternative way.
 
@@ -606,8 +604,9 @@ shuttle_next::app! {
 https://docs.shuttle.rs/examples/shuttle-next
 
 notes:
+Another extremely new project is Shuttle Next.
 
-Shuttle-next is a batteries-included, WASM-based backend web-framework.
+Next is a batteries-included, WASM-based backend web-framework.
 Based on Axum and Hyper, but with the isolation and built-in containerisation of webassembly.
 
 Wasm is the lightest container format we have, and we're starting to see it used more and more on the server, as shuttle are doing here.
@@ -623,12 +622,12 @@ Roadmap: https://github.com/orgs/shuttle-hq/projects/4
 
 notes:
 
-shuttle have have a loose roadmap for the rest of the year they are working towards including:
+shuttle's roadmap for the rest of the year contains:
 -  Horizontal Scaling
 -  AWS Memcached Integration
 -  Multi-service Networking
--  AWS Lambda Resource 
--  S3 & CloudFront Resources
+-  AWS Lambda 
+-  S3 & CloudFront 
 -  EBS Storage for Persistent Services
 
 
@@ -636,11 +635,17 @@ shuttle have have a loose roadmap for the rest of the year they are working towa
 
 # Events
 
+https://workshop.shuttle.rs
+
 notes:
 
-Shuttle have a couple of events coming up such as a workshop that combines Next.js, Rust & interacting with GPT, a hackathon, etc.
+Shuttle have a couple of events coming up such as a workshop that combines Next.js, Rust & interacting with GPT, a hackathon, and much more.
 
-- [ ] when are these events? how do people apply?
+Keep an eye on their website for future details!
+
+---
+
+%%7:32%%
 
 ---
 
