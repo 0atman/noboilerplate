@@ -19,6 +19,26 @@ edition = "2021"
 [dev-dependencies]
 
 [dependencies]
+axum = "0.6.10"
+axum-extra = { version = "0.4.2", features = ["spa"] }
+tower-http = { version = "0.4.0", features = ["fs"] }
+serde = "1.0.148"
+serde_json = "1.0.96"
+
+shuttle-axum = { version = "0.16.0" }
+shuttle-runtime = { version = "0.16.0" }
+shuttle-static-folder = "0.16.0"
+
+tokio = { version = "1.26.0" }
+[dependencies.sqlx]
+version = "0.6.2"
+features = [
+	"runtime-tokio-native-tls",
+	"postgres", 
+	"offline"] 
+[dependencies.shuttle-shared-db]
+version = "0.16.0"
+features = ["postgres"]
 ```
 
 # Lint Tweaks
@@ -36,8 +56,6 @@ edition = "2021"
 
 # Imports
 
-```rust
-```
 
 # Setup
 
@@ -62,7 +80,11 @@ Rust is a very new language, existing CI and production pipelines are ill-suited
 
 Rust's type system is so powerful you can encode infrastructure inside it.
 
-Infrastructure from code, validated by your local rust compiler is possible, and it's a technique you can use with shuttle.rs, who are both subject and sponsor of today's video.
+The dream of infrastructure from code, No yaml, no terraform, just pure rust, validated by your local compiler is possible, and it's a technique you can use with shuttle.rs, who are both subject and sponsor of today's video.
+
+---
+
+
 
 ---
 
@@ -228,11 +250,11 @@ I'll demo you all the code in a moment, but I want to show you how easy it is to
 In the second codeblock, I've added a new param to the main function which is a sqlx pgPool struct.
 Normally we'd have to create this postgres pool ourselves, with a database uri or similar.
 
-The shuttle-provided postgres annotation here builds this pool for us with sensible defaults. You can configure them, of course.
+The shuttle-provided postgres annotation here builds this pool for us with sensible defaults. 
 
 Now, either locally or when built on shuttle's servers, your code will be passed a valid connection pool, connected transparently in dev to a local shuttle-managed docker database.
 
-If you would like to manage your own dev database, you can configure it to do that too.
+If you would like to manage your own dev database, you can configure it to do that too, by passing in a `local_uri`
 
 ---
 
@@ -387,32 +409,6 @@ A hello world is all very well, but lets build something with persistance showin
 
 ---
 
-```toml
-axum = "0.6.10"
-axum-extra = { version = "0.4.2", features = ["spa"] }
-serde = "1.0.148"
-serde_json = "1.0.96"
-
-shuttle-axum = { version = "0.16.0" }
-shuttle-runtime = { version = "0.16.0" }
-shuttle-static-folder = "0.16.0"
-
-tokio = { version = "1.26.0" }
-```
-```toml
-[dependencies.sqlx]
-version = "0.6.2"
-features = [
-	"runtime-tokio-native-tls",
-	"postgres", 
-	"offline"] 
-[dependencies.shuttle-shared-db]
-version = "0.16.0"
-features = ["postgres"]
-```
-
----
-
 ```rust
 use serde::Serialize;
 use sqlx::FromRow;
@@ -426,35 +422,20 @@ struct Todo {
 
 
 notes:
-
 ## 'todo' Data model
 
----
+Step one as always is our data model.
+The full demo in shuttle's example projects supports both saving and loading todos, but we're just going to read from the db in this short example.
 
+Imagine we have a database full of these objects already.
 
-```rust
-use axum::extract::State;
-use sqlx::{PgPool, query_as};
-
-async fn todos(State(pool): State<PgPool>) -> String {
-    let todo = query_as!(Todo, "SELECT * FROM todos")
-        .fetch_all(&pool)
-        .await
-        .unwrap();
-    serde_json::to_string(&todo).unwrap()
-}
-```
-
-
-notes:
-
-## `todos` route
+Deriving from serialise and FromRow provide our ORM mapping using sqlx, powered by the great serde.
 
 ---
 
 ```rust
 use axum::{routing::get, Router};
-use axum_extra::routing::SpaRouter;
+use tower_http::services::{ServeFile, ServeDir};
 use std::path::PathBuf;
 use shuttle_shared_db::Postgres;
 use shuttle_static_folder::StaticFolder;
@@ -470,6 +451,8 @@ notes:
 
 ## Shuttle main annotations deep-dive
 
+Now lets look at the main function here.
+
 you can learn a lot about a rust function from it's signature.
 let's focus on that.
 
@@ -484,7 +467,7 @@ async fn axum(
 ```
 
 notes:
-This first line annotates the shuttle entrypoint, this macro expands differently depening on if it is built on your dev machine or shuttle's build system, handling the differences in environment.
+This first line annotates the shuttle entrypoint, this macro expands differently depending on if it is built on your dev machine or shuttle's build system, handling the differences in environment.
 
 
 ---
@@ -497,6 +480,11 @@ async fn axum(
 ) -> shuttle_axum::ShuttleAxum {
 ```
 
+notes:
+Next is shuttle's postgres pool, generated at compile-time by shuttle's Postgres macro annotation here.
+
+This sets up everything you need to supply the pool, using docker on your local machine, or connecting to a real database if build on shuttle.
+
 ---
 
 ```rust[4]
@@ -506,6 +494,13 @@ async fn axum(
     #[StaticFolder] static_folder: PathBuf,
 ) -> shuttle_axum::ShuttleAxum {
 ```
+
+notes:
+Next is a clever workaround for deployment differences.
+Serving static files is very different from how you might have experienced in other language, where we might have them served by a frontend like nginx or other proxy.
+This is less important in Rust, as it is not only possible but easy to get the same or better performance than these traditional frontends.
+
+Shuttle's StaticFolder annotation makes it just as easy to serve files in local development as on their server (where the folder structure may be very different)
 
 ---
 
@@ -517,22 +512,69 @@ async fn axum(
 ) -> shuttle_axum::ShuttleAxum {
 ```
 
+notes:
+
+Finally the Axum router can be converted into a shuttle object ready for serving. 
+
 ---
 
 ```rust
+
     let router = Router::new()
-        .route("/todos", get(todos))
-        .merge(SpaRouter::new(
-	        "/assets", static_folder)
-		        .index_file("index.html"))
+		.route("/todos", get(todos))
+		.nest_service("/", ServeDir::new("dist")
+			.not_found_service(
+				ServeFile::new("dist/index.html")),)
         .with_state(pool);
 
     Ok(router.into())
 }
 ```
 
+notes:
+
+Here is the body of the main function, setting up the axum router with two endpoints, our todos list, and static files inside a dist directory served from the root. 
+This could be where our frontend app, written in a javascript or webassembly framework could live.
+
 ---
 
+
+```rust
+use axum::extract::State;
+use sqlx::{PgPool, query_as};
+
+async fn todos(State(pool): State<PgPool>) -> String {
+    let todos = query_as!(Todo, "SELECT * FROM todos")
+        .fetch_all(&pool)
+        .await
+        .unwrap();
+    serde_json::to_string(&todos).unwrap()
+}
+```
+
+
+notes:
+## `todos` route
+
+Finally, here's our single controller function, this is the handler mounted at `/todos` in our little demo app.
+
+Because we've wired up shuttle's postgres pool into our app, every handler function is giving a state structt with our postgress pool inside.
+
+The handler returns a simple string representation of the todos in our database, if we wanted we could build a richer html representation or even json, to be consumed by a frontend.
+
+Note we are using sqlx's fantastic `query_as!()` macro to validate that sql query on our database AT COMPILE TIME.
+
+I've raved about how you can't get this real-world schema and query validation anywhere else in other videos, check them out for more details.
+
+What if you don't want to run a local dev database, or you're running in an environment, like ci or github actions, where the database isn't available?
+
+sqlx has an offline feature, which is LOVELY, let me show you how to use it:
+
+---
+
+```bash
+$ cargo sqlx prepare
+```
 
 ```json
 { // sql-data.json
@@ -611,7 +653,7 @@ Based on Axum and Hyper, but with the isolation and built-in containerisation of
 
 Wasm is the lightest container format we have, and we're starting to see it used more and more on the server, as shuttle are doing here.
 
-Shuttle Next is available for alpha testing and feedback, at the moment the only resource available is an http stream to and from your project.
+Shuttle Next is available for very pre-alpha testing and feedback, at the moment the only resource available is an http stream to and from your project.
 
 ---
 
@@ -624,7 +666,7 @@ notes:
 
 shuttle's roadmap for the rest of the year contains:
 -  Horizontal Scaling
--  AWS Memcached Integration
+-  Additional dbs, like Memcache, DynamoDB, Turso
 -  Multi-service Networking
 -  AWS Lambda 
 -  S3 & CloudFront 
@@ -635,17 +677,16 @@ shuttle's roadmap for the rest of the year contains:
 
 # Events
 
-https://workshop.shuttle.rs
+
+Next workshop 14th of June, sign up at https://workshop.shuttle.rs
 
 notes:
 
-Shuttle have a couple of events coming up such as a workshop that combines Next.js, Rust & interacting with GPT, a hackathon, and much more.
-
-Keep an eye on their website for future details!
+Shuttle have a couple of events coming up such as a workshop on the 14th of June that combines Next.js, Rust & interacting with GPT!
 
 ---
 
-%%7:32%%
+
 
 ---
 
