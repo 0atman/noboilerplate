@@ -64,9 +64,9 @@ features = ["postgres"]
 
 %%
 
-![[rust-logo.png]]
+![[shuttle-logo.png]]
 
-# Production RUST with shuttle.rs
+# Infrastructure from code
 
 notes:
 %%
@@ -78,13 +78,9 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 Rust is a very new language, existing CI and production pipelines are ill-suited to it, and don't take advantage of its superpowers.
 
-Rust's type system is so powerful you can encode infrastructure inside it.
+Rust's type system is so powerful you can encode your infrastructure inside it.
 
 The dream of infrastructure from code, No yaml, no terraform, just pure rust, validated by your local compiler is possible, and it's a technique you can use with shuttle.rs, who are both subject and sponsor of today's video.
-
----
-
-
 
 ---
 
@@ -100,8 +96,8 @@ Everything you see in this video from the script to the images are part of a mar
 # What is shuttle.rs?
 
 notes:
-
-Think Heroku, but with an actual free tier, or like Vercel for backends.
+Shuttle is a y-combinator-backed company that I first heard of last year on hackernews.
+I was impressed by what I saw: Think Heroku, but with an actual free tier, or like Vercel for backends.
 No yaml, no terraform, just pure rust, if you need some infra, you can just have it.
 
 It's quite a impressive claim, let's try it out.
@@ -145,7 +141,7 @@ If you're not familiar with cargo-binstall, it is a wrapper around cargo install
 This cuts down install time to seconds.
 
 If there isn't a matching binary for your system, it falls back to compiling as normal.
-There will be for shuttle, as shuttle even build binaries for my weird setup: asahi linux running on arm apple silicon.
+There will be for shuttle, as shuttle even build binaries for my weird setup: asahi linux running on apple silicon.
 
 ---
 
@@ -245,14 +241,15 @@ notes:
 Here is the signature of our main axum entrypoint that shuttle init created.
 The only change to vanilla axum is the return value, which uses the wrapped shuttle axum value for the axum router.
 
-I'll demo you all the code in a moment, but I want to show you how easy it is to request a database from shuttle.
+I'll demo you all the code in a moment, but I want to highlight how easy it is to request a database from shuttle.
 
 In the second codeblock, I've added a new param to the main function which is a sqlx pgPool struct.
-Normally we'd have to create this postgres pool ourselves, with a database uri or similar.
+Normally we'd have to create this postgres pool manually ourselves, with a database uri or similar.
 
 The shuttle-provided postgres annotation here builds this pool for us with sensible defaults. 
 
 Now, either locally or when built on shuttle's servers, your code will be passed a valid connection pool, connected transparently in dev to a local shuttle-managed docker database.
+you only need docker installed
 
 If you would like to manage your own dev database, you can configure it to do that too, by passing in a `local_uri`
 
@@ -272,33 +269,7 @@ Here's the output from `cargo shuttle run`, you can see the databases connected,
 notes:
 ## Mid-roll 30s break
 
-(A mid-roll breakaway, perhaps 30s, explaining shuttle's offering  
-**What Shuttle has right now that's worth mentioning
-
----
-
-```bash
-$ npx create-shuttle-app
-
-✔ What is your project named? … npx-shuttle-app
-✔ Use TypeScript with this project? … No / Yes
-✔ Use ESLint with this project? … No / Yes
-✔ Use `src/` directory with this project? … No / Yes
-✔ What import alias would you like configured? … @/*
-Creating a new Next.js app in ./npx-shuttle-app.
-
-$ npm run start  # start dev server
-$ npm run deploy # deploy to shuttle
-```
-
-notes:
-Shuttle have created an quistart template, requiring just node and rust to be installed
-
-You Run the `npx create-shuttle-app` command, and
-A new project gets initialized which contains:
-Shuttle, Axum and other dependencies installed, 
-a static folder with a Next.js app inside
-and all relevant code required to instantly deploy the full-stack app with `npm run deploy`, which uses cargo shuttle deploy behind the scenes.
+Let's talk about some of shuttle's impressive features.
 
 ---
 
@@ -355,6 +326,33 @@ The persist struct that is passed in inside our MyState wrapper can load and sav
 Behind the scenes, shuttle have told me that this is implemented with a persistant docker volume attached to your project.
 This is a genius simple persistance option for when managing a database is overkill.
 
+
+---
+
+```bash
+$ npx create-shuttle-app
+
+✔ What is your project named? … npx-shuttle-app
+✔ Use TypeScript with this project? … No / Yes
+✔ Use ESLint with this project? … No / Yes
+✔ Use `src/` directory with this project? … No / Yes
+✔ What import alias would you like configured? … @/*
+Creating a new Next.js app in ./npx-shuttle-app.
+
+$ npm run start  # start dev server
+$ npm run deploy # deploy to shuttle
+```
+
+notes:
+Shuttle have created an quistart template, requiring just node and rust to be installed for a full-stack app.
+
+You Run the `npx create-shuttle-app` command, and
+A new project gets initialized which contains:
+Shuttle, Axum and other dependencies installed, 
+a static folder with a Next.js app inside
+and all relevant code required to instantly deploy the full-stack app with `npm run deploy`, which uses cargo shuttle deploy behind the scenes.
+
+
 Let's talk more about shuttle the service.
 
 ---
@@ -367,7 +365,7 @@ notes:
 
 ## Github CTA
 
-Shuttle manage their development on github, and based on their response to an issue I filed while writing this video, they're very responsive to contribution.
+As you would hope, Shuttle manage their development on github, and based on their response to an issue I filed while writing this video, they're very responsive to contribution.
 Do star the project on github, it really helps them out.
 
 ---
@@ -405,7 +403,7 @@ Axum + DB + Static files demo
 
 notes:
 
-A hello world is all very well, but lets build something with persistance showing how to use the shuttle infrastructure from code principles.
+A hello world is all very well, but let's build something with persistance showing how to use the shuttle infrastructure from code principles.
 
 ---
 
@@ -425,21 +423,25 @@ notes:
 ## 'todo' Data model
 
 Step one as always is our data model.
-The full demo in shuttle's example projects supports both saving and loading todos, but we're just going to read from the db in this short example.
+The full demo in shuttle's example projects supports both saving and loading todos, but we're just going to read from the db in this short example today.
 
 Imagine we have a database full of these objects already.
 
-Deriving from serialise and FromRow provide our ORM mapping using sqlx, powered by the great serde.
+Deriving from Serialise and FromRow provide our ORM mapping using sqlx, powered by the great serde.
 
 ---
 
+%%
 ```rust
 use axum::{routing::get, Router};
 use tower_http::services::{ServeFile, ServeDir};
 use std::path::PathBuf;
 use shuttle_shared_db::Postgres;
 use shuttle_static_folder::StaticFolder;
+```
+%%
 
+```rust
 #[shuttle_runtime::main]
 async fn axum(
     #[Postgres] pool: PgPool,
@@ -467,7 +469,7 @@ async fn axum(
 ```
 
 notes:
-This first line annotates the shuttle entrypoint, this macro expands differently depending on if it is built on your dev machine or shuttle's build system, handling the differences in environment.
+This first line annotates the shuttle entrypoint, this macro expands differently depending on if it is built on your dev machine or shuttle's build system, handling the differences in environment transparently.
 
 
 ---
@@ -481,7 +483,7 @@ async fn axum(
 ```
 
 notes:
-Next is shuttle's postgres pool, generated at compile-time by shuttle's Postgres macro annotation here.
+Next is shuttle's postgres pool, generated at compile-time by shuttle's Postgres annotation here.
 
 This sets up everything you need to supply the pool, using docker on your local machine, or connecting to a real database if build on shuttle.
 
@@ -497,8 +499,10 @@ async fn axum(
 
 notes:
 Next is a clever workaround for deployment differences.
-Serving static files is very different from how you might have experienced in other language, where we might have them served by a frontend like nginx or other proxy.
-This is less important in Rust, as it is not only possible but easy to get the same or better performance than these traditional frontends.
+
+Serving static files is very different from how you might have experienced in other languages, where we might have them served by a frontend like nginx or another proxy.
+
+This is less important in Rust, as it is not only possible but easy to get the same or better performance than these traditional frontends with native rust.
 
 Shuttle's StaticFolder annotation makes it just as easy to serve files in local development as on their server (where the folder structure may be very different)
 
@@ -514,7 +518,7 @@ async fn axum(
 
 notes:
 
-Finally the Axum router can be converted into a shuttle object ready for serving. 
+Finally the Axum router is converted into a shuttle-compatibile struct ready for serving. 
 
 ---
 
@@ -534,7 +538,10 @@ Finally the Axum router can be converted into a shuttle object ready for serving
 notes:
 
 Here is the body of the main function, setting up the axum router with two endpoints, our todos list, and static files inside a dist directory served from the root. 
+
 This could be where our frontend app, written in a javascript or webassembly framework could live.
+
+Note the router.into() line, hooking into the From trait for the ShuttleAxum return value.
 
 ---
 
@@ -558,7 +565,8 @@ notes:
 
 Finally, here's our single controller function, this is the handler mounted at `/todos` in our little demo app.
 
-Because we've wired up shuttle's postgres pool into our app, every handler function is giving a state structt with our postgress pool inside.
+Because we've wired up shuttle's postgres pool into our app, every handler function is giving a state struct with our postgres pool inside.
+This is how state works in functional languages, the staet is passed from trunk to leaf, passing down the function tree.
 
 The handler returns a simple string representation of the todos in our database, if we wanted we could build a richer html representation or even json, to be consumed by a frontend.
 
@@ -566,7 +574,7 @@ Note we are using sqlx's fantastic `query_as!()` macro to validate that sql quer
 
 I've raved about how you can't get this real-world schema and query validation anywhere else in other videos, check them out for more details.
 
-What if you don't want to run a local dev database, or you're running in an environment, like ci or github actions, where the database isn't available?
+but What if you don't want to run a local dev database, or you're running in an environment, like ci or github actions, where the database isn't available?
 
 sqlx has an offline feature, which is LOVELY, let me show you how to use it:
 
@@ -596,8 +604,12 @@ $ cargo sqlx prepare
 (some keys missing)
 
 notes:
-
 ## sqlx offline demo
+
+Running `cargo sqlx prepare` builds this little json file that you check in to your project that contains the valid schema and queries of your database.
+If the file exists, sqlx transparently uses it instead of connecting to a db.
+
+You should always try to use a real db where possible, but this is a smart escape hatch!
 
 ---
 
@@ -605,7 +617,9 @@ notes:
 
 
 notes:
-Shuttle's pace of development is extremely fast, and they have shared with me some extremely promising upcoming features.
+I'll finish up with an exclusive look at the future of shuttle.
+
+Shuttle's pace of development is very fast, and they have shared with me some extremely promising upcoming features.
 
 ---
 
@@ -620,12 +634,13 @@ They are planning to hit beta this summer with new features and a step towards b
 ![[infra-from-code.gif]]
 
 (mockup of Shuttle Console)
+(will be animated in the final video)
 
 notes:
 
 ## Shuttle Console
 
-In a few weeks Shuttle plan to release a web console to allow you to visualise and manage projects, resources, logs, and so forth.
+In a few weeks Shuttle plan on releasing a web console to allow you to visualise and manage projects, resources, logs, and so forth.
 
 This will expose the details that are already availble on the command line, but in an alternative way.
 
@@ -636,7 +651,7 @@ You know I love the command line, but I also love options.
 
 ```rust[]
 shuttle_next::app! {
-    #[shuttle_next::endpoint(method = get, route = "/hello")]
+    #[shuttle_next::endpoint(method = get, route = "/")]
     async fn hello() -> &'static str {
         "Hello, World!"
     }
@@ -651,7 +666,7 @@ Another extremely new project is Shuttle Next.
 Next is a batteries-included, WASM-based backend web-framework.
 Based on Axum and Hyper, but with the isolation and built-in containerisation of webassembly.
 
-Wasm is the lightest container format we have, and we're starting to see it used more and more on the server, as shuttle are doing here.
+Wasm is the lightest container format we have, and we're starting to see it used more and more on the server, as shuttle are doing here, as a replacement for Docker.
 
 Shuttle Next is available for very pre-alpha testing and feedback, at the moment the only resource available is an http stream to and from your project.
 
@@ -659,7 +674,8 @@ Shuttle Next is available for very pre-alpha testing and feedback, at the moment
 
 ## The Rest!
 
-Roadmap: https://github.com/orgs/shuttle-hq/projects/4
+Roadmap:
+https://github.com/orgs/shuttle-hq/projects/4
 
 
 notes:
@@ -685,8 +701,12 @@ notes:
 Shuttle have a couple of events coming up such as a workshop on the 14th of June that combines Next.js, Rust & interacting with GPT!
 
 ---
+![[shuttle-logo.png|300]]
+# [shuttle.rs](https://www.shuttle.rs/)
 
-
+notes:
+Go check them out!
+My thanks to shuttle for their support of this channel.
 
 ---
 
