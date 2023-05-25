@@ -62,9 +62,13 @@ features = ["postgres"]
 ```rust
 ```
 
+
+
 %%
 
-![[shuttle-logo.png]]
+
+![[shuttle-logo-white.png]]
+
 
 # Infrastructure from code
 
@@ -93,7 +97,12 @@ Everything you see in this video from the script to the images are part of a mar
 
 ---
 
-# What is shuttle.rs?
+
+# What is
+
+![[shuttle-logo-white.png|500]]
+
+<h1>?</h1>
 
 notes:
 Shuttle is a y-combinator-backed company that I first heard of last year on hackernews.
@@ -117,7 +126,7 @@ To get up and running fast, we're going to follow the 5-part shuttle quickstart 
 $ cargo install cargo-binstall  # first get binstall
 ```
 ```bash
-$ cargo binstall cargo-shuttle  # then binstall shuttle!
+$ cargo binstall cargo-shuttle  # then binstall shuttle
 
  INFO resolve: Resolving package: 'cargo-shuttle'
  WARN The package cargo-shuttle v0.16.0 
@@ -154,6 +163,25 @@ Let's get a hello world working quickly.
 ---
 
 
+- axum
+- poise
+- poem
+- rocket
+- salvo
+- serenity
+- tide
+- thruster
+- tower
+- warp
+
+notes:
+
+At time of recording shuttle support
+{}
+frameworks.
+
+---
+
 ```md
 ❯ cargo shuttle init
 How do you want to name your project?
@@ -175,22 +203,10 @@ notes:
 
 ## Creating a new shuttle project
 
-Shuttle has a setup wizard to start a new template project so you can get to hello world with no code.
-
-At time of recording they support
-  - axum
-  - poise
-  - poem
-  - rocket
-  - salvo
-  - serenity
-  - tide
-  - thruster
-  - tower, and
-  - warp
-frameworks.
 
 We'll make a simple Axum project today.
+
+Shuttle has a setup wizard to start a new template project so you can get to hello world with no code.
 
 Initial compilation, as always with Rust is slower, but subsequent builds are fast.
 
@@ -198,26 +214,27 @@ Initial compilation, as always with Rust is slower, but subsequent builds are fa
 
 ---
 
-![[axum-shuttle-hello-world.png]]
+![[shuttle-test-axum-helloworld.png]]
 
 notes: 
 well that was easy.
-We've got a hello world with a self-signed ssl certificate up on the internet without any code so far.
+We've got a hello world with a lets encrypt ssl certificate up on the internet without any code so far.
 
 What ELSE can we do with shuttle?
 
 ---
 
-## Everything is Rust,
-## Rust is everything
+
+![[infra-from-code.gif]]
 
 > "Get a database by just asking for one in your Rust code."
-
-&mdash; shuttle.rs docs
 
 notes:
 
 Over at shuttle.rs they are not shy about their dedication to Rust which I love to see.
+Rust is different, that's the point.
+We need different CI tools.
+
 They say you can get a database by just by asking for one, let's see what that looks like.
 
 ---
@@ -232,7 +249,7 @@ async fn axum() -> ShuttleAxum
 async fn axum(#[Postgres] pool: PgPool) -> ShuttleAxum
 ```
 
-(signature-valid psudocode)
+(signature-valid pseudocode)
 
 notes:
 
@@ -256,11 +273,27 @@ If you would like to manage your own dev database, you can configure it to do th
 ---
 
 
-![[shuttle-run-output.png]]
+![[shuttle-run-db.png]]
 
 notes:
 
-Here's the output from `cargo shuttle run`, you can see the databases connected, extra plugins like the static plugin here, and then the output from the server log.
+Here's the output from `cargo shuttle run`, you can see the databases connected, 
+
+---
+
+![[shuttle-run-static.png]]
+
+notes:
+
+extra plugins like the static plugin here, 
+
+---
+
+![[shuttle-run-log.png]]
+
+notes:
+
+and then the output from the server log.
 
 ---
 
@@ -358,7 +391,6 @@ Let's talk more about shuttle the service.
 ---
 
 ![[shuttle-github-org.png]]
-
 https://github.com/shuttle-hq/shuttle
 
 notes:
@@ -674,9 +706,6 @@ Shuttle Next is available for very pre-alpha testing and feedback, at the moment
 
 ## The Rest!
 
-Roadmap:
-https://github.com/orgs/shuttle-hq/projects/4
-
 
 notes:
 
@@ -701,8 +730,9 @@ notes:
 Shuttle have a couple of events coming up such as a workshop on the 14th of June that combines Next.js, Rust & interacting with GPT!
 
 ---
-![[shuttle-logo.png|300]]
-# [shuttle.rs](https://www.shuttle.rs/)
+
+![[shuttle-logo-black.png]]
+
 
 notes:
 Go check them out!
