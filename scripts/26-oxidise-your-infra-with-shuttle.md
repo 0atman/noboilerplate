@@ -118,7 +118,7 @@ https://docs.shuttle.rs/introduction/quick-start
 
 notes:
 
-To get up and running fast, we're going to follow the 5-part shuttle quickstart in the first part of this video, logging in to shuttle using github, generating an api key, and deploying a hello world app.
+To get up and running fast, we're going to follow the 5-part shuttle quickstart in the first half of this video, logging in to shuttle using github, generating an api key, and deploying a hello world app.
 
 ---
 
@@ -210,7 +210,7 @@ Shuttle has a setup wizard to start a new template project so you can get to hel
 
 Initial compilation, as always with Rust is slower, but subsequent builds are fast.
 
-2.5 minute initial and 40 seconds for subsequent deploys I saw in my tests while making this video.
+2.5 minutes for initial and 40 seconds for subsequent deploys I saw in my tests while making this video.
 
 ---
 
@@ -377,7 +377,7 @@ $ npm run deploy # deploy to shuttle
 ```
 
 notes:
-Shuttle have created an quistart template, requiring just node and rust to be installed for a full-stack app.
+Shuttle have created an quickstart template, requiring just node and rust to be installed for a full-stack app.
 
 You Run the `npx create-shuttle-app` command, and
 A new project gets initialized which contains:
@@ -517,7 +517,7 @@ async fn axum(
 notes:
 Next is shuttle's postgres pool, generated at compile-time by shuttle's Postgres annotation here.
 
-This sets up everything you need to supply the pool, using docker on your local machine, or connecting to a real database if build on shuttle.
+This sets up everything you need to supply the pool, using docker on your local machine, or connecting to a real database if built on shuttle.
 
 ---
 
@@ -550,7 +550,7 @@ async fn axum(
 
 notes:
 
-Finally the Axum router is converted into a shuttle-compatibile struct ready for serving. 
+Finally the Axum router is converted into a shuttle-compatible struct ready for serving. 
 
 ---
 
@@ -598,11 +598,30 @@ notes:
 Finally, here's our single controller function, this is the handler mounted at `/todos` in our little demo app.
 
 Because we've wired up shuttle's postgres pool into our app, every handler function is giving a state struct with our postgres pool inside.
-This is how state works in functional languages, the staet is passed from trunk to leaf, passing down the function tree.
+This is how state works in functional languages, the state is passed from trunk to leaf, passing down the function tree.
 
 The handler returns a simple string representation of the todos in our database, if we wanted we could build a richer html representation or even json, to be consumed by a frontend.
 
-Note we are using sqlx's fantastic `query_as!()` macro to validate that sql query on our database AT COMPILE TIME.
+---
+
+
+
+```rust[5]
+use axum::extract::State;
+use sqlx::{PgPool, query_as};
+
+async fn todos(State(pool): State<PgPool>) -> String {
+    let todos = query_as!(Todo, "SELECT * FROM todos")
+        .fetch_all(&pool)
+        .await
+        .unwrap();
+    serde_json::to_string(&todos).unwrap()
+}
+```
+
+notes:
+
+Note we are using sqlx's fantastic `query_as!()` macro to validate that sql query on our actual database AT COMPILE TIME.
 
 I've raved about how you can't get this real-world schema and query validation anywhere else in other videos, check them out for more details.
 
@@ -639,7 +658,7 @@ notes:
 ## sqlx offline demo
 
 Running `cargo sqlx prepare` builds this little json file that you check in to your project that contains the valid schema and queries of your database.
-If the file exists, sqlx transparently uses it instead of connecting to a db.
+If the file exists, sqlx transparently uses it instead of connecting to the db.
 
 You should always try to use a real db where possible, but this is a smart escape hatch!
 
@@ -666,7 +685,6 @@ They are planning to hit beta this summer with new features and a step towards b
 ![[infra-from-code.gif]]
 
 (mockup of Shuttle Console)
-(will be animated in the final video)
 
 notes:
 
@@ -674,7 +692,7 @@ notes:
 
 In a few weeks Shuttle plan on releasing a web console to allow you to visualise and manage projects, resources, logs, and so forth.
 
-This will expose the details that are already availble on the command line, but in an alternative way.
+This will expose the details that are already available on the command line, but in an alternative way.
 
 You know I love the command line, but I also love options.
 
@@ -698,7 +716,7 @@ Another extremely new project is Shuttle Next.
 Next is a batteries-included, WASM-based backend web-framework.
 Based on Axum and Hyper, but with the isolation and built-in containerisation of webassembly.
 
-Wasm is the lightest container format we have, and we're starting to see it used more and more on the server, as shuttle are doing here, as a replacement for Docker.
+Wasm is the lightest container format we have, and we're starting to see it used more and more on the server, as shuttle are doing here, as a replacement for Docker and k8s.
 
 Shuttle Next is available for very pre-alpha testing and feedback, at the moment the only resource available is an http stream to and from your project.
 
@@ -735,11 +753,20 @@ Shuttle have a couple of events coming up such as a workshop on the 14th of June
 
 
 notes:
-Go check them out!
+Go check them out at shuttle.rs!
 My thanks to shuttle for their support of this channel.
 
 ---
 
+# Want a db?
+
+```rust[]
+async fn axum(#[Postgres] pool: PgPool) -> ShuttleAxum
+```
+
+# Just ask
+
+---
 ![[tri-hex-moon-white-transparent.png|300]]
 
 # Thank you
