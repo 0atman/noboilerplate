@@ -81,7 +81,7 @@ These are the policies for upholding our community’s rules and the code of con
 
 ### Reporting Guide
 
-Instances of behaviors that violate the Python Discord Code of Conduct or rules may be reported by any member of the community. Community members are encouraged to report these situations, including situations they witness involving other community members.
+Instances of behaviors that violate the NoBoilerplate Discord Code of Conduct or rules may be reported by any member of the community. Community members are encouraged to report these situations, including situations they witness involving other community members.
 
 You may report in the following ways:
 
