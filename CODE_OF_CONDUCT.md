@@ -74,7 +74,7 @@ The NoBoilerplate Code of Conduct applies equally to all members of the communit
 
 These are the policies for upholding our community’s rules and the code of conduct. If you want to report a situation that needs to be reviewed by our moderation team, please direct-message the Modmail bot on the NAMTAO Productions Discord.
 
-1.  The Code of Conduct and the Community Rules are enforced by the moderation team, which consists of users with the moderators role on the NoBoilerplate Discord server.
+1.  The Code of Conduct and the Community Rules are enforced by the moderation team, which consists of users with the `moderators` role on the NoBoilerplate Discord server.
 2.  Behavior that moderators find agains the spirit of this document, whether listed in the text or not, is also not allowed.
 3.  Complaints about moderation in-channel are not allowed. If a moderator takes an action or makes a decision you do not agree with, please send a Direct Message (DM) to Modmail.
 4.  If you disagree with a moderation action or decision taken against you, you may appeal the action or decision by following the Appeal Procedure below.
