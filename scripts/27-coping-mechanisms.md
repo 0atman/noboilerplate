@@ -6,11 +6,13 @@
 
 f7f7f7 background slide colour
 
+- [ ] title formatting
+
 %%
 
 ![[tri-hex-moon-white-transparent.png|300]]
 
-# Hacking your brain
+## Hacking your brain
 ### With elaborate coping mechanisms
 
 notes:
@@ -56,7 +58,7 @@ Also buy apple stock, don't sell those bitcoins in 2015, and you can break up wi
 
 ---
 
-# Declare bankruptcy on your memory
+# 1. Declare bankruptcy on your memory
 
 notes:
 
@@ -73,7 +75,7 @@ And I'll help you there.
 
 ---
 
-# Carry a notebook
+## 2. Carry a notebook
 ![[field-notes.png|700]]
 
 
@@ -103,7 +105,8 @@ This theory is called Active Externalism.
 
 ---
 
-# Calendars are GREAT
+# 3. Calendars
+# are GREAT
 
 notes:
 
@@ -120,7 +123,7 @@ If it can be done before the due date, it's a task, not an event.
 
 ---
 
-# Getting Things Done (GTD)
+# 4. Getting Things Done (GTD)
 
 notes:
 
@@ -136,7 +139,7 @@ Task systems that don't do this filtering create more undue distractions.
 ---
 
 
-# Carry earplugs
+# 5. Carry earplugs
 
 notes:
 
@@ -154,7 +157,17 @@ I've heard that wax ear plugs can get stuck in there, so don't use those, I like
 
 ---
 
-## In the face of ambiguity, refuse the temptation to guess
+
+## 6. In the face of ambiguity,
+## refuse the temptation
+## to guess
+
+
+```sh
+❯ python -c "import this" | grep ambiguity
+In the face of ambiguity, refuse the temptation to guess.
+```
+
 
 notes:
 
@@ -203,16 +216,13 @@ In addition to this no boilerplate video, I've put together 12 seasons so far of
 It's very reasonable for an AI to have difficulty understanding other people's emotions, or struggle with his own, and framing this as an AI challenge allows me to talk about autism in a safe environment.
 In later seasons, my research has allowed me to branch out into other mental health and LGBT issues too, all with the same AI lens.
 
-My work here on No Boilerplate is valuable, but I think my work on Lost Terminal is essential.
-
 I'd love for you to watch or listen to the first season, I've linked it here, and at the end of the video, or in the description.
-It's also at lostterminal.com, or on itunes, spotify, or anywhere you get your podcasts.
 
 back to the letter
 
 ---
 
-# Note-Taking Systems
+# 7. Use a Note-Taking System
 
 notes:
 
@@ -224,7 +234,8 @@ You can use a wiki for this, there are several available, but you can also use M
 
 ---
 
-# Plain Text lasts forever
+# 8. Plain Text
+# lasts forever
 
 notes:
 
@@ -241,7 +252,7 @@ My brain is stored in plain text, marked up with Markdown, inside Obsidian.
 
 ![[obsidian-hopepunk.png]]
 
-[obsidian.md](http://obsidian.md)
+[obsidian.md](http://obsidian.md) (not sponsored, other editors available)
 
 notes:
 
@@ -267,7 +278,7 @@ Don't. Open. Your. Browser.
 
 ---
 
-# Eat the frog
+# 9. Eat the frog
 
 notes:
 
@@ -288,8 +299,10 @@ Do the hardest thing first.
 
 ---
 
-# Build habits
+# 10. Build habits
 ## Then chain them together
+
+> wake → water → yoga → write → shower
 
 notes:
 
@@ -317,7 +330,7 @@ If you spend you time bouncing between 3 apps, you'll end the year with nothing.
 
 ---
 
-# Public speaking is important 
+# 11. Public speaking is important 
 
 notes:
 
@@ -335,7 +348,7 @@ Don't bother with persuasion or rhetoric, we're not here for that, we're here to
 Study, imitate and practice.
 
 ---
-
+# 12.
 # Imitate
 # imitate 
 # imitate
@@ -348,8 +361,7 @@ This works as well in a sprint planning meeting as it does on the dance floor.
 
 ---
 
-# Negative emotions are not 
-# very useful
+# 13. Negative emotions are not very useful
 
 notes:
 
@@ -370,6 +382,7 @@ You have to FOCUS.
 
 ---
 
+# 14.
 # _F o c u s_
 
 
@@ -383,7 +396,7 @@ There's an infinite amount of news available to read, use rss feeds, and filters
 
 
 
-# Just do a bit
+# 15. Just do a bit
 
 > You put one word after another until its done. It's that easy, and that hard.
 
@@ -399,7 +412,8 @@ I trick my brain into doing this with Timers.
 
 ---
 
-# Timers are GREAT
+# 16. Timers
+# are GREAT
 
 notes:
 
@@ -429,7 +443,7 @@ Would you believe me that these days I get up early and love it? No, probably I 
 ---
 
 
-# humanize organize mechanize
+# 17. humanize organize mechanize
 
 
 
@@ -457,7 +471,7 @@ In addition to waking up and drinking 500ml before breakfast, this little system
 
 ---
 
-
+# 18.
 ## One thing at a time
 ## most important thing first
 # Start now
