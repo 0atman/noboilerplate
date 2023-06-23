@@ -239,19 +239,24 @@ They say you can get a database by just by asking for one, let's see what that l
 
 ---
 
+# Ask for a DB
+
 ```rust[]
 #[shuttle_runtime::main]
 async fn axum() -> ShuttleAxum
 ```
+
+# Get a DB
 
 ```rust[]
 #[shuttle_runtime::main]
 async fn axum(#[Postgres] pool: PgPool) -> ShuttleAxum
 ```
 
+notes:
+
 (signature-valid pseudocode)
 
-notes:
 
 ## Introduction to "infrastructure from code"
 
