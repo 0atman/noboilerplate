@@ -222,7 +222,7 @@ Though we've got very far with astronvim, we're going to take it to the next lev
 ![[neovide.png]]
 
 notes:
-Neovide, a portamentu of Neovim and IDE, provides ligatures and font shaping, an animated cursor, smooth scrolling, animated windows, blurred floating windows, and most importantly, emoji support.
+Neovide, a portmanteau of Neovim and IDE, provides ligatures and font shaping, an animated cursor, smooth scrolling, animated windows, blurred floating windows, and most importantly, emoji support.
 
 It also can connect over a socket to a remote instance of nvim, handy for cloud use
 
