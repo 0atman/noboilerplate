@@ -68,7 +68,7 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 [github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
 notes:
-Everything you see in this video from the script to the images are part of a markdown document available on github under a public domain license.
+Everything you see in this video from the script to the images are part of a markdown document available on github under a public domain licence.
 
 ---
 
