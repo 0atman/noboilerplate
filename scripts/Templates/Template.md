@@ -85,7 +85,7 @@ notes:
 
 # OUTRO
 
-If you would like to support my channel, get early ad-free and tracking-free videos and vip discord access head to patreon.com/noboilerplate.
+If you would like to support my channel, get early ad-free and tracking-free videos, vip discord access or 1:1 mentoring, head to patreon.com/noboilerplate.
 
 If you're interested in transhumanism and hopepunk stories, please check out my sci-fi podcast, Lost Terminal.
 
