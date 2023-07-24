@@ -2,6 +2,16 @@
 
 We are committed to providing a friendly, safe and welcoming environment for all, regardless of level of experience, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, nationality, or other similar characteristic.
 
+### Our Goal
+
+The goal of this document is to set the overall tone for our community. This isn’t an exhaustive list of things you can and can't do. Rather, take this document in the spirit in which it’s intended, and try to be your best self.
+
+### Scope
+
+This Code of Conduct applies to all spaces managed by 0atman/Namta0/Tris. This includes, but is not limited to, the NAMTAO Productions Discord server, NoBoilerplate/LostTerminal/ModemPrometheus repositories on GitHub and the NoBoilerplate YouTube-channel. In addition, violations of this code outside these spaces may affect a person's ability to participate within them.
+
+The NoBoilerplate Code of Conduct applies equally to all members of the community, including staff.
+
 ## Rules
 
 1. Don't forget to be awesome.
@@ -23,6 +33,8 @@ The following ideologies or opinions are not welcome.
 - Racism
 - Homophobia
 - Transphobia
+- Climate Change Denial
+- Conspiracy Theories
 
 Talking about them from a outside perspective is allowed, for example discussing how to deal with Homophobic relatives.
 
@@ -31,42 +43,35 @@ Talking about them from a outside perspective is allowed, for example discussing
 This community is a safe space for the following:
 - LGBTQIA+
 - neurodivergent (ADHD, Autism, etc.)
+- Plural Systems
 
 ##### Examples of behavior that contributes to creating a positive environment include:
 
 -   Being kind and courteous to others
 -   Using welcoming and inclusive language
--   Being respectful of differing viewpoints and experiences
+-   Being respectful
+-   Assuming the best in others
 -   Collaborating with other community members
 -   Gracefully accepting constructive criticism
 -   Focusing on what is best for the community
 -   Showing empathy towards other community members
 -   Helping others understand you
 -   Using spoiler warnings
--   Using trigger warnings (for things like food, violence, queerphobia)
+-   Using trigger warnings (for things like food, violence, queerphobia, politics)
 
 ##### Examples of unacceptable behavior by participants include:
 
 -   The use of sexualized language or imagery and sexual attention or advances
--   The use of inappropriate images, including in a community member's avatar
--   The use of inappropriate language, including in a community member's nickname
+-   The use of highly inappropriate images, including in a community member's avatar
+-   The use of highly inappropriate language, including in a community member's nickname
 -   Any spamming, flaming, baiting or other attention-stealing behavior
--   Insulting/derogatory comments, and personal or political attacks
+-   Trolling, Insulting/derogatory comments, and personal or political attacks
 -   Public or private harassment
 -   Publishing others' private information, such as a physical or electronic address, without explicit permission
 -   Discussing topics that are overly polarizing, sensitive, or incite arguments outside of #the-forum threads.
--   Responding with “RTFM”, "just google it” or similar phrases in response to help requests.
+-   Responding with “RTFM”, "just google it” or similar phrases in response to help requests. Instead, explain how to find the result.
 -   Other conduct which could reasonably be considered inappropriate
 
-### Our Goal
-
-The goal of this document is to set the overall tone for our community. This isn’t an exhaustive list of things you can and can't do. Rather, take this document in the spirit in which it’s intended, and try to be your best self.
-
-### Scope
-
-This Code of Conduct applies to all spaces managed by 0atman/Namta0/Tris. This includes, but is not limited to, the NAMTAO Productions Discord server, NoBoilerplate/LostTerminal/ModemPrometheus repositories on GitHub and the NoBoilerplate YouTube-channel. In addition, violations of this code outside these spaces may affect a person's ability to participate within them.
-
-The NoBoilerplate Code of Conduct applies equally to all members of the community, including staff.
 
 ---
 
@@ -76,7 +81,7 @@ These are the policies for upholding our community’s rules and the code of con
 
 1.  The Code of Conduct and the Community Rules are enforced by the moderation team, which consists of users with the `moderators` role on the NoBoilerplate Discord server.
 2.  Behavior that moderators find against the spirit of this document, whether listed in the text or not, is also not allowed.
-3.  Complaints about moderation in-channel are not allowed. If a moderator takes an action or makes a decision you do not agree with, please send a Direct Message (DM) to Modmail.
+3.  Complaints about moderation in-channel are not allowed. If a moderator takes an action or makes a decision you do not agree with, please send a Direct Message (DM) to Modmail. If it affects multiple people, make a #the-forum thread.
 4.  If you disagree with a moderation action or decision taken against you, you may appeal the action or decision by following the Appeal Procedure below.
 
 ### Reporting Guide
@@ -86,7 +91,7 @@ Instances of behaviors that violate the NoBoilerplate Discord Code of Conduct or
 You may report in the following ways:
 
 -   By tagging the `@Moderators` role on the Discord server in situations that require immediate moderator attention.
--   By sending a direct message (DM) to ModMail from our Discord server.
+-   By sending a direct message (DM) to Modmail from our Discord server.
 
 ### Appeal Procedure
 
