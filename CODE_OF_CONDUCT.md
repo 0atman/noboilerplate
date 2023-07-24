@@ -8,7 +8,7 @@ The goal of this document is to set the overall tone for our community. This isn
 
 ### Scope
 
-This Code of Conduct applies to all spaces managed by 0atman/Namta0/Tris. This includes, but is not limited to, the NAMTAO Productions Discord server, NoBoilerplate/LostTerminal/ModemPrometheus repositories on GitHub and the NoBoilerplate YouTube-channel. In addition, violations of this code outside these spaces may affect a person's ability to participate within them.
+This Code of Conduct applies to all spaces managed by 0atman/NAMTAO/Tris. This includes, but is not limited to, the NAMTAO Productions Discord server, NoBoilerplate/LostTerminal/ModemPrometheus repositories on GitHub and the NoBoilerplate YouTube-channel. In addition, violations of this code outside these spaces may affect a person's ability to participate within them.
 
 The NoBoilerplate Code of Conduct applies equally to all members of the community, including staff.
 
@@ -40,7 +40,7 @@ Talking about them from a outside perspective is allowed, for example discussing
 
 ### Safe Space
 
-This community is a safe space for the following:
+This community is explicitly a safe space for the following people:
 - LGBTQIA+
 - neurodivergent (ADHD, Autism, etc.)
 - Plural Systems
