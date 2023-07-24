@@ -107,3 +107,14 @@ Please provide all relevant information in your appeal, including:
 -   The reason for your appeal.
 
 Appeals will be discussed internally with the moderation team, but will be kept confidential otherwise.
+
+---
+
+#### Attribution
+
+This Code of Conduct and parts of the policies are adapted from the [Adafruit Community Code of Conduct](https://github.com/adafruit/Adafruit_Community_Code_of_Conduct/blob/master/code-of-conduct.md), [Django Code of Conduct](https://www.djangoproject.com/conduct/), [Rust Code of Conduct](https://www.rust-lang.org/en-US/conduct.html) and the [Hachyderm Rule Explainer](https://community.hachyderm.io/docs/rule-explainer/).
+
+#### License
+![CC-BY](https://licensebuttons.net/l/by/3.0/88x31.png)
+
+All content on this page is licensed under a [Creative Commons Attribution-ShareAlike license](http://creativecommons.org/licenses/by-sa/3.0/) license.
