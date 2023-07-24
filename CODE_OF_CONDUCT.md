@@ -62,8 +62,8 @@ This community is explicitly a safe space for the following people:
 ##### Examples of unacceptable behavior by participants include:
 
 -   The use of sexualized language or imagery and sexual attention or advances
--   The use of highly inappropriate images, including in a community member's avatar
--   The use of highly inappropriate language, including in a community member's nickname
+-   The use of age-restricted or obscene images, including in a community member's avatar
+-   The use of age-restricted or obscene language, including in a community member's nickname
 -   Any spamming, flaming, baiting or other attention-stealing behavior
 -   Trolling, Insulting/derogatory comments, and personal or political attacks
 -   Public or private harassment
