@@ -97,7 +97,7 @@ You may report in the following ways:
 If you wish to appeal a decision or action taken by the moderation team, you can do so in one of the following ways:
 
 -   By sending a direct message (DM) to Modmail from our Discord server.
--   By creating a Issue on GitHub [//]: # (TODO: just this or a actual email address or something else? long term we need a way for users which were banned)
+-   By emailing contact@noboilerplate.org
 
 Please provide all relevant information in your appeal, including:
 
