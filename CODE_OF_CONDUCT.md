@@ -1,101 +1,120 @@
-# Citizen Code of Conduct
+# NoBoilerplate Discord Code of Conduct
 
-TLDR:
+We are committed to providing a friendly, safe and welcoming environment for all, regardless of level of experience, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, nationality, or other similar characteristic.
+
+### Our Goal
+
+The goal of this document is to set the overall tone for our community. This isn’t an exhaustive list of things you can and can't do. Rather, take this document in the spirit in which it’s intended, and try to be your best self.
+
+### Scope
+
+This Code of Conduct applies to all spaces managed by 0atman/NAMTAO/Tris. This includes, but is not limited to, the NAMTAO Productions Discord server, NoBoilerplate/LostTerminal/ModemPrometheus repositories on GitHub and the NoBoilerplate YouTube-channel. In addition, violations of this code outside these spaces may affect a person's ability to participate within them.
+
+The NoBoilerplate Code of Conduct applies equally to all members of the community, including staff.
+
+## Rules
+
 1. Don't forget to be awesome.
 2. Treat everyone with respect. Absolutely no harassment, witch hunting, sexism, racism or hate speech will be tolerated.
-3. No spam or unsolicited self-promotion (server invites, advertisements etc) without permission from a moderator. This includes DMing fellow members.
-4. If you see something against the rules or something that makes you feel unsafe, let me (@0atman) or a moderator know. I want this server to be a welcoming space!
-5. No age-restricted or obscene content . This includes text, images or links featuring nudity, sex, hard violence or other disturbing graphic content.
-6. Don't be a dick.
+3. No spam or unsolicited self-promotion (server invites, advertisements etc) without permission from a staff member. This includes DMing fellow members.
+4. If you see something against the rules or something that makes you feel unsafe, report it to Modmail.
+5. No age-restricted or obscene content (outside of the #mature-themes-lt channel). This includes text, images or links featuring nudity, sex, hard violence or other disturbing graphic content.
+6. Stay on topic: Please take heated argument with little chance of resolution (such as politics or emacs vs vim!) to a thread in #⁠the-forum.
+7. Don't be a dick.
 
-## 1. Purpose
+## Unwanted Opinions and Ideologies
+The following ideologies or opinions are not welcome.
 
-A primary goal of No Boilerplate is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof). The community is explicitly trans-folk welcoming.
-This code of conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behavior.
+- Fascism
+- Colonialism
+- White supremacy
+- Religious extremism
+- Nationalism
+- Racism
+- Homophobia
+- Transphobia
+- Climate Change Denial
+- Conspiracy Theories
 
-We invite all those who participate in No Boilerplate to help us create safe and positive experiences for everyone.
+Talking about them from a outside perspective is allowed, for example discussing how to deal with Homophobic relatives.
 
-## 2. Open [Source/Culture/Tech] Citizenship
+### Safe Space
 
-A supplemental goal of this Code of Conduct is to increase open [source/culture/tech] citizenship by encouraging participants to recognize and strengthen the relationships between our actions and their effects on our community.
+This community is explicitly a safe space for the following people:
+- LGBTQIA+
+- neurodivergent (ADHD, Autism, etc.)
+- Plural Systems
 
-Communities mirror the societies in which they exist and positive action is essential to counteract the many forms of inequality and abuses of power that exist in society.
+##### Examples of behavior that contributes to creating a positive environment include:
 
-If you see someone who is making an extra effort to ensure our community is welcoming, friendly, and encourages all participants to contribute to the fullest extent, we want to know.
+-   Being kind and courteous to others
+-   Using welcoming and inclusive language
+-   Being respectful
+-   Assuming the best in others
+-   Collaborating with other community members
+-   Gracefully accepting constructive criticism
+-   Focusing on what is best for the community
+-   Showing empathy towards other community members
+-   Helping others understand you
+-   Using spoiler warnings
+-   Using trigger warnings (for things like food, violence, queerphobia, politics)
 
-## 3. Expected Behavior
+##### Examples of unacceptable behavior by participants include:
 
-The following behaviors are expected and requested of all community members:
-
- * Participate in an authentic and active way. In doing so, you contribute to the health and longevity of this community.
- * Exercise consideration and respect in your speech and actions.
- * Attempt collaboration before conflict.
- * Refrain from demeaning, discriminatory, or harassing behavior and speech.
- * Be mindful of your surroundings and of your fellow participants. Alert community leaders if you notice a dangerous situation, someone in distress, or violations of this Code of Conduct, even if they seem inconsequential.
- * Remember that community event venues may be shared with members of the public; please be respectful to all patrons of these locations.
-
-## 4. Unacceptable Behavior
-
-The following behaviors are considered harassment and are unacceptable within our community:
-
- * Violence, threats of violence or violent language directed against another person.
- * Sexist, racist, homophobic, transphobic, ableist or otherwise discriminatory jokes and language.
- * Posting or displaying sexually explicit or violent material.
- * Posting or threatening to post other people's personally identifying information ("doxing").
- * Personal insults, particularly those related to gender, sexual orientation, race, religion, or disability.
- * Inappropriate photography or recording.
- * Inappropriate physical contact. You should have someone's consent before touching them.
- * Unwelcome sexual attention. This includes, sexualized comments or jokes; inappropriate touching, groping, and unwelcomed sexual advances.
- * Deliberate intimidation, stalking or following (online or in person).
- * Advocating for, or encouraging, any of the above behavior.
- * Sustained disruption of community events, including talks and presentations.
-
-## 5. Weapons Policy
-
-No weapons will be allowed at No Boilerplate events, community spaces, or in other spaces covered by the scope of this Code of Conduct. Weapons include but are not limited to guns, explosives (including fireworks), and large knives such as those used for hunting or display, as well as any other item used for the purpose of causing injury or harm to others. Anyone seen in possession of one of these items will be asked to leave immediately, and will only be allowed to return without the weapon. Community members are further expected to comply with all state and local laws on this matter.
-
-## 6. Consequences of Unacceptable Behavior
-
-Unacceptable behavior from any community member, including sponsors and those with decision-making authority, will not be tolerated.
-
-Anyone asked to stop unacceptable behavior is expected to comply immediately.
-
-If a community member engages in unacceptable behavior, the community organizers may take any action they deem appropriate, up to and including a temporary ban or permanent expulsion from the community without warning (and without refund in the case of a paid event).
-
-## 7. Reporting Guidelines
-
-If you are subject to or witness unacceptable behavior, or have any other concerns, please notify a community organizer as soon as possible. contact@noboilerplate.org.
+-   The use of sexualized language or imagery and sexual attention or advances
+-   The use of age-restricted or obscene images, including in a community member's avatar
+-   The use of age-restricted or obscene language, including in a community member's nickname
+-   Any spamming, flaming, baiting or other attention-stealing behavior
+-   Trolling, Insulting/derogatory comments, and personal or political attacks
+-   Public or private harassment
+-   Publishing others' private information, such as a physical or electronic address, without explicit permission
+-   Discussing topics that are overly polarizing, sensitive, or incite arguments outside of #the-forum threads.
+-   Responding with “RTFM”, "just google it” or similar phrases in response to help requests. Instead, explain how to find the result.
+-   Other conduct which could reasonably be considered inappropriate
 
 
+---
 
-Additionally, community organizers are available to help community members engage with local law enforcement or to otherwise help those experiencing unacceptable behavior feel safe. In the context of in-person events, organizers will also provide escorts as desired by the person experiencing distress.
+### Moderation Policy
 
-## 8. Addressing Grievances
+These are the policies for upholding our community’s rules and the code of conduct. If you want to report a situation that needs to be reviewed by our moderation team, please direct-message the Modmail bot on the NAMTAO Productions Discord.
 
-If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify  with a concise description of your grievance. Your grievance will be handled in accordance with our existing governing policies. 
+1.  The Code of Conduct and the Community Rules are enforced by the moderation team, which consists of users with the `moderators` role on the NoBoilerplate Discord server.
+2.  Behavior that moderators find against the spirit of this document, whether listed in the text or not, is also not allowed.
+3.  Complaints about moderation in-channel are not allowed. If a moderator takes an action or makes a decision you do not agree with, please send a Direct Message (DM) to Modmail. If it affects multiple people, make a #the-forum thread.
+4.  If you disagree with a moderation action or decision taken against you, you may appeal the action or decision by following the Appeal Procedure below.
 
+### Reporting Guide
 
+Instances of behaviors that violate the NoBoilerplate Discord Code of Conduct or rules may be reported by any member of the community. Community members are encouraged to report these situations, including situations they witness involving other community members.
 
-## 9. Scope
+You may report in the following ways:
 
-We expect all community participants (contributors, paid or otherwise; sponsors; and other guests) to abide by this Code of Conduct in all community venues--online and in-person--as well as in all one-on-one communications pertaining to community business.
+-   By tagging the `@Moderators` role on the Discord server in situations that require immediate moderator attention.
+-   By sending a direct message (DM) to Modmail from our Discord server.
 
-This code of conduct and its related procedures also applies to unacceptable behavior occurring outside the scope of community activities when such behavior has the potential to adversely affect the safety and well-being of community members.
+### Appeal Procedure
 
-## 10. Contact info
+If you wish to appeal a decision or action taken by the moderation team, you can do so in one of the following ways:
 
-contact@noboilerplate.org
+-   By sending a direct message (DM) to Modmail from our Discord server.
+-   By creating a Issue on GitHub [//]: # (TODO: just this or a actual email address or something else? long term we need a way for users which were banned)
 
-## 11. License and attribution
+Please provide all relevant information in your appeal, including:
 
-The Citizen Code of Conduct is distributed by [Stumptown Syndicate](http://stumptownsyndicate.org) under a [Creative Commons Attribution-ShareAlike license](http://creativecommons.org/licenses/by-sa/3.0/). 
+-   Your Discord username and id.
+-   The decision or action you are appealing.
+-   The reason for your appeal.
 
-Portions of text derived from the [Django Code of Conduct](https://www.djangoproject.com/conduct/) and the [Geek Feminism Anti-Harassment Policy](http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy).
+Appeals will be discussed internally with the moderation team, but will be kept confidential otherwise.
 
-_Revision 2.3. Posted 6 March 2017._
+---
 
-_Revision 2.2. Posted 4 February 2016._
+#### Attribution
 
-_Revision 2.1. Posted 23 June 2014._
+This Code of Conduct and parts of the policies are adapted from the [Adafruit Community Code of Conduct](https://github.com/adafruit/Adafruit_Community_Code_of_Conduct/blob/master/code-of-conduct.md), [Django Code of Conduct](https://www.djangoproject.com/conduct/), [Rust Code of Conduct](https://www.rust-lang.org/en-US/conduct.html) and the [Hachyderm Rule Explainer](https://community.hachyderm.io/docs/rule-explainer/).
 
-_Revision 2.0, adopted by the [Stumptown Syndicate](http://stumptownsyndicate.org) board on 10 January 2013. Posted 17 March 2013._
+#### License
+![CC-BY](https://licensebuttons.net/l/by/3.0/88x31.png)
+
+All content on this page is licensed under a [Creative Commons Attribution-ShareAlike license](http://creativecommons.org/licenses/by-sa/3.0/) license.
