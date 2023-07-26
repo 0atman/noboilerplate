@@ -40,7 +40,7 @@ Talking about them from a outside perspective is allowed, for example discussing
 
 ### Safe Space
 
-This community is a safe space for everyone, including but not limited to the following people:
+This community is explicitly a safe space for marginalised and under-represented groups of people such as:
 - LGBTQIA+
 - neurodivergent (ADHD, Autism, etc.)
 - Plural Systems
