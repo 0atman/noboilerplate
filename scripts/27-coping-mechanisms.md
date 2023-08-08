@@ -6,7 +6,7 @@
 
 f7f7f7 background slide colour
 
-- [ ] title formatting
+- [x] title formatting
 
 %%
 
