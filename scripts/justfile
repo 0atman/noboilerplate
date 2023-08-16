@@ -1,4 +1,4 @@
-video := "30-poem.md"
+video := "32-rust-is-written-in-rust.md"
 
 
 # Rebuild project when rs and toml files change
