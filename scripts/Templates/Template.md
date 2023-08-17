@@ -26,6 +26,7 @@ edition = "2021"
 ```rust
 #![allow(dead_code)]
 #![allow(unused_variables)]
+#![allow(clippy::items_after_statements)]
 ```
 
 # Extern Crates

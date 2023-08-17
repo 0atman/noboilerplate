@@ -26,6 +26,7 @@ edition = "2021"
 ```rust
 #![allow(dead_code)]
 #![allow(unused_variables)]
+#![allow(clippy::items_after_statements)]
 ```
 
 # Extern Crates
@@ -49,9 +50,11 @@ fn main() {
 
 %%
 
+![[rusty-logo.png|400]]
 
-![[rust-logo.png]]
-# RUST is made of Rust
+# RUST is Made
+
+# Out Of Rust
 
 notes:
 %%
@@ -61,12 +64,22 @@ notes:
 %%
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
-As you probably know, the Rust compiler is built in Rust.
-Same as the Go compiler is written in Go, and many other languages.
+---
 
-We call this feature self-hosting, when the compiler is written in the language it is compiling.
+# Rust Feels like it Can Do ANYTHING
 
-Rust of course is self-hosting, but unlike other languages, it goes much, much deeper.
+notes:
+
+Whatever you want to do, Rust seems to be able to do it.
+
+It's the most popular language to write webassembly in,
+it can compile down to native code without linking to any os libraries, so can be used to write firmware, or linux drivers.
+The borrow checker keeps you safe right through async multiprocessing, threads and channels.
+Rust works with very little modification in-browser, on chips, in containers, and wherever.
+
+It's supremely adaptable.
+Why is this?
+It's because Rust is made of Rust.
 
 ---
 
@@ -76,6 +89,29 @@ Rust of course is self-hosting, but unlike other languages, it goes much, much d
 
 notes:
 Everything you see in this video from the script to the images are part of a markdown document available on github under a public domain licence.
+
+---
+
+```toml[]
+[package]
+name = "rustc-main"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+rustc_driver = { path = "../rustc_driver" }
+rustc_driver_impl = { path = "../rustc_driver_impl" }
+rustc_codegen_ssa = { path = "../rustc_codegen_ssa" }
+rustc_smir = { path = "../rustc_smir" }
+```
+
+[rust-lang/rust/compiler/rustc/Cargo.toml](https://github.com/rust-lang/rust/blob/master/compiler/rustc/Cargo.toml)
+notes:
+
+As you probably know, the Rust compiler is built in Rust.
+Same as the Go compiler is written in Go, and many other languages.
+
+We call this feature self-hosting, when the compiler is written in the language it is compiling.
 
 ---
 
@@ -99,16 +135,15 @@ C or assembly are common bootstrapping languages, but with Rust it was OCaml.
 
 > At "OCaml Chipotle" you can have whatever you like...But once a month you go for lunch, and they'll refuse to make you a bowl, refuse to tell you why, and refuse to let you leave. And when you try to get help...you realize there's nobody nearby who you can ask.
 
-https://blog.darklang.com/first-thoughts-on-rust-vs-ocaml/
+[blog.darklang.com/first-thoughts-on-rust-vs-ocaml/](https://blog.darklang.com/first-thoughts-on-rust-vs-ocaml/)
 
 notes:
 
-OCaml by the way is a really excellent ML family language, and the influences on Rust are clear. I talk a lot about Rust being similar to Haskell, but really, they're ALL ML family languages.
+OCaml by the way is a really excellent ML family language, and the influences on Rust are clear. I talk a lot about Rust being similar to Haskell, but really, they're BOTH ML family languages.
 
 Rust is just hiding inside C's clothing to sneak into the popular kids party.
 
 A reminder that there are more Rust projects on github than Kotlin, Scala, and Swift.
-
 We're here because Rust isn't a fringe language, it's mainstream and is ready for use in your company TODAY.
 
 Let's compare Rust to Go.
@@ -119,12 +154,14 @@ Let's compare Rust to Go.
 
 notes:
 
-Go has an excellent garbage collector for automatically managing memory.
+The line between userland and compiler is important, as it represents what you can and can't change day-to-day.
+
+For instance, Go has an splendid garbage collector for automatically managing memory.
 But if you want more control, perhaps you need to operate in an environment where a garbage collector is not desirable, such as webassembly, you have no option but to bring all of the go runtime with you, because it is bound up in the compiler.
 
-In this specific case, there is a fork of the compiler, tinygo, that addresses some of these problems with working with go and webassembly.
+In this specific usecase, there is a fork of the compiler, tinygo, that addresses some of these problems with working with go and WebAssembly.
 
-But this graph isn't actually to scale, let me fix it.
+This graph isn't actually to scale, let me fix it.
 
 ---
 
@@ -132,11 +169,11 @@ But this graph isn't actually to scale, let me fix it.
 
 notes:
 
-Rust is both lower-level and higher-level than Go, and Java, and Python, and nearly all other popular language.
+Rust is both lower-level and higher-level than Go, and Java, and Python, and nearly all other popular languages.
 
-This is in large part thanks to the incredible lisp-grade macro system, and the unsafe system, that allows you to keep writing Rust when other languages have to reach for C.
+This is in large part thanks to the incredible lisp-grade macro system, and the unsafe system, that allows you to keep writing Rust when other languages have to reach for C, or build tools.
 
-Both these features deserve their own video, and I have made one already, look for my "turtles" video, pinned here.
+Both these features deserve their own videos, and I have made two already, watch my "turtles" video, pinned here, or my deep-dive into macros, my 'Witchcraft' video.
 
 Let's dig deeper and look at some actual examples of Rust's building blocks.
 
@@ -144,7 +181,7 @@ Let's dig deeper and look at some actual examples of Rust's building blocks.
 
 ## Options
 
-```rust
+```rust[]
 pub enum Option<T> {
     None,
     Some(T),
@@ -153,15 +190,19 @@ pub enum Option<T> {
 
 notes:
 
-Rust's option type is not a primative, there are almost no such things in Rust, it's built in Rust's sum type: Enums.
+Rust's option type is not a primitive, it's built in Rust's sum type: Enums.
 
-Sum types are a core piece of algebraic 
-- [ ] better name for sum types, algebraic aogorithm?
+Enum are a core component of Rust's rich type system.
+
+A fantastic, clear explainton of sum types is in this pinned video by Logan Smith by the way
+https://www.youtube.com/watch?v=s5S2Ed5T-dc
+
+Or you can watch my video "rust data modelling without classes"
 
 ---
 
 ```rust
-fn checked_division(dividend: i32, divisor: i32) -> Option<i32> {
+fn div(dividend: i32, divisor: i32) -> Option<i32> {
     if divisor == 0 {
         None
     } else {
@@ -169,20 +210,19 @@ fn checked_division(dividend: i32, divisor: i32) -> Option<i32> {
     }
 }
 fn try_division(dividend: i32, divisor: i32) {
-    match checked_division(dividend, divisor) {
-        None => println!("{} / {} failed!", dividend, divisor),
+    match div(dividend, divisor) {
+        None => println!("{dividend} / {divisor} fail"),
         Some(quotient) => {
-            println!("{} / {} = {}", dividend, divisor, quotient)
+            println!("{dividend}/{divisor}={quotient}");
         },
-    }jj
-}
+}}
 ```
 
 notes:
 
 Rust does not have the concept of Null, instead using options ubiquitously throughout the language.
 
-Nearly all other languages, oldstandards such as javascript, python, and java, and even recently-designed ones like Go and Kotlin, began with nulls, the billion dollar mistake, only to realise their error and attempt a retro-fit of options.
+Nearly all other languages, old standards such as javascript, python, and java, and even recently-designed ones like Go and Kotlin, began with nulls, the billion-dollar mistake, only to realise their error and attempt a retro-fit of options.
 
 This never works, and you can feel it in the ecosystem and even standard libraries of these languages.
 
@@ -201,14 +241,13 @@ pub enum Result<T, E> {
 
 notes:
 
-If you have sum types, rust enums, you can build enormous parts of your standard library with this simple structure.
+If you have sum types, rust enums, you can build enormous parts of your standard library with this simple structure instead of building it in to the plumbing of the compiler.
 
 Here is the result enum, rust's answer to error passing.
 
 ---
 
-
-```rust
+```rust[]
 let mut file = match File::open(&path) {
     Err(why) => panic!("can't open {path.display()}: {why}"),
     Ok(file) => file,
@@ -217,21 +256,23 @@ let mut file = match File::open(&path) {
 
 or
 
-```rust
+```rust[]
 let mut file = File::open(&path)?; // to return the Err
 ```
 
 notes:
-And it allows you, without an exception system, to handle errors safer and in a more obvious way than any language with exceptions, which often happen impicitly.
+And it allows you, without an exception system, to handle errors safer and in a more obvious way than any language with exceptions, which often happen implicitly.
 
-In Rust there are many ways to deal with the result type, should you call a falliable function.
-You can match on the error hand handle it comprehensively, or use the idomatic question-mark operator to early-return the result containing the error to the calling function.
+In Rust there are many ways to deal with the result type, should you call a fallible function.
+You can match on the error and handle it comprehensively, or use the idiomatic question-mark operator to early-return the result containing the error to the calling function.
 
 It's fantastic, yet entirely optional.
 
-If you want a different error handling system for your library, perhaps some esoteric bare-metal custom hardware, you don't need to use this system, you can write your own, using the same algebraic type system that the standard library authors did.
+If you want a different error handling system for your library, perhaps some esoteric bare-metal custom hardware, you don't need to use this system. you can write your own, using the same algebraic type system that the standard library authors did.
 
-We'll dig deeper after a word from today's sponsor, Quadratic.
+The rust authors didn't build an exception system in the compiler, they included the building blocks to build it using normal rust sum types.
+
+The effect of this accessibility is huge, and we'll dig deeper after a word from today's sponsor, Quadratic.
 
 ---
 
@@ -241,8 +282,9 @@ We'll dig deeper after a word from today's sponsor, Quadratic.
 
 notes:
 
-Quadratic are building an Open Source spreadsheet for engineers and data scientists, built in Rust, Webassembly and WebGL.
+# Quadratic Sponsor
 
+Quadratic are building an Open Source spreadsheet for engineers and data scientists, built in Rust, Webassembly and WebGL.
 
 ---
 
@@ -254,9 +296,7 @@ Quadratic combines the functional data visualisation of a spreadsheet with the p
 
 ---
 
-
 <!-- slide bg="rgb(37, 34, 43)" -->
-
 
 ![[quadratic-dataframe.png|700]]
 
@@ -287,14 +327,11 @@ Because all of python is running locally inside webassembly, complex work, such 
 
 ![[quadratic-fps.png|700]]
 
-
 notes:
 
 This is all running at 60fps on the gpu using webgl, all inside your browser.
 
-
 ---
-
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 
@@ -310,10 +347,9 @@ Quadratic built their infinite canvas on webgl, allowing for smooth scrolling an
 
 notes:
 
-They also have GPT integration, giving you a copilot or pair programmer while you're writing. 
+They also have GPT integration, giving you a copilot or pair programmer while you're writing.
 
 ---
-
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 
@@ -324,34 +360,26 @@ https://github.com/quadratichq/quadratic
 notes:
 
 it's open source and free to use.
-And I'm delighted to say they are hiring Rust developers.
+And I'm delighted to say they are hiring.
 
 ---
 
-
 <!-- slide bg="rgb(37, 34, 43)" -->
-# Hiring for
 
-<split even>
+# Open Positions
 
-![[rust-logo.png|100]]
+- Founding Software Engineer - Rust, WASM
+- Founding Software Engineer - React, Express
 
-![[WebGL_Logo.png]]
+<br/>
+More info:
 
-![[arrow-inverse.png|100]]
-
-![[scripts/attachments/WASM.png|90]]
-
-</split>
+### <https://careers.quadratichq.com>
 
 notes:
 
 Quadratic are looking for:
-- Rust developers
-- People with WebGL experience, even if that's only with JavaScript
-- People with Apache Arrow experience for processing Quadratic's high-performance datasets, and,
-- Senior engineers used to working at the pace of a startup.
-
+- Great Rust engineers who have experience at a Startup and leading software architecture and implementation.
 
 ---
 
@@ -361,11 +389,13 @@ Quadratic are looking for:
 
 The infinite canvas spreadsheet with code
 
-https://QuadraticHQ.com
+#### https://QuadraticHQ.com
+
+#### <https://careers.quadratichq.com>
 
 notes:
 
--   Signup today!
+-   Apply today, and
 -   Head to QuadraticHQ.com to try it out.
 
 My thanks to quadratic for their support of this channel.
@@ -373,7 +403,6 @@ My thanks to quadratic for their support of this channel.
 Let's dive a little deeper into Rust's Rust.
 
 ---
-
 
 ```rust
 fn destroy_box(b: Box<i32>) {
@@ -391,7 +420,9 @@ https://doc.rust-lang.org/rust-by-example/scope/move.html
 
 notes:
 
-Here is part of the move semantics from the excellent Rust By Example
+# Move Semantics
+
+Here is part of the move semantics example from the excellent book Rust By Example
 
 We create a 32-bit signed integer and allocate it on the heap.
 and then move it into the destroy_box function.
@@ -405,7 +436,7 @@ This all happens deterministically at compile time, rather than at runtime, as a
 ---
 
 ```rust
-fn move_demo() {
+fn move_demo2() {
     let a = Box::new(5i32);
     drop(a);
 }
@@ -413,11 +444,13 @@ fn move_demo() {
 
 notes:
 
-In production code, we can of course use std::mem::drop to do this, which has the same effect.
+# Drop Introduction
+
+In normal code, we can of course use std::mem::drop to do this, which has the same effect.
 
 In fact, it's deeper than that, it does exactly the same thing.
 
-Let's look at the definition of std::mem::drop:
+Let's look at the source of std::mem::drop:
 
 ---
 
@@ -429,19 +462,20 @@ pub fn drop<T>(_x: T) {}
 
 _THAT'S IT_
 
-
 notes:
+
+# Drop Code
+
 THAT'S IT. This isn't the function signature, this is the function. It has NO BODY.
 
-Drop is a function that takes any type of input parameter and just does nothing with it, meaning that when it finishes, immediately, the compiler cleans up the memory of whatever was passed in.
+Drop is a function that takes any type of input parameter and just does nothing with it, meaning that when it finishes, immediately, rust will clean up the memory of whatever was passed in.
 
 This function is not magic:
 
 Because `_x` is moved into the function, it is automatically dropped before the function returns.
+Using rust's normal move semantics.
 
 ---
-
-
 
 ## [std::convert::identity](https://doc.rust-lang.org/std/convert/fn.identity.html)
 
@@ -451,11 +485,65 @@ pub const fn identity<T>(x: T) -> T { x }
 
 notes:
 
+# Identity Code
+
 The identity function is almost the same as drop.
 It simply takes ownership of the input for a moment, then gives it back.
 
-Identity is a very useful function in functional code, map an iterator with identity and you get back the same iterator.
+Identity is a very useful function in functional code, map an iterator with identity, and you get back the same iterator.
 When functions are first class and can be passed around in lists and applied in sequence, you might need some of these to be "no-ops" depending on some logic. the identity function is that no-op.
+
+---
+
+## [std::mem::copy](https://doc.rust-lang.org/std/mem/fn.copy.html#)
+
+```rust
+pub const fn copy<T: Copy>(x: &T) -> T {
+    *x 
+}
+```
+
+notes:
+
+# Copy Code
+
+Copy is similar.
+The copy function just dereferences a copy type, creating a copy.
+
+Note that this is not a how the Copy Trait is implemented, this is a helper function in the standard library to explicitly name what is often implicitly used.
+
+---
+
+```rust[]
+pub enum Infallible {}
+
+
+fn t_1000() -> Infallible {
+	loop {
+		seek_humans();
+		kill_all_humans();
+	}
+}
+```
+
+notes:
+
+You might have seen Infallible used as a return value of a function that can never return.
+
+Useful for infinite loops or branches of your code that can never execute.
+
+---
+
+```typescript
+// Future plans
+pub type Infallible = !;
+```
+
+notes:
+
+At time of recording the never type, notated with a bang can be used for this in unstable rust.
+
+The future plans are for these two types to be unified, by the way with infallible being a type alias for never.
 
 ---
 
@@ -463,7 +551,11 @@ When functions are first class and can be passed around in lists and applied in 
 
 notes:
 
-'rewrite it in rust' is so prevalent because in rust the whole stack is in the same language, and often in the same project
+'rewrite it in rust' is so prevalent because in rust your whole stack can be in the same language, and often in the same project
+
+Instead of executing your web code inside a web server, the web server is a rust library to your application code.
+
+Instead of interfacing with frontend javascript, your frontend is written in Rust, executing faster than react or svelt inside the browser in webassembly.
 
 You don't have to learn a whole new language to tweak the backend, frontend, or even kernel code.
 
@@ -477,9 +569,9 @@ Though there are projects to do all these layers in other languages, micropython
 
 notes:
 
-React Native, especilaly is a great example of this.
+React Native, especially is a great example of this.
 
-Having built many production apps in React Native over the last few years of my career in industry, my lasting impression is that it's a horrible ecosystem full of nightmares saved by a single thing:
+Having built many production apps in React Native over the last few years of my career, my lasting impression is that it's a horrible ecosystem full of nightmares saved by a single thing:
 
 Web developers prefer to write javascript than java, or swift.
 
@@ -489,19 +581,22 @@ It's very clever, but hammering off the edges of the square peg to fit in this c
 
 Rust offers a more sane way.
 
-
 ---
 
----
-- farm to table
+# Rust is a Universal Language
 
+notes:
+I think this uniformity of the language helps with rust's universality.
 
+This universality means that with one language, you can do what previously you'd have to learn multiple languages to do:
 
-- - Rust being a universal language
-    - dont' have to learn C
-    - or javascript
-    - or even html
-    - or funny build tools
+- dont' have to learn C to write robotics firmware or linux kernel drivers
+- Or learn javascript to write interactive web apps
+- Or learn the latest hot html preprocessors
+- Or the flavour of the week for build tools
+
+Rust can do it all.
+And we can do it for the next 40 years.
 
 ---
 
