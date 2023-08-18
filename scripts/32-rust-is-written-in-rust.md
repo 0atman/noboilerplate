@@ -86,6 +86,12 @@ The rules of our universe are pre-set, and mathematicians DISCOVER them, not INV
 
 They're not something we've invented to explain the world, like quantum physics is, or string theory.
 
+---
+
+# `1 = 1`
+
+notes:
+
 These rules exist, in perfect form, out there.
 And what's true out there, is true here.
 
@@ -97,9 +103,9 @@ the machinery of the Rust language is built on the simple rules of functional pr
 
 Starting with good rules is a profound way to build a language.
 
-You don't have to write an error handling system in such a language.
+You don't have to invent an error handling system in such a language.
 
-You discover it.
+You can discover it.
 
 ---
 
@@ -153,7 +159,7 @@ The CPU can only solve problems sequentially, one instruction at a time (perhaps
 
 The language of mathematics and higher-order functions are enormously powerful tools that we're still discovering uses for in our field.
 
-Rust's built with the fabric of reality - both high-level and low level.
+Rust's built with real mathematics - both high-level and low level.
 
 And the language developers hid none of this from you.
 
@@ -217,7 +223,7 @@ Rust is just hiding inside C's clothing to sneak into the popular kids party.
 A reminder that there are more Rust projects on github than Kotlin, Scala, and Swift.
 We're here because Rust isn't a fringe language, despite it's very strange roots, it's mainstream and is ready for use in production TODAY.
 
-Let's compare Rust to the very similar language Go.
+Let's compare Rust to another popular language, Go.
 
 ---
 
@@ -242,7 +248,7 @@ notes:
 
 Rust is both lower-level and higher-level than Go, and Java, and Python, and nearly all other popular languages.
 
-This is in large part thanks to the incredible lisp style macro system coupled with the unsafe system, that allows you to keep writing Rust when other languages have to reach for C, or build tools.
+This is in large part thanks to the incredible macro system, which is as powerful as it is in lisp, coupled with the unsafe system, that allows you to keep writing Rust when other languages have to reach for C, or build tools.
 
 Both these features deserve their own videos, and I have made two already, watch my "turtles" video, pinned here, or my deep-dive into macros, my 'Witchcraft' video.
 
@@ -459,7 +465,7 @@ Nearly all other languages, old standards such as javascript, python, and java, 
 
 This never works, and you can feel it in the ecosystem and even standard libraries of these languages.
 
-The Rust universe, just like the mathematical universe doesn't have the human concept of nulls.
+The Rust universe, just like the mathematical universe doesn't have the human concept of nulls, an exception to the type system.
 
 ---
 
