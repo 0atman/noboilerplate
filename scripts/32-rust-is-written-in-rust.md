@@ -80,17 +80,17 @@ What is maths based on?
 
 Unlike the rest of the human world, where physicists are building on mathematics, chemists are building on physics, biologists are building on chemistry and so on, Maths is the floor of the abstraction.
 
-Maths is based on the immutable rules of the universe.
-
-The rules of our universe are pre-set, and mathematicians DISCOVER them, not INVENT them.
-
-They're not something we've invented to explain the world, like quantum physics is, or string theory.
-
 ---
 
 # `1 = 1`
 
 notes:
+
+Maths is based on Axioms, fundamental self-evident rules.
+
+The rules of our universe are pre-set, and mathematicians DISCOVER them, not INVENT them.
+
+They're not something we've invented to explain the world, like quantum physics is, or string theory.
 
 These rules exist, in perfect form, out there.
 And what's true out there, is true here.
@@ -128,17 +128,15 @@ Computers exist.
 
 This is a brave take, and I understand that many of you may disagree with me.
 
-Rust acknowledges these truthes:
+Rust acknowledges these truths:
 
 - The CPU exists, and is fallible,
 - memory and therefore pointers exists,
 - and you can't always get what you want.
 
-Purely high-level languages assume the underlying computer is some perfect godlike machine that never fails and can be abstracted perfectly.
+Purely high-level languages assume the underlying computer is a perfect machine that never fails and can be abstracted perfectly.
 
-They're so confident of this that they abstract the real machine out of the control of the developer.
-
-Don't worry about pointers, they say, your language is keeping you safe.
+They then build on this assumption, and abstract the real machine out of the control of the developer.
 
 The Rust developers understand that computers exist. But we're not C developers.
 
@@ -165,7 +163,7 @@ And the language developers hid none of this from you.
 
 You may use it all, without compromising safety and ergonomics.
 
-To show this, let me talk about the compiler/userland split.
+To show this, let me talk first about the compiler/userland split.
 
 ---
 
@@ -221,7 +219,8 @@ OCaml is a high level ML family language, and the influences on Rust are clear. 
 Rust is just hiding inside C's clothing to sneak into the popular kids party.
 
 A reminder that there are more Rust projects on github than Kotlin, Scala, and Swift.
-We're here because Rust isn't a fringe language, despite it's very strange roots, it's mainstream and is ready for use in production TODAY.
+
+We're here today because Rust isn't a fringe language, despite it's very strange roots, it's mainstream and is ready for use in production TODAY.
 
 Let's compare Rust to another popular language, Go.
 
@@ -308,7 +307,7 @@ notes:
 
 # Quadratic Sponsor
 
-Quadratic are building an Open Source spreadsheet for engineers and data scientists, built in Rust, Webassembly and WebGL.
+Quadratic are building spreadsheet for engineers and data scientists, built in Rust, Webassembly and WebGL.
 
 ---
 
@@ -412,7 +411,7 @@ notes:
 
 My thanks to quadratic for their support of this channel.
 
-Back to our archaeological dig.
+Back to our rust discoveries.
 
 ---
 
@@ -433,10 +432,7 @@ Enums are a core component of Rust's rich type system.
 
 You or I could build our own, should we wish to.
 
-A fantastic, clear explanation of sum types is in this pinned video by Logan Smith by the way
-https://www.youtube.com/watch?v=s5S2Ed5T-dc
-
-And for practical examples of using enums, you can watch my video "rust data modelling without classes"
+for practical examples of using enums, you can watch my video "rust data modelling without classes"
 
 ---
 
@@ -628,6 +624,88 @@ We're discovering that by using the rules set out in the language, there are alm
 
 ---
 
+## Structs
+
+```rust
+struct Color {
+    r: bool,
+    g: bool,
+    b: bool,
+}
+
+let black   = Color { r: false, g: false, b: false }; 
+let blue    = Color { r: false, g: false, b: true  }; 
+let green   = Color { r: false, g: true,  b: false }; 
+let cyan    = Color { r: false, g: true,  b: true  }; 
+let red     = Color { r: true,  g: false, b: false }; 
+let magenta = Color { r: true,  g: false, b: true  }; 
+let yellow  = Color { r: true,  g: true,  b: false };
+let white   = Color { r: true,  g: true,  b: true  }; 
+```
+
+#### A Color Has 2 * 2 * 2 = 8 States
+
+notes:
+
+Structs and tuples are product types. The possible combinations you can make out of them is the product of the possible combinations of each individual field.
+
+a bool has 2 possible states: true and false
+a Color has 2 * 2 * 2 = 8 possible states, the product of the possible states of all its fields
+
+---
+
+## Enums
+
+```rust
+enum Cup {
+    Plastic(Color),
+    CompostablePlastic(Color),
+    Glass, // no color, transparent glass
+}
+```
+
+#### A Cup Has 8 + 8 + 1 = 17 States
+
+notes:
+
+Enums are sum types. The possible combinations you can make out of them is the sum of the possible combinations of each individual variant.
+
+a reminder that a Color has 8 possible states
+
+a Cup has 8 + 8 + 1 possible states: either it's one of the possible states of Cup::Plastic, or
+one of the possible states of Cup::CompostablePlastic, or it's Cup::Glass which is only one state
+
+---
+
+### Struct (product type)
+
+```rust
+struct Unit;
+
+let my_unit = Unit;
+```
+
+### Enum (sum type)
+
+```rust[]
+enum Infallible {}
+
+// compile error, no varients = can't instantiate
+let impossible = Infallible::no_varients_found;
+```
+
+notes:
+
+A struct with no fields, like the unit struct, is therefore the no-op of products, which is 1. There is exactly 1 way to instantiate a struct with no fields, which makes sense.
+
+An enum with no variants is therefore the no-op of sums, which is 0. There are exactly 0 ways to instantiate an enum with no variants.
+
+Unit is a struct with only one way to instantiate it, and Infallible is an enum with NO ways to instantiate it.
+
+Credit: Speykious on discord
+
+---
+
 ## [std::convert::Infallible](https://doc.rust-lang.org/std/convert/enum.Infallible.html)
 
 ```rust[]
@@ -647,7 +725,7 @@ notes:
 
 You might have seen Infallible used as a return value of a function that can never return.
 
-Useful for infinite loops or branches of your code that can never execute.
+Useful for infinite loops or branches of your code that can never finish.
 
 ---
 
@@ -682,38 +760,6 @@ Credit: Speykious on discord
 
 ---
 
-### Struct (product type)
-
-```rust
-struct Unit;
-
-let my_unit = Unit;
-```
-
-### Enum (sum type)
-
-```rust[]
-enum Infallible {}
-
-// compile error, no varients = can't instantiate
-let impossible = Infallible::no_varients_found;
-```
-
-notes:
-
-Structs and tuples are product types. The possible combinations you can make out of them is the product of the possible combinations of each individual field.
-A struct with no fields, like this unit struct, is therefore the no-op of products, which is 1. There is exactly 1 way to instantiate a struct with no fields, which makes sense.
-
-Enums are sum types. The possible combinations you can make out of them is the sum of the possible combinations of each individual variant.
-
-An enum with no variants is therefore the no-op of sums, which is 0. There are exactly 0 ways to instantiate an enum with no variants.
-
-Unit is a struct with only one way to instantiate it, and Infallible is an enum with NO ways to instantiate it.
-
-Credit: Speykious on discord
-
----
-
 # Conclusion
 
 ## What Does This MEAN IRL?
@@ -724,23 +770,7 @@ notes:
 
 What does this mean for our actual programming in real life?
 
-'rewrite it in rust' is so prevalent because rust's choices of low-level control and high-level ergonomics are applicable to any application.
-
----
-
-![[32-rust-is-written-in-rust 2023-08-15 14.57.37.excalidraw]]
-
-notes:
-
-The Rust language is so flexible that instead of executing your web code inside a web server, the web server is a rust library to your application code.
-
-Instead of interfacing with frontend javascript, your frontend is written in Rust, executing faster than react or svelt inside the browser in webassembly.
-
-You don't have to learn a whole new language to tweak the backend, frontend, or even kernel code.
-
-It's all here, ready for improvement.
-
-Though there are projects to do all these layers in other languages, micropython for instance, or react native, these projects always have the feeling of hammering a square peg into a circular hole.
+'rewrite it in rust' is so prevalent because rust's choices of low-level control and high-level ergonomics are wildly useful to any application.
 
 ---
 
@@ -788,3 +818,8 @@ Thank you so much for watching, talk to you on Discord.
   println!("That's all folks!");
 } 
 ```
+
+---
+
+![[compass-logo-transparent-2.png|500]]
+# Rust's Discoveries
