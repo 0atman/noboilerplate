@@ -64,12 +64,14 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 ---
 
-# Public Domain Videos
+![[cc-logo.png]]
 
-[github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
+## Public Domain Videos
+
+[https://github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
 notes:
-Everything you see in this video from the script to the images are part of a markdown document available on github under a public domain licence.
+Everything you see in this video: script, references, and images are part of a markdown document available freely on github under a public domain licence.
 
 ---
 
@@ -79,7 +81,8 @@ Everything you see in this video from the script to the images are part of a mar
 
 ![[tri-hex-moon-white-transparent.png|300]]
 
-# Thank you
+# Thank You
+
 ## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
 
 notes:
@@ -88,9 +91,9 @@ notes:
 
 If you would like to support my channel, get early ad-free and tracking-free videos, vip discord access or 1:1 mentoring, head to patreon.com/noboilerplate.
 
-If you're interested in transhumanism and hopepunk stories, please check out my sci-fi podcast, Lost Terminal.
+If you're interested in transhumanism and hopepunk stories, please check out my weekly sci-fi podcast, Lost Terminal.
 
-Or if urban fantasy is more your bag, do listen to a strange and beautiful podcast I produce called Modem Prometheus.
+Or if urban fantasy is more your bag, do listen to a strange and beautiful podcast I produce every full moon called Modem Prometheus.
 
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
