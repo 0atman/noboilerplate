@@ -213,7 +213,7 @@ notes:
 
 This is the principle that NANOWRIMO encourages its writers with.
 
-Write 1600 words every single day in November, and by October you will have a novel's worth of raw material.
+Write 1600 words every single day in November, and by December you will have a novel's worth of raw material.
 
 It might be good or it might be bad, but you will have brought out your creativity into the world, and can start editing, or start the next thing.
 
