@@ -91,6 +91,7 @@ notes:
 
 # Tie Yourself to the Mast
 
+%%pron. oh diss e us%%
 In the Odyssey, Odysseus (confusingly called Ulysses in English literature) had to travel through siren-infested waters.
 
 This was a well-understood problem in his world.
@@ -118,7 +119,7 @@ In the future, you, or your successor, or your team might well be tempted to try
 
 While it might be good for a while, the act of changing tools constantly is an enormous overhead for your team, and one that gives the lasting impression that anything we write is likely to be legacy very soon, trapped in a deprecated app that "we just don't use any more", so why bother writing anything down.
 
-Tieng yourself to the mast by standardising on one tool, and not only that, but a plain text tool, means your data will live forever, and the network effect can make it more and more valuable over time, instead of less and less.
+Tying yourself to the mast by standardising on one tool, and not only that, but a plain text tool, means your data will live forever, and the network effect can make it more and more valuable over time, instead of less and less.
 
 ---
 
@@ -161,8 +162,9 @@ The solution is documentation.
 # Documentation-First Teams
 
 notes:
-Everyone understands this, from 10,000-page government specifications to an email sign-off from the client you're making a 3-minute track for.
 Communication is most reliable when it is in black and white.
+
+Everyone understands this, from 10,000-page government specifications to an email sign-off from the client you're making a 3-minute track for.
 
 Yes, have more immediate conversations, by video, or chat, but write down what you concluded, and get the other person to confirm it.
 
@@ -203,7 +205,7 @@ notes:
 These apps all re-invent the wheel in their own way, and new ones are being released every week.
 I've used most of them, perhaps you have too, and they're all rubbish.
 
-But there is a group of people who are extremely practiced at managing enormous distributed, concurrent, text projects:
+But there is a group of people who are extremely practised at managing enormous distributed, concurrent, text projects:
 
 *Programmers!*
 
@@ -238,14 +240,14 @@ You'll use this through one of the many git web hosts, the largest of which is G
 
 notes:
 
-Though I mention GitHub primarily in this video, I'm not sponsored by them, I just acknowledge that popularity matters.
+Though I mention GitHub primarily in this video, I'm not sponsored by them, or anything like that, I just acknowledge that popularity matters.
 Support, experience, and integrations with other services will all be far, far easier if you use the standard.
 
 All these tools started as a web interface around the incredible tool: Git.
 
 ---
 
-## Aside
+## Aside:
 
 # Linux & Git
 
@@ -261,7 +263,7 @@ He jokes that he named his first project, Linux, after himself, and so it was na
 notes:
 From simple code-hosting beginnings, these git services have grown to be so much more than that, trusted by the largest projects in the world, built by the largest companies in the world.
 
-The foundation of my ideal dev team uses the raw materials that GitHub has given us.
+The foundation of my ideal team uses the raw materials that GitHub has given us.
 
 What are the raw materials?
 
@@ -303,7 +305,7 @@ Organisational tools like the Wiki (for documentation), Projects (for project ma
 ## Wikis
 
 notes:
-Each GitHub repository has a wiki, a folder of linked markdown files that anyone with access can edit, either in the friendly web editor, or, using git, on their own computer with whatever editor they like.
+Each GitHub repository has a wiki, a folder of linked markdown files that anyone with access can edit, either in the friendly web editor, or, by cloning the wiki with git, on their own computer with whatever editor they like.
 
 This is the minimum viable documentation tool, and it's useful for when git's full collaboration system isn't needed, and you just want to throw some linked markdown files together quickly.
 
@@ -348,7 +350,6 @@ Including my favourite tool here, Obsidian.
 
 Markdown keeps your team focussed on what is important by allowing you just enough formatting, but no rich customisation options.
 You're not making a beautiful client brochure, so you shouldn't use 90s desktop publishing tools to make your company's critical documentation.
-Should you?
 
 Back to GitHub's features:
 
@@ -402,7 +403,7 @@ This bare-bones tool completely side-steps 'the JIRA effect', which is if you ha
 
 ---
 
-## Aside
+## Aside:
 
 # Standups Are Great
 
@@ -422,7 +423,7 @@ If you don't have an issue on the board, you don't speak yet. Perhaps you could 
 At the end, the team member who is facilitating the meeting asks if anyone has any blockers, and we're done.
 
 The most important part of this most important meeting is asking if you have any blockers.
-A good standup means that no-one can be delayed by more than 24 hours.
+A good standup means that no-one can get lost or delayed by more than 24 hours.
 
 Note I didn't say the PM or DM or scrum master or whoever facilitates.
 That person doesn't exist in my team.
@@ -462,6 +463,8 @@ But if you wish, perhaps for regulatory reasons, read and write access to repos 
 
 ---
 
+![[PR.png]]
+
 ## Pull Requests
 
 notes:
@@ -494,7 +497,7 @@ Though Actions were built for running tests on source code, with a little imagin
 - If you're uploading video or audio clips, an action can run them through plugins to remove noise, add a music track, and upload the draft to YouTube.
 - If you're checking in company documents, an action can simply spellcheck it.
 
-Actions can run hundreds of times an hour, always adheres to best practice, and never makes mistakes.
+Actions can run hundreds of times an hour, always adhere to best practice, and never make mistakes.
 
 Automating your company gives you an enormous competitive speed and quality advantage.
 
@@ -503,7 +506,7 @@ Automating your company gives you an enormous competitive speed and quality adva
 ![[language-tool-on-premise.png]]
 
 notes:
-You could also, for example, set up style guide enforcement, blocking the PR if the phrase "on premise" has been found, for instance.
+You could also, for example, set up style guide enforcement, blocking the PR if the phrase "on premise" has been found.
 
 ---
 
@@ -524,9 +527,15 @@ If you, instead, had 5-15 different web services that you scattered all your tea
 
 Most, somehow, don't have this basic feature.
 
+---
+
+# Who is flying this thing?
+
+notes:
+
 GOOGLE DOCS doesn't have this basic feature: you can't find and replace across a drive of files!?
 
-And the reason is that that would be TERRIFYING, wouldn't it? What if a new hire accidentally did that, you'd have to roll back all those files manually, that could take days!
+And the reason for this, I suspect, is that would be TERRIFYING, wouldn't it? What if a new hire accidentally did that, you'd have to roll back all those files manually, that could take days!
 
 But with git, it would be a PR, clearly showing what was happening, and mistakes are trivial to fix.
 
@@ -575,6 +584,8 @@ You can't do all these utopian things in most companies, I'm painfully aware.
 But you CAN do SOME of these things, even just in your immediate team, or only for yourself.
 
 I'd be interested to know what other ways good teams buck the hype cycle in favour of sane, evidence-based improvements.
+
+Thank you.
 
 ---
 
