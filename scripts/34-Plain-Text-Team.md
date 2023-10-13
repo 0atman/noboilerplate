@@ -91,12 +91,12 @@ notes:
 
 # Tie Yourself to the Mast
 
-In the Odyssey, Ulysses had to travel through siren-infested waters.
+In the Odyssey, Odysseus (confusingly called Ulysses in English literature) had to travel through siren-infested waters.
 
 This was a well-understood problem in his world.
 Sailors would simply solve this by putting wax in their ears, so the sirens' tempting song wouldn't lure them to their deaths.
 
-But Ulysses had a challenge: He WANTED to hear the Sirens' beautiful song. He certainly didn't want to drown, so he ordered his crew to tie him to the mast of the ship, and to ignore any of his pleas to let him go, until safety.
+But Odysseus had a challenge: He WANTED to hear the Sirens' beautiful song. He certainly didn't want to drown, so he ordered his crew to tie him to the mast of the ship, and to ignore any of his pleas to let him go, until safety.
 
 This way, he was able to guard against future bad decisions he knew he would make by setting up a framework to control his future self.
 
@@ -104,7 +104,7 @@ This is the Ulysses pact, and it's a very common trick:
 
 - Leaving your credit card or car keys at home when going out drinking is a Ulysses pact.
 - Publishing a warrant canary on your company's website is a Ulysses pact,
-- and Standardising all your tools on plain text is a Ulysses pact.
+- and standardising all your tools on plain text is a Ulysses pact.
 
 ---
 
@@ -118,7 +118,7 @@ In the future, you, or your successor, or your team might well be tempted to try
 
 While it might be good for a while, the act of changing tools constantly is an enormous overhead for your team, and one that gives the lasting impression that anything we write is likely to be legacy very soon, trapped in a deprecated app that "we just don't use any more", so why bother writing anything down.
 
-Standardising on one tool, and not only that, but a plain text tool, means your data will live forever, and the network effect can make it more and more valuable over time, instead of less and less.
+Tieng yourself to the mast by standardising on one tool, and not only that, but a plain text tool, means your data will live forever, and the network effect can make it more and more valuable over time, instead of less and less.
 
 ---
 
@@ -245,7 +245,7 @@ All these tools started as a web interface around the incredible tool: Git.
 
 ---
 
-## Aside:
+## Aside
 
 # Linux & Git
 
@@ -402,7 +402,7 @@ This bare-bones tool completely side-steps 'the JIRA effect', which is if you ha
 
 ---
 
-## Aside:
+## Aside
 
 # Standups Are Great
 
