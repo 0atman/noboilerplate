@@ -34,20 +34,20 @@ So why are they all so bad at it?
 [https://github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
 notes:
-Everything you see in this video: script, links, and images are part of a plain-text markdown document available freely on github under a public domain licence.
+Everything you see in this video: script, links, and images are part of a plain-text markdown document available freely on GitHub under a public domain licence.
 
 ---
 
 # First World Problems
 
 notes:
-If you've worked in a web team, tech team or any dgital creative team, you've likely felt the pain.
+If you've worked in a web team, tech team or any digital creative team, you've likely felt the pain.
 
 - Bad software,
 - constantly changing processes,
 - and lots and lots of meetings.
 
-I talked about some of these problems in my Agile video that made me a lot of friends.
+I discussed some of these problems in my Agile video that made me a lot of friends.
 But today, I want to go bigger.
 You can solve all these problems in a single blow.
 
@@ -71,6 +71,7 @@ The secret is, in order to do more, you must have the discipline to do LESS.
 </split>
 
 notes:
+
 A lot of the ideas that I will mention today are not new.
 They've been well-understood in the startup and digital world for a long time.
 
@@ -122,7 +123,7 @@ Standardising on one tool, and not only that, but a plain text tool, means your 
 ---
 
 <i class="fas fa-quote-left fa-2x fa-pull-left"></i>
-"The greatest problem in communication is the illusion that it has been achieved."
+"The greatest problem in communication is the _illusion_ that it has been achieved."
 
 ## &mdash; William H. Whyte
 
@@ -167,7 +168,7 @@ Yes, have more immediate conversations, by video, or chat, but write down what y
 
 ---
 
-## ["Documenting Architecture Decisions"](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
+# ["Documenting Architecture Decisions"](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
 
 (aka the _ADR_ process)
 
@@ -231,13 +232,20 @@ I recommend you use the most popular distributed version control system on the p
 
 You'll use this through one of the many git web hosts, the largest of which is GitHub, which I recommend for most people.
 
-Though I mention Github primarily in this video, I'm not sponsored by them, I just acknowledge that popularity matters.
+---
+
+# Popularity Matters
+
+notes:
+
+Though I mention GitHub primarily in this video, I'm not sponsored by them, I just acknowledge that popularity matters.
+Support, experience, and integrations with other services will all be far, far easier if you use the standard.
 
 All these tools started as a web interface around the incredible tool: Git.
 
 ---
 
-# Aside
+## Aside:
 
 # Linux & Git
 
@@ -328,7 +336,8 @@ There are a few more options available, which you can look up at markdownguide.o
 
 ---
 
-![[obsidian-kanban-painting.png]]
+![[obsidian-kanban-paint.png]]
+
 notes:
 
 The genius of storing your data in this universal plain-text format is that should you wish to migrate from GitHub to another similar platform, your data is portable and under your control.
@@ -393,7 +402,7 @@ This bare-bones tool completely side-steps 'the JIRA effect', which is if you ha
 
 ---
 
-## Aside
+## Aside:
 
 # Standups Are Great
 
