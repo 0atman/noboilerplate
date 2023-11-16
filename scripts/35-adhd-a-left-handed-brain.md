@@ -34,6 +34,8 @@ notes:
 
 Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
+This video is about ADHD.
+
 Despite not being left-handed, I do have a great deal of empathy for our left-handed cousins because of my ADHD.
 
 A surprising number of left-handed people are ambidextrous, they are equally skilled with either hand.
@@ -46,7 +48,7 @@ But when you walk out into the world, you will find that nearly everything isn't
 
 It's not fair, but
 - if you are left-handed, you must learn to be ambidextrous.
-- Just as if you have ADHD, you must learn to cope in a neurotypical world.
+- And if you have ADHD, you must learn to cope in a neurotypical world.
 
 ---
 
@@ -69,6 +71,8 @@ notes:
 As I mentioned in my coping mechanisms video, I have ADHD.
 
 I was diagnosed in school in the early 90s, and have recently started taking medication after an adult diagnosis.
+
+My adhd has profoundly shaped my life as a child and through to adulthood.
 
 I made this video to tell you my story, but also to share everything that I've learned along the way.
 
@@ -147,8 +151,6 @@ One of those comments is judgemental, and one of them is constructive.
 
 notes:
 
-#todo
-
 I am extremely lucky.
 You can kind of reverse-engineer that from the knowledge that I'm a YouTuber.
 A lot of things had to align for us to be talking today.
@@ -168,7 +170,7 @@ notes:
 
 Both my parents, in addition to being wonderful supportive people, taught in primary school.
 
-This meant that when their first-born son wasn't making eye contact as early as he should, and seemed more disruptive and distracted among other children, they took FAST action.
+This experience meant that when their first-born son wasn't making eye contact as early as he should, and seemed more disruptive and distracted among other children, they took FAST action.
 
 And it saved my life.
 
@@ -219,7 +221,7 @@ Dopamine is my favourite brain chemical, and yours too.
 It is part of the reward system in the brain.
 Dopamine encourages us to do activities that the brain thinks are good for us.
 
-Our brains give us a huge dopamine hit in anicipation of positive primal activities: eating fatty foods, exercise, sex, entertainment, and so on.
+Our brains give us a huge dopamine hit in anticipation of positive primal activities: eating fatty foods, exercise, sex, entertainment, and so on.
 
 But it also rewards us with a smaller amount of dopamine for doing more cerebral activities:
 - Cleaning your house,
@@ -231,7 +233,7 @@ In short, non-urgent tasks that you could just ignore.
 Until you can't.
 
 When we are children, our dopamine system, and understanding of the world, is not developed yet.
-Our parents and teachers have to persuade us into doing non-primal but useful tasks.
+Our parents and teachers have to persuade us into doing non-primal but important tasks.
 
 Because we are rewarded by our parents and teachers for doing a Good Job in these endeavours, our brain, and dopamine system, learns this, and we start to build autonomous positive habits for ourselves.
 
@@ -275,6 +277,8 @@ How did I get to university? To paraphrase Dave Lister, from Red Dwarf:
 
 ![[lister-milkshake.png|800]]
 
+&mdash; Dave Lister (AKA Lister of Smeg, Cloister the Stupid, Sebastian Doyle, Skipper, Cinzano Bianco, Spanners)
+
 notes:
 
 > The normal way you get into University. The same old, usual, normal, boring way you get in. I failed my exams and applied.
@@ -289,7 +293,7 @@ And self-direction is a nightmare for someone with ADHD.
 
 notes:
 
-Starting university, in 2004, I had access to broadband internet for the first time.
+Starting university, in 2004, I had access to broadband internet for the first time - imagine that!
 
 This allowed me to easily research ways to organise myself, what I would later come to know as _coping mechanisms_.
 
@@ -302,7 +306,7 @@ I was legendarily forgetful, missing both social and school appointments regular
 I started researching as much as I could, reading early Lifehacker articles and blog posts.
 I started building more coping mechanisms.
 
-- I had built enough coping mechanisms for school, but not university
+- I had built enough of them for school, but not university
 - I no longer could get by on smarts, everyone's smart here
 - But with the ADHD diagnosis, I was able to use the university's systems set up for people like me to just about get by.
 
@@ -328,7 +332,7 @@ And it happens to millions of people:
 
 ---
 
-## ADHD Doesn't Present Strongly in a Structured & Deadline Filled Environment
+## ADHD Doesn't Present Strongly in a Structured & Deadline-Filled Environment
 
 notes:
 
@@ -341,7 +345,7 @@ If you, like many folks,
 
 You might never notice you have ADHD.
 
-Symptoms like executive dysfunction and choice paralysis might not affect you in the 9-to-5 grind.
+Symptoms like executive dysfunction and inattention might not affect you in the 9-to-5 grind.
 
 But guess what happened in 2020.
 
@@ -358,7 +362,7 @@ And even after the lockdowns lifted, we discovered that in many cases, we didn't
 
 It suddenly seemed like insanity to go from your home, where you have an internet connection and a computer, to sit in a noisy office where you have an internet connection and a computer.
 
-The illusion of the Victorian workhouse was shattered by the coronavirus lockdowns.
+The collective dillusion of the Victorian workhouse was shattered by the coronavirus lockdowns.
 
 The world experimented, just briefly, with pausing infinite growth and grind:
 - Smog lifted in Beijing and Delhi,
@@ -377,7 +381,7 @@ notes:
 
 The solution isn't to pack the people back into the workhouse again.
 We're past that, for all the sabre-rattling of CEOs to get back to the office, that boat has sailed.
-The leases on the office have been given up, and white-collar worker's eyes have opened to the fact that they were being tricked into giving away hours of their life commuting for literally no reason.
+The leases on the offices have been given up, and white-collar worker's eyes have opened to the fact that they were being tricked into giving away hours of their life commuting for literally no reason.
 
 And the free market, darling of the very CEOs who demand the return to work, has seized upon this efficiency, and will not let it go.
 
@@ -596,6 +600,7 @@ If it's half as affective with you as it has been for me, it'll still be incredi
 - Study your Triggers and Habits
 	- Then improve them
 - Routines are good
+- Breaks are important
 
 notes:
 
@@ -607,7 +612,7 @@ And the Adult diagnosis was only agreed-upon and formalised in 2013.
 
 ---
 
-## Attention Deficit Hyperactivity Disorder
+# "Attention Deficit Hyperactivity Disorder"
 
 notes:
 
@@ -616,6 +621,7 @@ The name is still a problem, and names have power.
 
 It sounds very judgemental, doesn't it?
 As someone with Autism, I don't have a deficit of social skills, or whatever.
+The name is non-judgemental.
 
 Our understanding is still evolving, and even the dominant Dopamine model I described today is subject to criticism and new research.
 
@@ -639,7 +645,7 @@ Though illegal drugs famously can boost dopamine, so can caffeine and chocolate.
 
 When getting a diagnosis, even for the newly-recognised adult ADHD, pre-existing childhood symptoms are essential to find for the medical professional because otherwise it could represent a recent, new condition, and that could be an emergency.
 
-Don't let the historical requirement put you off.
+Don't let this historical requirement put you off.
 If you have ADHD today, you very likely had it as a child.
 Your doctor will help you.
 
@@ -651,13 +657,14 @@ _"[Hack Your Brain With Elaborate Coping Mechanisms](https://www.youtube.com/wat
 
 notes:
 
-I couldn't fit all my advice in this script today: I talked about 18 of my elaborate coping mechanisms in a previous video, pinned here and linked in the description, do watch that for more detail on what I do to manage day-to-day.
+I couldn't fit all my advice in this script today: I talked about 18 of my elaborate coping mechanisms in a previous video, pinned here and linked in the description, do watch that for more detail on what I do to manage my life day-to-day.
 
 If some of what I've said has struck a chord in you, talk to your doctor.
 
 I was very fortunate to be able to pay for a quicker diagnosis than many of my friends.
 
-But even if I couldn't afford that, my advice to my past self would be that the wait is worth it, start the ball rolling today.
+But even if I couldn't afford that, my advice to my past self would be the same as to anyone:
+The wait is worth it, start the ball rolling today.
 
 ---
 
@@ -680,8 +687,3 @@ Or if urban fantasy is more your bag, do listen to a strange and beautiful podca
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
 Thank you so much for watching, talk to you on Discord.
-
-```rust
-  println!("That's all folks!");
-} 
-```
