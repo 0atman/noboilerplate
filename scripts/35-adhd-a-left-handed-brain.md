@@ -3,19 +3,6 @@
 .reveal .hljs {min-height: 50%;}
 </style>
 
-%%
-
-#todo
-- [x] rewrite interspersing learnings alongside the story
-- [x] Adult adhd 2013 in DSM
-- [x] stigma, support the child without labelling the child. Dyslexia is what I thought I had
-- [x] Date that girls could get diagnosed, 200X
-- [x] write script [[@pc]]
-- [x] edit video
-- [x] publish video patreon
-- [ ] publish final video
-
-%%
 
 ## ADHD: A Left-handed Brain
 
