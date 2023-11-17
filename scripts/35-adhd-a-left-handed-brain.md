@@ -7,16 +7,13 @@
 
 #todo
 - [x] rewrite interspersing learnings alongside the story
-- [ ] Adult adhd 2013 in DSM
-- [ ] stigma, support the child without labelling the child. Dyslexia is what I thought I had
-- [ ] Date that girls could get diagnosed, 200X
-- [ ] write script [[@pc]]
-- [ ] edit video
-- [ ] publish video patreon
+- [x] Adult adhd 2013 in DSM
+- [x] stigma, support the child without labelling the child. Dyslexia is what I thought I had
+- [x] Date that girls could get diagnosed, 200X
+- [x] write script [[@pc]]
+- [x] edit video
+- [x] publish video patreon
 - [ ] publish final video
-- [ ] neurodivergance evolutionary Helen Taylor
-	- [ ] "complamentary cognitions"
-- [ ] website?
 
 %%
 
@@ -72,6 +69,16 @@ As I mentioned in my coping mechanisms video, I have ADHD.
 
 I was diagnosed in school in the early 90s, and have recently started taking medication after an adult diagnosis.
 
+---
+
+# I Am not a Doctor
+
+### I'm Hoping that Hearing My Story Could Be Helpful for Folks
+
+notes:
+
+#todo
+- [x] screenshot this slide
 My adhd has profoundly shaped my life as a child and through to adulthood.
 
 I made this video to tell you my story, but also to share everything that I've learned along the way.
@@ -91,8 +98,6 @@ This video has been much improved by her involvement, do check out her Patreon w
 Let's start with the big question:
 
 ---
-
-# Part 1
 
 ## Why Does it Seem Like
 
@@ -422,7 +427,19 @@ notes:
 
 ---
 
-- (short Patreon plug)
+![[patreon.png|200]]
+
+## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
+
+notes:
+
+It's just me running this channel, and I'm so grateful to everyone for supporting me on this wild adventure.
+
+If you'd like to see and give feedback on my videos up to a week early, as well as get discord perks, and even your name in the credits, it would be very kind of you to check my Patreon.
+
+I'm also offering a limited number of mentoring slots. If you'd like 1:1 tuition on Rust, Personal organisation, creative production, Web tech, or anything that I talk about in my videos, do sign up and let's chat!
+
+Back to my story:
 
 ---
 
@@ -480,21 +497,20 @@ ADHD medication can work wonders if you are being affected by the same dopamine 
 
 # ADHD Meds
 
-## Are way Nicer than
-
-# Antidepressants
+# Are GOOD
 
 notes:
 
-I want to make this clear to you, especially as depression and ADHD (and indeed Autism) are often found together.
+#todo
+- [x] re-take and re-record this slide
 
-I am extremely fortunate to not need antidepressants, and as there is no pill for autism yet, ADHD is my first personal experience with daily medication.
+The path onto ADHD meds can run a lot smoother than when you first start taking other similarly wonderful, life-saving medicines.
+It is easier to find the right ADHD drug for you, there are fewer side effects, and you don't have to take them for long periods of time to let them build up slowly, unlike (say) antidepressants.
+
+As there is no pill for autism yet, ADHD is my first personal experience with daily medication.
 
 Some of my friends take antidepressants, and it sounds tough.
-Worth it, let me be clear, but tough.
-
-They are wonderful life-saving medicines, but it is tricky to find the right one for you, they can have extremely strong side effects, and you must take them for long periods of time to let them build up slowly.
-When you come off them, for a break or to switch to a different one, you must wean yourself off gradually or suffer withdrawal.
+Worth it, let me be clear, but tough at first, before they start working for you.
 
 This is nothing like my experience with ADHD meds.
 
