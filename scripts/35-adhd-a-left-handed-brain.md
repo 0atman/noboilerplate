@@ -207,8 +207,6 @@ There are many hypothesised causes of ADHD, and the most dominant model is a Dop
 
 notes:
 
-https://podcastnotes.org/huberman-lab/episode-39-controlling-your-dopamine-for-motivation-focus-satisfaction-huberman-lab/
-
 Dopamine is my favourite brain chemical, and yours too.
 It is part of the reward system in the brain.
 Dopamine encourages us to do activities that the brain thinks are good for us.
