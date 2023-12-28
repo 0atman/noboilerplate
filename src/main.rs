@@ -51,7 +51,7 @@ fn template(inner: String) -> String {
                     <div id="navbar" class="navbar-menu has-background-black">
                         <div class="navbar-start">
 
-                            <a class="navbar-item has-text-white" href="https://www.teepublic.com/user/no-boilerplate">
+                            <a class="navbar-item has-text-white" href="https://www.teepublic.com/stores/no-boilerplate?ref_id=33332">
 
                                 <span class="icon is-small">
 
