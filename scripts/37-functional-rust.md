@@ -24,12 +24,14 @@ These lints make clippy less noisy when I'm building the video
 #![allow(unused_variables)]
 #![allow(clippy::no_effect)]
 #![allow(unused_must_use)]
+#![allow(clippy::unnecessary_cast)]
 ```
 
 # Crate Attributes
 
 ```rust
 #![feature(const_for)]
+#![allow(clippy::never_loop)]
 ```
 
 # Setup
@@ -42,7 +44,7 @@ fn main() {
 } 
 ```
 
-# Title Options:
+# Title Options
 
 - From Haskell to Go to Rust
 - Is Rust a Functional Language?
@@ -125,7 +127,7 @@ Everything you see in this video: script, links, and images are part of a markdo
 
 ---
 
-# Part 1:
+# Part 1
 ## Formal Methods
 
 _I just want everything to be perfect_
@@ -266,7 +268,7 @@ But, more likely, you'd realise that you've written a function that can cause an
 
 ---
 
-### Formal proof requires finite state
+### Formal Proof Requires Finite State
 ![[Turnstile_state_machine_colored.png]]
 
 notes:
@@ -308,7 +310,7 @@ Let's talk about Functional Programming:
 
 ---
 
-# Part 2:
+# Part 2
 ## Functional Programming
 
 
@@ -464,7 +466,7 @@ I'm importing the `rstest` prelude, which pulls in test attributes such as `fixt
 
 ---
 
-### Functional features every language has
+### Functional Features Every Language Has
 
 1. First-class functions
 2. Anonymous functions (lambdas)
@@ -592,12 +594,20 @@ notes:
 
 ```rust
 const fn working(x: i32, y: i32) {
-    x + y;
-    x / y;
-
+    x + y - x / y * x;
+	(1, 2, 3).0;
+	[1, 2, 3][0];
+	let maybe_number = Option::Some(42);
+	let adder = |z: i32| x + 1;
+	let number_ref = &maybe_number;
+	10 as f64;
+	loop {break 1};
+	match maybe_number {
+		Some(42..=42) => "Answer found!",
+		_             => "Keep searching..."
+	};
 }
 ```
-
 
 notes:
 
@@ -606,23 +616,48 @@ So what can we do in a const function, and perhaps more importantly, what can we
 12:00
 
 - arithmetic operators on int and floats
-- tuples
-- arrays
-- structs
-- let assignment
-- array slicing with usize
-- range expressions
+- tuple creation and indexing
+- arrays and array slicing with usize
+- struct creation and use
 - closure expressions without capturing
 - shared borrows, except interior mutability
-    - test this
 - casting
     - except for casting to memory addresses
-- calling const functions
-- loop, while, while let
-- if if let and match
-    - no for yet, though it's being worked on
+- calling `const` functions
+- `loop`, `while`, `while let`
+- `if` `if let` and `match`
+    - no `for` yet, though it's being worked on
+- range expressions
 
 
+---
+
+```rust[]
+const fn mut_refs() {
+	let name = "Tris";
+	let name_mut_ref = &mut name;
+}
+```
+
+---
+
+```rust[]
+const fn borrow_interior() {
+	let z = std::cell::UnsafeCell::new(0);
+	let zref = &z;
+}
+```
+
+---
+
+```rust[]
+const fn str_matching() {
+	match "Tris" {
+		"Tris" => "Great!",
+		_      => "Nobody's perfect!"
+	};
+}
+```
 
 ---
 
@@ -646,7 +681,7 @@ const fn circle_area(radius: f64) -> f64 {
 
 ---
 
-```rust
+```rust[]
 //#![feature(const_for)] set at the crate level
 
 const fn non_const_fn() {
