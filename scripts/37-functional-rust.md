@@ -22,16 +22,21 @@ These lints make clippy less noisy when I'm building the video
 #![allow(clippy::items_after_statements)]
 #![allow(dead_code)]
 #![allow(unused_variables)]
+#![allow(clippy::no_effect)]
+#![allow(unused_must_use)]
 ```
 
-# Imports
+# Crate Attributes
 
 ```rust
+#![feature(const_for)]
 ```
 
 # Setup
 
 ```rust
+
+
 fn main() {
 	println!("Rust video");
 } 
@@ -42,6 +47,8 @@ fn main() {
 - From Haskell to Go to Rust
 - Is Rust a Functional Language?
 - In Search of a Perfect Language
+- Using Rust To Make Your Life Worse
+- How To Make Rust More Annoying
 
 ---
 
@@ -64,9 +71,7 @@ notes:
 
 I was taught formal methods at university, which included the languages Z, B, ACL2, and the excitingly named Coq.
 
-These Formal methods are mathematically rigorous techniques used for the specification, development, analysis, and verification of software and hardware systems where everything MUST BE CORRECT.
-
-Systems like pacemakers, autopilot and hospital systems must be formally proved, not just rigorously tested, because human life is on the line.
+Systems like pacemakers, autopilots and hospital ventilators must be formally proved, not just rigorously tested, because human life is on the line.
 
 ---
 
@@ -76,9 +81,11 @@ Systems like pacemakers, autopilot and hospital systems must be formally proved,
 
 notes:
 
-But Formal Methods are expensive, require using unusual external verification languages, and most damning for web developers, they are SLOW to develop.
+But Formal Methods are expensive, require using unusual external verification languages, and most damning for web and application developers, they slow down iteration.
 
-After graduating university and getting a web development job, I despaired that the safety and guarantees of the formal systems that I had been introduced to weren't available to me.
+After graduating university and getting a web development job, I despaired that the safety and guarantees of the formal systems that I had been introduced to weren't available to me as a web developer.
+
+I was going to have to act if I wanted to live in a different world.
 
 ---
 
@@ -86,9 +93,9 @@ After graduating university and getting a web development job, I despaired that 
 
 notes:
 
-I did what any developer would do, I took to Stack Overflow.
+So I did what any engineer would do, and took to Stack Overflow.
 
-You can read the desperation in my wording in the question, which turned out to be most popular stack overflow post of all time!
+You can read my desperation in the question here, in what turned into my most popular stack overflow question.
 
 One of the last answers I received, all those years ago, very sympathetically said:
 
@@ -101,7 +108,7 @@ _I'm not sure whether what you ask for is actually what will make you happy. :-)
 
 notes:
 
-"I'm not sure whether what you ask for is actually what will make you happy."
+"I'm not sure whether what you ask for, is actually what will make you happy."
 
 I did not know what he meant, until I found Rust.
 
@@ -120,6 +127,8 @@ Everything you see in this video: script, links, and images are part of a markdo
 
 # Part 1:
 ## Formal Methods
+
+_I just want everything to be perfect_
 
 notes:
 
@@ -148,19 +157,21 @@ Time:  0.00 seconds
 Proof succeeded.
 ```
 
+https://www.0atman.com/articles/13/ACL2
+
 notes:
-- [ ] "A Computational Logic for Applicative Common Lisp"_
 
 The first entry on my blog, 0atman.com, in 2013, is this output from ACL2, proving that _a plus b always equals b plus a_.
 
 ACL2 code is written in Lisp, but formal methods can be used for any language, or can machine translate from their own language to, say, java or c++.
 
-Note the time output in this run, this proof took less than 10ms on whatever slow nightmare computer I was running a decade ago.
-The explanation for this speed is just above it, prover steps counted 10.
+Note the time output in this run, this proof took 0ms on whatever slow nightmare computer I was running a decade ago.
+The explanation for this speed is just above it:
+`Prover steps counted: 10.`
 
-Just 10 steps to prove all combinations of addition are equivalent.
+Just 10 steps to prove that all infinite combinations of addition are equivalent.
 
-Let me show how this works by showing you what it's NOT doing:
+Let me explain how this works by showing you what it's NOT doing:
 
 ---
 
@@ -181,14 +192,14 @@ proptest = "1.4.0"
 
 notes:
 
-If you were to use a general-purpose programming language, like here with Rust and the fantastic Proptest crate, you might test that `a + b` always equals `b + a`, by picking random values within a range and testing that some invariant held.
+If you were to use a general-purpose programming language, like here with Rust and the fantastic Proptest crate, you might reasonably test that `a + b` always equals `b + a`, by picking random values within a range and testing that some invariant held.
 
-Here I'm using `proptest` to do this, the `proptest` macro coupled with its `any` type in this very concise example.
+Here I'm using the `proptest` macro coupled with its `any` type in this very concise example.
 
 But there's a problem:
 As soon as we add two random numbers that are larger than `u32::MAX / 2`, we will overflow the integer type.
 
-OK so we can't prove this using randomised iteration.
+we can't prove this exhaustively using randomised iteration.
 
 But proptest did something cool here that we should pay attention to.
 
@@ -217,14 +228,14 @@ fn u32_max() {
 
 notes:
 
-Here's proptest's output when the overflow happens
+Here's `proptest`'s output when the overflow happens
 
-Proptest not only proved that we had written potentially overflowing code, but when it did, it then iterated until it found a minimal failing example.
+It not only proved that we had written potentially overflowing code, but when it did, it then iterated until it found a minimal failing example.
 
 Line 7, here, shows the two values it found right at the edge of the failure.
 Add those two values of a an b together and you get exactly one OVER the u32 limit.
 
-Upon finding a failure, `proptest` does a search for minimal failing edge cases automatically, and it can do this for:
+Upon finding a failure, `proptest` does this search for minimal failing edge cases automatically, and it can do this for:
 
 Strings, Arrays, Bools, Chars, Ints and Floats, Options, anything from Std::Collection including Vecs, BTrees and Hashes, and with a little help, any custom datatype you make.
 
@@ -249,33 +260,59 @@ test result: ok. 1 passed; finished in 0.01s
 
 notes:
 
-Here's how to fix the test, by the way, you test a smaller range of integers.
+Here's one way to fix the test, by the way, by testing a smaller range of integers, if you know the state of your application is bounded like this.
 
-Or, more likely, you'd realise that you've written a function that can cause an integer overflow, and rewrite it to not do that, perhaps using rust's checked arithmetic, that returns results instead of blindly letting the CPU do whatever nonsense it wants with the bits!
+But, more likely, you'd realise that you've written a function that can cause an integer overflow, and you should rewrite it to not do that, perhaps using an auto-promoting integer crate, or checked arithmetic, that returns results instead of blindly letting the CPU do whatever nonsense it wants with the bits!
 
 ---
 
+### Formal proof requires finite state
 ![[Turnstile_state_machine_colored.png]]
 
 notes:
 
-I came to realise that formal methods were impractical for the kinds of tasks I wanted to use them with: Web apps.
+I came to realise that formal methods were impractical for the kinds of tasks I wanted to use them with: general-purpose Web apps and services.
 
 Even a single string has so much entropy, so many permutations of UTF-8 code points, that Theorem Provers, like ACL2, are not suitable.
+they would take longer than the predicted age of the universe to run.
+
+---
+
+
+venn diagram this
+
+notes:
 
 Formal Methods are for proving the critical state machine of your autopilot, or proving that your pacemaker never stops beating the patient's heart.
 
-Formal Methods are very theoretically sound, but unpractical.
+They are very theoretically sound, but impractical.
 Normal imperative programming languages are very practical, but not theoretically sound.
-
 I needed to compromise.
 
 My research moved on to what I consider the best compromise available to us: Functional Programming.
 
 ---
 
+
+## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
+
+notes:
+
+It's just me running this channel, and I'm so grateful to everyone for supporting me on this wild adventure.
+
+If you'd like to see and give feedback on my videos up to a week early, as well as get discord perks, and even your name in the credits, it would be very kind of you to check my Patreon.
+
+I'm also offering a limited number of mentoring slots. If you'd like 1:1 tuition on Rust, Personal organisation, creative production, Web tech, or anything that I talk about in my videos, do sign up and let's chat!
+
+Let's talk about Functional Programming:
+
+---
+
 # Part 2:
 ## Functional Programming
+
+
+_I just wanna chill_
 
 ---
 
@@ -284,21 +321,25 @@ My research moved on to what I consider the best compromise available to us: Fun
 | Scala    | JVM ecosystem, hybrid OO/FP                  |
 | Haskell  | Strictly FP, Lazy, Type System |
 | Clojure  | JVM, FP, LISP!                               |
-| Go       | Popular, FAST, Low-level                               |
+| Go       | Popular, Fast, Low-level                               |
 | Rust 🦀         | FP, Type System, Low-level                                |
 
 notes:
+Here's the broad strokes of my 15-year journey:
 
-Scala has a advanced type system, which I knew was good for getting more logic checked by the compiler, and back in 2013 had statically-typed html built-in, which was quite a trick!
+1. Scala has an advanced type system, which I knew was good for getting more logic checked by the compiler, and back in 2013 it had statically-typed html built-in, which was quite a trick!
+2. But people told me Haskell was a more powerful functional language, and after a few rocky starts, I learned to appreciate the "if it compiles, it works" mindset. But I think that its narrow, high-level usage and esoteric ML syntax is holding it back from wideer adoption. It's the best language in the world, no doubt, but that's not all we must consider in the real world.
+3. Clojure, the most popular lisp, built on the JVM, came close, for me. It was so popular I was able to join a startup bank and and get paid to code it for 2 years! But as with nearly all lisps, it has no compile-time type system. Though I know about Typed closure, it's an ugly add-on, not a core part of the language, same problem as typescript and python, and ruby Lisp's access to compile-time changed my life with Macros, and you know how that ended.
+5. Go very nearly worked for me. Fast, lower-level compared to all others on this list except for Rust, and is multi-paradigm, with a strong showing from Functional Programming.
 
-But people told me haskell was a more powerful functional language, and after a few rocky starts, I learned to appreciate the "if it compiles, it works" mindset. It's even the most popular ML language, but I thought that it's academic background, aesoteric ML syntax, was holding it back from wide adoption. It's the best language in the world, no doubt, but that's not all there is to consider in the real world.
+But Go is inelegant. 
 
-Clojure, the most popular lisp in the world, built on the JVM, came close, for me. It was so popular I was able to join a startup bank and code it for 2 years! But as with nearly all lisps, has no type system. Though I know about Typed closure, it's an ugly add-on, not a core part of the language.
-Access to compile-time changed my life with Macros
+And I don't mean the syntax, beauty is in the eye of the binaryholder, and you'll never get two people to agree upon that.
+If anything, it's TOO practical. There's no beauty to be found in Go, just a sort of crushing march of efficiency, and I don't mean that as a complement.
 
-Go very nearly worked for me. Fast, lower-level compared to all others on this list except for Rust, and was multi-paradigm, with Functional Programming with a strong showing.
+It's got the practicality of a chainsaw, but what I want is a poem that cuts just as sharp.
 
-But it was 
+7:00
 
 ---
 
@@ -306,7 +347,15 @@ But it was
 
 notes:
 
-I have great news, Rust is
+And in 2020, after a few false starts I found rust.
+
+And I have great news, Rust is more functional than I realised until recently.
+
+The functional ML roots of the language, Graydon's first Rust compiler was written in OCaml, shine through, influencing it right from the start.
+- [ ] seed this earlier by talking about how great ML languages are
+It's not "C++ but better". It's Haskell standing on Lisp's shoulders hiding in C's overcoat to sneak into the popular language's party. 
+
+Let's see some code.
 
 ---
 
@@ -318,9 +367,11 @@ color-eyre = "0.6.2"
 rstest = "0.18.2"
 ```
 
+(in `cargo.toml`)
+
 notes:
 
-Classic set-up
+Here is the classic set-up I include in all of my Rust projects, pretty and simple error handling with `color-eyre`, and the `rstest` testing framework, the most important feature for me is it's ability to use fixtures.
 
 ---
 
@@ -334,7 +385,11 @@ tailcall = "0.1.6"
 
 notes:
 
-We're going to use some of these cool crates to demo the utility of functional techniques
+Next, I'm going to use some of these cool crates to demo the utility of functional techniques today.
+- `Rayon` is the simplest parallelism library you've ever seen, built on Rust's immutability fundamental,
+- `static_ssertions` allow you to simply reason about your compile-time code without touching macros, and
+- [ ] say this right idiot
+- We'll look at `tailcall` as a glimpse of Rust's future functional features. 
 
 ---
 
@@ -351,38 +406,371 @@ nursery = "deny"
 unwrap_used = "deny"
 ```
 
+```sh
+$ cargo clippy
+
+[clippy negs you here]
+```
+
 notes:
+
+If you're using rust without using Clippy, you're doing yourself a great disservice.
+
+VSCode or your editor will use it behind the scenes, but you must also run clippy in a terminal to answer the most important question: 
+
+What was the first error, that's the one you have to fix.
 
 ---
 
 ```toml
 [profile.release]
 opt-level = 'z'   # Optimize for size.
-lto = true        # Enable Link Time Optimization
-codegen-units = 1 # Reduce number of codegen units to increase optimizations.
+lto = true        # Enable Link Time Optimisation
+codegen-units = 1 # Reduced to increase optimisations.
 panic = 'abort'   # Abort on panic
-strip = "symbols" # Strip symbols from binary*
+strip = "symbols" # Strip symbols from binary
 ```
 
----
+More: https://github.com/johnthagen/min-sized-rust
+
+notes:
+
+And here's a reasonable starting point for optimising the size of your release builds, cutting a helloworld down from 3MB to 300K.
+
+You can get it down to 8K if you really want to, but I recommend stopping here and starting building. 
 
 ---
 
 ```rust
-
-#[cfg(test)]
 mod tests {
 
+#[allow(clippy::wildcard_imports)]
 use rstest::*;
 
-const fn adder(a: i32, b: i32) -> i32 {
-    a + b
+#[fixture]
+fn setup() {
+	color_eyre::install().expect("color_eyre installed");
 }
-
-
 ```
 
 notes:
+Here's our test module setup.
+
+Everything you see in this video will be inside this module.
+All of my code examples are concatenated into main.rs and compiled, this is how I statically type my literate programming videos.
+(see my repo for details)
+
+I'm importing the `rstest` prelude, which pulls in test attributes such as `fixture`, here, which runs this line ahead of every test, setting up `color_eyre`'s pretty errors.
+
+---
+
+### Functional features every language has
+
+1. First-class functions
+2. Anonymous functions (lambdas)
+3. iterators
+4. `map()`, `filter()`, et al
+
+notes:
+
+Most modern languages have these functional-light features.
+Javascript, Go, Python, and Ruby all have most of these.
+
+They are hugely useful, and Rust, of course, has them all. But Rust has a killer feature.
+
+Rust has Pure functions.
+
+Kindof.
+
+---
+
+# Pure Functions
+
+- Deterministic
+- Side-effect-free
+
+
+
+```rust[]
+fn f(x: i32) -> i32 { x + 1 }
+```
+
+
+
+notes:
+
+Pure functions are WILDLY useful.
+
+Normal functions can do anything, which means you have to read the code to figure out what they are doing.
+
+Pure functions' utility comes from their limitations, they can't do everything:
+
+They are functions where their output only depends on their inputs, and they have no side-effects (eg. memory or I/O)
+
+If your language has a way of separating or tagging functions that are pure, and then can hold you to that contract, both you and the compiler can reason about your code in useful, new ways:
+
+- if a pure function is called twice with the same inputs, the result is guaranteed to be the same every time
+    - this is called referential transparency or idempotence or determinism
+	- this enables perfect, predictable, caching,
+	- and easier debugging!
+- Pure functions that don't cause side-effects also allow perfect parallelisation, the functions can run on separate threads, processes, machines, or even in different geographic datacenters.
+	- Their output is only affected by their inputs, so you bundle the inputs with the functions, and they can run anywhere.
+- if a pure function is never called, it can be automatically removed by the compiler, or ignored by the developer.
+
+Early on in development, Rust had a `pure fn` system, just like Haskell! 
+- [ ] look this up maybe here https://internals.rust-lang.org/t/const-pure/13824
+It was abandoned because it was soon discovered that the language had already solved many of the problems that a pure function system would guard against:
+
+The compiler and developer don't usually need further function annotation to understand the side effects of functions, the type system and language ALREADY encode that to an enormous extent.
+
+But if you really want a function purity system in Rust, like I do, there kindof is one.
+
+If you've set up clippy like I recommend, this rust function here will not compile.
+
+---
+
+```rust[]
+$ cargo clippy
+
+ 1  error: this could be a `const fn`
+   --> src/main.rs:20:1
+    |
+ 20 | fn f(x: i32) -> i32 { x + 1 }
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
+
+The fix:
+
+```rust
+  const fn f(x: i32) -> i32 { x + 1 }
+```
+
+notes:
+
+Clippy tells us that that this function could be a `const fn`.
+
+This error was my first clue that rust is doing something interesting.
+
+The fix, as ever, is to do what clippy says, obey the compiler and turn the function into a const function.
+
+---
+
+
+![[nb-teepublic-error-obey.png|700]]
+
+note:
+
+(stupid "obey the compiler" merch available at noboilerplate.org)
+
+---
+
+(previous slide)
+
+notes:
+
+const functions are functions that can be executed at compile time.
+They differ from rust macros, which can do anything, by being much more limited.
+
+And just like with Pure functions, these limits make them exciting:
+
+---
+
+
+<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
+_Behaviors such as out of bounds [array indexing](https://doc.rust-lang.org/reference/expressions/array-expr.html#array-and-slice-indexing-expressions) or [overflow](https://doc.rust-lang.org/reference/expressions/operator-expr.html#overflow) are compiler errors if the value must be evaluated at compile time._
+
+&mdash; [rust-lang.org/reference/const_eval.html](https://doc.rust-lang.org/reference/const_eval.html)
+
+
+notes:
+`const` functions have access to a limited subset of Rust, you could read about it here, but let's experiment:
+
+---
+
+## Pure-ish Functions in Rust
+
+
+```rust
+const fn working(x: i32, y: i32) {
+    x + y;
+    x / y;
+
+}
+```
+
+
+notes:
+
+So what can we do in a const function, and perhaps more importantly, what can we not do?
+
+12:00
+
+- arithmetic operators on int and floats
+- tuples
+- arrays
+- structs
+- let assignment
+- array slicing with usize
+- range expressions
+- closure expressions without capturing
+- shared borrows, except interior mutability
+    - test this
+- casting
+    - except for casting to memory addresses
+- calling const functions
+- loop, while, while let
+- if if let and match
+    - no for yet, though it's being worked on
+
+
+
+---
+
+```rust[]
+const fn circle_area(radius: f64) -> f64 {
+    (std::f64::consts::PI * radius).powf(2.0)
+}
+```
+
+```rust[]
+ 1  error[E0658]: floating point arithmetic is not 
+    allowed in constant functions
+   --> src/main.rs:27:5
+    |
+ 27 |     (PI * radius).powf(2.0)
+    |     ^^^^^^^^^^^^^
+```
+
+
+
+
+---
+
+```rust
+//#![feature(const_for)] set at the crate level
+
+const fn non_const_fn() {
+	for n in 1..101 {}
+}
+```
+
+
+---
+
+```rust[]
+const fn impure_function_env() {
+    std::env::var("PATH");
+}
+```
+
+```sql
+ 1  error[E0015]: cannot call non-const fn `std::env::var::<&s
+ tr>` in constant functions
+   --> src/main.rs:55:5
+    |
+ 55 |     std::env::var("PATH");
+    |     ^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: calls in constant functions are limited to constan
+ t functions, tuple structs and tuple variants
+```
+
+---
+
+```rust[]
+const fn impure_function_fs() {
+    let _ = std::fs::File::create("foo.txt");
+}
+```
+
+```sql
+ 1  error[E0015]: cannot call non-const fn `std::fs::File::cre
+ ate::<&str>` in constant functions
+   --> src/main.rs:55:13
+    |
+ 55 |     let _ = std::fs::File::create("foo.txt");
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: calls in constant functions are limited to constan
+ t functions, tuple structs and tuple variants
+
+```
+
+
+---
+
+https://lib.rs/crates/const_soft_float
+
+---
+
+
+```rust
+const fn be_careful_with_macros() {
+    std::env!("PATH");
+}
+```
+
+Rust's const functions are only pure once you get to *runtime*
+
+If you understand this caveat, you can get enormous benefit from these pure-ish functions.
+
+---
+
+
+so what should be const fn?
+
+vital business logic
+
+---
+
+piecemeal purity
+
+type signature encodes most things
+
+> I just want to reiterate something that I say in a child comment in this thread: thanks to its thoughtful design, many of the advantages of purity are less appreciable in Rust than they would be in, say, C++.
+> 
+> In Rust, everything is immutable unless you opt-in to mutability. Looking at a function signature will tell you which of its arguments can possibly be mutated. Global mutable state is _highly_ discouraged, by requiring you to wrap code that accesses global mutable state in a dreaded `unsafe {}` block. As for optimization capabilities, LLVM itself can (AFAIK) infer when functions are "pure" and mark them as `readonly` or `readnone` (not sure what the limitations to this approach are, though).
+> 
+> So don't make the mistake of thinking that Rust is a free-for-all due to the long-ago removal of its `pure` keyword. Many (dare I say a majority?) of the nice features of purity are merely provided by different mechanisms (for those use cases that Rust does not satisfy, Graydon's own explanation should suffice regarding their enormous added complexity in a language that is not Haskell).
+
+---
+
+
+- ✅ Deterministic (at runtime)
+- ✅ Side-effect-free
+
+notes:
+
+Are const fns pure?
+
+No.
+
+They're better than that.
+
+They're practical
+
+Rust is as pure a language you can get without adding an actual purity system!
+
+(mention Nim)
+
+---
+# Const Diversion
+
+```rust
+
+
+use static_assertions::const_assert;
+const_assert!(1 == 1);
+
+#[rstest]
+#[should_panic(expected = "assertion")]
+fn assertter() {
+	assert_eq!(1,2);
+}
+
+```
+
+---
 
 I'm very interested in typed lambda calculus. It's a shame that the lisp community are so against typing, they're real dynamic proponents! I sadly left the Clojure world because of this. Typed Clojure exists, but it suffers from the same problem Typescript does: It's a rarely-used afterthought.
 
@@ -392,7 +780,7 @@ As Dijkstra said, "A program is like a poem, you cannot write a poem without wri
 
 The worst-kept secret in software development is that we're more like poets and artists than masons and bricklayers. You ask a poet how many poems she will write in a year, and she truthfully says, "I cannot know".
 
-So, though learning pure ML and FP languages has enriched my thinking a great deal, to get things done, I am obliged to compromise. Rust's compromises are much smarter to my mind than other popular languages because if you add too much FP, you get languages like you've suggested without wide adoption. But if you don't add enough, you end up with languages like Go, a very good modern language, but with no beauty and (for reasons perhaps best known to Ken Thompson) no sum types.
+So, though learning pure ML and FP languages has enriched my thinking a great deal, to get things done, I am obliged to compromise. Rust's compromises are much smarter to my mind than other popular languages because if you add too much FP, you get languages like Haskell and Lisp without wide adoption. But if you don't add enough, you end up with languages like Go, a very good modern language, but with no beauty and (for reasons perhaps best known to Ken Thompson) no sum types.
 
 Scala was the focus of my interest for many years, but it's hamstrung by the JVM (as well as buoyed by it). Allowing nulls to infect your type system dramatically reduces the safety and confidence of it. Rust doesn't allow nulls into the type system, which means I get the strongest feeling of compiler-driven development in Rust of all the popular languages. Just like when I write Haskell, if it compiles, it WORKS!
 
@@ -451,16 +839,6 @@ I'm sorry to keep going on and on, but Rust is the best answer right now to my r
 - "first-class" is a computer science term for programming language entities that have no restriction on their use (thus first-class functions can appear anywhere in the program that other first-class entities like numbers can, including as arguments to other functions and as their return values).
 - partial application (nearly the same as currying)
 
-## Pure Functions
-
-- no side-effects (memory or i/o)
-- if a result isn't used, it can be removed
-- if a pure function is called twice with the same inputs, the result is the same
-    - this is called referential transparency or idempotence
-- enables perfect caching
-- perfect parralisation
-- `const fn` can be used for this?
-- side-effects are known at compile time in many cases by `let/mut` definitions
 
 ## Closures
 
@@ -550,9 +928,15 @@ this implementation is planned to eventually be folded into the language using t
 
 ## Lazyness
 
-```rust
-//(0..).map(|x| x * 2)
+generators
+
+```rust[]
+(0..).map(|x| x * 2)
 ```
+
+and 
+
+https://doc.rust-lang.org/reference/expressions/operator-expr.html#lazy-boolean-operators
 
 # Tagged Unions (ie Haskell's Datatypes, Rust's enums)
 
@@ -583,10 +967,6 @@ fn fibonacci(n: u64) -> u64 {
     }
 
 
-    #[fixture]
-    fn setup() {
-        color_eyre::install().expect("color_eyre installed");
-    }
 
 
 ```
@@ -597,79 +977,8 @@ fn laziness() {
 }
 ```
 
-```rust
-const fn pure_function(a: i32, b: i32) -> i32 {
-    a + b
-}
-```
-
 ---
 
-```rust[]
-const fn impure_function_env() {
-    std::env::var("PATH");
-}
-```
-
-```sql
- 1  error[E0015]: cannot call non-const fn `std::env::var::<&s
- tr>` in constant functions
-   --> src/main.rs:55:5
-    |
- 55 |     std::env::var("PATH");
-    |     ^^^^^^^^^^^^^^^^^^^^^
-    |
-    = note: calls in constant functions are limited to constan
- t functions, tuple structs and tuple variants
-```
-
----
-
-```rust[]
-const fn impure_function_fs() {
-    let _ = std::fs::File::create("foo.txt");
-}
-```
-
-```sql
- 1  error[E0015]: cannot call non-const fn `std::fs::File::cre
- ate::<&str>` in constant functions
-   --> src/main.rs:55:13
-    |
- 55 |     let _ = std::fs::File::create("foo.txt");
-    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    |
-    = note: calls in constant functions are limited to constan
- t functions, tuple structs and tuple variants
-
-```
-
----
-
-```rust
-const fn be_careful_with_macros() {
-    std::env!("PATH");
-}
-```
-
-Rust's const functions are only pure at *runtime*
-
----
-
-# Const Diversion
-
-```rust
-use static_assertions::const_assert;
-const_assert!(1 == 1);
-
-
-#[rstest]
-#[should_panic(expected = "assertion")]
-fn assertter() {
-	assert_eq!(1,2);
-}
-
-```
 
 ---
 
