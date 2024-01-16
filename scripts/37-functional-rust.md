@@ -48,9 +48,10 @@ fn main() {
 
 ### Title Ideas
 
-#### Const Fn: Rust's Secret Purity System
+#### In Search of Code Purity
+#### Rust's Secret Purity System
 
-#### Const Fn: From Haskell to Go to Rust
+#### My Purity Journey from Haskell to Go to Rust
 
 #### Const Fn: Pure Functions in Rust
 
@@ -171,7 +172,7 @@ The language has many incredible features that give me similar confidence to usi
 In Haskell, and maybe, kinda, Rust, it's a first-class feature.
 
 The first function here, factorial, is a pure function, a function that doesn't cause or rely upon side-effects.
-We know this without reading the function body because it doesn't have IO in the signature.
+We know this without reading the function body because it doesn't have IO.
 
 The second function, main, prints to the screen, and so MUST have IO in the signature.
 
@@ -264,7 +265,8 @@ Proof succeeded.
 ```
 
 https://www.0atman.com/articles/13/ACL2
-
+- [ ] redo this with 0 
+- [ ] retake this
 notes:
 
 The first entry on my blog, 0atman.com, in 2013, is this output from ACL2, proving that _a plus b always equals b plus a_.
@@ -401,8 +403,8 @@ _I just wanna chill_
 | Scala | JVM ecosystem, hybrid OO/FP |
 | Haskell | ML, Lazy, Type System |
 | Clojure | JVM, FP, LISP! |
-| Go | Popular, Fast, low-level |
 | Nim | Pure functions, fast, low-level |
+| Go | Popular, Fast, low-level |
 | Rust 🦀 | FP, Type System, Low-level |
 
 notes:
@@ -417,7 +419,7 @@ Here are the broad strokes of my 15-year journey so far:
 But Go is inelegant.
 
 And I don't mean the syntax, beauty is in the eye of the binaryholder, and you'll never get two people to agree upon that.
-If anything, it's TOO practical. There's no beauty to be found in Go, just a sort of crushing march of efficiency, and I don't mean that as a complement.
+If anything, it's TOO practical. There's no beauty to be found in Go, just a sort of crushing march of efficiency, and I don't mean that as a compliment.
 
 It's got the practicality of a chainsaw, but what I want is a poem that cuts just as sharp.
 
@@ -517,6 +519,8 @@ More: https://github.com/johnthagen/min-sized-rust
 
 notes:
 
+- [ ] retake this slide
+
 And, as a bonus, here's a reasonable starting point for optimising the size of your release builds, cutting a helloworld down from 3MB to 300K.
 
 You can get it down to 8K if you really want to, but I recommend stopping here and starting building.
@@ -524,6 +528,7 @@ You can get it down to 8K if you really want to, but I recommend stopping here a
 ---
 
 ```rust
+// #[cfg(test)] omitted because I want linting
 mod tests {
 
 #[allow(clippy::wildcard_imports)]
@@ -953,7 +958,7 @@ Because you can only call functions that are marked as const from a const functi
 io functions, like print, can't be called safely because they cause the side-effect of printing to the screen.
 
 This feels very similar to how IO functions in Haskell work, and makes me quite excited for their potential purity.
-- [ ] mention the box getting hotter
+- [ ] mention "the box getting hotter"?
 
 ---
 
