@@ -663,7 +663,7 @@ $ cargo clippy
 The fix:
 
 ```rust
-const fn faddone(x: i32) -> i32 { x + 1 }
+const fn addone(x: i32) -> i32 { x + 1 }
 ```
 
 notes:
