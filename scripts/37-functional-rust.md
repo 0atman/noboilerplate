@@ -992,7 +992,7 @@ So printing isn't possible, but if you take my advice, you'll debug with the com
 
 Note that only simple error messages available in const assertions, you can't use string formatting to interpolate values.
 
-But, in the second code block, the `static_assertions` crate provides const versions of assertions that panic with an error message with variables and other useful context.
+But, in the second code block, the `const_panic` crate provides const versions of assertions that panic with an error message with variables and other useful context.
 
 Const functions are looking great so far!
 
