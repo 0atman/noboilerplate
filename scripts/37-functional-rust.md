@@ -994,7 +994,7 @@ So printing isn't possible, but if you take my advice, you'll debug with the com
 
 Note that only simple error messages available in const assertions, you can't use string formatting to interpolate values.
 
-But, in the second code block, the `static_assertions` crate provides const versions of assertions that panic with an error message with variables and other useful context.
+But, in the second code block, the `const_panic` crate provides const versions of assertions that panic with an error message with variables and other useful context.
 
 Const functions are looking great so far!
 
@@ -1121,7 +1121,7 @@ fn sum_of_squares(input: &[i32]) -> i32 {
 
 notes:
 
-By the way, this built-in granular control of side-effects is how Rayon is able to turn nearly any iterator into a parallel iterator, with a single-line change to your existing code.
+By the way, this built-in granular control of side-effects is how Rayon is able to turn most iterators into parallel iterators, with a single-line change to your existing code.
 
 Encoding side-effects into the type system allows you and the compiler and smart crates like Rayon to reason about the soundness of parallel code without a restrictive, gated, purity system.
 
