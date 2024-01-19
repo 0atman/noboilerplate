@@ -1119,7 +1119,7 @@ fn sum_of_squares(input: &[i32]) -> i32 {
 
 notes:
 
-By the way, this built-in granular control of side-effects is how Rayon is able to turn nearly any iterator into a parallel iterator, with a single-line change to your existing code.
+By the way, this built-in granular control of side-effects is how Rayon is able to turn most iterators into parallel iterators, with a single-line change to your existing code.
 
 Encoding side-effects into the type system allows you and the compiler and smart crates like Rayon to reason about the soundness of parallel code without a restrictive, gated, purity system.
 
