@@ -49,6 +49,7 @@ fn main() {
 ### Title Ideas
 
 #### In Search of Code Purity
+
 #### Rust's Secret Purity System
 
 #### My Purity Journey from Haskell to Go to Rust
@@ -101,9 +102,6 @@ Systems like pacemakers, autopilots and hospital ventilators must be formally pr
 &mdash; The web development world
 
 notes:
-
-- [ ] invert and vector this
-- [ ] retake this
 
 But Formal Methods are expensive, require using unusual external verification languages, and most damning for web and application developers, they slow down iteration.
 
@@ -216,7 +214,7 @@ ML-inspired languages, with their comprehensive compile-time type safety, functi
 
 ---
 
-### Patreon-Only Formal Methods and Proptest Deep-dive
+## Formal Methods and Proptest Deep-dive
 
 _I just want everything to be perfect!_
 
@@ -270,7 +268,6 @@ Proof succeeded.
 [`0atman.com/articles/13/ACL2`](https://www.0atman.com/articles/13/ACL2)
 notes:
 
-- [ ] retake this
 The first entry on my blog, 0atman.com, in 2013, is this output from ACL2, proving that _a plus b always equals b plus a_.
 
 ACL2 code is written in Lisp, but formal methods can be used for any language, or can machine translate from their own language to, say, java or c++.
@@ -521,7 +518,6 @@ More: https://github.com/johnthagen/min-sized-rust
 
 notes:
 
-
 And, as a bonus, here's a reasonable starting point for optimising the size of your release builds, cutting a helloworld down from 3MB to 300K.
 
 You can get it down to 8K if you really want to, but I recommend stopping here and starting building.
@@ -537,12 +533,13 @@ use rstest::*;
 
 #[fixture]
 fn setup() {
+	#[allow(clippy::unwrap_used)]
 	color_eyre::install().unwrap();
 }
 ```
 
 notes:
-- [ ] retake this slide. 
+- [x] retake this slide.
 Here's our test module setup.
 
 Everything you see in this video from now on will be inside this module.
@@ -679,11 +676,13 @@ The fix, as ever, is to do what clippy says, obey the compiler and turn the func
 
 ---
 
-![[nb-teepublic-error-obey.png|700]]
+![[teepublic-obey-sticker.png|500]]
+
+https://noboilerplate.org
 
 note:
 
-(stupid "obey the compiler" merch available at noboilerplate.org)
+("obey the compiler" merch available at noboilerplate.org)
 
 ---
 
@@ -719,7 +718,7 @@ notes:
 ## Const Functions in Rust
 
 ```rust
-const fn working(x: i32, y: i32, f: f64) {
+const fn demo(x: i32, y: i32, f: f64) -> &'static str {
     x + y - x / y * x;
 	(1, 2, 3).0;
 	[1, 2, 3][0];
@@ -731,7 +730,7 @@ const fn working(x: i32, y: i32, f: f64) {
 	match maybe_number {
 		Some(42..=42) => "Answer found!",
 		_             => "Keep searching..."
-	};
+	}
 }
 ```
 
@@ -960,13 +959,12 @@ Because you can only call functions that are marked as const from a const functi
 io functions, like print, can't be called safely because they cause the side-effect of printing to the screen.
 
 This feels very similar to how IO functions in Haskell work, and makes me quite excited for their potential purity.
-- [ ] mention "the box getting hotter"?
 
 ---
 
 ### Compiler-driven Development
 
-```rust[]
+```rust[2]
 const fn single_digit(value: i32) -> i32 {
 	assert!(value < 10, "Value too big");
 	return value
@@ -974,7 +972,7 @@ const fn single_digit(value: i32) -> i32 {
 const _: i32 = single_digit(10);
 ```
 
-```rust[]
+```rust[4]
 use const_panic::concat_assert;
 
 const fn single_digit2(value: i32) -> i32 {
