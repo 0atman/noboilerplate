@@ -102,6 +102,9 @@ Systems like pacemakers, autopilots and hospital ventilators must be formally pr
 
 notes:
 
+- [ ] invert and vector this
+- [ ] retake this
+
 But Formal Methods are expensive, require using unusual external verification languages, and most damning for web and application developers, they slow down iteration.
 
 After graduating from university and getting a web development job, I despaired that the safety and guarantees of the formal systems that I had been introduced to weren't available to me as a web developer.
@@ -264,11 +267,10 @@ Time:  0.00 seconds
 Proof succeeded.
 ```
 
-https://www.0atman.com/articles/13/ACL2
-- [ ] redo this with 0 
-- [ ] retake this
+[`0atman.com/articles/13/ACL2`](https://www.0atman.com/articles/13/ACL2)
 notes:
 
+- [ ] retake this
 The first entry on my blog, 0atman.com, in 2013, is this output from ACL2, proving that _a plus b always equals b plus a_.
 
 ACL2 code is written in Lisp, but formal methods can be used for any language, or can machine translate from their own language to, say, java or c++.
@@ -519,7 +521,6 @@ More: https://github.com/johnthagen/min-sized-rust
 
 notes:
 
-- [ ] retake this slide
 
 And, as a bonus, here's a reasonable starting point for optimising the size of your release builds, cutting a helloworld down from 3MB to 300K.
 
@@ -536,11 +537,12 @@ use rstest::*;
 
 #[fixture]
 fn setup() {
-	color_eyre::install().expect("color_eyre installed");
+	color_eyre::install().unwrap();
 }
 ```
 
 notes:
+- [ ] retake this slide. 
 Here's our test module setup.
 
 Everything you see in this video from now on will be inside this module.
@@ -909,7 +911,7 @@ This is how it works for the whole standard library, by the way:
 
 ## No File System Access
 
-```rust[]
+```rust[2]
 const fn impure_function_fs() {
     let _ = std::fs::File::create("foo.txt");
 }
@@ -1000,7 +1002,7 @@ But there is a caveat to my dreams of purity:
 
 ---
 
-```rust[]
+```rust[2]
 const fn impure_function_env() {
     std::env::var("PATH");
 }
@@ -1023,7 +1025,7 @@ Of course, you can't read them from const functions, that's wildly out of scope,
 
 ---
 
-```rust
+```rust[2]
 const fn be_careful_with_macros() {
     let path: &'static str = std::env!("PATH");
 }
