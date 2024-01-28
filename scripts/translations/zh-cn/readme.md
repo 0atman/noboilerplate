@@ -7,6 +7,10 @@ This folder is used for simplified Chinese translations of the No Boilerplate vi
 This video script is translated with the intent to be redistributed to the Chinese ADHD/ASD advocacy [Qingshan Aspie](https://qingshanasd.cn/), so it is translated in a less literal style with more paraphrasing involved, and slangs are more generously used. Translated images are stored in `/scripts/translations/zh-cn/attachments`. Also, the gender-neutral pronoun "ta" is used throughout the file to replace "they".  
 这篇视频文稿翻译将会被用于向中文ADHD/ASD公益机构[青衫Aspie](https://qingshanasd.cn/)公众号投稿，所以翻译风格更加注重精准传达文字含义，重新组织了更多的句子，并且适当使用了网络语言。图片的翻译在`/scripts/translations/zh-cn/attachments`目录内。整篇文稿使用了中性代词“ta”来代替英文中性代词“they”。
 
+## 35-adhd-a-left-handed-brain
+This video script is translated with the intent to be redistributed to the Chinese ADHD/ASD advocacy [Qingshan Aspie](https://qingshanasd.cn/), so it is translated in a less literal style with more paraphrasing involved, and slangs are more generously used. Translated images are stored in `/scripts/translations/zh-cn/attachments`. Also, the gender-neutral pronoun "ta" is used throughout the file to replace "they".  
+这篇视频文稿翻译将会被用于向中文ADHD/ASD公益机构[青衫Aspie](https://qingshanasd.cn/)公众号投稿，所以翻译风格更加注重精准传达文字含义，重新组织了更多的句子，并且适当使用了网络语言。图片的翻译在`/scripts/translations/zh-cn/attachments`目录内。整篇文稿使用了中性代词“ta”来代替英文中性代词“they”。
+
 # Glossary / 术语表
 | en | zh-cn |
 |---|---|
