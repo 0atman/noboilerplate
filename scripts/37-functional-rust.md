@@ -436,7 +436,7 @@ The functional ML roots of the language, Graydon's first Rust compiler was writt
 
 It's not "C++ but better".
 
-It's Haskell standing on Lisp's shoulders, hiding in C's coat to sneak into _PRDCTN_. (The fancy nightclub where all the popular language's hang out)
+It's Haskell standing on Lisp's shoulders, hiding in C's coat to sneak into _PRDCTN_. (The fancy nightclub where all the popular languages hang out)
 
 Let's look at how Rust can manage side effects
 
