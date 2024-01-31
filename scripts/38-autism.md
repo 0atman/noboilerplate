@@ -73,7 +73,7 @@ notes:
 ## Ursa Minor
 
 
-Because the 7 brightest stars of Ursa Minor always appear in the sky together, we have given them a name, a classification to separate them from all the other stars in the night sky, such as Ursa Minor Beta, where the Hitch-Hikers Guide to The Galaxy is published.
+Because the 7 brightest stars of Ursa Minor always appear in the sky together, we have given them a name, a classification to separate them from all the other stars in the night sky, such as Ursa Minor Beta, where, according to Douglas Addams, the Hitch-Hikers Guide to The Galaxy is published.
 
 But constellations do and don't exist.
 
@@ -263,16 +263,117 @@ Which of these categories you fit in to changes from person to person, situation
 ---
 
 notes:
-# Learning About Yourself
+# Part 2
+## Learning About Yourself
+- [ ] some fancy "know thyself" imagary
 
+notes:
 
-- to find ways to cope/mask/thrive
+If you have autism, there are many options you should persue, and your doctor can help you there.
+
+Today I'm going to talk about the only one I feel qualified to talk about: Studying The Patent.
+
+---
+
+# The Scientific Method
+
+1. Observation
+2. Hypothesis
+3. Experimentation
+4. Repeat
+
+notes:
+- [ ] check this is the correct thery
+
+There is exactly one way to find out about the world we live in.
+The Scentific Method.
+
+==Someone== defined this in a way I quite like
+
+> It's a way of not fooling yourself
+
+Which is especially important, and especially difficult in mental health.
+Our perception is unreliable, our memory and recall is unreliable, and the stories we tell ourselves and other people are reliable.
+
+If you are to study the patient, you must find a way to cut through your and society's biases and filters to find ways to cope, or just mask or, if you're very lucky, thrive.
 
 ---
 
 notes:
 # Coping Mechanisms
 
+With Autism you can't set the bone in a cast like you can if you break your arm.
+There are two primary ways to ameliorate autism:
+1. Change yourself, or
+2. Change society.
+
+And while the latter is a very important part of our collective story, others can speak on this topic better than I.
+
+I am going to focus on ourselves, the part of the problem that we more easily can influence.
+
+---
+
+# Mental Health Incident Review
+
+1. Write down what happened in the Incident
+2. Devise coping mechanisms that you think might improve your situation next time
+3. Write down what happened when you used them, the next time the same situation occurred
+
+notes:
+
+In software engineering, when a bug, crash, or other incident happens, we try to identify what happened with an incident review.
+The same principles work for me for figuring out what went wrong with a societal interaction incident.
+
+This is an example of applying the scientific method to our mental health.
+- Observe the incident. 
+- Hypothosise the cause
+- Come up with a theory that could change the situation next time.
+- Test that theory when it happens.
+
+Let's look at a concrete example that all too many people have experienced.
+
+Why a party can be terrible.
+
+---
+
+- party
+- having a good time
+- really loud
+- power through
+- leave in tears
+
+---
+
+Five Whys
+
+---
+
+# Clarification:
+## Autism symptoms are not inherently bad or good
+## Society's expectations of normalcy are not inherently bad or good
+
+I want to stress at this point that though I'm suggesting tools and techniques to change your own behaviour, this is not a moral judgement.
+
+The coping mechanisms that you discover for yourself are a practical way to cope with wider society, so that you can manage each day a little easier.
+
+This is also not to say that society's expectations of, say, eye contact or background music in every public place, or even the nuances of conversation cues are good, just because we want to have the option to mask or fit in from time to time.
+
+Masking is useful, but problematic.
+
+---
+
+# Masking
+
+notes:
+
+Suppressing or changing our behaviours to fit with the perceived norms of those around us.
+
+And it's not restricted to Autism, many people mask on a daily basis to fit in with society's understanding of how they should act.
+
+For more details ask any woman.
+
+And while masking should not be required, it is very useful.
+To make and improve your own, you must study those around you, in addition to studying yourself.
 
 ---
 
