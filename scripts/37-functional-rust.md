@@ -539,7 +539,6 @@ fn setup() {
 ```
 
 notes:
-- [x] retake this slide.
 Here's our test module setup.
 
 Everything you see in this video from now on will be inside this module.
