@@ -267,6 +267,10 @@ notes:
 ## Learning About Yourself
 - [ ] some fancy "know thyself" imagary
 
+> The first principle is that you must not fool yourself, and you are the easiest person to fool
+
+-- Richard Feynman
+
 notes:
 
 If you have autism, there are many options you should persue, and your doctor can help you there.
