@@ -8,6 +8,7 @@ audience: People with autism, undiagnosed people questioning things, parents of 
 - [ ] a diagnosis gives you more confidence in telling people
 - [ ] scientific method
 - [ ] we give it a name because names have power
+- [ ] 
 
 ---
 
@@ -144,6 +145,7 @@ notes:
 - if one or both of you parents had it, you likely have it
 - But the reverse is likely true: If you have it, ask your parents some questions about how they have experienced life
 
+
 ---
 
 - [ ] triptych of talking, stimming, timetable
@@ -220,6 +222,18 @@ notes:
 - not making eye contact
 - social skills difficult
 - sensory overload
+
+---
+
+# Finding My People
+
+> I was more like my friends than I suspected.
+
+-- Annie Kotowicz, in "Unpuzzling a Life on the Autism Spectrum"
+
+notes:
+
+
 
 ---
 
@@ -488,6 +502,38 @@ notes:
 - c - d
 - the states are saved, but to rebuild context
 
+
+---
+
+## Gender Norms
+
+As x says in What I say when I XYZ
+
+> On average, the autistic people I've met have seeemed more androgynous than the neurotypical peope I've met.
+
+
+Reason: gender's another societal construct that we don't pick up on well.
+
+
+
+---
+
+## Autistic Fears
+
+notes:
+
+mitigating discomfort has become my first step, so that less bravery is required.
+Nevertheless, some amount of bravery will always be needed.
+
+---
+
+## Energy Budgeting
+
+> I push myself too hard when I assume that my current self is the same as my recent self. It's not.
+
+- Spoons metaphor
+- you don't have the same reserves as other
+- learn this
 
 ---
 
