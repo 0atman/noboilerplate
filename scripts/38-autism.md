@@ -1,12 +1,22 @@
 ---
 audience: People with autism, undiagnosed people questioning things, parents of children with autism
 ---
+<style>
+:root {--r-code-font: "FiraCode Nerd Font";}
+.reveal .hljs {min-height: 50%;}
+</style>
 
 ## Todo
+- [ ] rewrite with the guide [How to talk about autism](file:///home/oatman/Downloads/NAS_How%20to%20talk%20and%20write%20about%20autism.pdf)
+---
+
+# The Autism Constellation
+
+## How to Cope
 
 ---
 
-- [ ] Autism starry logo
+![[autism-constellations.png]]
 
 notes:
 
@@ -16,83 +26,89 @@ Hi friends, my name is Tris and this is No Boilerplate, focusing on fast, techni
 
 If you break your arm, the cause is apparent, and the symptoms lead directly back to it.
 
-Autism, like many mental health conditions, does not appear to be like this. We can't yet comprehensively diagnose the root cause or causes.
+Autism, does not appear to be like this. We can't yet comprehensively diagnose the physical root cause or causes.
 
-Just look at the list of symptoms that someone with autism can present with:
+Just look at some of the traits that someone with autism can have:
 
 ---
 
-- [ ] list of autism symptoms
+### Autism Symptoms (incomplete)
+
+- Anxiety
+- Bipolar disorder
+- Depression
+- ADHD
+- Selective mutism
+- Schizophrenia
+- OCD
+- PTSD
 
 notes:
 
-# Symptoms
+How do you tell if you have autism, or some OTHER condition entirely?
 
-- [Intellectual disability](https://en.wikipedia.org/wiki/Intellectual_disability "Intellectual disability")
-- [anxiety](https://en.wikipedia.org/wiki/Anxiety "Anxiety")
-- [bipolar disorder](https://en.wikipedia.org/wiki/Bipolar_disorder "Bipolar disorder")
-- [depression](https://en.wikipedia.org/wiki/Depression_(mood) "Depression (mood)")
-- [Rett syndrome](https://en.wikipedia.org/wiki/Rett_syndrome "Rett syndrome"),
-- [attention deficit hyperactivity disorder](https://en.wikipedia.org/wiki/Attention_deficit_hyperactivity_disorder "Attention deficit hyperactivity disorder"),
-- [schizoid personality disorder](https://en.wikipedia.org/wiki/Schizoid_personality_disorder "Schizoid personality disorder")
-- [selective mutism](https://en.wikipedia.org/wiki/Selective_mutism "Selective mutism"),
-- [schizophrenia](https://en.wikipedia.org/wiki/Schizophrenia "Schizophrenia"),
-- [obsessive–compulsive disorder](https://en.wikipedia.org/wiki/Obsessive%E2%80%93compulsive_disorder "Obsessive–compulsive disorder"),
-- [social anxiety disorder](https://en.wikipedia.org/wiki/Social_anxiety_disorder "Social anxiety disorder"),
-- [Einstein syndrome](https://en.wikipedia.org/wiki/Late_talker "Late talker"),
-- learning disorders (mainly [speech disorders](https://en.wikipedia.org/wiki/Speech_disorder "Speech disorder"))
-- [PTSD](https://en.wikipedia.org/wiki/Post-traumatic_stress_disorder "Post-traumatic stress disorder"),
-
-How do you tell when you have autism, or just a few of these conditions, or some OTHER condition?
+I am not a doctor, but I do have Autism.
 
 ---
 
-- [ ] constellation
+<!-- slide bg="[[constellations.jpg]]" -->
 
 notes:
 
 # Constellation
 
-I am not a doctor, but I do have Autism.
-
-I don't pretend to know the link between the wide and varied symptoms that Autism presents with, though there are theories for some of them, and I am confident that modern medicine will figure it out in time.
-
 The way I picture my condition is like a constellation of stars.
+
+Autism is a neurological/developmental disorder, not a mental health condition.
+And because of the developmental/neurological difference, autism touches so many different areas that mental health disorders typically don't.
+
+The way to make sense of this is to find repeated patterns, the same as we do for the night sky.
 
 ---
 
-- [ ] Diagram of Ursa Minor, highlighting Ursa Minor Beta with a H2G2 reference.
+# Ursa Minor
+
+![[38-autism ursa minor.excalidraw.svg]]
 
 notes:
 
 ## Ursa Minor
 
-Because the 7 brightest stars of Ursa Minor always appear in the sky together, we have given them a name, a classification to separate them from all the other stars in the night sky, such as Ursa Minor Beta, where, according to Douglas Addams, the Hitch-Hikers Guide to The Galaxy is published.
+Because the 7 brightest stars of Ursa Minor always appear in the sky together, we have given them a name, a classification to separate them from all the other stars in the night sky.
 
 But constellations do and don't exist.
 
 ---
 
-- [ ] Diagram of Ursa Minor and earth, viewed from the side
-
+![[ursa-minor-projection.png]]
 notes:
 
 # Extra-terrestrial Star Projection
 
-Looked at from Earth, they certainly do. But seen from another point of view, another Galaxy perhaps, the grouping might not exist, or be missing some stars, or have gained a few others.
+Looked at from Earth, they certainly seem to. But seen from another point of view, the other side of the Galaxy perhaps, the grouping might not be visible, or be missing some stars, or have gained a few others.
 
 It exists as Ursa Minor only as a presentation to us, a grouping of stars that tend to go together.
-And we make these groupings because it is very useful to us.
+Polaris is 305Ly further away from us than the next brightest star, Ursa Minor Beta, they're not next to each other at all.
 
-Find a couple of bright stars in a shape you recognise, and you can more easily find the rest of the constellation, even in conditions that are less than idea.
+By the way, the record for hitch hiking this distance is just under an hour, but you don’t get to see much on the way.
 
-And once you recognise Ursa Minor, you can orient yourself to the north star.
+---
+
+
+# Ursa Minor
+
+![[38-autism ursa minor.excalidraw.svg]]
+
+notes:
+
+The reason we we make these groupings because it is very useful to us.
+
+Find a couple of bright stars in a shape you recognise, and you can more easily find the rest of the constellation, even in conditions that might less than idea.
+Once you recognise Ursa Minor, you can orient yourself to the north star.
 
 Once you've recognised the Autism constellation of behaviours, you can name it.
-Names have power.
 
-To name a thing is to control it,
-To name your behaviours "Autism" gives permission to feel the way you feel
+To name a thing is to control it.
 
 And you can begin to find your way.
 
@@ -109,120 +125,259 @@ Everything you see in this video: script, links, and images are part of a markdo
 
 ---
 
-# I Am Not a Doctor
-
-### But I Hope My Story Helps Others
+# There Are Two Jokes in This Video
 
 notes:
+
+I know two Autism jokes and I will share them with you in the two halves of this video.
+
+Are you ready for the first joke?
+
+---
+
+## Joke the First
+
+> Some say that people with Autism take things literally, but they are thinking of kleptomaniacs.
+
+---
+
+# Part 1
+
+# What is Autism?
+
+notes:
+
+I Am Not a Doctor
 
 - Just someone who has tried to understand his condition, scientifically and obsessively, for many years.
-- but I hope my story helps others
-- this is my story, I don't wish to say this is the only way to do things
+- I don't wish to say that what I say is the only way to do things
+- This is my story, and the advice that has worked for me
+- I hope telling it helps others, and gives ideas for things to try.
 
 ---
 
+<split gap="1">
 ![[What I Mean When I Say I'm Autistic - Cover.png|400]]
 
-notes:
-
-What I mean when I say I'm Autistic
-
-Annie Kotowicz
-%% (pron. kuh-TOE-vitch) %%
-
----
-
-- [ ] Diagram showing autism prevalence
-notes:
-
-# Autism is Extremely Common
-
-- 1 in 100 children have it
-- You don't grow out of it
-- which means that 1 in 100 adults could have it and not know they do
-- heritable
-- if one or both of you parents had it, you likely have it too
-- But the reverse is also likely true: If you have it, ask your parents some questions about how they have experienced life
-
----
-
-- [ ] triptych of talking, stimming, timetable
-notes:
-
-# Primary Autism Symptoms
-
-- regular difficulties in social interaction or communication
-- restricted or repetitive behaviours (often called "[stimming](https://en.wikipedia.org/wiki/Stimming "Stimming")")
-- resistance to changes or restricted interests
-
----
-
-- [ ] Social network graph
-
-notes:
-
-# Secondary Social Effects
-
-link back to primary symptoms:
-- problems in obtaining or sustaining employment or education
-- difficulties in initiating or sustaining social relationships
-- a history of neurodevelopmental conditions (including learning disabilities and [ADHD](https://en.wikipedia.org/wiki/Attention_deficit_hyperactivity_disorder "Attention deficit hyperactivity disorder")) or mental health conditions.
-
----
-
-<split even>
-
-![[sherlock-benny-c.png|300]]
-![[hawking-benny-c.png|300]]
-![[turing-benny-c.png|300]]
+![[unmasking-autism.png|400]]
 
 </split>
 
-### Benefits in Addition to Challenges?
-
 notes:
 
-Some of the symptoms of Autism, such as hyperfocus on restricted interests, lack of social aptitude, and XYZ can be useful,
-To the point where these traits seem to cause such genius in some people that the person is portrayed in film by Benedict Cumberbatch.
+# Credits
+
+Two books I recommend and have drawn upon greatly in the research for this video for some of the more technical aspects of Autism are:
+
+Firstly:
+
+## What I Mean when I Say I'm Autistic
+
+by Annie Kotowicz
+%% (pron. kuh-TOE-vitch) %%
+
+This is an eye-opening account of her self-discovery as one of the many undiagnosed women with autism.
+
+Available at: <http://autisticbook.com/>
+
+And secondly:
+
+# Unmasking Autism
+
+Dr. Devon Price
+Available at: <https://www.penguinrandomhouse.com/books/688819/unmasking-autism-by-devon-price-phd/>
+
+A comprehensive handbook of Autism, packed extremely densely with both science and advice.
+
+non-affiliate links to both of these books in the video description
 
 ---
 
-![[smaug-benny-c.png|400]]
-
-- ✅ Difficulties in social interaction
-- ✅ Restricted or repetitive behaviours
-- ✅ Resistance to changes
-- ✅ Restricted interests
-- ✅ Played by Benadryl Cummerbund
-
-### Smaug Confirmed ✅
-
----
+# Autism is Extremely Common
 
 notes:
 
-# Aside: Chicken or Egg?
-
-- Is it autism that causes the genius, or is it that regular society is bad, and not fitting in in some areas is actually a really good idea?
+- between 1 and 2 percent of children have it
+- You don't grow out of it
+- which means that 1 or 2 percent of adults could have it and not know they do
+- it seems to be extremely heritable
+- if one or both of your parents have it, you likely have it too
+- But the reverse is also likely true: If you have it, ask your parents some questions about how they have experienced their life so far
 
 ---
 
+## My Model of Autism:
+
+### Bottom-up Thinking
+
 notes:
 
-# My Experience
+The question of what causes autism is uninteresting to me, you can't see my biology, dna or chromosomes, what you can see is my behaviour, my presentation.
 
-I forgot I had autism still I was 25!
+We don't know the cause of autism, but the way I think about my condition is that it is caused by bottom-up thinking.
+I've heard this sometimes called details-oriented thinking.
+
+It's defined in contrast to top-down thinking, where high-level concepts are worked out first, details second.
+
+For me, bottom-up thinking is a proxy for the unknown, or missing root cause.
+
+---
+
+## Bottom-up Thinkers Value
+
+- **Our Senses** over what we are told
+- **Well-defined Rules** over tacit convention
+- **Sticking to a Plan** over improvisation
+- **Clear Data** over emotional arguments
+- **Reality** over society's imagined constructs
+
+That is, while there is value in the items on  
+the right, we value the items on the left more.
+
+_(dubiously adapted from The Agile Manefesto)_
+
+notes:
+
+This is why emotions can sometimes come slower to us, we're paying attention to the million details around us, and sometimes this causes us to miss what's going on inside us or in others, perhaps until it's too late
+
+You often can't simple tell us what to do, we'd prefer it if you also tell us the details of what and why, from the bottom up.
+
+---
+
+<!-- slide bg="[[you-know-the-rules.png]]" -->
+<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
+_"You know the rules, and so do I."_
+#### &mdash; R. Astley, Poet
+
+notes:
+
+- Country to stereotype Autistic people know many of the rules of society
+- autistic learning is like foreign language learning, I think:
+	- We learned the rules more recently then everyone else (we were late to the party)
+	- This means the rules are fresher in our mind
+	- and we work harder to adhere to them
+	- So we often get frustrated when we see other people not following them
+
+societal defaults don't come very naturally to us, because they don't often come with matching data:
+
+---
+
+![[colored-white-water-fountains.png]]
+
+notes:
+- some people are better than other people? 
+- That is an extrodinary claim, without extrodinary evidence to back it up
+
+---
+
+![[two-countries-alike-in-love-of-beige-food.png|800]]
+
+notes:
+
+- *our* nation happens to be better than all the others? 
+- How convienient! What does that statement even mean?
+
+---
+
+![[gender-cuffs.png]]
+-- TED.com
+
+notes:
+
+- The clothes I can wear are defined solely by my sex?
+- That doesn't seem very likely, and needlessly restrictive.
+- Who cares?
+- Who told you these rules?
+
+---
+
+## You Cannot Persuade Me of the Simplicity of the World
+
+### I Can't not See the Complexity
+
+notes:
+
+And herein lies the problem.
+
+Neurotypical people can often choose to employ either bottom-up thinking or top-down, depending on the situation.
+
+Autistic people can't make that choice as easily.
+
+---
+
+## Primary Autism Symptoms
+
+- Social interaction
+- Restricted behaviours
+- Restricted interests
+
+notes:
+
+This restricted bottom-up thinking causes the primary Autism symptoms of:
+
+- regular difficulties in social interaction and communication
+- restricted or repetitive behaviours
+- resistance to change or restricted interests
+
+- [ ] explain why bottom up thinking
+
+---
+
+## Secondary Social Effects
+
+- Employment
+- Relationships
+- Mental health
+
+notes:
+
+These primary behaviourss, cause wider secondary social effects, including
+
+- problems in getting or continuing employment or education
+- difficulties in initiating or sustaining social relationships
+- a history of mental health conditions due to our differences.
+
+---
+
+
+---
+
+> "There is no such thing as ethical consumption under capitalism"
+
+Have you heard this?
+
+notes:
+- [ ] link to autism
+
+Here's a thought experiment:
+
+The idea of "ethical consumption" is to try to spend your money in a way where nobody gets exploited, but people eventually learn that it is almost impossible in a capitalist system for someone somewhere along the line to not be "exploited" in some way where they aren't paid properly for their labour or are working in unconscionable conditions
+
+Autism's relationship to society is like this
+- [ ] explain normal behaviour under society
+
+> There's no such thing as rational behaviour in society.
+
+---
+
+# My Experience With Autism
+
+#### (briefly)
+
+notes:
+
+I forgot I had autism until I was 25!
 
 I had moved to a new flat in London and was registering with my new Doctor.
 During our introductory appointment, he pulled up my file from the NHS central database and talked himself and me through my history, asking for a few follow-up and clarification points along the way.
 
 Towards the end, the doctor said something that stuck with me. He said:
 
-> Tris, I can see there's an error in your file here, which I can correct for you. It says you have Autism, but speaking with you I can tell that's not right is it!
+> Tris, I can see there's an error in your file here, which I can correct for you. It says you have Autism, but speaking with you, I can tell that's not right, is it!
 
 He laughed, I didn't.
 
-I had fooled a doctor into thinking I was normal.
+I was masking so well, that I had fooled a doctor into thinking I was neurotypical.
 
 I was hit with a flashback to my childhood.
 
@@ -233,62 +388,129 @@ notes:
 # My Childhood
 
 - not making eye contact
-- social skills difficult
+- extreme social skills difficult
 - sensory overload
 
 ---
 
 # Finding My People
 
-> I was more like my friends than I suspected.
+<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
+_I was more like my friends than I suspected._
 
--- Annie Kotowicz, in "Unpuzzling a Life on the Autism Spectrum"
+#### &mdash; Annie Kotowicz
+
+##### "Unpuzzling A Life on the Autism Spectrum"
 
 notes:
+
+I eventually found my people.
 
 ---
-
-notes:
 
 # ADHD Comorbidity
 
+notes:
+
 In addition to the long list I showed early, Autism is extreme co-morbid with ADHD, which complicates diagnosis, as the conditions can sometimes mask each other.
+
+See my video on ADHD for more details there.
 
 Unlike ADHD, which is not typically considered a disability, Autism more often is. The truth is more complex than this binary label, of course.
 
-So what is it?
-- Is it a disability?
-- Is it a neurodivergence?
-- Is it a superpower?
-
 ---
 
-- [ ] Spectrum diagram from "Disability" to "Neurodivergent" through to "Superpower"
+# Disability?
+
+# Neurodivergence?
+
+# Superpower?
+
 notes:
 
-# All Three?
+- Is it a disability?
+- Is it a neurodivergence?
+- Is it, as some people say, a superpower?
 
 I think it can be any and all of these, depending on the person
 - disability
-    - An adult who can't make eye contact is indeed disabled by our society
-        - [ ] find the theory that names this
+    - An adult who can't make eye contact is indeed disabled by our society according to the Social Model of disability
 - if it is a Neurodivergence
     - means that it's a normal part of being human.
-    - Just as some people are introverts or extroverts, or a visual learner or a auditory learner, doesn't mean one is inherently better than the other.
-- Superpower
-    - someone with special interests and tendencies to withdraw from society used to be called a genius, a savant, a brilliant artist
-    - This definition troubles me, as I think it can minimise the problems people face.
+    - Just as some people are introverts or extroverts, or a visual learner or an auditory learner, doesn't mean one is inherently better than the other.
+    - And so it follows that autitsic thinking isn't inherently better or worse than more neurotypical ways of thinking.
+- Is it a Superpower?
+    - someone with highly specialised interests and tendencies to withdraw from society used to be called a genius, a savant, a brilliant artist
+    - But this definition troubles me, as I think it can minimise the problems people face by focussing on the advantages and utility of the condition.
+    - Normally the utility to your boss, your employment, not to yourself
+
+
+---
+### "Superpowers"?
+
+<split gap="1">
+
+![[sherlock-benny-c.png|280]]
+![[hawking-benny-c.png|280]]
+![[turing-benny-c.png|280]]
+
+</split>
+
+High praise.
+
+notes:
+
+Some of the symptoms of Autism, such as hyperfocus on restricted interests and lack of social aptitude, can have benefits.
+Sometimes these traits cause such apparent genius in people that the person is portrayed in film by Benedict Cumberbatch.
+
+---
+<split even >
+
+</split>
+![[smaug-benny-c.png|400]]
+
+- ✅ Difficulties in social interaction
+- ✅ Restricted or repetitive behaviours
+- ✅ Resistance to changes
+- ✅ Restricted interests
+- ✅ Played by Benadryl Cummerbund
+
+### Smaug Confirmed ✅
+
+notes:
+
+High praise indeed.
+
+---
 
 - [ ] turing bycycle story
 
-Which of these categories you fit in to changes from person to person, situation to situation, and day to day. and hour to hour
-- But you can help yourself by
+notes:
+
+Which of these categories you fit in to changes from person to person, situation to situation, day to day and hour to hour
+- But you can help yourself, as I did, by
 	- learning about yourself
 	- and testing coping mechanisms.
 
 ---
 
-### Part 2: Learning about Yourself
+# Aside
+
+## Chicken or Egg
+
+notes:
+
+Is it autism, though, that causes the apparent genius, or is it, perhaps, that regular society has many extremely detrimental norms, and not fitting in, in some areas is actually a really good idea?
+
+---
+
+## Joke the Second
+
+> Autism is dramatically over-represented in STEM fields like biomedical research. This could well mean that autism causes vaccines.
+
+---
+
+## Part 2: Studying the Patient
 
 <i class="fas fa-quote-left fa-2x fa-pull-left"></i>
 _"The first principle is that you must not fool yourself, and you are the easiest person to fool."_
@@ -297,30 +519,13 @@ _"The first principle is that you must not fool yourself, and you are the easies
 
 notes:
 
-If you have autism, there are many options you should peruse, and your doctor can help you there.
+If you are autistic, as I am, there are many options you should persue, and your doctor can help you there.
 
-Today I'm going to talk about the only one I feel qualified to talk about: Studying The Patient.
+Today I'm going to set out the only one I feel qualified to talk about: Studying The Patient.
 
 ---
 
 ## The Scientific Method
-
-```
-loop {
-	data = observation(world);
-	hypothesis = considering(data);
-	prediction = apply(hypothosis);
-	if test(prediction) == true {
-		publish(hypothosis)
-	} else {
-		continue
-	}
-}
-```
-
-Observe ➡ Hypothesise ➡ Predict ➡ Test ➡ Repeat
-
-notes:
 
 1. Observation
 2. Hypothesis
@@ -328,39 +533,46 @@ notes:
 4. Test
 5. Refine & Repeat
 
+notes:
+
 There is exactly one way to find out about the world around us:
 The Scientific Method.
 
-==Someone== defined this in a way I quite like
+This is especially important, and especially difficult with the mental health effects of autism.
+Richard Feynman said that "Science is a way of trying not to fool yourself." and that is what we must undertake.
 
-> It's a way of not fooling yourself
+Our perception is unreliable, our memory and recall unreliable, and the stories we tell ourselves and other people about ourselves are unreliable.
 
-Which is especially important, and especially difficult with mental health.
-Our perception is unreliable, our memory and recall is unreliable, and the stories we tell ourselves and other people about ourselves are unreliable.
-
-If you are to study the patient, you must find a way to cut through your and society's biases and filters to find ways to cope, or just mask or, if you're very lucky, thrive.
-
-8:22
+If you are to study the patient, as I recommend, you must find a way to cut through your and society's biases and filters to find ways to cope, or mask or, if you're very lucky, thrive.
 
 ---
 
+
+## Coping Mechanisms
+
+![[heal-yourself-boundaries.png]]
+
+[Heal Yourself, Skeletor.](https://skeletorislove.tumblr.com/)
+
 notes:
 
-# Coping Mechanisms
 
-With Autism you can't set the bone in a cast like you can if you break your arm.
+With Autism, you can't set the bone in a cast like you can if you break your arm.
+It will never heal on its own: you must heal yourself.
 
-There are two primary ways to ameliorate the fiction between your autistic brain and society's expectation:
+The fiction between our autistic behaviours and society's expectation of our behaviours cause many of the issues we face day to day.
+
+There are two main ways to ameliorate this:
 1. Change yourself, or
 2. Change society.
 
 And while the latter is a very important part of our collective story, others can speak on this topic better than I.
 
-I am going to focus on ourselves, the part of the problem that we more easily can influence.
+I am going to focus on ourselves, the part of the problem that we more easily can influence, and take charge of.
 
 ---
 
-# Mental Health Incident Review
+### Mental Health Incident Review
 
 1. Write down what happened in the Incident
 2. Devise coping mechanisms that you think might improve your situation next time
@@ -368,54 +580,155 @@ I am going to focus on ourselves, the part of the problem that we more easily ca
 
 notes:
 
-In software engineering, when a bug, crash, or other incident happens, we try to identify the cause and stop it happening again with an incident review.
+In my industry, software engineering, when a bug, crash, or other incident happens, we try to identify the cause and stop it happening again with an incident review.
 
-The same principles work for me for figuring out what went wrong with a societal interaction incident.
+The same principles work for me for figuring out what went wrong with a societal interaction incident, due to my autism.
+
+---
+
+#### Mental Health Incident Review Template
+
+```md
+# Description
+What happened?
+
+# Timeline
+When did it start?
+
+# '5Whys' Root Cause Analysis
+Ask yourself 'Why' 5 times. (explained later)
+
+# Actions to take to stop this happening in the future
+Ideas for new coping mechanisms to try
+```
+
+notes:
 
 This is an example of applying the scientific method to our mental health.
 - Observe the incident.
-- Hypothosise the cause
-- Come up with a theory that could change the situation next time.
-- Test that theory the next time you're in that situation.
+- Hypothesise the cause
+- Come up with a plan that could change the situation next time.
+- Test the plan the next time you're in that situation.
+
+You may take many days to finalise the incident review, as more thought brings triggers and other issues to light, as you think on it.
 
 Let's look at a concrete example that all too many people have experienced.
 
-Why a party can be terrible.
 
 ---
+
+## Incident Review Demo
 
 ### Timeline
 
 - **20:00** Arrive at party
-- **20:15** Everyone's here having a good time!
-- **20:30** Really uncomfortably loud though
-- **21:00** Ignore discomfort, everyone else is OK
-- **22:00** Leave in tears
-- **22:30** Long bus ride home
+- **20:15** The music's great! I'm having a good time!
+- *SCENE MISSING*
+- **22:00** Leave in tears!
+- **22:30** Long bus ride home, asking yourself:
 
-_Why does this keep happening?_
+**_"Why does this keep happening to me?"_**
+
+notes:
+
+
+We attended a party with friends, everything was looking up, but something ruined the evening for us, and we aren't sure why.
+We're left asking 
+**_"Why does this keep happening to me?"_**
+That's a great question
+Don't just ask yourself, test yourself
+Let's look at the incident report
 
 ---
 
-Five "Why"s
+## Incident Review Demo
+
+### '5Whys' Analysis
+
+```md
+# 5whys: House Party 2024-01-27
+
+1. Why did I had to leave the party.
+	- Because I was crying.
+2. Why was I crying?
+	- Because I was overwhelmed.
+1. Why was I overwhelmed?
+	- Because it was too loud.
+3. Why was it too loud?
+	- Because I didn't take a break.
+5. Why didn't I take a break?
+	- Because I was enjoying myself too much to notice
+```
+
+notes:
+
+1. Why did I have to leave the party?
+	- Because I was crying.
+2. Why was I crying?
+	- Because I was overwhelmed.
+1. Why was I overwhelmed?
+	- Because it was too loud.
+3. Why was it too loud?
+	- Because I didn't take a break.
+5. Why didn't I take a break?
+	- Because I was enjoying myself too much to notice
+
+The 5whys section of the incident review lead to one of the possible causes:
+
+If this method sounds like a therapist, there's a reason for that.
+
+There could be more than 5 reasons in the chain, by the way, the "5whys" system actually asks as many questions as needed to get to the root cause. I record only the most important 5 in my summaries.
+
+The 5whys I've demoed here may or may not be valid for you or for me, but I hope you can see the utility in drilling down from surface-level actions and reactions to the underlying causes.
+
+It's also cheaper than a therapist.
+
+---
+
+```md
+# Description
+I attended a party with friends, but left crying.
+# Timeline
+- 2024-01-27
+# '5Whys' Root Cause Analysis
+1. Why did I had to leave the party.
+2. Why was I crying?
+1. Why was I overwhelmed?
+3. Why was it too loud?
+5. Why didn't I take a break?
+	- Because I was enjoying myself too much to notice
+# Actions to take to stop this happening in the future
+**Set a timer to remind me to take a break every hour**
+```
+
+notes:
+
+The results of a clear-headed mental health incident review could give us the data we need, over time, to build and test new coping mechanisms for the next time we are in a similar challenging situation.
+
+In this case, going for a real or pretend smoke break every hour might help, and to stop us forgetting, we could set a timer, as it's clear that we can't always remember for ourselves!
 
 ---
 
 # Clarification
 
-## Autism Symptoms Are not Inherently Bad or Good
+<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
+_Things are as they are. Looking out into the universe at night, we make no comparisons between right and wrong stars, nor between well and badly arranged constellations._
 
-## Society's Expectations of Normalcy Are not Inherently Bad or Good
+#### &mdash; Alan Watts
 
-I want to stress at this point that though I'm suggesting tools and techniques to change your own behaviour, this is not a moral judgement.
+notes:
 
-The coping mechanisms that you discover for yourself are a practical way to cope with wider society, so that you can manage each day a little easier.
+I want to stress at this point that though I'm suggesting tools and techniques to change our behaviour, this is not a moral judgement about out behaviour.
 
-This is also not to say that society's expectations of, say, eye contact or background music in every public place, or even the nuances of conversation cues are inherantly good, just because we want to have the option to mask or fit in from time to time.
+The coping mechanisms that you discover for yourself are a practical way to cope with wider society so that you can manage each day a little easier.
 
-Masking, like fashion, helps us fit in, if we want to.
+This is also not to say that society's expectations of, say, eye contact or background music in every public place are inherently good, just because we want to have the option to mask or fit in from time to time.
 
-Masking is useful, but problematic.
+Masking, like fashion, helps us fit in, if it suits us.
+
+Do it for yourself, not for others.
+
+If you do it for others it becomes problematic.
 
 ---
 
@@ -428,33 +741,56 @@ notes:
 
 ## Masking
 
-Masking is Suppressing or changing our behaviours to fit with the perceived norms of those around us.
+One of the coping mechanisms that Autistic people use, for better and worse, is Masking.
+
+Masking is suppressing or changing our behaviours to fit with the perceived norms of those around us.
 
 And it's not restricted to Autism, many people mask on a daily basis to fit in with society's understanding of how they should act.
 
-For more details ask any woman.
+For more details, ask any woman.
+
+---
+
+<!-- slide bg="[[V.png]]" -->
+
+<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
+_"You wear a mask for so long you forget who you were underneath it."_
+
+#### &mdash; V for Vendetta
+
+notes:
+
+We all mask from time to time, such as when we're sad in our personal life, but want to remain professional at work, we can mask until they pass.
+We're advised not to bottle up our emotions, as that can have perminant concequences.
+But Autistic people are autistic all the time, so we must mask all the time.
 
 And while masking should not be required, it is very useful.
 To make and improve your own, you must study those around you, in addition to studying yourself.
 
- - [ ] masking we all do masking sad-> happy, when unwanted emotions come
-    - [ ] but autistic people are austic all the time, so they must mask all the time
-    - [ ] "that's called editing" wait "Masking"
-
 ---
+
+## Alternatives to Masking
+
+<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
+_"Refusing to perform neurotypicality is a revolutionary act of disability justice._
+
+_It’s also a radical act of self-love."_
+
+#### &mdash; Unmasking Autism
 
 notes:
 
-## Earplugs
-
-You know how you don't like pubs, clubs, stadia and other noisy places? Surprise! That's called sensory overload, and is an Autism symptom.
-
-wear earplugs to relieve this symptom.
-
-There's a lot of earplug options, from the classic foam cylinders to mouldable wax.
-I've heard that wax ear plugs can get stuck in there, so don't use those, I like the ones that look like rounded foam earbuds, very comfy.
+- Alcohol is a common coping device many autistic people use.
+	- The combination of helping you ignore society's expectation of your behaviour,
+	- and the fact that if other people around you are drinking too, they might not notice them either,
+	- is an understandable combination of desirable factors.
+- But consider this:
+- We can, with practice, ignore society's expectations of our behaviour without chemical help.
+- letting down your guard and being more yourself might mean being letting your autistic behaviours out, and that is ok, because it can make you happier.
 
 ---
+
+## Coping with Meltdowns
 
 ```md
 I will face my meltdown.
@@ -466,142 +802,17 @@ Where the meltdown has gone there will be nothing.
 Only I will remain.
 ```
 
-##### &mdash; Adapted from the "Litany Against Fear" from _Dune_
+##### &mdash; Adapted from _Dune_
 
 notes:
 
-# Meltdown
+Meltdowns affect many Autistic people, and can be caused by a variety of triggers:
+- Sensory overload
+- Change of plans
+
+I am very fortunate to have have mitigated my meltdowns with coping mecahanisms over the years.
 
 Breathe.
-
----
-
-notes:
-
-## Refuse to Guess
-
-```sh
-❯ python -c "import this" | grep ambiguity
-In the face of ambiguity, refuse the temptation to guess.
-```
-
-notes:
-
-OK, so while we're talking about Autism, let's talk about all those misunderstandings that happen when you talk to people.
-
-Neurotypical people have a lot more bandwidth available in their communications than you or I do.
-They take into consideration body language, tone, vocal hesitations, and extrapolate enormous amounts of information when talking.
-
-AND THEY EXPECT YOU TO DO THE SAME.
-
-You're not going to do that, nor should you have to.
-
-What you're going to do is, at the first hint of confusion or misunderstanding, say "I'm sorry, I don't understand" and let them try again.
-
-If they continue to give you incomplete confusing information, you are going to say again, patiently, "I don't understand", don't worry they won't mind repeating themselves, they all love talking, it'll help them too, trust me.
-
-And if on the third utterance they still don't make sense, you say "I'm sorry, I don't think YOU understand".
-Because half the time they DON'T, and it's not your responsibility to teach them how to communicate.
-
----
-
-- [ ] wake → water → yoga → write → shower
-
-notes:
-
-## Build Habits, Chain Them
-
-notes:
-
-There's a good but boring book called Triggers by Marshall Goldsmith, that I recommend you read, or ideally get someone to summarise it for you.
-
-Pay attention to what is making you do thing, its trigger, like a location, a song, a person or a thought.
-Then build a feedback loop to improve and chain these triggers together.
-
----
-
-notes:
-
-## Public Speaking is Important
-
-I'm very good at public speaking NOW, so it all works out eventually, but that is because I PRACTISED a lot.
-
-Yes that thing mum and dad asked us to do for the piano and we never did.
-
-At university you are going to realise public speaking is going to be
-1. a problem and
-2. mandatory in the wider world.
-
-Pay attention to people who seem like they know what they are talking about and figure out what makes them so good at explaining their thoughts.
-Don't bother with persuasion or rhetoric, we're not here for that, we're here to talk to people clearly and precisely.
-
-Study, imitate and practice.
-
----
-
-
-notes:
-
-## Imitate
-
-Pay attention to how people act, then do what they do.
-
-This works as well in a sprint planning meeting as it does on the dance floor.
-
----
-
-# ego problems
-
-notes:
-
-everyone is trying their hardest
-practice empathy
-
----
-
-notes:
-
-## You Can't Trick Me Emotionally
-
----
-
-notes:
-
-## Compartmentalisation
-
----
-
-notes:
-
-- a - b
-- b - c
-- c - d
-- the states are saved, but to rebuild context
-
----
-
-## Gender Norms
-
-As x says in What I say when I XYZ
-
-> On average, the autistic people I've met have seeemed more androgynous than the neurotypical peope I've met.
-
-Reason: gender's another societal construct that we don't pick up on well.
-
----
-
-> no ethical consumption under capitalism
-
-- adapt this to autism
-
----
-
-## Autistic Fears
-
-notes:
-
-mitigating discomfort has become my first step, so that less bravery is required.
-Nevertheless, some amount of bravery will always be needed.
 
 ---
 
@@ -609,9 +820,38 @@ Nevertheless, some amount of bravery will always be needed.
 
 > I push myself too hard when I assume that my current self is the same as my recent self. It's not.
 
+WIMWISA
+
+notes:
+
 - Spoons metaphor
 - you don't have the same reserves as other
 - learn this
+
+---
+
+<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
+_"Your needs are value-neutral."_
+
+#### &mdash; Unmasking Autism
+
+notes:
+
+The primary advice I wish to give leave you, is that you are allowed to find out how to make space for yourself.
+
+- You are allowed to leave the room if it is too noisy, or to wear earplugs or headphones.
+- you are allowed to ask people clarification questions when they do not provide enough detail.
+- and you are allowed to build and test coping mechanisms to fix the gaps that you perceive between where you are now and where you would like to be.
+
+You're not just allowed to do these things, if they make your life easier or your days happier, I think you should.
+
+And you should start today.
+
+---
+
+## Thanks
+
+Carin S. Calder-La Croix and I am happy for you to link to my Instagram: [https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA==](https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA== "https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA==")
 
 ---
 
@@ -632,8 +872,3 @@ Or if urban fantasy is more your bag, do listen to a strange and beautiful podca
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
 Thank you so much for watching, talk to you on Discord.
-
-```rust
-  println!("That's all folks!");
-} 
-```

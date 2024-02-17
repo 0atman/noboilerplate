@@ -2,8 +2,24 @@
 audience:
 ---
 <style>
-:root {--r-code-font: "FiraCode Nerd Font";}
-.reveal .hljs {min-height: 50%;}
+:root {
+	--r-code-font: "FiraCode Nerd Font";
+}
+.reveal .hljs {
+	min-height: 50%;
+}
+
+.reveal .mermaid { 
+	min-width: 100%; height: auto;
+}
+.reveal .mermaid svg { 
+	max-width: 100% !important;
+}
+.reveal .mermaid svg .edgeLabel { 
+	background-color: var(--r-background-color) !important;
+	color: var(--r-main-color) !important;
+	font-size: 13px;
+}
 </style>
 %%
 
