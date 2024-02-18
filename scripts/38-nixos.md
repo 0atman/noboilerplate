@@ -524,13 +524,6 @@ Thank you.
 
 # Thumbnail Ideas
 
----
-
-<!-- slide bg="[[nixos-icon.svg]]" -->
-
-# I Used to <!-- element class="contrast" -->
-
-# Use Arch, Btw <!-- element class="contrast" -->
 
 ---
 
