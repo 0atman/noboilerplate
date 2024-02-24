@@ -5,6 +5,7 @@
 %%
 
 f7f7f7 background slide colour
+or maybe 191919
 
 # Cargo.toml
 

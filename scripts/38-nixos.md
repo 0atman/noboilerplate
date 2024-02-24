@@ -1,10 +1,6 @@
 ---
 audience: Linux users
 ---
-- [ ] write script [[@pc]]
-- [ ] edit video
-- [ ] video patreon approval
-- [ ] publish final video
 
 <style>
 :root {
@@ -36,11 +32,6 @@ audience: Linux users
 ![[nixos-icon.svg|800]]
 
 notes:
-%%
-- Tell them what you're going to tell them
-- Tell them
-- Tell them what you told them
-%%
 
 # NixOS: Everything, Everywhere, All At Once
 
@@ -59,7 +50,7 @@ All of my videos, music, podcasts, and gaming is on Linux.
 
 ---
 
-## Differentiated
+## What makes a linx distro?
 
 - ✅ Package Manager
 - ✅ Release cycle (stability, freshness)
@@ -239,8 +230,7 @@ Imagine your whole system configured from a single declarative package file. Tha
 
 ---
 
-![installer|800](https://itsfoss.com/content/images/size/w600/2023/02/1.-choose-the-language-of-NixOS-installer.png)
-
+![[nixos-installer.png]]
 notes:
 
 And you don't have to write the package file from scratch! NixOS has a graphical installer that looks like all the other Linux installers.
@@ -383,13 +373,430 @@ This is like booting a previous kernel version, but with ALL THE OTHER MOVING PI
 For someone who has suddenly become a professional online person, this is SUCH a relief when I have deadlines and videos need making, and an update ruins my day.
 This can't happen to me anymore. Or if it does, I roll back, keep working, and fix it later on, after the deadline.
 
-%% patreon here %%
+---
+
+# Part 2
+
+## TIPS
+
+notes:
+
+Part 2: Tips
+
+Through trial and error here are all the tips I've found along the way as I have tumbled down the NixOS rabit hole
+
+---
+
+![[patreon.png|200]]
+
+## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
+
+notes:
+
+It's just me running this channel, and I'm so grateful to everyone for supporting me on this wild adventure.
+
+If you'd like to see and give feedback on my videos up to a week early, as well as get discord perks, and even your name in the credits, it would be very kind of you to check my Patreon.
+
+I'm also offering a limited number of mentoring slots. If you'd like 1:1 tuition on Rust, Personal organisation, creative production, Web tech, or anything that I talk about in my videos, do sign up and let's chat!
+
+---
+
+## Don't use `nix-env`
+
+```sh
+$ nix-env -iA nixpkgs.firefox
+
+$ nix-env --uninstall firefox
+```
+
+notes:
+
+Many nix tutorials talk about nix-env.
+Don't use this, it doesn't interact with the global declarative configuration.nix, and when i first tried NixOS 4 years ago, I bounced off it because I couldn't see the point in learning this alien distro just to get non-reproducibility again.
+
+Never use it.
+
+---
+
+`./rebuild`
+
+```sh[]
+#!/bin/bash
+set -e
+pushd ~/dotfiles/nixos/
+nvim oatman-pc.nix
+git diff -U0 *.nix
+echo "NixOS Rebuilding..."
+sudo nixos-rebuild switch &>nixos-switch.log || (
+ cat nixos-switch.log | grep --color error && false)
+gen=$(nixos-rebuild list-generations | grep current)
+alejandra . &>/dev/null
+git commit -am "$gen"
+popd
+```
+
+
+(get the actual code from my [gist](https://gist.github.com/0atman/1a5133b842f929ba4c1e195ee67599d5) in the video source)
+
+notes:
+
+This is either genius or stupid, or perhaps more likely BOTH
+
+When you use nixos, you do two things very often
+1. Edit your config
+2. Run `nixos-rebuild switch`, to switch to it
+
+This is the primary loop of NixOS configuration, imagine how often you edit a config file or add a package or run a configuration command on other Linux distros.
+All those actions and disparate configs are now unified, on NixOS, so nearly everyone builds their own script or alias for streamlining this process.
+
+Here is mine, and I quite like it.
+
+---
+
+`./rebuild`
+
+```sh[5]
+#!/bin/bash
+set -e
+pushd ~/dotfiles/nixos/
+nvim oatman-pc.nix
+git diff -U0 *.nix
+echo "NixOS Rebuilding..."
+sudo nixos-rebuild switch &>nixos-switch.log || (
+ cat nixos-switch.log | grep --color error && false)
+gen=$(nixos-rebuild list-generations | grep current)
+alejandra . &>/dev/null
+git commit -am "$gen"
+popd
+```
+
+notes:
+
+First I edit my configuration in my editor.
+
+---
+
+`./rebuild`
+
+```sh[5]
+#!/bin/bash
+set -e
+pushd ~/dotfiles/nixos/
+nvim oatman-pc.nix
+git diff -U0 *.nix
+echo "NixOS Rebuilding..."
+sudo nixos-rebuild switch &>nixos-switch.log || (
+ cat nixos-switch.log | grep --color error && false)
+gen=$(nixos-rebuild list-generations | grep current)
+alejandra . &>/dev/null
+git commit -am "$gen"
+popd
+```
+
+notes:
+
+Then, after saving, git shows me what I have changed as a sanity check... 
+
+---
+
+`./rebuild`
+
+```sh[8]
+#!/bin/bash
+set -e
+pushd ~/dotfiles/nixos/
+nvim oatman-pc.nix
+git diff -U0 *.nix
+echo "NixOS Rebuilding..."
+sudo nixos-rebuild switch &>nixos-switch.log || (
+ cat nixos-switch.log | grep --color error && false)
+gen=$(nixos-rebuild list-generations | grep current)
+alejandra . &>/dev/null
+git commit -am "$gen"
+popd
+```
+
+notes:
+
+...before I type my sudo password and start the rebuild.
+
+---
+
+`./rebuild`
+
+```sh[]
+#!/bin/bash
+set -e
+pushd ~/dotfiles/nixos/
+nvim oatman-pc.nix
+git diff -U0 *.nix
+echo "NixOS Rebuilding..."
+sudo nixos-rebuild switch &>nixos-switch.log || (
+ cat nixos-switch.log | grep --color error && false)
+gen=$(nixos-rebuild list-generations | grep current)
+alejandra . &>/dev/null
+git commit -am "$gen"
+popd
+```
+
+notes:
+
+---
+
+`./rebuild`
+
+```sh[]
+#!/bin/bash
+set -e
+pushd ~/dotfiles/nixos/
+nvim oatman-pc.nix
+git diff -U0 *.nix
+echo "NixOS Rebuilding..."
+sudo nixos-rebuild switch &>nixos-switch.log || (
+ cat nixos-switch.log | grep --color error && false)
+gen=$(nixos-rebuild list-generations | grep current)
+alejandra . &>/dev/null
+git commit -am "$gen"
+popd
+```
+
+notes:
+
+---
+
+`./rebuild`
+
+```sh[]
+#!/bin/bash
+set -e
+pushd ~/dotfiles/nixos/
+nvim oatman-pc.nix
+git diff -U0 *.nix
+echo "NixOS Rebuilding..."
+sudo nixos-rebuild switch &>nixos-switch.log || (
+ cat nixos-switch.log | grep --color error && false)
+gen=$(nixos-rebuild list-generations | grep current)
+alejandra . &>/dev/null
+git commit -am "$gen"
+popd
+```
+
+notes:
+
+---
+
+`./rebuild`
+
+```sh[]
+#!/bin/bash
+set -e
+pushd ~/dotfiles/nixos/
+nvim oatman-pc.nix
+git diff -U0 *.nix
+echo "NixOS Rebuilding..."
+sudo nixos-rebuild switch &>nixos-switch.log || (
+ cat nixos-switch.log | grep --color error && false)
+gen=$(nixos-rebuild list-generations | grep current)
+alejandra . &>/dev/null
+git commit -am "$gen"
+popd
+```
+
+notes:
+
+---
+
+```diff
+❯ rebuild 
+```
+
+_(I add neofetch to my config then `:wq`)_
+
+```diff
+~/dotfiles/nixos ~/dotfiles/nixos
+--- a/nixos/oatman-pc.nix
++++ b/nixos/oatman-pc.nix
+@@ -313,0 +314 @@
++    neofetch
+
+NixOS Rebuilding...
+activating the configuration...
+setting up /etc...
+[main 55e7e60] 160 current  2024-02-23 16:38:54 
+ 1 file changed, 1 insertion(+)
+```
+
+notes:
+
+Here's what it outputs when adding a package, in this case neofetch.
+After adding it into my package list, I save and quit vim, and the script continues.
+- First, displaying a condensed diff, reminding me what I've changed across my nix files, it's simple in this case, of course 
+- Then it kicks off a rebuild of my nixos config, throwing away most of stdout, I just don't care what's happening, as long as it's going fine.
+	- I've already tabbed back to what I was supposed to be doing before I fell down a system configuration habit hole.
+- If successfully built, the config is then autoformatted
+- and then committed with the current generation's metadata as the commit message.
+- Here we just built generation 160
+
+---
+
+```sh[3-7]
+❯ git log
+
+commit   12673c8f57e4384c[...] (HEAD -> main)
+Author: Tris <contact@noboilerplate.org>
+Date:   Fri Feb 23 16:39:23 2024 +0000
+
+    160 current  2024-02-23 16:39:23 
+
+commit  55e7e609b6c1f11a6[...] (HEAD -> main)
+Author: Tris <contact@noboilerplate.org>
+Date:   Fri Feb 23 16:38:56 2024 +0000
+
+    159 current  2024-02-23 16:38:54 
+```
+
+notes:
+
+And if we run git log, we see the latest commit is up to date.
+
+This is a feature that's missing from nixos I think - while you can revert to any previous working generation of your  system, it doesn't revert your configuration.nix, which I assumed it would.
+
+Versioning your config is the solution to this, and good practice, recommended everywhere.
+Committing after every single successful build feels like working in a TDD environment, which I love.
+
+If you're concerned about the number of commits this generates, firstly, don't, who cares, but secondly, the script doesn't push the changes, you could squash these commits into a larger feature before pushing.
+
+---
+
+![[nixos-bad-traceback.png]]
+
+## WHO IS FLYING THIS THING!?
+
+notes:
+
+If something goes wrong in a nixos build, the vomit that hits your terminal is TERRIBLE! And a huge problem for newbies.
+
+Call me spoiled, coming from the Rust world with the best errors in the business, but this is unacceptable, right?. 
+
+Even simple errors like this variable typo are often hidden in the middle of an incomprehensible traceback, this one's relatively small.
+The error isn't at the end, the error isn't at the beginning, it's in the middle.
+
+This is just bad design.
+
+---
+
+```diff
+~/dotfiles/nixos ~/dotfiles/nixos
+--- a/nixos/oatman-pc.nix
++++ b/nixos/oatman-pc.nix
+@@ -297 +297 @@
+-    neofetch
++    neoERRORfetch
+NixOS Rebuilding...
+error:
+       error: undefined variable 'neoERRORfetch'
+```
+
+notes:
+
+Reading only the error is often as just as useful as reading the whole traceback.
+The errors themselves are ususally pretty simple, and so my script just prints that, so you know where to look.
+
+The full log for the last rebuild is saved in `nixos-switch.log`, if something has gone really wrong.
+Also for very long-running compiles, such as entire browser builds, it's nice to tail this log to see what's happening.
+
+---
+
+```diff
+~/dotfiles/nixos ~/dotfiles/nixos
+--- a/nixos/oatman-pc.nix
++++ b/nixos/oatman-pc.nix
+@@ -297 +297 @@
+-    neoERRORfetch
++    neofetch
+NixOS Rebuilding...
+[main 3628d2a] 164 current  2024-02-24 09:58:40 
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+~/dotfiles/nixos
+```
+
+notes:
+
+But if all goes well, your package is installed and ready to go.
+
+---
+
+![[neofetch.png]]
+
+(minimum spec required to compile rust tbh)
+
+notes:
+And can run whatever new packages or config you just added, here's neofetch, for fun.
+
+---
+
+### Trivial custom services
+
+```nix
+  systemd.services.irc = {
+
+      serviceConfig = {
+        Type = "simple";
+        User = "oatman";
+        ExecStart = "screen -dmS irc irssi";
+        ExecStop = "screen -S irc -X quit";
+        }; 
+
+      wantedBy = ["multi-user.target"];
+  };
+```
+
+lightly edited for clarity, copypaste from:
+<https://nixos.wiki/wiki/Extend_NixOS>
+
+notes:
+
+My favourite suprise nixos feature is that I can make new systemd services from arbitrary long-running commands, trivially!
+
+Could I have done this by creating systemd units in ubuntu or arch? of course. But I tended not to, it was out of my normal routine.
+
+By configuring systemd using the same system for my normal day-to-day package management, has made adding new services easy, mundane, normal, even.
+
+And this is a subtle feature that touches everything in nixos.
+
+---
+
+| Arch Linux                                  | NixOS             |
+| ------------------------------------------- | ----------------- |
+| update `/etc/modules`?                      | configuration.nix |
+| `update-mime-database ~/.local/share/mime`? | configuration.nix |
+| `fc-list \| grep "FiraCode"`?               | configuration.nix |
+| `/etc/gdm3/custom.conf`?                    | configuration.nix |
+| `/usr/share/pipewire`?                      | configuration.nix |
+| `usermod -aG group user`                    | configuration.nix |
+| `MESA_LOADER_DRIVER_OVERRIDE=driver`        | configuration.nix |
+|                                             | configuration.nix |
+|                                             |                   |
+
+notes:
+
+- tweaking kernel modules is normal.
+- changing xdg mimetype config is normal
+- tweaking font settings is normal
+- Changing x11 or wayland settings is normal
+- adding advanced audio backends like pipewire or jack is normal
+- Optimising opengl and hardware accelleration settings is normal
+- and even adding my user to new groups is normal, something that I never sruggled with before, of course, but I never committed the exact command to memory, I'd look it up every time.
+
+All these things and everything else is configured in a single file, in one simple syntax, so I don't have to look it up each time.
+
+This is actually a huge deal.
 
 ---
 
 ## Stable or Rolling Release
 
-# OR BOTH
+## OR BOTH
 
 ```sh
 $ nix-channel --add \
@@ -474,33 +881,55 @@ Try out 10 in the same day!
 
 ---
 
-## Don't use `nix-env`
+### NixOS can be configured with TOML
 
-```sh
-$ nix-env -iA nixpkgs.firefox
-
-$ nix-env --uninstall firefox
+```nix
+# configuration.nix
+imports = [
+  (builtins.fromTOML (builtins.readFile ./myconfig.toml))
+];
 ```
+
+```toml
+# myconfig.toml
+[boot]
+loader.efi.canTouchEfiVariables = true;
+loader.systemd-boot.enable = true;
+
+[programs.steam]
+enable = true
+remotePlay.openFirewall = true
+dedicatedServer.openFirewall = true
+```
+
+(don't tell anyone)
 
 notes:
 
-Many nix tutorials talk about nix-env.
-Don't use this, it doesn't interact with the global declarative configuration.nix, and when i first tried NixOS 4 years ago, I bounced off it because I couldn't see the point in learning this alien distro just to get non-reproducibility again.
+And finally, look, I don't know if this is a good idea. I'm sharing this just between you and I and 200,000 of my closest friends.
 
-Never use it.
+When I first tried nixos, the byzantine configuration langauge confused me.
+It seemed like toml, but it had semicolons, modules, and, after scractching the surface, I realised it was an entire turing-complete functional programming language.
+
+After four years, I actually think the nix language is worth learning and getting used to, in the same way that for all its faults HTML is worth learning:
+Because it's the standard, and you'll be able to copy and paste config you find on the internet.
+
+However, there's nothing stopping you from using toml for a simple config like this.
+
+If you can't get over the syntax, there is another way.
 
 ---
 
 ## Extras
 
-- nix flakes = package.lock
+- **nix flakes** = package.lock
 	- exact reproducibility
-- home manager = dotfiles management
-	- I'm not sold on this
-- Turing-complete config
+- **home manager** = dotfiles management
+	- I'm not sold on this (I'm using gnu `stow`)
+- **Turing-complete config**
 	- use if statements etc
-- All packages get their own independent dependency tree
-- Nix dev setup
+- All packages get their own **independent dependency tree**
+- **Nix dev setup**
 
 notes:
 
@@ -512,18 +941,28 @@ There are a few more things to become familiar with, but you can do that while y
 
 ---
 
-<!-- slide bg="[[EEAAO-homage.svg]]" -->
+## [Ultimate NixOS Guide](https://www.youtube.com/watch?v=a67Sv4Mbxmc)
+
+![[vimenjoyer-nixos-guide.png|700]]
+
+⏯ [youtube.com/@vimjoyer](http://www.youtube.com/@vimjoyer) 💝 [ko-fi.com/vimjoyer](https://ko-fi.com/vimjoyer)
 
 notes:
 
-Go have fun! Try the latest packages, desktop environments and apps, all without reversing your mouse buttons!
+I have missed out so many details to keep this short but this video is the one you should watch next, Vimjoyer's fantastic, fast video on getting everything set up.
+
+This video gave me the key breakthrough about nixos's enormous package repo, and dozens more. 
+
+He's even got a repo with simple, starter, config to copy.
+
+Go have fun! Try the latest packages, desktop environments and apps, 
+And all without reversing your mouse buttons!
 
 Thank you.
 
 ---
 
 # Thumbnail Ideas
-
 
 ---
 
@@ -552,3 +991,10 @@ Or if urban fantasy is more your bag, do listen to a strange and beautiful podca
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
 Thank you so much for watching, talk to you on Discord.
+
+---
+
+- [x] write script [[@pc]]
+- [x] edit video
+- [x] video patreon approval
+- [ ] publish final video
