@@ -7,6 +7,9 @@
    id="svg3"
    sodipodi:docname="nixos-everywhere.svg"
    inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   inkscape:export-filename="nixos-everywhere.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -22,15 +25,22 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="0.22973633"
-     inkscape:cx="3736.8927"
-     inkscape:cy="2132.8799"
-     inkscape:window-width="3838"
-     inkscape:window-height="2132"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:zoom="0.16244812"
+     inkscape:cx="184.67435"
+     inkscape:cy="-1135.7472"
+     inkscape:window-width="3840"
+     inkscape:window-height="2083"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg3" />
+  <rect
+     style="fill:#000000;stroke-width:13.1288;fill-opacity:1"
+     id="rect1"
+     width="3899.3069"
+     height="2318.0327"
+     x="-126.82829"
+     y="-117.99136" />
   <rect
      style="fill:none;fill-opacity:1;stroke:none;stroke-width:18.927;stroke-opacity:1"
      id="rect6"
@@ -122,25 +132,25 @@
      style="font-size:8px;font-family:'TeX Gyre Bonum';-inkscape-font-specification:'TeX Gyre Bonum';white-space:pre;shape-inside:url(#rect4);display:inline;fill:#8f0000;fill-opacity:0.127405;stroke-width:0.377953" />
   <text
      xml:space="preserve"
-     transform="matrix(65.647432,0,0,61.457569,-8.2960471,684.05015)"
+     transform="matrix(65.647432,0,0,61.457569,-17.671047,684.05015)"
      id="text4-8"
      style="font-size:6.66667px;font-family:'TeX Gyre Bonum';-inkscape-font-specification:'TeX Gyre Bonum';white-space:pre;shape-inside:url(#rect5-7);display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.27587;stroke-dasharray:none;stroke-opacity:1"><tspan
        x="1.984375"
        y="7.8217997"
-       id="tspan4"><tspan
+       id="tspan2"><tspan
          style="font-weight:bold;font-family:Sans;-inkscape-font-specification:'Sans Bold'"
-         id="tspan3">EVERYWHERE
+         id="tspan1">EVERYWHERE
 </tspan></tspan></text>
   <text
      xml:space="preserve"
-     transform="matrix(70.515952,0,0,61.32813,-29.627836,262.254)"
+     transform="matrix(70.515952,0,0,61.32813,-29.627836,249.129)"
      id="text4"
      style="font-size:6.66667px;font-family:'TeX Gyre Bonum';-inkscape-font-specification:'TeX Gyre Bonum';white-space:pre;shape-inside:url(#rect5-5);display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.27587;stroke-dasharray:none;stroke-opacity:1"><tspan
        x="1.984375"
        y="7.8217997"
-       id="tspan6"><tspan
+       id="tspan4"><tspan
          style="font-weight:bold;font-family:Sans;-inkscape-font-specification:'Sans Bold'"
-         id="tspan5">EVERYTHING
+         id="tspan3">EVERYTHING
 </tspan></tspan></text>
   <text
      xml:space="preserve"
@@ -149,8 +159,8 @@
      style="font-size:6.66667px;font-family:'TeX Gyre Bonum';-inkscape-font-specification:'TeX Gyre Bonum';white-space:pre;shape-inside:url(#rect5-7-4-7-3);display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.266336;stroke-dasharray:none;stroke-opacity:1"><tspan
        x="1.984375"
        y="7.8217997"
-       id="tspan8"><tspan
+       id="tspan6"><tspan
          style="font-weight:bold;font-family:Sans;-inkscape-font-specification:'Sans Bold'"
-         id="tspan7">ALL AT ONCE
+         id="tspan5">ALL AT ONCE
 </tspan></tspan></text>
 </svg>
