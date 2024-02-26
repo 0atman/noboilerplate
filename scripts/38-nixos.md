@@ -43,7 +43,7 @@ And in my free time I spend a lot of time gaming on Linux, too!
 
 ---
 
-## What makes a linx distro?
+## What makes a linux distro?
 
 - ✅ Package Manager
 - ✅ Release cycle (stability, freshness)
