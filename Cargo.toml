@@ -8,3 +8,23 @@ edition = "2021"
 [dependencies]
 yate = "0.1.2"
 color-eyre = "*"
+leptos = { version = "0.6.6", features = ["csr", "nightly"] }
+console_error_panic_hook = "0.1.7"
+html-node = { version = "0.4.0", features = ["typed"] }
+rstml = "*"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+enum_glob_use = "deny"
+pedantic = "deny"
+nursery = "deny"
+unwrap_used = "deny"
+
+[profile.release]
+opt-level = 'z'   # Optimize for size.
+lto = true        # Enable Link Time Optimisation
+codegen-units = 1 # Reduced to increase optimisations.
+panic = 'abort'   # Abort on panic
+strip = "symbols" # Strip symbols from binary

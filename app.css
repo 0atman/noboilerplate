@@ -1,0 +1,6 @@
+/* mystyle.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* future css customisation goes here */
