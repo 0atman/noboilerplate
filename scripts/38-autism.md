@@ -1,5 +1,7 @@
 ---
 audience: People with autism, undiagnosed people questioning things, parents of children with autism
+tags:
+  - todo
 ---
 <style>
 :root {--r-code-font: "FiraCode Nerd Font";}
@@ -8,6 +10,7 @@ audience: People with autism, undiagnosed people questioning things, parents of 
 
 ## Todo
 - [ ] rewrite with the guide [How to talk about autism](file:///home/oatman/Downloads/NAS_How%20to%20talk%20and%20write%20about%20autism.pdf)
+- [ ] https://www.autism.org.uk/contact-us/media-enquiries/how-to-talk-and-write-about-autism
 ---
 
 # The Autism Constellation
@@ -16,7 +19,9 @@ audience: People with autism, undiagnosed people questioning things, parents of 
 
 ---
 
-![[autism-constellations.png]]
+
+
+<!-- slide bg="[[constellations.jpg]]" -->
 
 notes:
 
@@ -25,8 +30,12 @@ notes:
 Hi friends, my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
 If you break your arm, the cause is apparent, and the symptoms lead directly back to it.
+If something bad happens to a loved one, it may reasonably cause you depression.
 
-Autism, does not appear to be like this. We can't yet comprehensively diagnose the physical root cause or causes.
+Autism, does not appear to be like this. We can't yet comprehensively diagnose the biological or physiological root cause or causes.
+
+Autism is a neurological/developmental disorder, not a mental health condition.
+And because of the developmental/neurological difference, autistic traits touch so many different areas that a mental health disorder typically would not.
 
 Just look at some of the traits that someone with autism can have:
 
@@ -45,24 +54,11 @@ Just look at some of the traits that someone with autism can have:
 
 notes:
 
-How do you tell if you have autism, or some OTHER condition entirely?
+How do you tell if you are autistic, or have some OTHER condition entirely?
 
 I am not a doctor, but I do have Autism.
 
----
-
-<!-- slide bg="[[constellations.jpg]]" -->
-
-notes:
-
-# Constellation
-
-The way I picture my condition is like a constellation of stars.
-
-Autism is a neurological/developmental disorder, not a mental health condition.
-And because of the developmental/neurological difference, autism touches so many different areas that mental health disorders typically don't.
-
-The way to make sense of this is to find repeated patterns, the same as we do for the night sky.
+The way I picture my varied autistic traits is like a constellation of stars.
 
 ---
 
@@ -88,9 +84,10 @@ notes:
 Looked at from Earth, they certainly seem to. But seen from another point of view, the other side of the Galaxy perhaps, the grouping might not be visible, or be missing some stars, or have gained a few others.
 
 It exists as Ursa Minor only as a presentation to us, a grouping of stars that tend to go together.
-Polaris is 305Ly further away from us than the next brightest star, Ursa Minor Beta, they're not next to each other at all.
 
-By the way, the record for hitch hiking this distance is just under an hour, but you don’t get to see much on the way.
+For instance: Polaris is 305Ly further away from us than the next brightest star, Ursa Minor Beta, they're not next to each other at all.
+
+I understand the record for hitch hiking 305Ly is just under an hour, but you don’t get to see much on the way.
 
 ---
 
@@ -103,10 +100,16 @@ notes:
 
 The reason we we make these groupings because it is very useful to us.
 
-Find a couple of bright stars in a shape you recognise, and you can more easily find the rest of the constellation, even in conditions that might less than idea.
-Once you recognise Ursa Minor, you can orient yourself to the north star.
+Find a few bright stars in a shape you recognise, and you can more easily find the rest of the constellation, even in conditions that might less than idea.
+And once you recognise Ursa Minor, you can orient yourself to the north star.
 
-Once you've recognised the Autism constellation of behaviours, you can name it.
+---
+
+- [ ] back to the constellation photo, but this time with AUTISM spelled out in a constellation
+
+notes:
+
+So once you've recognised the Autism constellation of behaviours, you can name it.
 
 To name a thing is to control it.
 
@@ -129,7 +132,7 @@ Everything you see in this video: script, links, and images are part of a markdo
 
 notes:
 
-I know two Autism jokes and I will share them with you in the two halves of this video.
+I know two Autism jokes and I will share them both with you in the two halves of this video.
 
 Are you ready for the first joke?
 
@@ -154,42 +157,32 @@ I Am Not a Doctor
 - This is my story, and the advice that has worked for me
 - I hope telling it helps others, and gives ideas for things to try.
 
+
 ---
 
-<split gap="1">
-![[What I Mean When I Say I'm Autistic - Cover.png|400]]
 
-![[unmasking-autism.png|400]]
+<!-- slide bg="[[constellations.jpg]]" -->
 
-</split>
+👩 Alice is:
+- Left-handed
+- An Introvert
+- A Visual learner
 
 notes:
 
-# Credits
+An autistic person has a set of traits we group together under the autism label.
 
-Two books I recommend and have drawn upon greatly in the research for this video for some of the more technical aspects of Autism are:
+Three examples of common non-autistic traits are:
+1. Being left-handed,
+2. An Introvert, or
+3. Being more of a visual learner than auditory learner.
 
-Firstly:
+Traits are not inherently good or bad, though they might be better or worse suited to some situations than others.
 
-## What I Mean when I Say I'm Autistic
+More on that later.
 
-by Annie Kotowicz
-%% (pron. kuh-TOE-vitch) %%
+The way to make sense of this all, is to find repeated patterns, the same as we do for the night sky.
 
-This is an eye-opening account of her self-discovery as one of the many undiagnosed women with autism.
-
-Available at: <http://autisticbook.com/>
-
-And secondly:
-
-# Unmasking Autism
-
-Dr. Devon Price
-Available at: <https://www.penguinrandomhouse.com/books/688819/unmasking-autism-by-devon-price-phd/>
-
-A comprehensive handbook of Autism, packed extremely densely with both science and advice.
-
-non-affiliate links to both of these books in the video description
 
 ---
 
@@ -197,46 +190,45 @@ non-affiliate links to both of these books in the video description
 
 notes:
 
-- between 1 and 2 percent of children have it
-- You don't grow out of it
-- which means that 1 or 2 percent of adults could have it and not know they do
-- it seems to be extremely heritable
-- if one or both of your parents have it, you likely have it too
-- But the reverse is also likely true: If you have it, ask your parents some questions about how they have experienced their life so far
+- between 1 and 2 percent of children have it, and you don't grow out of it
+	- This means that 1 or 2 percent of adults could have it and not know they do
+- Autism seems to be extremely heritable
+	- if one or both of your parents have it, you likely have it too
+	- But the reverse is also likely true: If you have it, ask your parents some questions about how they have experienced their life so far
+
+- There does appear to be a single core trait, however, which surprised me
 
 ---
 
 ## My Model of Autism:
 
-### Bottom-up Thinking
+### Detail-oriented Thinking
 
 notes:
 
-The question of what causes autism is uninteresting to me, you can't see my biology, dna or chromosomes, what you can see is my behaviour, my presentation.
+The question of what causes autism is uninteresting to me, you can't see my biology, dna or chromosomes, what you can see is my behaviour and my presentation.
 
-We don't know the cause of autism, but the way I think about my condition is that it is caused by bottom-up thinking.
-I've heard this sometimes called details-oriented thinking.
+We don't know the cause of autism, but the way I think about my condition is that it is caused by detail-oriented thinking.
+I've heard this sometimes called bottom-up thinking.
 
-It's defined in contrast to top-down thinking, where high-level concepts are worked out first, details second.
+It's defined in contrast to thinking in abstractions, sometimes called top-down thinking, where high-level concepts are worked out first, details second.
 
-For me, bottom-up thinking is a proxy for the unknown, or missing root cause.
+For me, detail-oriented thinking is a proxy for the unknown, or missing root cause.
 
 ---
 
-## Bottom-up Thinkers Value
+## detail-oriented Thinkers Value
 
 - **Our Senses** over what we are told
 - **Well-defined Rules** over tacit convention
 - **Sticking to a Plan** over improvisation
 - **Clear Data** over emotional arguments
-- **Reality** over society's imagined constructs
-
-Direct perception over society's implicit abstractions?
+- **Direct perception** over society's implicit abstractions
 
 That is, while there is value in the items on  
 the right, we value the items on the left more.
 
-_(dubiously adapted from The Agile Manefesto)_
+_(dubiously adapted from The Agile Manifesto)_
 
 notes:
 
@@ -253,12 +245,12 @@ _"You know the rules, and so do I."_
 
 notes:
 
-- Country to stereotype Autistic people know many of the rules of society
+- Country to stereotype Autistic people are often more aware of the rules of society than non-autistic people.
 - autistic learning is like foreign language learning, I think:
 	- We learned the rules more recently then everyone else (we were late to the party)
-	- This means the rules are fresher in our mind
+	- This means the rules are fresher in our minds
 	- and we work harder to adhere to them
-	- So we often get frustrated when we see other people not following them
+	- so we often get frustrated when we see other people not following them
 
 societal defaults don't come very naturally to us, because they don't often come with matching data:
 
@@ -276,8 +268,8 @@ notes:
 
 notes:
 
-- *our* nation happens to be better than all the others? 
-- How convienient! What does that statement even mean?
+- The nation I was born in happens to be better than all the others? 
+- How convenient?
 
 ---
 
@@ -286,7 +278,7 @@ notes:
 
 notes:
 
-- The clothes I can wear are defined solely by my sex?
+- The clothes I can wear are defined solely by my biological sex?
 - That doesn't seem very likely, and needlessly restrictive.
 - Who cares?
 - Who told you these rules?
@@ -295,13 +287,13 @@ notes:
 
 ## You Cannot Persuade Me of the Simplicity of the World
 
-### I Can't not See the Complexity
+### I Can Only See the Complexity
 
 notes:
 
-And herein lies the problem.
+And herein lies the problem: Choice.
 
-Neurotypical people can often choose to employ either bottom-up thinking or top-down, depending on the situation.
+Neurotypical people more often can choose to employ either detail-oriented thinking or top-down, abstract thinking, depending on the task or situation.
 
 Autistic people can't make that choice as easily.
 
@@ -315,13 +307,15 @@ Autistic people can't make that choice as easily.
 
 notes:
 
-This restricted bottom-up thinking causes the primary Autism symptoms of:
+This restricted detail-oriented thinking causes the primary Autism symptoms of:
 
 - regular difficulties in social interaction and communication
+	- We are lost in the conversation, and are missing the social cues around us 
 - restricted or repetitive behaviours
+	- We tend not to look to others for behaviours to imitate, so often reach a local maximum we can't break out of
 - resistance to change or restricted interests
-
-- [ ] explain why bottom up thinking
+	- The wider world exerts its influence in large abstractions that can be predicted if you are not focising on the details.
+	- Autistic people focus on the weather, neurotypical people can better see the climate.
 
 ---
 
@@ -333,14 +327,11 @@ This restricted bottom-up thinking causes the primary Autism symptoms of:
 
 notes:
 
-These primary behaviourss, cause wider secondary social effects, including
+These primary behaviours, cause wider secondary social effects, including
 
 - problems in getting or continuing employment or education
 - difficulties in initiating or sustaining social relationships
-- a history of mental health conditions due to our differences.
-
----
-
+- a history of mental health conditions due to the conflict between our traits and a society not set up for people like us.
 
 ---
 
@@ -353,12 +344,33 @@ notes:
 
 Here's a thought experiment:
 
-The idea of "ethical consumption" is to try to spend your money in a way where nobody gets exploited, but people eventually learn that it is almost impossible in a capitalist system for someone somewhere along the line to not be "exploited" in some way where they aren't paid properly for their labour or are working in unconscionable conditions
+The idea of "ethical consumption" is for consumers to try to spend their money in a way where nobody gets exploited.
 
-Autism's relationship to society is like this
+But we eventually learn that it is almost impossible in a system designed for value extraction for someone, somewhere along the line, to not be exploited in some way where they aren't paid properly for their labour or are working in unconscionable conditions.
+
+An understandable coping mechanism with this world that we find ourselves in, is to ignore it.
+
+
+Autism's relationship to society is much like this problem.
+
+---
+
+> There's no such thing as "rational behaviour" in society.
+
+notes:
+
 - [ ] explain normal behaviour under society
 
-> There's no such thing as rational behaviour in society.
+
+---
+
+### Children's toys ARE unisex
+
+Here's the rules:
+
+1. If you don't operate a toy with your genitals, then it is for both boys and girls.
+2. If you DO operate it with your genitals, then this toy is not for children!j"
+
 
 ---
 
@@ -853,7 +865,50 @@ And you should start today.
 
 ## Thanks
 
-Carin S. Calder-La Croix and I am happy for you to link to my Instagram: [https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA==](https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA== "https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA==")
+> Carin S. Calder-La Croix and I am happy for you to link to my Instagram: [https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA==](https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA== "https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA==")
+
+---
+
+
+<split gap="1">
+![[What I Mean When I Say I'm Autistic - Cover.png|400]]
+
+![[unmasking-autism.png|400]]
+
+</split>
+
+notes:
+
+# Credits
+
+Before I continue, I must credit two books, which I recommend and have drawn upon greatly in the research for this video for some of the more technical aspects of Autism.
+
+Firstly:
+
+## What I Mean when I Say I'm Autistic
+
+by Annie Kotowicz
+%% (pron. kuh-TOE-vitch) %%
+
+This is an eye-opening account of her self-discovery as one of the many diagnosed women with autism.
+
+Available at: <http://autisticbook.com/>
+
+And secondly:
+
+# Unmasking Autism
+
+Dr. Devon Price
+Available at: <https://www.penguinrandomhouse.com/books/688819/unmasking-autism-by-devon-price-phd/>
+
+A comprehensive handbook of Autism, packed extremely densely with both science and advice.
+
+non-affiliate links to both of these books in the video description.
+
+Read them *both*.
+
+
+
 
 ---
 
