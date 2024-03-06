@@ -11,11 +11,13 @@ tags:
 ## Todo
 - [ ] rewrite with the guide [How to talk about autism](file:///home/oatman/Downloads/NAS_How%20to%20talk%20and%20write%20about%20autism.pdf)
 - [ ] https://www.autism.org.uk/contact-us/media-enquiries/how-to-talk-and-write-about-autism
+- [ ] where are all the images?
+- [ ] 
 ---
 
 # The Autism Constellation
 
-## How to Cope
+## And How to Cope
 
 ---
 
@@ -30,7 +32,6 @@ notes:
 Hi friends, my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
 If you break your arm, the cause is apparent, and the symptoms lead directly back to it.
-If something bad happens to a loved one, it may reasonably cause you depression.
 
 Autism, does not appear to be like this. We can't yet comprehensively diagnose the biological or physiological root cause or causes.
 
@@ -53,6 +54,8 @@ Just look at some of the traits that someone with autism can have:
 - PTSD
 
 notes:
+
+To name but a few.
 
 How do you tell if you are autistic, or have some OTHER condition entirely?
 
@@ -98,7 +101,7 @@ I understand the record for hitch hiking 305Ly is just under an hour, but you do
 
 notes:
 
-The reason we we make these groupings because it is very useful to us.
+The reason we we make these groupings is because it is very useful to us.
 
 Find a few bright stars in a shape you recognise, and you can more easily find the rest of the constellation, even in conditions that might less than idea.
 And once you recognise Ursa Minor, you can orient yourself to the north star.
@@ -109,7 +112,7 @@ And once you recognise Ursa Minor, you can orient yourself to the north star.
 
 notes:
 
-So once you've recognised the Autism constellation of behaviours, you can name it.
+Once you've recognised the Autism constellation of behaviours, you can name it.
 
 To name a thing is to control it.
 
@@ -153,7 +156,7 @@ notes:
 I Am Not a Doctor
 
 - Just someone who has tried to understand his condition, scientifically and obsessively, for many years.
-- I don't wish to say that what I say is the only way to do things
+- I don't wish to assert that what I say is the only way to do things
 - This is my story, and the advice that has worked for me
 - I hope telling it helps others, and gives ideas for things to try.
 
@@ -181,7 +184,9 @@ Traits are not inherently good or bad, though they might be better or worse suit
 
 More on that later.
 
-The way to make sense of this all, is to find repeated patterns, the same as we do for the night sky.
+The way to make sense of this all, is to find repeated patterns and groupings of traits, the same as we do for the night sky.
+
+There does appear to be a single core trait, however, which surprised me
 
 
 ---
@@ -190,13 +195,12 @@ The way to make sense of this all, is to find repeated patterns, the same as we 
 
 notes:
 
-- between 1 and 2 percent of children have it, and you don't grow out of it
-	- This means that 1 or 2 percent of adults could have it and not know they do
+- between 1 and 2 percent of children are autistic, and you don't grow out of it
+	- This means that 1 or 2 percent of adults could be autistic and not know they are
 - Autism seems to be extremely heritable
-	- if one or both of your parents have it, you likely have it too
-	- But the reverse is also likely true: If you have it, ask your parents some questions about how they have experienced their life so far
+	- if one or both of your parents are autistic, you likely are too
+	- But the reverse is also likely true: If are autistic, ask your parents some questions about how they have experienced their life so far
 
-- There does appear to be a single core trait, however, which surprised me
 
 ---
 
@@ -208,12 +212,12 @@ notes:
 
 The question of what causes autism is uninteresting to me, you can't see my biology, dna or chromosomes, what you can see is my behaviour and my presentation.
 
-We don't know the cause of autism, but the way I think about my condition is that it is caused by detail-oriented thinking.
+We don't know the biological cause of autism, but the way I think about my condition is that it is caused by detail-oriented thinking.
 I've heard this sometimes called bottom-up thinking.
 
 It's defined in contrast to thinking in abstractions, sometimes called top-down thinking, where high-level concepts are worked out first, details second.
 
-For me, detail-oriented thinking is a proxy for the unknown, or missing root cause.
+For me, detail-oriented thinking is a proxy for the as-yet unknown, currently missing root cause.
 
 ---
 
@@ -234,7 +238,7 @@ notes:
 
 This is why emotions can sometimes come slower to us, we're paying attention to the million details around us, and sometimes this causes us to miss what's going on inside us or in others, perhaps until it's too late
 
-You often can't simple tell us what to do, we'd prefer it if you also tell us the details of what and why, from the bottom up.
+You often can't simply tell us what to do, we'd prefer it if you also tell us the details of what and why, from the bottom up.
 
 ---
 
@@ -245,7 +249,7 @@ _"You know the rules, and so do I."_
 
 notes:
 
-- Country to stereotype Autistic people are often more aware of the rules of society than non-autistic people.
+- Country to stereotype, Autistic people are often more aware of the rules of society than non-autistic people.
 - autistic learning is like foreign language learning, I think:
 	- We learned the rules more recently then everyone else (we were late to the party)
 	- This means the rules are fresher in our minds
@@ -260,7 +264,7 @@ societal defaults don't come very naturally to us, because they don't often come
 
 notes:
 - some people are better than other people? 
-- That is an extrodinary claim, without extrodinary evidence to back it up
+- That is an extrodinary claim, without the extrodinary evidence needed to back it up
 
 ---
 
@@ -269,7 +273,7 @@ notes:
 notes:
 
 - The nation I was born in happens to be better than all the others? 
-- How convenient?
+- How convenient!
 
 ---
 
@@ -295,7 +299,7 @@ And herein lies the problem: Choice.
 
 Neurotypical people more often can choose to employ either detail-oriented thinking or top-down, abstract thinking, depending on the task or situation.
 
-Autistic people can't make that choice as easily.
+Autistic people can't make that choice as easily, and it defines our lives.
 
 ---
 
@@ -307,7 +311,7 @@ Autistic people can't make that choice as easily.
 
 notes:
 
-This restricted detail-oriented thinking causes the primary Autism symptoms of:
+This restricted, detail-oriented thinking causes the primary Autism symptoms of:
 
 - regular difficulties in social interaction and communication
 	- We are lost in the conversation, and are missing the social cues around us 
@@ -331,7 +335,7 @@ These primary behaviours, cause wider secondary social effects, including
 
 - problems in getting or continuing employment or education
 - difficulties in initiating or sustaining social relationships
-- a history of mental health conditions due to the conflict between our traits and a society not set up for people like us.
+- a history of mental health conditions due in part to the conflict between our traits and a society not set up for people like us.
 
 ---
 
@@ -346,14 +350,15 @@ Here's a thought experiment:
 
 The idea of "ethical consumption" is for consumers to try to spend their money in a way where nobody gets exploited.
 
-But we eventually learn that it is almost impossible in a system designed for value extraction for someone, somewhere along the line, to not be exploited in some way where they aren't paid properly for their labour or are working in unconscionable conditions.
+But we eventually learn that it is almost impossible in a system designed for value extraction, for someone, somewhere along the line, to not be exploited in some way where they aren't paid properly for their labour or are working in unconscionable conditions, often on our street, right now.
 
 An understandable coping mechanism with this world that we find ourselves in, is to ignore it.
-
 
 Autism's relationship to society is much like this problem.
 
 ---
+
+![[cool and normal.png|400]]
 
 > There's no such thing as "rational behaviour" in society.
 
@@ -369,7 +374,7 @@ notes:
 Here's the rules:
 
 1. If you don't operate a toy with your genitals, then it is for both boys and girls.
-2. If you DO operate it with your genitals, then this toy is not for children!j"
+2. If you DO operate it with your genitals, then this toy is not for children!"
 
 
 ---
@@ -398,7 +403,7 @@ I was hit with a flashback to my childhood.
 ---
 
 notes:
-
+- [ ] finish childhood
 # My Childhood
 
 - not making eye contact
@@ -453,6 +458,7 @@ I think it can be any and all of these, depending on the person
     - means that it's a normal part of being human.
     - Just as some people are introverts or extroverts, or a visual learner or an auditory learner, doesn't mean one is inherently better than the other.
     - And so it follows that autitsic thinking isn't inherently better or worse than more neurotypical ways of thinking.
+    - This is how I think of Autism.
 - Is it a Superpower?
     - someone with highly specialised interests and tendencies to withdraw from society used to be called a genius, a savant, a brilliant artist
     - But this definition troubles me, as I think it can minimise the problems people face by focussing on the advantages and utility of the condition.
@@ -552,10 +558,10 @@ notes:
 There is exactly one way to find out about the world around us:
 The Scientific Method.
 
-This is especially important, and especially difficult with the mental health effects of autism.
+This is especially important, and especially difficult with the mental health effects of Autism.
 Richard Feynman said that "Science is a way of trying not to fool yourself." and that is what we must undertake.
 
-Our perception is unreliable, our memory and recall unreliable, and the stories we tell ourselves and other people about ourselves are unreliable.
+Our perception is unreliable, our memory and recall unreliable, and the stories we tell ourselves and the people around us about ourselves are unreliable.
 
 If you are to study the patient, as I recommend, you must find a way to cut through your and society's biases and filters to find ways to cope, or mask or, if you're very lucky, thrive.
 
@@ -574,7 +580,7 @@ notes:
 With Autism, you can't set the bone in a cast like you can if you break your arm.
 It will never heal on its own: you must heal yourself.
 
-The fiction between our autistic behaviours and society's expectation of our behaviours cause many of the issues we face day to day.
+The friction between our autistic behaviours and society's expectation of our behaviours cause many of the issues we face day to day.
 
 There are two main ways to ameliorate this:
 1. Change yourself, or
@@ -624,9 +630,9 @@ This is an example of applying the scientific method to our mental health.
 - Come up with a plan that could change the situation next time.
 - Test the plan the next time you're in that situation.
 
-You may take many days to finalise the incident review, as more thought brings triggers and other issues to light, as you think on it.
+You may take many days to finalise the incident review, as more thought brings triggers and other issues to light.
 
-Let's look at a concrete example that all too many people have experienced.
+Lets look at a concrete example that all too many people have experienced.
 
 
 ---
@@ -691,7 +697,7 @@ The 5whys section of the incident review lead to one of the possible causes:
 
 If this method sounds like a therapist, there's a reason for that.
 
-There could be more than 5 reasons in the chain, by the way, the "5whys" system actually asks as many questions as needed to get to the root cause. I record only the most important 5 in my summaries.
+There could be more than 5 whys in the chain, by the way, the "5whys" system actually asks as many questions as needed to get to the root cause. We record only the most important 5 in our review.
 
 The 5whys I've demoed here may or may not be valid for you or for me, but I hope you can see the utility in drilling down from surface-level actions and reactions to the underlying causes.
 
@@ -732,13 +738,13 @@ _Things are as they are. Looking out into the universe at night, we make no comp
 
 notes:
 
-I want to stress at this point that though I'm suggesting tools and techniques to change our behaviour, this is not a moral judgement about out behaviour.
+I want to stress at this point that though I'm suggesting tools and techniques to change our behaviour, this is not a moral judgement about our behaviour.
 
 The coping mechanisms that you discover for yourself are a practical way to cope with wider society so that you can manage each day a little easier.
 
 This is also not to say that society's expectations of, say, eye contact or background music in every public place are inherently good, just because we want to have the option to mask or fit in from time to time.
 
-Masking, like fashion, helps us fit in, if it suits us.
+Masking, like fashion, helps us fit in, when it suits us.
 
 Do it for yourself, not for others.
 
@@ -774,7 +780,7 @@ _"You wear a mask for so long you forget who you were underneath it."_
 
 notes:
 
-We all mask from time to time, such as when we're sad in our personal life, but want to remain professional at work, we can mask until they pass.
+We all mask from time to time, such as when we're sad in our personal life, but want to remain professional at work, we can mask until the end of the work day.
 We're advised not to bottle up our emotions, as that can have perminant concequences.
 But Autistic people are autistic all the time, so we must mask all the time.
 
@@ -799,8 +805,8 @@ notes:
 	- and the fact that if other people around you are drinking too, they might not notice them either,
 	- is an understandable combination of desirable factors.
 - But consider this:
-- We can, with practice, ignore society's expectations of our behaviour without chemical help.
-- letting down your guard and being more yourself might mean being letting your autistic behaviours out, and that is ok, because it can make you happier.
+	- We can, with practice, ignore society's expectations of our behaviour without chemical help.
+	- letting down your guard and being more yourself might mean being letting your autistic behaviours out, and that is ok, around those you trust, because it can make you happier.
 
 ---
 
@@ -851,7 +857,7 @@ _"Your needs are value-neutral."_
 
 notes:
 
-The primary advice I wish to give leave you, is that you are allowed to find out how to make space for yourself.
+The primary advice I wish to leave you with, is that you are allowed to make space for yourself.
 
 - You are allowed to leave the room if it is too noisy, or to wear earplugs or headphones.
 - you are allowed to ask people clarification questions when they do not provide enough detail.
@@ -881,7 +887,7 @@ notes:
 
 # Credits
 
-Before I continue, I must credit two books, which I recommend and have drawn upon greatly in the research for this video for some of the more technical aspects of Autism.
+ I must credit two books, which I recommend and have drawn upon greatly in the research for this video for some of the more technical aspects of Autism.
 
 Firstly:
 
@@ -890,7 +896,7 @@ Firstly:
 by Annie Kotowicz
 %% (pron. kuh-TOE-vitch) %%
 
-This is an eye-opening account of her self-discovery as one of the many diagnosed women with autism.
+This is an eye-opening account of her self-discovery as one of the many women with autism only diagnosed as an adult.
 
 Available at: <http://autisticbook.com/>
 
@@ -906,8 +912,6 @@ A comprehensive handbook of Autism, packed extremely densely with both science a
 non-affiliate links to both of these books in the video description.
 
 Read them *both*.
-
-
 
 
 ---
