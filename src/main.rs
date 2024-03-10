@@ -47,6 +47,9 @@ fn template(inner: Node) -> Node {
                                 <a href="https://www.teepublic.com/stores/no-boilerplate?ref_id=33332" class="block lg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">
                                     Store
                                 </a>
+                                <a href="https://www.patreon.com/noboilerplate/posts" class="block lg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">
+                                    Support me on Patreon
+                                </a>
 
                             </div>
                         </div>
