@@ -898,7 +898,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "modemprometheus-com"
+name = "no-boilerplate-com"
 version = "0.1.0"
 dependencies = [
  "color-eyre",
