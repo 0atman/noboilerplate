@@ -9,10 +9,11 @@ tags:
 </style>
 
 ## Todo
+
 - [ ] rewrite with the guide [How to talk about autism](file:///home/oatman/Downloads/NAS_How%20to%20talk%20and%20write%20about%20autism.pdf)
-- [ ] https://www.autism.org.uk/contact-us/media-enquiries/how-to-talk-and-write-about-autism
+- [ ] <https://www.autism.org.uk/contact-us/media-enquiries/how-to-talk-and-write-about-autism>
 - [ ] where are all the images?
-- [ ] 
+- [ ]
 ---
 
 # The Autism Constellation
@@ -20,8 +21,6 @@ tags:
 ## And How to Cope
 
 ---
-
-
 
 <!-- slide bg="[[constellations.jpg]]" -->
 
@@ -36,9 +35,9 @@ If you break your arm, the cause is apparent, and the symptoms lead directly bac
 Autism, does not appear to be like this. We can't yet comprehensively diagnose the biological or physiological root cause or causes.
 
 Autism is a neurological/developmental disorder, not a mental health condition.
-And because of the developmental/neurological difference, autistic traits touch so many different areas that a mental health disorder typically would not.
+And because of the developmental/neurological difference, autistic traits touch so many different areas of life that a mental health disorder typically would not.
 
-Just look at some of the traits that someone with autism can have:
+Just look at some of the traits that someone with autism can express:
 
 ---
 
@@ -94,7 +93,6 @@ I understand the record for hitch hiking 305Ly is just under an hour, but you do
 
 ---
 
-
 # Ursa Minor
 
 ![[38-autism ursa minor.excalidraw.svg]]
@@ -128,6 +126,7 @@ And you can begin to find your way.
 
 notes:
 Everything you see in this video: script, links, and images are part of a markdown document available freely on github under a public domain licence.
+- [ ] todo
 
 ---
 
@@ -160,9 +159,7 @@ I Am Not a Doctor
 - This is my story, and the advice that has worked for me
 - I hope telling it helps others, and gives ideas for things to try.
 
-
 ---
-
 
 <!-- slide bg="[[constellations.jpg]]" -->
 
@@ -173,7 +170,7 @@ I Am Not a Doctor
 
 notes:
 
-An autistic person has a set of traits we group together under the autism label.
+An autistic person has a set of traits we group together under the Autism label.
 
 Three examples of common non-autistic traits are:
 1. Being left-handed,
@@ -186,8 +183,7 @@ More on that later.
 
 The way to make sense of this all, is to find repeated patterns and groupings of traits, the same as we do for the night sky.
 
-There does appear to be a single core trait, however, which surprised me
-
+There does appear to be a single autistic core trait, however, which surprised me
 
 ---
 
@@ -197,46 +193,28 @@ notes:
 
 - between 1 and 2 percent of children are autistic, and you don't grow out of it
 	- This means that 1 or 2 percent of adults could be autistic and not know they are
-- Autism seems to be extremely heritable
+- Autism auso seems to be extremely heritable
 	- if one or both of your parents are autistic, you likely are too
-	- But the reverse is also likely true: If are autistic, ask your parents some questions about how they have experienced their life so far
-
-
----
-
-## My Model of Autism:
-
-### Detail-oriented Thinking
-
-notes:
-
-The question of what causes autism is uninteresting to me, you can't see my biology, dna or chromosomes, what you can see is my behaviour and my presentation.
-
-We don't know the biological cause of autism, but the way I think about my condition is that it is caused by detail-oriented thinking.
-I've heard this sometimes called bottom-up thinking.
-
-It's defined in contrast to thinking in abstractions, sometimes called top-down thinking, where high-level concepts are worked out first, details second.
-
-For me, detail-oriented thinking is a proxy for the as-yet unknown, currently missing root cause.
+	- But the reverse is also likely true: If you are autistic, ask your parents some questions about how they have experienced their life so far
 
 ---
 
-## detail-oriented Thinkers Value
+## My Model of Autism
+
+### Detail-Oriented Thinkers Value:
 
 - **Our Senses** over what we are told
 - **Well-defined Rules** over tacit convention
 - **Sticking to a Plan** over improvisation
-- **Clear Data** over emotional arguments
-- **Direct perception** over society's implicit abstractions
+- **Clear Data** over society's implicit abstractions
 
-That is, while there is value in the items on  
-the right, we value the items on the left more.
-
-_(dubiously adapted from The Agile Manifesto)_
+_That is, while there is value in the items on  
+the right, we value the items on the left more.[^agilemani]_
 
 notes:
 
-This is why emotions can sometimes come slower to us, we're paying attention to the million details around us, and sometimes this causes us to miss what's going on inside us or in others, perhaps until it's too late
+
+This is why emotions can sometimes come slower to us, we're paying attention to the million details around us, and sometimes this causes us to miss the big picture
 
 You often can't simply tell us what to do, we'd prefer it if you also tell us the details of what and why, from the bottom up.
 
@@ -245,6 +223,7 @@ You often can't simply tell us what to do, we'd prefer it if you also tell us th
 <!-- slide bg="[[you-know-the-rules.png]]" -->
 <i class="fas fa-quote-left fa-2x fa-pull-left"></i>
 _"You know the rules, and so do I."_
+
 #### &mdash; R. Astley, Poet
 
 notes:
@@ -263,7 +242,7 @@ societal defaults don't come very naturally to us, because they don't often come
 ![[colored-white-water-fountains.png]]
 
 notes:
-- some people are better than other people? 
+- some people are better than other people?
 - That is an extrodinary claim, without the extrodinary evidence needed to back it up
 
 ---
@@ -272,7 +251,7 @@ notes:
 
 notes:
 
-- The nation I was born in happens to be better than all the others? 
+- The nation I was born in happens to be better than all the others?
 - How convenient!
 
 ---
@@ -286,6 +265,23 @@ notes:
 - That doesn't seem very likely, and needlessly restrictive.
 - Who cares?
 - Who told you these rules?
+
+---
+
+### Detail-oriented Thinking
+
+notes:
+
+The question of what causes autism is uninteresting to me, you can't see my biology, dna or chromosomes, what you can see is my behaviour and my presentation.
+
+We don't know the biological cause of autism, but the way I think about my condition is that it is caused by detail-oriented thinking.
+I've heard this sometimes called bottom-up thinking.
+
+It's defined in contrast to thinking in abstractions, sometimes called top-down thinking, where high-level concepts are worked out first, details second.
+
+For me, detail-oriented thinking is a proxy for the as-yet unknown, currently missing root cause.
+
+And it is a very useful framework
 
 ---
 
@@ -314,7 +310,7 @@ notes:
 This restricted, detail-oriented thinking causes the primary Autism symptoms of:
 
 - regular difficulties in social interaction and communication
-	- We are lost in the conversation, and are missing the social cues around us 
+	- We are lost in the conversation, and are missing the social cues around us
 - restricted or repetitive behaviours
 	- We tend not to look to others for behaviours to imitate, so often reach a local maximum we can't break out of
 - resistance to change or restricted interests
@@ -366,7 +362,6 @@ notes:
 
 - [ ] explain normal behaviour under society
 
-
 ---
 
 ### Children's toys ARE unisex
@@ -375,7 +370,6 @@ Here's the rules:
 
 1. If you don't operate a toy with your genitals, then it is for both boys and girls.
 2. If you DO operate it with your genitals, then this toy is not for children!"
-
 
 ---
 
@@ -404,6 +398,7 @@ I was hit with a flashback to my childhood.
 
 notes:
 - [ ] finish childhood
+
 # My Childhood
 
 - not making eye contact
@@ -464,8 +459,8 @@ I think it can be any and all of these, depending on the person
     - But this definition troubles me, as I think it can minimise the problems people face by focussing on the advantages and utility of the condition.
     - Normally the utility to your boss, your employment, not to yourself
 
-
 ---
+
 ### "Superpowers"?
 
 <split gap="1">
@@ -567,7 +562,6 @@ If you are to study the patient, as I recommend, you must find a way to cut thro
 
 ---
 
-
 ## Coping Mechanisms
 
 ![[heal-yourself-boundaries.png]]
@@ -575,7 +569,6 @@ If you are to study the patient, as I recommend, you must find a way to cut thro
 [Heal Yourself, Skeletor.](https://skeletorislove.tumblr.com/)
 
 notes:
-
 
 With Autism, you can't set the bone in a cast like you can if you break your arm.
 It will never heal on its own: you must heal yourself.
@@ -634,7 +627,6 @@ You may take many days to finalise the incident review, as more thought brings t
 
 Lets look at a concrete example that all too many people have experienced.
 
-
 ---
 
 ## Incident Review Demo
@@ -651,9 +643,8 @@ Lets look at a concrete example that all too many people have experienced.
 
 notes:
 
-
 We attended a party with friends, everything was looking up, but something ruined the evening for us, and we aren't sure why.
-We're left asking 
+We're left asking
 **_"Why does this keep happening to me?"_**
 That's a great question
 Don't just ask yourself, test yourself
@@ -875,7 +866,6 @@ And you should start today.
 
 ---
 
-
 <split gap="1">
 ![[What I Mean When I Say I'm Autistic - Cover.png|400]]
 
@@ -913,7 +903,6 @@ non-affiliate links to both of these books in the video description.
 
 Read them *both*.
 
-
 ---
 
 ![[tri-hex-moon-white-transparent.png|300]]
@@ -933,3 +922,12 @@ Or if urban fantasy is more your bag, do listen to a strange and beautiful podca
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
 Thank you so much for watching, talk to you on Discord.
+
+---
+
+# Footnotes
+
+<%? ==footnote==s %>
+# Footnotes
+
+[^agilemani]: dubiously adapted from The Agile Manifesto
