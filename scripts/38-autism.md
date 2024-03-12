@@ -124,9 +124,12 @@ And you can begin to find your way.
 
 [https://github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
+(For all footnotes[^footnotedemo] and [links]() read my scripts here)
+
+[^footnotedemo]: named footnotes are at the end of this file
+
 notes:
 Everything you see in this video: script, links, and images are part of a markdown document available freely on github under a public domain licence.
-- [ ] todo
 
 ---
 
@@ -201,7 +204,7 @@ notes:
 
 ## My Model of Autism
 
-### Detail-Oriented Thinkers Value:
+### Detail-Oriented Thinkers Value
 
 - **Our Senses** over what we are told
 - **Well-defined Rules** over tacit convention
@@ -212,7 +215,6 @@ _That is, while there is value in the items on
 the right, we value the items on the left more.[^agilemani]_
 
 notes:
-
 
 This is why emotions can sometimes come slower to us, we're paying attention to the million details around us, and sometimes this causes us to miss the big picture
 
@@ -235,7 +237,7 @@ notes:
 	- and we work harder to adhere to them
 	- so we often get frustrated when we see other people not following them
 
-societal defaults don't come very naturally to us, because they don't often come with matching data:
+societal defaults don't come very naturally to us because they don't often come with matching data:
 
 ---
 
@@ -243,7 +245,7 @@ societal defaults don't come very naturally to us, because they don't often come
 
 notes:
 - some people are better than other people?
-- That is an extrodinary claim, without the extrodinary evidence needed to back it up
+- That is an extraordinary claim, without the extraordinary evidence needed to back it up
 
 ---
 
@@ -925,9 +927,8 @@ Thank you so much for watching, talk to you on Discord.
 
 ---
 
-# Footnotes
-
 <%? ==footnote==s %>
+
 # Footnotes
 
 [^agilemani]: dubiously adapted from The Agile Manifesto
