@@ -73,7 +73,7 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 [https://github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
-(For all footnotes[^1] and [links]() read my scripts here)
+(for all footnotes[^1] and [links]() read my scripts here)
 
 [^1]: example.com
 

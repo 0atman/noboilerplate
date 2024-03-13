@@ -10,17 +10,14 @@ tags:
 
 ## Todo
 
-- [ ] rewrite with the guide [How to talk about autism](file:///home/oatman/Downloads/NAS_How%20to%20talk%20and%20write%20about%20autism.pdf)
-- [ ] <https://www.autism.org.uk/contact-us/media-enquiries/how-to-talk-and-write-about-autism>
-- [ ] where are all the images?
-- [ ]
 ---
 
-# The Autism Constellation
 
-## And How to Cope
+## Part 0:
+# The Autism 
+# Constellation
 
----
+### (Or: How to recognise Autism)
 
 <!-- slide bg="[[constellations.jpg]]" -->
 
@@ -106,9 +103,13 @@ And once you recognise Ursa Minor, you can orient yourself to the north star.
 
 ---
 
-- [ ] back to the constellation photo, but this time with AUTISM spelled out in a constellation
+<!-- slide bg="[[constellations.jpg]]" -->
+
+# AUTISM
 
 notes:
+
+- [ ] back to the constellation photo, but this time with AUTISM spelled out in a constellation
 
 Once you've recognised the Autism constellation of behaviours, you can name it.
 
@@ -124,7 +125,7 @@ And you can begin to find your way.
 
 [https://github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
-(For all footnotes[^footnotedemo] and [links]() read my scripts here)
+(for all footnotes[^footnotedemo] and [links]() read my scripts here)
 
 [^footnotedemo]: named footnotes are at the end of this file
 
@@ -133,11 +134,14 @@ Everything you see in this video: script, links, and images are part of a markdo
 
 ---
 
-# There Are Two Jokes in This Video
+
+# Part 1:
+
+## Detail-Orientated Thinking
 
 notes:
 
-I know two Autism jokes and I will share them both with you in the two halves of this video.
+I know two Autism jokes and I will share them both with you in this video.
 
 Are you ready for the first joke?
 
@@ -149,31 +153,25 @@ Are you ready for the first joke?
 
 ---
 
-# Part 1
-
-# What is Autism?
+# Disclaimer:
+## I am not a doctor
 
 notes:
 
-I Am Not a Doctor
+- I have grown from an autistic child who needed weekly lessons from a childhood psychiatrist in order to learn how to make eye contact, into an autistic adult who is flying high in an aeroplane made out of comprehensive coping mechanisms.
+- I Am Not a Doctor, just someone who has tried to understand his condition, scientifically and obsessively, for many years.
+- I hope explaining what has worked well for me helps others, and gives you ideas for things to try.
 
-- Just someone who has tried to understand his condition, scientifically and obsessively, for many years.
-- I don't wish to assert that what I say is the only way to do things
-- This is my story, and the advice that has worked for me
-- I hope telling it helps others, and gives ideas for things to try.
+An autistic person has a set of traits we group together under the Autism label.
 
 ---
 
-<!-- slide bg="[[constellations.jpg]]" -->
-
-👩 Alice is:
-- Left-handed
+### 👩 Alice is...
+- Left-Handed
 - An Introvert
 - A Visual learner
 
 notes:
-
-An autistic person has a set of traits we group together under the Autism label.
 
 Three examples of common non-autistic traits are:
 1. Being left-handed,
@@ -186,23 +184,38 @@ More on that later.
 
 The way to make sense of this all, is to find repeated patterns and groupings of traits, the same as we do for the night sky.
 
-There does appear to be a single autistic core trait, however, which surprised me
+There does appear to be a unifying autistic core trait, however, which surprised me:
 
 ---
+### Unifying Autistic Trait:
+## Detail-Oriented Thinking
 
+notes:
+
+We don't know the biological cause of autism, but the way I think about my condition is that it is caused by detail-oriented thinking.
+I've heard this sometimes called bottom-up thinking.
+
+This is in contrast to thinking in abstractions, sometimes called top-down thinking, where high-level concepts are worked out first, details second.
+
+The question of what causes autism is uninteresting to me, you can't see my biology, DNA or chromosomes, what you can see is my behaviour and my presentation.
+
+For me, detail-oriented thinking is a proxy for the as-yet unknown, currently missing root cause.
+
+And it is a very useful framework
+
+---
 # Autism is Extremely Common
 
 notes:
 
 - between 1 and 2 percent of children are autistic, and you don't grow out of it
 	- This means that 1 or 2 percent of adults could be autistic and not know they are
-- Autism auso seems to be extremely heritable
+- Autism also seems to be extremely heritable
 	- if one or both of your parents are autistic, you likely are too
 	- But the reverse is also likely true: If you are autistic, ask your parents some questions about how they have experienced their life so far
 
 ---
 
-## My Model of Autism
 
 ### Detail-Oriented Thinkers Value
 
@@ -226,11 +239,11 @@ You often can't simply tell us what to do, we'd prefer it if you also tell us th
 <i class="fas fa-quote-left fa-2x fa-pull-left"></i>
 _"You know the rules, and so do I."_
 
-#### &mdash; R. Astley, Poet
+#### &mdash; R. Astley, Philosopher
 
 notes:
 
-- Country to stereotype, Autistic people are often more aware of the rules of society than non-autistic people.
+- Country to common stereotypes, Autistic people are often more aware of the rules of society than non-autistic people.
 - autistic learning is like foreign language learning, I think:
 	- We learned the rules more recently then everyone else (we were late to the party)
 	- This means the rules are fresher in our minds
@@ -238,6 +251,16 @@ notes:
 	- so we often get frustrated when we see other people not following them
 
 societal defaults don't come very naturally to us because they don't often come with matching data:
+
+
+---
+
+# Show your working
+
+
+notes:
+
+autistic people, like mathematicians, want to see how you got to the answer, not just the answer.
 
 ---
 
@@ -268,22 +291,6 @@ notes:
 - Who cares?
 - Who told you these rules?
 
----
-
-### Detail-oriented Thinking
-
-notes:
-
-The question of what causes autism is uninteresting to me, you can't see my biology, dna or chromosomes, what you can see is my behaviour and my presentation.
-
-We don't know the biological cause of autism, but the way I think about my condition is that it is caused by detail-oriented thinking.
-I've heard this sometimes called bottom-up thinking.
-
-It's defined in contrast to thinking in abstractions, sometimes called top-down thinking, where high-level concepts are worked out first, details second.
-
-For me, detail-oriented thinking is a proxy for the as-yet unknown, currently missing root cause.
-
-And it is a very useful framework
 
 ---
 
@@ -335,6 +342,8 @@ These primary behaviours, cause wider secondary social effects, including
 - difficulties in initiating or sustaining social relationships
 - a history of mental health conditions due in part to the conflict between our traits and a society not set up for people like us.
 
+These problems are just as due to our society, as they are to out Autism.
+
 ---
 
 > "There is no such thing as ethical consumption under capitalism"
@@ -342,8 +351,6 @@ These primary behaviours, cause wider secondary social effects, including
 Have you heard this?
 
 notes:
-- [ ] link to autism
-
 Here's a thought experiment:
 
 The idea of "ethical consumption" is for consumers to try to spend their money in a way where nobody gets exploited.
@@ -362,65 +369,9 @@ Autism's relationship to society is much like this problem.
 
 notes:
 
-- [ ] explain normal behaviour under society
+We want to live our lives in a way that makes us happy. But society is set up with implied rules and conventions that perpetuate themselves not because they make sense, but because that's just how we do things.
 
----
-
-### Children's toys ARE unisex
-
-Here's the rules:
-
-1. If you don't operate a toy with your genitals, then it is for both boys and girls.
-2. If you DO operate it with your genitals, then this toy is not for children!"
-
----
-
-# My Experience With Autism
-
-#### (briefly)
-
-notes:
-
-I forgot I had autism until I was 25!
-
-I had moved to a new flat in London and was registering with my new Doctor.
-During our introductory appointment, he pulled up my file from the NHS central database and talked himself and me through my history, asking for a few follow-up and clarification points along the way.
-
-Towards the end, the doctor said something that stuck with me. He said:
-
-> Tris, I can see there's an error in your file here, which I can correct for you. It says you have Autism, but speaking with you, I can tell that's not right, is it!
-
-He laughed, I didn't.
-
-I was masking so well, that I had fooled a doctor into thinking I was neurotypical.
-
-I was hit with a flashback to my childhood.
-
----
-
-notes:
-- [ ] finish childhood
-
-# My Childhood
-
-- not making eye contact
-- extreme social skills difficult
-- sensory overload
-
----
-
-# Finding My People
-
-<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
-_I was more like my friends than I suspected._
-
-#### &mdash; Annie Kotowicz
-
-##### "Unpuzzling A Life on the Autism Spectrum"
-
-notes:
-
-I eventually found my people.
+There is no way to act normally in this system, and for autistic people, this dissonance can be extremely painful.
 
 ---
 
@@ -436,11 +387,11 @@ Unlike ADHD, which is not typically considered a disability, Autism more often i
 
 ---
 
-# Disability?
+## Disability?
 
-# Neurodivergence?
+## Neurodivergence?
 
-# Superpower?
+## Superpower?
 
 notes:
 
@@ -449,7 +400,7 @@ notes:
 - Is it, as some people say, a superpower?
 
 I think it can be any and all of these, depending on the person
-- disability
+- A disability
     - An adult who can't make eye contact is indeed disabled by our society according to the Social Model of disability
 - if it is a Neurodivergence
     - means that it's a normal part of being human.
@@ -461,6 +412,10 @@ I think it can be any and all of these, depending on the person
     - But this definition troubles me, as I think it can minimise the problems people face by focussing on the advantages and utility of the condition.
     - Normally the utility to your boss, your employment, not to yourself
 
+Which of these categories you fit in to changes from person to person, situation to situation, day to day and hour to hour
+- But you can help yourself, as I did, by
+	- learning about yourself
+	- and testing coping mechanisms.
 ---
 
 ### "Superpowers"?
@@ -477,7 +432,7 @@ High praise.
 
 notes:
 
-Some of the symptoms of Autism, such as hyperfocus on restricted interests and lack of social aptitude, can have benefits.
+Some of the symptoms of Autism, such as hyperfocus on restricted interests and lack of social aptitude, can be beneficial.
 Sometimes these traits cause such apparent genius in people that the person is portrayed in film by Benedict Cumberbatch.
 
 ---
@@ -500,24 +455,13 @@ High praise indeed.
 
 ---
 
-- [ ] turing bycycle story
+# Aside:
+## Chicken or Egg?
+
 
 notes:
 
-Which of these categories you fit in to changes from person to person, situation to situation, day to day and hour to hour
-- But you can help yourself, as I did, by
-	- learning about yourself
-	- and testing coping mechanisms.
-
----
-
-# Aside
-
-## Chicken or Egg
-
-notes:
-
-Is it autism, though, that causes the apparent genius, or is it, perhaps, that regular society has many extremely detrimental norms, and not fitting in, in some areas is actually a really good idea?
+Is it autism, though, that causes the apparent genius, or is it, perhaps, that regular society has many extremely detrimental norms, and not fitting in, sometimes, is actually a really good idea?
 
 ---
 
@@ -527,7 +471,8 @@ Is it autism, though, that causes the apparent genius, or is it, perhaps, that r
 
 ---
 
-## Part 2: Studying the Patient
+### Part 2:
+## Studying the Patient
 
 <i class="fas fa-quote-left fa-2x fa-pull-left"></i>
 _"The first principle is that you must not fool yourself, and you are the easiest person to fool."_
@@ -536,7 +481,7 @@ _"The first principle is that you must not fool yourself, and you are the easies
 
 notes:
 
-If you are autistic, as I am, there are many options you should persue, and your doctor can help you there.
+If you are autistic, as I am, there are many options you should pursue, and your doctor can help you there.
 
 Today I'm going to set out the only one I feel qualified to talk about: Studying The Patient.
 
@@ -552,7 +497,7 @@ Today I'm going to set out the only one I feel qualified to talk about: Studying
 
 notes:
 
-There is exactly one way to find out about the world around us:
+Throughout history, we have found out that there is exactly one way to find out about the world around us:
 The Scientific Method.
 
 This is especially important, and especially difficult with the mental health effects of Autism.
@@ -573,7 +518,7 @@ If you are to study the patient, as I recommend, you must find a way to cut thro
 notes:
 
 With Autism, you can't set the bone in a cast like you can if you break your arm.
-It will never heal on its own: you must heal yourself.
+It will never heal on its own: You must heal yourself.
 
 The friction between our autistic behaviours and society's expectation of our behaviours cause many of the issues we face day to day.
 
@@ -601,6 +546,19 @@ The same principles work for me for figuring out what went wrong with a societal
 
 ---
 
+## Can't you just 
+# tell me 
+## what to do?
+
+notes:
+
+Suggesting coping mechanisms before working out what went wrong would be to put the cart before the horse, it would be the wrong thing first.
+
+While you may read about my own coping mechanisms in my pinned video here, and maybe some would help you, it is vital to build a practice of continuous improvement for yourself.
+You and I only have a little time together, I would rather teach you how to fish than give you a fish.
+
+---
+
 #### Mental Health Incident Review Template
 
 ```md
@@ -619,7 +577,7 @@ Ideas for new coping mechanisms to try
 
 notes:
 
-This is an example of applying the scientific method to our mental health.
+A mental health incident review is an example of applying the scientific method to our own mental health.
 - Observe the incident.
 - Hypothesise the cause
 - Come up with a plan that could change the situation next time.
@@ -654,9 +612,9 @@ Let's look at the incident report
 
 ---
 
-## Incident Review Demo
+### Incident Review Demo
 
-### '5Whys' Analysis
+#### '5Whys' Analysis
 
 ```md
 # 5whys: House Party 2024-01-27
@@ -819,27 +777,20 @@ Only I will remain.
 
 notes:
 
-Meltdowns affect many Autistic people, and can be caused by a variety of triggers:
-- Sensory overload
-- Change of plans
+Meltdowns affect many Autistic people, and can be caused by a variety of triggers, but for me it was my plans for the future being changed.
 
-I am very fortunate to have have mitigated my meltdowns with coping mecahanisms over the years.
-
-Breathe.
+I used to become furious when my plans were changed, perhaps by weather, or a delayed train, or someone cancelling.
+Strangely, I would be furious even when the changed plans benefited me!
+My coping mechanism here is to breathe. If I can go somewhere quiet for 2 minutes, and not talk to anyone, I can get through it.
 
 ---
+### Autism first aid kit:
+- peaked Cap 
+- sunglasses 
+- earplugs
+- headphones
 
-## Energy Budgeting
 
-> I push myself too hard when I assume that my current self is the same as my recent self. It's not.
-
-WIMWISA
-
-notes:
-
-- Spoons metaphor
-- you don't have the same reserves as other
-- learn this
 
 ---
 
