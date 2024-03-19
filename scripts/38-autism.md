@@ -30,31 +30,43 @@ Hi friends, my name is Tris and this is No Boilerplate, focusing on fast, techni
 
 If you break your arm, the cause is apparent, and the symptoms lead directly back to it.
 
+But it's not like that with Autism.
 Just look at some of the traits that someone with autism can express:
-- [ ] re-record above
 
 ---
 
 <!-- slide bg="[[constellations.jpg]]" data-background-opacity="0.2" -->
 
-### Some Common Signs
+### Examples of Common Autistic Traits
 
+- Trouble with neurotypical conversations (DSM A1)
+- Missing body language (DSM A2)
+- Trouble with neurotypical relationships (DSM A3)
+- Stimming (DSM B1)
+- Need for routine (DSM B2)
+- Transition inertia (DSM B2)
+- Strong interests (DSM B3)
+- Sensory reactivity (DSM B4)
+
+(List graciously provided by Annie Kotowicz)
+
+%%
+the list continues:
 - avoidance of eye-contact
 - delayed language skills
 - more interest in objects than people
 - hyper/hypo-sensitivity to smell, texture, sound, taste, or appearance
 - resistance to changes in routine
 - repetitive motions or movements, e.g. stimming
+%%
 
 notes:
-- [ ] re-take this slide
-To name but a few.
 
 How do you tell if you are autistic, or have some OTHER condition entirely?
 
 I am not a doctor, but I do have Autism.
 
-The way I picture the varied autistic traits are like a constellation of stars.
+The way I picture the varied autistic traits is like a constellation of stars.
 
 ---
 
@@ -74,7 +86,9 @@ But constellations do and don't exist.
 
 ---
 
-![[ursa-minor-projection.png]]
+![[ursa-minor-projection.png|800]]
+(graphics design is my passion)
+
 notes:
 
 # Extra-terrestrial Star Projection
@@ -97,10 +111,10 @@ I understand the record for hitch-hiking 305Ly is just under an hour, but you do
 
 notes:
 
-The reason we we make these groupings is because it is very useful to us.
+The reason we make these groupings is because it is very useful to us.
 
 Find a few bright stars in a shape you recognise, and you can more easily find the rest of the constellation, even in conditions that might less than ideal.
-once you recognise Ursa Minor, you can orient yourself to the north star.
+Once you recognise Ursa Minor, you can orient yourself to the north star.
 
 ---
 
@@ -109,8 +123,6 @@ once you recognise Ursa Minor, you can orient yourself to the north star.
 ![[autism-constellation.png]]
 
 notes:
-
-- [ ] retake this slide
 
 Once you've recognised the Autism constellation of behaviours, you can name it.
 
@@ -129,10 +141,10 @@ And you can begin to find your way.
 (for all [links]() read my scripts here ⬆)
 
 notes:
-Everything you see in this video: script, links, and images are part of a markdown document available freely on github under a public domain licence.
+Everything you see in this video: script, links, and images are part of a markdown document available freely on GitHub under a public domain licence.
 
 ---
-
+ 
 <!-- slide bg="[[Blueprint-texture.png]]" data-background-opacity="0.1" -->
 
 # Part 1
@@ -211,7 +223,6 @@ We don't know the biological cause of autism, but the way I think about my condi
 I've heard this sometimes called bottom-up thinking.
 
 This contrasts with thinking in abstractions, sometimes called top-down thinking, where high-level concepts are worked out first, details second.
-- [ ] re-record above
 
 The question of what causes autism is uninteresting to me, you can't see my biology, DNA or chromosomes, what you can see is my behaviour and my presentation.
 
@@ -268,7 +279,7 @@ notes:
 - Country to common stereotypes, Autistic people are often more aware of the rules of society than non-autistic people.
 	- Applying the rules ourselves can be a challenge
 - autistic learning is like foreign language learning, I think:
-	- We learned the rules more recently then everyone else (we were late to the party)
+	- We learned the rules more recently than everyone else (we were late to the party)
 	- This means the rules are fresher in our minds
 	- and we work harder to adhere to them
 	- so we often get frustrated when we see other people not following them
@@ -287,17 +298,17 @@ notes:
 
 - $$3x = 2$$
 
+- Therefore:
+
 - $$x = \frac{2}{3}$$
 
 notes:
 
-- [ ] fix this to show working, and maybe center the equals sign
-
 Autistic people, like mathematicians, want to see how you got to the answer, not just the answer itself.
 
-We want people to show their working or we may not believe them.
+We want people to show their working, or we may not believe them.
 
-societal defaults don't come very naturally to us because they don't often come with matching data, for instance:
+Societal defaults don't come very naturally to us because they don't often come with matching data, for instance:
 
 ---
 
@@ -306,7 +317,7 @@ societal defaults don't come very naturally to us because they don't often come 
 
 notes:
 - some people are better than other people?
-- That is an extraordinary claim, without the extraordinary evidence needed to back it up
+- That is an extraordinary claim, without the extraordinary evidence needed to back it up!
 
 ---
 
@@ -350,17 +361,22 @@ Autistic people can't make that choice as easily, and it defines our lives.
 
 <!-- slide bg="[[Blueprint-texture.png]]" data-background-opacity="0.1" -->
 
-## Primary Autism Symptoms
+## Primary Autism Signs
 
 - Social interaction
 - Restricted behaviours
 - Restricted interests
 
 notes:
-- [ ] not symptoms
-This restricted, detail-oriented thinking causes the primary Autism symptoms of:
 
-- regular difficulties in social interaction and communication
+Talking about common signs of Autism is a challenge because there are a lot of pervasive biases built into how it has been historically defined.
+
+All the symptoms in published literature have come from the _external_ point of view of psychiatric professionals, or parents, or teachers.
+This is a very different perspective from the actual Autistic experience, which stems from detail-oriented thinking.
+
+This restricted way of thinking causes the primary Autism symptoms of:
+
+- Regular difficulties in social interaction and communication
 	- We are lost in the conversation, and are missing the social cues around us
 - restricted or repetitive behaviours
 	- We tend not to look to others for behaviours to imitate, so often reach a local maximum we can't break out of
@@ -387,7 +403,6 @@ These primary behaviours, cause wider secondary social effects, including
 - a history of mental health conditions due in part to the conflict between our traits and a society not set up for people like us.
 
 These challenges are just as due to our society, as they are to our Autism.
-- [ ] re-record above
 
 ---
 
@@ -403,7 +418,6 @@ Here's a thought experiment:
 The idea of "ethical consumption" is for consumers to try to spend their money in a way where no-one gets exploited.
 
 But we eventually learn that it is almost impossible in a system designed for value extraction, for someone, somewhere along the line, to not be exploited.
-- [ ] re-record above
 An understandable coping mechanism to deal with this world that we find ourselves in, is to ignore it.
 
 Autism's relationship to society is much like this problem.
@@ -455,7 +469,6 @@ notes:
 - Is it, as some people say, a superpower?
 - Is it a neurodivergence?
 
-I think it can be any and all of these, depending on the person and the situation
 - A disability
     - An adult who can't make eye contact is indeed disabled by our society according to the Social Model of disability
 - is it a Superpower?
@@ -524,6 +537,20 @@ High praise indeed
 notes:
 
 Is it autism, though, that causes the apparent genius, or is it, perhaps, that regular society has many extremely detrimental norms, and not fitting in, sometimes, is actually a really good idea?
+
+---
+
+![[patreon.png|200]]
+
+## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
+
+notes:
+
+It's just me running this channel, and I'm so grateful to everyone for supporting me on this wild adventure.
+
+If you'd like to see and give feedback on my videos up to a week early, as well as get discord perks, and even your name in the credits, it would be very kind of you to check my Patreon.
+
+I'm also offering a limited number of mentoring slots. If you'd like 1:1 tuition on Personal organisation, Rust, creative production, Web tech, or anything that I talk about in my videos, do sign up and let's chat!
 
 ---
 
@@ -615,8 +642,6 @@ I am going to focus on ourselves, the part of the problem that we can more easil
 3. Write down what happens when you use them, the next time the same situation occurs
 
 notes:
-
-- [ ] re-record above
 
 In my industry, software engineering, when a bug, crash, or other incident happens, we try to identify the cause and stop it happening again with an incident review.
 
@@ -772,7 +797,8 @@ In this case, going for a real or pretend smoke break every hour might help, and
 
 <!-- slide bg="[[blackboard.jpg]]" data-background-opacity="0.2" -->
 <i class="fas fa-quote-left fa-2x fa-pull-left"></i>
-_"[Masking is like] holding a chair at arm’s length in front of you, while simultaneously trying to carry on a conversation."_
+_"I find all of this [masking] utterly exhausting...
+[like] holding a chair at arm’s length in front of you, while simultaneously trying<br> to carry on a conversation._"
 
 #### &mdash; What I Mean when I Say I'm Autistic
 
@@ -849,7 +875,7 @@ notes:
 	- and the fact that if other people around you are drinking too, they might not notice them either,
 	- is an understandable combination of desirable factors.
 	- But we can, with practice, ignore society's expectations of our behaviour without chemical help.
-	- letting down your guard and being more yourself might mean being letting your autistic behaviours out, and that is ok, around those you trust, because it can make you happier.
+	- letting down your guard and being more yourself might mean being letting your autistic behaviours out, and that is ok, around those you trust because it can make you happier.
 
 ---
 
@@ -925,7 +951,7 @@ And you should start today.
 
 ## Thanks
 
-> Carin S. Calder-La Croix and I am happy for you to link to my Instagram: [https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA==](https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA== "https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA==")
+> Thanks very much to my friend Carin S. Calder-La Croix for her advice on this video. [https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA==](https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA== "https://www.instagram.com/link_carin?igsh=MTZidDQxdmN3ZTNhdA==")
 
 ---
 
@@ -961,8 +987,7 @@ And secondly:
 Dr. Devon Price
 Available at: <https://www.penguinrandomhouse.com/books/688819/unmasking-autism-by-devon-price-phd/>
 
-His extremely comprehensive handbook of Autism is packed extremely densely with both science and advice.
-- [ ] re-record this line
+His comprehensive handbook of Autism is packed extremely densely with both science and advice.
 non-affiliate links to both of these books in the video description.
 
 Read them *both*.
@@ -988,3 +1013,21 @@ Or if urban fantasy is more your bag, do listen to a strange and beautiful podca
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
 Thank you so much for watching, talk to you on Discord.
+
+# Description
+
+📓 What I Mean when I Say I'm Autistic by Annie Kotowicz
+Available at: <http://autisticbook.com/>
+📑 Unmasking Autism by Dr. Devon Price
+Available at: <https://www.penguinrandomhouse.com/books/688819/unmasking-autism-by-devon-price-phd/>
+
+Special thanks to my friend Carin S. Calder-La Croix for her advice on this video. <https://www.instagram.com/link_carin/>
+
+# Errata
+
+- I mentioned 'visual learner' just for familiarity, it's an outdated idea: <https://en.wikipedia.org/wiki/Learning_styles#Criticism>
+
+# Pinned Items
+
+- [ ] 7:50 adhd video
+- [ ] 11:50 coping mechsnisms
