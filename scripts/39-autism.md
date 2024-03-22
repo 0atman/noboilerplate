@@ -1029,5 +1029,5 @@ Special thanks to my friend Carin S. Calder-La Croix for her advice on this vide
 
 # Pinned Items
 
-- [ ] 7:50 adhd video
-- [ ] 11:50 coping mechsnisms
+- [x] 7:50 adhd video
+- [x] 11:50 coping mechsnisms
