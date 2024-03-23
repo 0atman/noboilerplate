@@ -1,3 +1,6 @@
 .obsidian
 target/
+subtitles/target
 .trash
+#generated subtitle files
+subtitles/*.txt
