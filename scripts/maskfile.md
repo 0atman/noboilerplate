@@ -2,22 +2,22 @@
 
 <!-- A heading defines the command's name -->
 
-## Watch
+## watch
 
 > Rebuilds project when rs and toml files change
 
 ```sh
-mask Build
-cargo watch -c -i "*.rs" -i "*.toml" -s "mask Build"
+mask build
+cargo watch -c -i "*.rs" -i "*.toml" -s "mask build"
 ```
 
-## Build
+## build
 
 > Pull out rust and toml code fences into their files
 
 ```sh
 mkdir src -p
-cat 37-functional-rust.md | literate --language rust > src/main.rs
-cat 37-functional-rust.md | literate --language toml > Cargo.toml
+cat 40-compiler-driven-development.md | literate --language rust > src/main.rs
+cat 40-compiler-driven-development.md | literate --language toml > Cargo.toml
 echo "done"
 ```

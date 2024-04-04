@@ -1,5 +1,5 @@
 watch:
-	mask Watch
+	mask watch
 
 dependencies:
 	cargo install --all-features literate cargo-watch mask
