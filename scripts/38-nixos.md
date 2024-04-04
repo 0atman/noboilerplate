@@ -897,4 +897,4 @@ Thank you so much for watching, talk to you on Discord.
 - [x] write script [[@pc]]
 - [x] edit video
 - [x] video patreon approval
-- [ ] publish final video
+- [x] publish final video
