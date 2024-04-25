@@ -1,4 +1,4 @@
-Scripts for my talks on the No Boilerplate channel are in `scripts/`, you can read theme here on github by clicking through into the folder, or download the whole lot to your computer and read offline by clicking the green "code" button then "download zip".
+Scripts for my talks on the No Boilerplate channel are in `scripts/`, you can read them here on github by clicking through into the folder, or download the whole lot to your computer and read offline by clicking the green "code" button then "download zip".
 
 I build these using [obsidian.md](https://obsidian.md/) and the [advanced-slides plugin](https://github.com/MSzturc/obsidian-advanced-slides): I take each slide, printscreen it, and splice it with my audio using [reaper.fm](http://reaper.fm/).
 
