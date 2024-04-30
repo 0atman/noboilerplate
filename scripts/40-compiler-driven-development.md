@@ -47,6 +47,7 @@ These lints make clippy less noisy when I'm building the video
 ```rust
 fn main() {
 	println!("Rust talk");
+	}
 
 ```
 
@@ -112,20 +113,171 @@ Everything you see in this video: script, links, and images are part of a markdo
 
 ---
 
-# Chapter 1: The Rich Type System
+# Part 1: TDD Recap
+
+<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
+_"The first principle is that you must not fool yourself, and you are the easiest person to fool."_
+
+#### &mdash; Richard Feynman
+
+notes:
+
+I love Test-driven development, and if you've not tried it before, you will too.
+
+TDD is not really about testing, nor about writing all your tests ahead of time, it's not even really about correctness.
+It's about _not fooling yourself_, because, as Feynman said, you are the easiest person to fool.
+
+---
+
+# When Am I Done?
+
+<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
+_"Done is the engine of more."_
+
+#### &mdash; The Cult of Done
+
+notes:
+
+TDD, for me, answers the question I care most about when writing a project - am I done yet?
+
+I'm not coding infinitely for fun, past 5pm I'm not even being paid to code, and I'm certainly not here for my health.
+Quite the opposite, actually.
+
+I want to know when I'm done at the earliest possible moment, so I can STOP, and get on with other things.
+
+---
+
+# Red
+# Green
+# Refactor
+
+notes:
+
+The core of TDD's application is that you write a simple test first, then watch it fail, to "go red", thus proving that your test suite works.
+Then you write the minimum application code to make the test pass, making it green again.
+
+You then refactor if needed and then improve the test, making it stricter or more precice than before, watch the test fail again, and make it pass by improving the code.
+
+This constant tick-tocking between Red and Green states for your test keeps you honest, focussed, and engaged with the question we're all trying to answer:
+
+When Am I Done!
+
+Let's look at a tiny TDD example in Rust:
+
+
+---
+
+# RED
+
+```rust
+#[test]
+fn test_my_divider() {
+	assert_eq!(my_divider(10, 2), 5.0);
+}
+```
+
+notes:
+
+first we write a new test, covering the functionality we're about to write, a simple arithmetic dividing function that takes a numerator, denominator, and returns the result of divding the two.
+
+Writing the test first makes us think about the problem we are solving first, rather than the plumbing of how to solve it - an important top-down approach that can get lost in the weeds in typical programming.
+
+---
+
+# RED
+
+```sql
+ 1  error[E0425]: cannot find function `my_divider` 
+   --> src/main.rs:13:13
+    |
+ 13 |     assert_eq!(my_divider(10, 2), 5.0);
+    |                ^^^^^^^^^^ not found in this scope
+
+ error: could not compile `compiler-driven` due
+ to 1 previous error
+```
+notes:
+
+Of course, this new test fails - it actually fails before even being run, because it's calling a function the compiler can't find: our as-yet unwritten function, my_divider.
+
+We have successfully broken our test suite! 
+
+Thus proving to ourselves that the testing is doing what we want, let's make it pass:
+
+---
+
+# GREEN
+
+```rust
+pub fn my_divider(x: i32, y: i32) -> f32 {
+	5.0
+}
+```
+
+notes:
+We write the simplest code that makes our new test pass, hardcoding, as I'm doing here, is not only acceptible but encouraged!
+Your tests should not be fooled by hardcoded answers, should they?
+
+
+
+---
+
+# GREEN
+
+```sql
+   Compiling compiler-driven v0.1.0 
+    Finished `test` profile target(s) in 0.84s
+     Running unittests src/main.rs 
+
+running 1 test
+test test_my_divider ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored;
+finished in 0.00s
+```
+---
+
+- watch the new test pass
+- improve the test so hardcoding doesn't cut it, and watch it fail
+- improve the code to make it pass.
+
+---
+
+```mermaid
+flowchart LR
+A{Tests Failing}
+B{Tests Passing}
+
+A --->|Improve the code| B
+
+B --> |Improve the test| A
+```
+
+notes:
+
+If the tests are failing, improve the code, if the tests are passing, improve the tests!
+
+---
+
+# Patreon-only addition
+
+- [ ] a bridge between CDD and TDD is const-driven testing.
+
+---
+
+# Part 2: The Rich Type System
 
 <i class="fas fa-quote-left fa-2x fa-pull-left"></i>
 Show me your flowcharts and conceal your tables, and I shall continue to be mystified. Show me your tables, and I won't usually need your flowcharts; they'll be obvious.
 
-&mdash; Fred Brooks
+&mdash; Fred Brooks, "The Mythical Man-Month"
 
 notes:
 
-Just as good data design can make runtime errors impossible, good program design in Rust can extend that 
-
-- [ ] Was this the mythical man-month?
+Just as good data design can make runtime errors impossible, good program design in Rust can extend that
 
 ---
+
 # Rust is the opposite of Perl. Perl Makes Easy Things Easy and Hard Things Possible, Rust Makes Easy Things Possible and Hard Things Easy
 
 https://devclass.com/2023/03/20/microsofts-visual-basic-why-it-won-and-why-it-had-to-die/
@@ -166,12 +318,26 @@ Refactor.
 
 ---
 
+- Write a some basic tests for the new feature. This upfront testing requires you to focus on test requirements before starting hacking
+- Add one test from the list
+- Run all tests, watch the new test fail
+- write the simplest code that makes the new code pass
+	- hardcoding acceptible
+- watch the new test pass
+- improve the test so hardcoding doesn't cut it, and watch it fail
+- improve the code to make it pass.
+
+---
+
+Autocomitting on `cargo build` ok
+
+---
+
 # Amortized Complexity
 
  - first run slow, subsequent runs fast
  - like rust compile times
  - like life
-
 
 ---
 "Writing a compiler that would accept all of the valid programs is not possible, thus we're left with the next best thing: a compiler that will reject all invalid programs at a cost of being overly strict."
@@ -180,6 +346,7 @@ Refactor.
 Rust forces you to fix all your future bugs before you deploy. This causes the steeper learning curve, but given that all future bugs are crammed into the first compile, it's a suprisingly flat curve!
 
 ---
+
 # Optimise for Readability
 
 notes:
@@ -189,6 +356,7 @@ Your programs, if you're lucky and doing your job right, will be used by orders 
 So it follows that some small sacrifice of readability is valid, if it benefits you.
 
 ---
+
 # Parse Dont Validate
 
 https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/
@@ -242,7 +410,9 @@ impl<State: PartialEq> Light<State> {
     }
 }
 ```
+
 ---
+
 ## Correct Transitions
 
 ```rust[]
@@ -255,13 +425,13 @@ fn correct_transitions() {
 ```
 
 ---
+
 ## Incorrect Transitions
 
 ```rust[2]
 let bedroom_light = Light { state: Off {} };
 bedroom_light.turn_on().turn_on(); // can't call twice 
 ```
-
 
 ```sql
 error[E0599]: no method named `turn_on` found 
@@ -367,6 +537,11 @@ impl<State: ResponseState> Light<State> {
 
 # Auto-commit Passing Builds
 
+> If debugging is the process of removing software bugs, then programming must be the process of putting them in.
+
+&mdash; Dijkstra
+
+notes:
 the commit message is
 
 > Fixes [previous error]
@@ -401,8 +576,3 @@ Or if urban fantasy is more your bag, do listen to a strange and beautiful podca
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
 Thank you so much for watching, talk to you on Discord.
-
-```rust
-  println!("That's all folks!");
-} 
-```
