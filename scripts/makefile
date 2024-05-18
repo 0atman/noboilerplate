@@ -1,5 +1,5 @@
 watch:
-	mask watch
+	mprocs "bacon clippy" "mask --maskfile readme.md watch"
 
 dependencies:
-	cargo install --all-features literate cargo-watch mask
+	cargo install -f --all-features literate cargo-watch mask mprocs bacon

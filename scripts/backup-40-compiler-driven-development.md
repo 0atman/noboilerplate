@@ -358,14 +358,6 @@ how to start with CDD in Rust is the same as with TDD, test driven development, 
 Red.
 Green.
 Refactor.
-- [ ] check these colours.
-
-- [ ] debugging steps
-    - [ ] is the signature correct
-    - [ ] make it compile with dummy body
-    - [ ] break it
-    - [ ] red/green/refactor
-    - [ ] do a commit when the build succeeds - automate this
 
 ---
 
@@ -377,7 +369,7 @@ Refactor.
 
 ---
 "Writing a compiler that would accept all of the valid programs is not possible, thus we're left with the next best thing: a compiler that will reject all invalid programs at a cost of being overly strict."
-- [ ] who said this?
+- [x] who said this?
 
 Rust forces you to fix all your future bugs before you deploy. This causes the steeper learning curve, but given that all future bugs are crammed into the first compile, it's a suprisingly flat curve!
 
@@ -484,7 +476,7 @@ for struct `Light<On>` in the current scope
 
 notes:
 
-- [ ] replace this with a screenshot of the error
+- [x] replace this with a screenshot of the error
 ---
 
 # Typestate Pattern With Traits
