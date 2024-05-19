@@ -58,7 +58,7 @@ fn main() {
 
 %%
 
-![[rust-logo.png|200]]
+![rust-logo|200](rust-logo.png)
 
 - Higher-level than Go, Javascript, Java,
 	- but as fast as C
@@ -358,7 +358,9 @@ It's a fantastic product made by some nice people, and I'm delighted to say they
 <!-- slide bg="rgb(37, 34, 43)" -->
 
 ## Founding Software Engineer
+
 - [ ] Update hiring info
+
 #### (Rust, WASM)
 
 <br/>
@@ -379,7 +381,7 @@ Quadratic are looking for:
 
 The infinite canvas spreadsheet with code
 
-#### https://QuadraticHQ.com
+#### <https://QuadraticHQ.com>
 
 #### <https://careers.quadratichq.com>
 
@@ -410,6 +412,37 @@ Now that we've revised TDD, we can talk about CDD.
 CDD operates on the same Red/Green/Refactor pattern as TDD, except you're not writing tests, you're writing code that the compiler is not satisfied with, and the ticktocking between Red and Green is the conversation between you and the compiler.
 
 A simple example will clear this up:
+
+---
+
+# new example
+
+---
+
+```rust
+enum Status {
+	On,
+	Off
+}
+struct User { 
+	name: String,
+	age: u8
+}
+
+fn fnfn (){}
+```
+
+- [ ] finish this
+
+notes:
+
+In CDD we get to green by improving the code, still, but to get to red we must improving our model in the type system.
+
+We do this by pushing more logic from runtime into compile time.
+
+- [ ] clippy String -> &str
+- [ ] clippy split " " -> ' '
+- [ ] 
 
 ---
 
@@ -625,7 +658,7 @@ Now, let's try it:
 
 ## 🔴 RED
 
-```rust[]2
+```rust[2]
 fn count_words(input: String) -> usize {
 	input.split(" ")
 }
@@ -659,7 +692,7 @@ For the sake of time, I happen to know you can simply count the number of items 
 
 # Final version
 
-```rust
+```rust[]
 fn count_words(input: String) -> usize {
 	input.split(" ").count()
 }
@@ -675,7 +708,6 @@ The Compiler statically analysing our code is all very well, but that's not the 
 Let's set clippy on our code.
 
 ---
-
 
 ###### `$ cargo clippy -- -D clippy::pedantic -W clippy::nursery`
 
@@ -713,13 +745,42 @@ I literally learned the second optimisation while I was writing this video - cli
 # You know when you're done with CDD
 
 - [ ] A network diagram with path travelling to a local maximum error
-- [ ] TDD and CDD let you know when you're done, but also give you more confidcence you have explored much more of the state space. 
+- [ ] TDD and CDD let you know when you're done, but also give you more confidcence you have explored much more of the state space.
 
 notes:
 
-Just as in TDD, we can have enormous confidence that we've done the right thing with CDD, by proving 
+Just as in TDD, we can have enormous confidence that we've done the right thing with CDD, by proving
 
 ---
+
+---
+
+![[tri-hex-moon-white-transparent.png|300]]
+
+# Thank You
+
+## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
+
+notes:
+
+# OUTRO
+
+If you would like to support my channel, get early ad-free and tracking-free videos, vip discord access or 1:1 mentoring, head to patreon.com/noboilerplate.
+
+If you're interested in transhumanism and hopepunk stories, please check out my weekly sci-fi podcast, Lost Terminal.
+
+Or if urban fantasy is more your bag, do listen to a strange and beautiful podcast I produce every full moon called Modem Prometheus.
+
+Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
+
+Thank you so much for watching, talk to you on Discord.
+
+---
+---
+---
+---
+
+# Rejected sections
 
 - [ ] Old part 2:
 
@@ -1206,25 +1267,3 @@ build a whole system with just they type system
 
 show how prototyping at compile time can give real predictions
 maybe use dependent types, or at least fake dependent types with custom new()
-
----
-
-![[tri-hex-moon-white-transparent.png|300]]
-
-# Thank You
-
-## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
-
-notes:
-
-# OUTRO
-
-If you would like to support my channel, get early ad-free and tracking-free videos, vip discord access or 1:1 mentoring, head to patreon.com/noboilerplate.
-
-If you're interested in transhumanism and hopepunk stories, please check out my weekly sci-fi podcast, Lost Terminal.
-
-Or if urban fantasy is more your bag, do listen to a strange and beautiful podcast I produce every full moon called Modem Prometheus.
-
-Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
-
-Thank you so much for watching, talk to you on Discord.
