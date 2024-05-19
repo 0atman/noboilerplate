@@ -58,7 +58,7 @@ fn main() {
 
 %%
 
-![rust-logo|200](rust-logo.png)
+![rust-logo|200](attachments/rust-logo.png)
 
 - Higher-level than Go, Javascript, Java,
 	- but as fast as C
@@ -442,7 +442,7 @@ We do this by pushing more logic from runtime into compile time.
 
 - [ ] clippy String -> &str
 - [ ] clippy split " " -> ' '
-- [ ] 
+- [ ]
 
 ---
 
