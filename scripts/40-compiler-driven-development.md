@@ -274,9 +274,123 @@ notes:
 - [ ] obviously improve this mermaid diagram
 If the tests are failing, improve the code, if the tests are passing, improve the tests!
 
+after a word from today's sponsor, Quadratic.
+
 ---
 
-# Quadratic Shoutout
+<!-- slide bg="rgb(37, 34, 43)" -->
+
+![[quadratic-website.png]]
+
+notes:
+
+# Quadratic Sponsor
+
+Quadratic are building spreadsheet for engineers and data scientists, built in Rust, Webassembly and WebGL.
+
+---
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+![[cell.png]]
+notes:
+
+Quadratic combines the functional data visualisation of a spreadsheet with the power of full programming languages, starting with Python, with SQL coming soon.
+
+---
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+
+![[quadratic-dataframe.png|700]]
+
+notes:
+Standard Python data science libraries are built-in.
+
+---
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+![[quadratic-micropip-demo.png|700]]
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+notes:
+In fact, because quadratic are using Pyodide inside webassembly, any pure python dependency can be installed, like this example of the faker library.
+
+---
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+
+![[quadratic-api-demo.png|700]]
+
+notes:
+Because all of python is running locally inside webassembly, complex work, such as here pulling data from an api, is possible.
+
+---
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+
+![[quadratic-fps.png|700]]
+
+notes:
+
+This is all running at 60fps on the gpu using webgl, all inside your browser.
+
+---
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+
+![[quadratic-section-zoom-in-out.gif]]
+
+notes:
+Quadratic built their infinite canvas on webgl, allowing for smooth scrolling and pinch to zoom.
+
+---
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+![[quadratic-gpt.png|500]]
+
+notes:
+
+They also have GPT integration, giving you a copilot or pair programmer while you're writing.
+
+It's a fantastic product made by some nice people, and I'm delighted to say they are hiring.
+
+---
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+
+## Founding Software Engineer
+- [ ] Update hiring info
+#### (Rust, WASM)
+
+<br/>
+More info:
+
+### <https://careers.quadratichq.com>
+
+notes:
+
+Quadratic are looking for:
+- Great Rust engineers who have experience at a Startup and leading software architecture and implementation.
+
+---
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+
+![[Quadratic Logo.png]]
+
+The infinite canvas spreadsheet with code
+
+#### https://QuadraticHQ.com
+
+#### <https://careers.quadratichq.com>
+
+notes:
+
+-   Apply today, and
+-   Head to QuadraticHQ.com to try it out.
+
+My thanks to quadratic for their support of this channel.
+
+Let's look at Compiler-driven-development
 
 ---
 
@@ -315,13 +429,14 @@ fn count_words(input) {
 
 notes:
 
+- [ ] example too long, rewrite with more focus on modelling errors not syntax errors
 - [ ] pin to RMR
 
 let's say we want to write a function to count the number of words in a string, by simply splitting on spaces.
 
 Just as in TDD, I recommend you start by hardcoding values just to get the compiler to compile.
 
-The goal here is to go green, to compile. This psudocode does not get us there, but unlike in TDD, we don't just get an error, we get FIXES!
+The goal here is to go green, to compile. This psudocode does not get us there, but unlike in TDD, we don't just get error output, we get FIXES!
 
 - [ ] remove line numbers from all error outputs
 
@@ -498,7 +613,7 @@ trait bound {integer}: Pattern<'_> is not satisfied
 
 notes:
 
-To find out what type `String::split()` parameter accepts, introduce a type error deliberately. Splitting a string on a number doesn't make much sense, and the compiler knows it.
+To find out what type `String::split()` parameter accepts, a trick is to introduce a type error deliberately. Splitting a string on a number doesn't make much sense, and the compiler knows it.
 Here's the error when you do.
 
 The full error was much larger than this, and a bit more scary, traits often are, but you don't have to understand it if you are at the start of your rust journey, or using a complex unfamiliar api, you just look at the wonderful help text the compiler has given us, enumerating all the concrete typos that implement the `Pattern` trait - the exact list that we want!
@@ -595,7 +710,14 @@ I literally learned the second optimisation while I was writing this video - cli
 
 ---
 
-# END
+# You know when you're done with CDD
+
+- [ ] A network diagram with path travelling to a local maximum error
+- [ ] TDD and CDD let you know when you're done, but also give you more confidcence you have explored much more of the state space. 
+
+notes:
+
+Just as in TDD, we can have enormous confidence that we've done the right thing with CDD, by proving 
 
 ---
 
