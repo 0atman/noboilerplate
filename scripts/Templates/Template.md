@@ -68,18 +68,18 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 ---
 
+
 ![[cc-logo.png]]
 
 ## Public Domain Videos
 
 [https://github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
-(for all footnotes[^1] and [links]() read my scripts here)
-
-[^1]: example.com
+(for all [links]() read my scripts here ⬆)
 
 notes:
-Everything you see in this video: script, links, and images are part of a markdown document available freely on github under a public domain licence.
+Everything you see in this video: script, links, and images are part of a markdown document available freely on GitHub under a public domain licence.
+
 
 ---
 
