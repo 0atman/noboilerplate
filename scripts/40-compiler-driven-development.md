@@ -61,13 +61,12 @@ fn main() {
 ![rust-logo|200](attachments/rust-logo.png)
 
 - Higher-level than Go, Javascript, Java,
-	- but as fast as C
-
+	- _but as fast as C_
 - No runtime or garbage collector,
-	- but thread and memory safety guaranteed
-
+	- _but thread and memory safety guaranteed_
 - Comprehensive type system (with monads!),
-	- but friendliest tooling in the business
+	- _but friendliest tooling in the business_
+
 notes:
 
 # CDD: Compiler-Driven Development in Rust
@@ -108,7 +107,7 @@ The compiler is your best friend, your wingmate, a friendly and infallible pair 
 
 ---
 
-![[cc-zero-2k.png|300]]
+![300|400](attachments/cc-zero-2k.png)
 
 ## Public Domain Videos
 
@@ -183,7 +182,7 @@ Here's at a tiny TDD example in Rust:
 
 ---
 
-# RED
+## 🔴 RED
 
 ```rust
 #[test]
@@ -200,7 +199,7 @@ Writing the test first makes us think about the problem we are solving first, ra
 
 ---
 
-# RED
+## 🔴 RED
 
 ```sql
  1  error[E0425]: cannot find function `my_divider` 
@@ -223,7 +222,7 @@ Thus proving to ourselves that the testing is doing what we want, let's make it 
 
 ---
 
-# GREEN
+## 🟢 GREEN
 
 ```rust
 pub fn my_divider(x: i32, y: i32) -> f32 {
@@ -237,7 +236,7 @@ Your tests should not be fooled by hardcoded answers, should they?
 
 ---
 
-# GREEN
+## 🟢 GREEN
 
 ```sql
    Compiling compiler-driven v0.1.0 
@@ -280,18 +279,22 @@ after a word from today's sponsor, Quadratic.
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 
-![[quadratic-website.png]]
+![](attachments/partner-attachments/quadratic-website-24.png)
+
+### Quadratichq.com
 
 notes:
 
-# Quadratic Sponsor
-
-Quadratic are building spreadsheet for engineers and data scientists, built in Rust, Webassembly and WebGL.
+Quadratic is a modern spreadsheet designed for data scientists, engineers, and analysts, built in Rust, Webassembly and WebGL.
 
 ---
 
 <!-- slide bg="rgb(37, 34, 43)" -->
-![[cell.png]]
+
+![cell-type|700](attachments/partner-attachments/quadratic-cell-type-24.png)
+
+### Cells with formulas and code
+
 notes:
 
 Quadratic combines the functional data visualisation of a spreadsheet with the power of full programming languages, starting with Python, with SQL coming soon.
@@ -300,7 +303,9 @@ Quadratic combines the functional data visualisation of a spreadsheet with the p
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 
-![[quadratic-dataframe.png|700]]
+![dataframe|700](attachments/partner-attachments/quadratic-dataframe.png)
+
+### Add data programmatically
 
 notes:
 Standard Python data science libraries are built-in.
@@ -308,17 +313,22 @@ Standard Python data science libraries are built-in.
 ---
 
 <!-- slide bg="rgb(37, 34, 43)" -->
-![[quadratic-micropip-demo.png|700]]
+![micropip|700](attachments/partner-attachments/quadratic-micropip-demo.png)
+
+### 3rd party libraries
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 notes:
-In fact, because quadratic are using Pyodide inside webassembly, any pure python dependency can be installed, like this example of the faker library.
+In fact because quadratic are using Pyodide inside webassembly, any pure python dependency can be installed, like this example of the faker library.
+Loads of essential native libraries, like numpy, scipi, and pandas have been specially ported, too.
 
 ---
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 
-![[quadratic-api-demo.png|700]]
+![api-demo|700](attachments/partner-attachments/quadratic-api-demo.png)
+
+### Full access to browser APIs
 
 notes:
 Because all of python is running locally inside webassembly, complex work, such as here pulling data from an api, is possible.
@@ -327,7 +337,9 @@ Because all of python is running locally inside webassembly, complex work, such 
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 
-![[quadratic-fps.png|700]]
+![fps|700](attachments/partner-attachments/quadratic-fps.png)
+
+### Built like a video game
 
 notes:
 
@@ -337,7 +349,9 @@ This is all running at 60fps on the gpu using webgl, all inside your browser.
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 
-![[quadratic-section-zoom-in-out.gif]]
+![quadratic-section-zoom-in-out](attachments/partner-attachments/quadratic-section-zoom-in-out.gif)
+
+### Pinch and zoom
 
 notes:
 Quadratic built their infinite canvas on webgl, allowing for smooth scrolling and pinch to zoom.
@@ -345,7 +359,21 @@ Quadratic built their infinite canvas on webgl, allowing for smooth scrolling an
 ---
 
 <!-- slide bg="rgb(37, 34, 43)" -->
-![[quadratic-gpt.png|500]]
+
+![multiplayer|700](attachments/partner-attachments/quadratic-multiplayer.png)
+
+### Real time collaboration
+
+notes:
+
+Multiplayer support with live mouse tracking so well I'm mad that vscode doesn't do this!
+
+---
+
+<!-- slide bg="rgb(37, 34, 43)" -->
+![png|400](attachments/partner-attachments/quadratic-gpt.png)
+
+## GPT Code assistant
 
 notes:
 
@@ -357,29 +385,28 @@ It's a fantastic product made by some nice people, and I'm delighted to say they
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 
-## Founding Software Engineer
+## [careers.quadratichq.com](https://careers.quadratichq.com)
 
-- [ ] Update hiring info
-
-#### (Rust, WASM)
-
-<br/>
-More info:
-
-### <https://careers.quadratichq.com>
+- **Founding Software Engineer**
+	- _Rust, WASM_
+- **AI Software Engineer**
+	- _Rust, TS, WASM_
+- **Founding Software Engineer**
+	- _React, Express_
 
 notes:
 
 Quadratic are looking for:
-- Great Rust engineers who have experience at a Startup and leading software architecture and implementation.
+- Great Rust engindeers who have experience at a Startup and leading software architecture and implementation, and
+- Frontend and AI
 
 ---
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 
-![[Quadratic Logo.png]]
+![](attachments/partner-attachments/quadratic-logo-cleaned.png)
 
-The infinite canvas spreadsheet with code
+> Analyze data the developer way, share results the spreadsheet way.
 
 #### <https://QuadraticHQ.com>
 
@@ -614,7 +641,7 @@ You can do all these in Rust, but we can also get the compiler to tell us exactl
 
 #### Bad merch available at <http://noboilerplate.org>
 
-![[teepublic-obey-sticker.png|400]]
+![400](attachments/teepublic-obey-sticker.png)
 
 notes:
 And you know what you have to do when the compiler tells you what it wants!
@@ -755,7 +782,7 @@ Just as in TDD, we can have enormous confidence that we've done the right thing 
 
 ---
 
-![[tri-hex-moon-white-transparent.png|300]]
+![300](attachments/tri-hex-moon-white-transparent.png)
 
 # Thank You
 
@@ -813,7 +840,7 @@ Self-documenting code is a joke in other languages, it's a reality in Rust:
 
 ---
 
-![[axum-readme-github.png]]
+![axum-readme-github.png](attachments/axum-readme-github.png)
 
 <https://github.com/tokio-rs/axum>
 
@@ -909,7 +936,7 @@ OK, let's break this, what status codes have we got?
 
 ---
 
-![[40-clippy-no-item-destroyed.png]]
+![40-clippy-no-item-destroyed.png](40-clippy-no-item-destroyed.png)
 
 notes:
 
@@ -1074,7 +1101,7 @@ So it follows that some small sacrifice of readability is valid, if it benefits 
 
 <https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/>
 
-is this the same as [[The Typestate Pattern in Rust]]
+is this the same as [The Typestate Pattern in Rust](The%20Typestate%20Pattern%20in%20Rust)
 
 ---
 
