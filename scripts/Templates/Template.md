@@ -22,15 +22,27 @@ edition = "2021"
 
 [dev-dependencies]
 
+[lints.rust]
+unsafe_code = "forbid"
+
+# come at me, clippy
+[lints.clippy]
+enum_glob_use = "deny"
+pedantic = { level = "deny", priority = -1 }
+nursery = { level = "deny", priority = -1 }
+unwrap_used = "deny"
+
 [dependencies]
+# defined later, during the video
 ```
 
 # Lint Tweaks
 
+These lints make clippy less noisy when I'm building the video
+
 ```rust
-#![allow(dead_code)]
-#![allow(unused_variables)]
-#![allow(clippy::items_after_statements)]
+#![allow(dead_code, unused_variables)]
+#![allow(clippy::items_after_statements, clippy::no_effect, unused_must_use, clippy::must_use_candidate, clippy::unused_self, clippy::missing_const_for_fn)]
 ```
 
 # Extern Crates
@@ -68,7 +80,6 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 ---
 
-
 ![[cc-logo.png]]
 
 ## Public Domain Videos
@@ -79,7 +90,6 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 notes:
 Everything you see in this video: script, links, and images are part of a markdown document available freely on GitHub under a public domain licence.
-
 
 ---
 

@@ -1,10 +1,12 @@
 ---
-audience:
+highlightTheme: css/vs2015.css
 ---
+
 <style>
 :root {--r-code-font: "FiraCode Nerd Font";}
 .reveal .hljs {min-height: 50%;}
 </style>
+
 %%
 f7f7f7 background slide colour
 or maybe 191919
@@ -22,10 +24,17 @@ edition = "2021"
 [dev-dependencies]
 
 [dependencies]
-axum = "0.7.4"
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0.68"
-tokio = { version = "1.0", features = ["full"] }
+http = "1.0"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+# come at me, clippy
+[lints.clippy]
+enum_glob_use = "deny"
+pedantic = { level = "deny", priority = -1 }
+nursery = { level = "deny", priority = -1 }
+unwrap_used = "deny"
 ```
 
 # Lint Tweaks
@@ -33,13 +42,8 @@ tokio = { version = "1.0", features = ["full"] }
 These lints make clippy less noisy when I'm building the video
 
 ```rust
-#![allow(dead_code)]
-#![allow(unused_variables)]
-#![allow(clippy::items_after_statements)]
-#![allow(clippy::no_effect)]
-#![allow(unused_must_use)]
-#![allow(clippy::must_use_candidate)]
-#![allow(clippy::unused_self)]
+#![allow(dead_code, unused_variables)]
+#![allow(clippy::items_after_statements, clippy::no_effect, unused_must_use, clippy::must_use_candidate, clippy::unused_self, clippy::missing_const_for_fn)]
 ```
 
 # Imports
@@ -53,56 +57,151 @@ These lints make clippy less noisy when I'm building the video
 fn main() {
 	println!("Rust talk");
 }
-
 ```
 
 %%
 
-![rust-logo|200](attachments/rust-logo.png)
+# Subtitle ideas
 
-- Higher-level than Go, Javascript, Java,
-	- _but as fast as C_
-- No runtime or garbage collector,
-	- _but thread and memory safety guaranteed_
-- Comprehensive type system (with monads!),
-	- _but friendliest tooling in the business_
+- Compiler-checked whiteboarding
+- Don't run your code
 
+---
+
+![rust-logo|400](attachments/rust-logo.png)
+
+## Compiler-Driven Development in Rust
+
+notes:
+
+Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
+
+Today I'm going to explain the alien magic of Compiler-Driven Development by analogy to Test-Driven Development, demo two examples in Rust, and make some recommendations.
+
+---
+
+### Don't just run your code, Model it
+
+```rust
+pub enum StatusCode {
+    Ok = 200,
+	NotFound = 404 // etc
+}
+struct Metadata {
+    status: StatusCode,
+    header_map: http::header::HeaderMap
+}
+struct HttpResponse<S: ResponseState> {
+    state: Box<dyn ResponseState>,
+    extra: S,
+}
+trait ResponseState {}
+impl ResponseState for Metadata {}
+```
+
+[cliffle.com/blog/rust-typestate/](https://cliffle.com/blog/rust-typestate/) (stay tuned for demo)
+
+notes:
+When I write a new Rust program, I don't start with functions or methods or any runtime code.
+I start with the model of my application, expressed with Rust's rich type system.
+
+Interacting with the real-world, on disk or through the network is too slow for me, at first, I need to iterate faster than that, to sketch out my ideas, unconstrained by the outside world.
+
+You may be familiar with repl-driven development, or the fast feedback of testing out your code in the browser with hot code reloading.
+
+The compiler is faster than these methods, to be fair because it's doing less.
+Pure model code, the heart of the plumbing of your app, doesn't have to deal with rendering a UI, making network connections, setting up databases, none of that unimportant boilerplate.
+
+And nor should you, at first.
+
+---
+
+%%
+
+```rust
+struct Loot;
+struct Monster;
+```
+
+%%
+
+```rust[]
+struct DungeonRoom {
+	next_room: DungeonRoom,
+	loot: Vec<Loot>,
+	mobs: Vec<Monster>,
+}
+```
+
+![bacon|800](attachments/bacon-error-infinite-size-recursion-dungeon.png)
+
+notes:
+
+- Start by building the logic of your app in linked structs, leave methods and functions to later.
+- Don't run your code, just compile it
+- And iterate with a compile watcher, such as my favourite, here, Bacon, running cargo clippy with its enormous suite of lints turned on.
+
+Compiler-driven development is like compiler-checked whiteboarding.
+
+---
+
+![|600](attachments/illustration-dev-whiteboard.png)
+
+#### Developers Live at Compile time
+
+notes:
+
+Whatever language you code in,
+Javascript, Python, Java, Go, even HTML and CSS (to a certain extent), we developers all live at compile time.
+
+The time when our code is actually executing on the CPU or in-browser, plays a very small part of our days.
+
+Most of our time is not spent writing or running code, but reading it - and often trying to figure out strange runtime behaviour!
+
+This is exactly what Rust's more complex syntax and comprehensive type system can help you with, too, and all without writing unit tests.
+
+---
+
+| Tests                           | Types                           |
+| ------------------------------- | ------------------------------- |
+| Removed before deploy           | Removed before deploy           |
+| Improve your code with feedback | Improve your code with feedback |
+| Can be enforced in CI           | Enforced eveywhere              |
+
+notes:
+
+Tests and types are quite similar in a few ways:
+
+- tests don't get shipped, but they improve our code with feedback
+- types and syntax don't get shipped, but they improve our code with feedback, too
+- You don't deploy your test suite into production, nor bundle it onto the user's device
+- and compilers, by definition, do the same, they compile out all the advanced types when building the executable
+- neither tests no types remain in the code that you ship to the user
+
+- you don't HAVE to write tests, I'm sure you know a few cowboys and girls who proudly say they don't test their code
+
+- But in statically typed languages, like Rust, you HAVE to adhere to the models that you have expressed in the type system
+
+- Tests drive quality, as does modelling your application using a rich type system.
+
+---
+
+![|400](attachments/compiles-on-my-machine-meme.png)
 notes:
 
 # CDD: Compiler-Driven Development in Rust
 
-Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
+If your language has an advanced compiler, like Rust, you no longer need to wonder if the contractor you've hired has run your test suite, or if a junior developer has made what they think is a tiny change, DIRECTLY on github, without ever running the code.
 
-Rust has many extremely impressive, seemingly even contradictory claims.
-
-- High level lisp-style metaprogramming
-	- AND as fast as low-level C
-- A zero-cost hard-realtime language with no garbage collection overheads
-	- AND perfect memory and thread safety
-- A rich type system allowing modelling of data impossible in other popular languages
-	- AND gorgeous helpful errors produced by the friendly compiler when your modelling is wrong
-
-How does Rust do all this when most popular languages can't?
-
-**Comprehensive understanding of your code at compile-time.**
-
----
-
-# Developers Live at Compile time
-
-notes:
-
-Whatever language you code in:
-Javascript, Python, Java, Go, even HTML and CSS (to a certain extent), we developers all live at compile time.
-
-Sure, we test the code, either by running it interactively or automating that in our tests, but the time when our code is actually executing on the CPU plays a very small part of our day.
-
-Most of our time is not spent writing or running code, but reading it - often trying to figure out strange runtime behaviour!
+- Normal coding requires constant executing and checking to verify that you've done the right thing.
+- TDD just requires running tests to know, and
+- CDD only requires compiling the code to know that you're right.
 
 Rust's superpowers are the direct result of being a language where the compiler can reason about as much of the code as you can.
 
-The compiler is your best friend, your wingmate, a friendly and infallible pair programmer, and this opens a way of programming that you might never have experienced before:
+Programming inside this rich compile-time environment, means you might not run your program for most of your work day, yet when you do run it, it works first time.
 
+This magical way of coding is called
 **"Compiler-Driven Development"**
 
 ---
@@ -130,9 +229,9 @@ _"The first principle is that you must not fool yourself, and you are the easies
 #### &mdash; Richard Feynman
 
 notes:
-Compiler-Driven Development is like Test-Driven Development.
+I will explain the conversation with the compiler that is core to Compiler-Driven Development, in relation to my understanding of Test-Driven Development.
 
-I love TDD, and if you've not tried it before, you will too, it's probably not what you think it is.
+I love TDD, and if you've not tried it before, you might too, it's probably not what you think it is.
 
 TDD is not really about testing, nor about writing all your tests ahead of time, it's not even really about correctness.
 
@@ -161,22 +260,26 @@ I want to know when I'm done at the earliest possible moment, so I can STOP, and
 
 ---
 
-# 🔴 Red
+# The TDD Method
 
-# 🟢 Green
+## 🔴 Red
 
-# 🟠 Refactor
+## 🟢 Green
+
+## 🟠 Refactor
 
 notes:
 
-The core application of TDD is to write a simple test before writing any other code, then watch it fail, to "go red", thus proving that your test suite works.
+The core method of TDD is to write a simple test before writing any other code, then watch it fail, to "go red", thus proving that your test suite works.
 Then you write the minimum application code to make the test pass, making it green again.
 
-You then refactor if needed and then improve the test, making it stricter or more precice than before, watch the test fail again, and make it pass by improving the code.
+You then refactor if needed and then improve the test, making it stricter or more precise than before, watch the test fail again, and make it pass by improving the code.
 
 This constant tick-tocking between Red and Green states for your test keeps you honest, focussed, and engaged with the question we're all trying to answer:
 
 > When Am I Done?
+
+# Rust TDD Example
 
 Here's at a tiny TDD example in Rust:
 
@@ -196,6 +299,9 @@ notes:
 First we write a new test, covering the functionality we're about to write, a simple arithmetic dividing function that takes a numerator, denominator, and returns the result of dividing the two.
 
 Writing the test first makes us think about the problem we are solving first, rather than the plumbing of how to solve it - an important top-down approach that can get lost in the weeds in typical programming.
+This same top-down approach is used in CDD, as we will see in a moment.
+
+Let's run this test:
 
 ---
 
@@ -214,7 +320,7 @@ Writing the test first makes us think about the problem we are solving first, ra
 
 notes:
 
-Of course, this new test fails - it actually fails before even being run, because it's calling a function the compiler can't find: our as-yet unwritten function, `my_divider`.
+Of course, it fails - it actually fails before even being run because it's calling a function the compiler can't find: our as-yet unwritten function, `my_divider`.
 
 We have successfully broken our test suite!
 
@@ -231,8 +337,10 @@ pub fn my_divider(x: i32, y: i32) -> f32 {
 ```
 
 notes:
-We write the simplest code that makes our new test pass, hardcoding, as I'm doing here, is not only acceptible but encouraged!
+We write the simplest code that makes our new test pass, hardcoding, as I'm doing here, is not only acceptable but encouraged!
 Your tests should not be fooled by hardcoded answers, should they?
+And if you can't write a test comprehensive enough to fail a hardcoded solution... maybe you've discovered that hardcoding is the correct answer this time!
+LLVM might actually do this for you, behind the scenes.
 
 ---
 
@@ -250,30 +358,32 @@ test result: ok. 1 passed; 0 failed; 0 ignored;
 finished in 0.00s
 ```
 
----
+notes:
 
-- watch the new test pass
+Hardcoding has taken us back to green, tests passing.
+I will finish this example here, you can already imagine how we would carry on:
+- We'd watch the new test pass
 - improve the test so hardcoding doesn't cut it, and watch it fail
-- improve the code to make it pass.
+- then improve the code to make it pass.
+- And so on.
 
 ---
 
-```mermaid
-flowchart LR
-A{Tests Failing}
-B{Tests Passing}
+![[attachments/tdd-mermaid-40-compiler-driven-development.excalidraw]]
 
-A --->|Improve the code| B
-
-B --> |Improve the test| A
-```
+> Tests failing? Improve the code.
+>
+> Tests passing? Improve the tests.
 
 notes:
 
-- [ ] obviously improve this mermaid diagram
-If the tests are failing, improve the code, if the tests are passing, improve the tests!
+The method is simple:
 
-after a word from today's sponsor, Quadratic.
+**If the tests are failing, improve the code, if the tests are passing, improve the tests!**
+
+# Quadratic Sponsor
+
+Now we've revised TDD, we can get into CDD, after a word from today's sponsor, Quadratic, who I am delighted to say are hiring Rust developers:
 
 ---
 
@@ -319,8 +429,8 @@ Standard Python data science libraries are built-in.
 
 <!-- slide bg="rgb(37, 34, 43)" -->
 notes:
-In fact because quadratic are using Pyodide inside webassembly, any pure python dependency can be installed, like this example of the faker library.
-Loads of essential native libraries, like numpy, scipi, and pandas have been specially ported, too.
+In fact, because quadratic are using Pyodide inside webassembly, any pure python dependency can be installed, like this example of the faker library.
+Loads of essential native libraries, like numpy, scipi, and pandas have been specially ported, by the pyodide team too.
 
 ---
 
@@ -366,7 +476,7 @@ Quadratic built their infinite canvas on webgl, allowing for smooth scrolling an
 
 notes:
 
-Multiplayer support with live mouse tracking so well I'm mad that vscode doesn't do this!
+Multiplayer support with live mouse tracking works so well, I'm mad that vscode doesn't do this!
 
 ---
 
@@ -379,7 +489,7 @@ notes:
 
 They also have GPT integration, giving you a copilot or pair programmer while you're writing.
 
-It's a fantastic product made by some nice people, and I'm delighted to say they are hiring.
+It's a fantastic product made by some nice people, and they are **hiring!**
 
 ---
 
@@ -397,8 +507,8 @@ It's a fantastic product made by some nice people, and I'm delighted to say they
 notes:
 
 Quadratic are looking for:
-- Great Rust engindeers who have experience at a Startup and leading software architecture and implementation, and
-- Frontend and AI
+- Great Rust engineers who have experience at a Startup and leading software architecture and implementation, and
+- Frontend and AI devs
 
 ---
 
@@ -406,7 +516,7 @@ Quadratic are looking for:
 
 ![](attachments/partner-attachments/quadratic-logo-cleaned.png)
 
-> Analyze data the developer way, share results the spreadsheet way.
+> Analyze data the developer way, &nbsp; &nbsp; share results the spreadsheet way
 
 #### <https://QuadraticHQ.com>
 
@@ -414,12 +524,10 @@ Quadratic are looking for:
 
 notes:
 
--   Apply today, and
+-   Apply today, or
 -   Head to QuadraticHQ.com to try it out.
 
 My thanks to quadratic for their support of this channel.
-
-Let's look at Compiler-driven-development
 
 ---
 
@@ -436,46 +544,35 @@ notes:
 
 Now that we've revised TDD, we can talk about CDD.
 
-CDD operates on the same Red/Green/Refactor pattern as TDD, except you're not writing tests, you're writing code that the compiler is not satisfied with, and the ticktocking between Red and Green is the conversation between you and the compiler.
-
-A simple example will clear this up:
+CDD operates on the same Red/Green/Refactor pattern as TDD, except you can entirely skip writing tests: You're simply writing code that the compiler is not satisfied with, and the ticktocking between Red and Green is the conversation between you and the compiler.
 
 ---
 
-# new example
+## Rustc proves for you
 
----
-
-```rust
-enum Status {
-	On,
-	Off
-}
-struct User { 
-	name: String,
-	age: u8
-}
-
-fn fnfn (){}
-```
-
-- [ ] finish this
+- 100% code coverage
+- No invalid syntax
+- Guarenteed thread safety
+- Business modelling structures/nums
 
 notes:
 
-In CDD we get to green by improving the code, still, but to get to red we must improving our model in the type system.
+In CDD You don't check that your code works in the way you expect by calling your functions or modules and examining their output or behaviour in a unit test.
+You trust the compiler to prove the model of your system, across ALL possible paths through your code.
 
-We do this by pushing more logic from runtime into compile time.
+Because the rich type system models so much of your logic that would otherwise require runtime testing in other languages, you can skip writing tests for these cases and more:
 
-- [ ] clippy String -> &str
-- [ ] clippy split " " -> ' '
-- [ ]
+- No invalid syntax, even if the bad lines are never called, in rust, coverage is always 100%
+- No insecure memory usage, everything is safe to pass between concurrent processes, if it's not the compiler won't let you do it
+- And my favourite, the Rust type system allows encoding much of your application's logic inside the types themselves, far more than simple objects or classes do in other popular languages.
+
+Let's look at two CDD examples to illustrate this:
 
 ---
 
-## 🔴 RED
+## Example 1/2
 
-###### ~~means recording~~
+##### Build something that compiles
 
 ```rust[]
 fn count_words(input) {
@@ -483,26 +580,19 @@ fn count_words(input) {
 }
 ```
 
-&nbsp;
-
-#### Goal: Try to build something that compiles
-
 notes:
 
-- [ ] example too long, rewrite with more focus on modelling errors not syntax errors
-- [ ] pin to RMR
+say we want to write a function to count the number of words in a string, by simply splitting on spaces.
 
-let's say we want to write a function to count the number of words in a string, by simply splitting on spaces.
+Just as in TDD, I recommend you start by hardcoding values to get your code to compile.
 
-Just as in TDD, I recommend you start by hardcoding values just to get the compiler to compile.
-
-The goal here is to go green, to compile. This psudocode does not get us there, but unlike in TDD, we don't just get error output, we get FIXES!
-
-- [ ] remove line numbers from all error outputs
+The goal here is to go green. This psudocode does not quite get us there, but unlike in TDD, we don't just get error output, we get FIXES!
 
 ---
 
 ## 🔴 RED
+
+###### ~~means recording~~
 
 ```rust[]
 fn count_words(input) {
@@ -525,31 +615,11 @@ help: if this is a parameter name, give it a type
 ```
 
 notes:
+- [ ] pin to RMR
 
----
+The helpful compiler error tells us to fill in a few types, and with a short conversion of trying out a type or two, saving, watching the output from the compiler, and following its advice, we can get to green quickly.
 
-## 🔴 RED
-
-```rust[]
-fn count_words(input: String) {
-	1
-}
-```
-
-```rust[6]
-error[E0308]: mismatched types
-  --> src/main.rs:20:2
- |
- | fn count_words(input: String) {
- |                              ^
-help: try adding a return type: `-> `
- |     1
- |     ^ expected `()`, found integer
-```
-
-notes:
-
-We're getting there, the previous syntax error is now a compiler error - we're writing valid Rust, but we're not modelling the types correctly.
+(For more details on how the compiler output coaches you, see my video, "How to Speak Rust")
 
 ---
 
@@ -563,38 +633,18 @@ fn count_words(input: String) -> usize {
 
 notes:
 
-We did it! The first hardcoded version of our function now compiles, and if it compiles we know many things are proved in the entire codebase, thanks to the rich type system.
+Just as in TDD, I recommend hardcoding first.
+This first naive version of our function compiles, and if it compiles we know many things are proved in the entire codebase, as I mentioned just now.
 
-When you're writing Rust, you must get to a compiling state as soon as you can, until you do all bets are off:
-- LSP may act strangely
+When you're writing Rust, you must strive to get to a compiling state as soon as you can, until you do all bets are off:
+- LSP or your editor may act strangely
 - Clippy can't suggest advanced features to use, and
 - CDD can't work
+- Let alone your team's runtime test suite.
 
-Breaking the code, getting to a RED state is an important transition. Don't stay there for very long, break up big new work features into atomic, compilable chunks, and iterate upwards from compiling states.
+Breaking the code, getting to a RED state is an important transition. Don't stay there for very long, break up big new features into atomic, compilable chunks, and iterate upwards from compiling states.
 
 RIGHT: Let's keep going, I don't see any refactoring needed yet, so we'll skip that and go back to red.
-
-How do we do that? Heres's the flowchart that you should tattoo inside your eyelids:
-
----
-
-```mermaid
-flowchart LR
-A{Compiler Error}
-B{Compiling OK}
-
-A --->|Improve the code| B
-
-B --> |Improve the model| A
-```
-
-notes:
-
-- [ ] obviously improve this mermaid diagram
-
-Remember, just as in TDD where we'd get to green by improving the code, and we'd get to red by improving the test;
-
-In CDD we get to green by improving the code, still, but to get to red we must improving our model in the type system.
 
 Let's continue:
 
@@ -628,10 +678,10 @@ I've made what I think is a reasonable guess about the name of the method to spl
 However, I've deliberately not added the string parameter that `split()` almost certainly wants.
 
 I've done this to make sure we're not staying green.
-Sure the compiler remaining happy is PROBABLY good, but you'll KNOW it, if it goes red then back to green again.
-Same as in TDD.
+Sure, the compiler remaining happy is PROBABLY good, but you'll KNOW it if it goes red, then back to green again.
+Same as in TDD, don't skip steps.
 
-So what does `split()` require? Most of us would guess, correctly, that it wants a string. But how would we confirm that? The method definition is a bit cryptic, referencing the `Pattern` trait, but not telling us the concrete types we can use.
+So what does `split()` require? Most of us would guess, correctly, that it wants a string. But how would we confirm that? The method definition here is a bit cryptic, referencing the `Pattern` trait, but not telling us the concrete types we can use.
 
 In other languages you might reach for the documentation of `String::split()`, or use your IDE's autocomplete to get the same, perhaps google the error, or start hacking around.
 
@@ -639,9 +689,9 @@ You can do all these in Rust, but we can also get the compiler to tell us exactl
 
 ---
 
-#### Bad merch available at <http://noboilerplate.org>
+![|500](attachments/teepublic-obey-sticker.png)
 
-![400](attachments/teepublic-obey-sticker.png)
+#### "OBEY THE COMPILER" merch available at &nbsp; <http://noboilerplate.org>
 
 notes:
 And you know what you have to do when the compiler tells you what it wants!
@@ -673,12 +723,12 @@ trait bound {integer}: Pattern<'_> is not satisfied
 
 notes:
 
-To find out what type `String::split()` parameter accepts, a trick is to introduce a type error deliberately. Splitting a string on a number doesn't make much sense, and the compiler knows it.
+To find out what type `String::split()` accepts, a trick is to introduce a type error deliberately. Splitting a string on a number doesn't make much sense, and the compiler knows it.
 Here's the error when you do.
 
-The full error was much larger than this, and a bit more scary, traits often are, but you don't have to understand it if you are at the start of your rust journey, or using a complex unfamiliar api, you just look at the wonderful help text the compiler has given us, enumerating all the concrete typos that implement the `Pattern` trait - the exact list that we want!
+The full error was much larger than this, and a bit more scary, traits often are, but you don't have to understand it if you are at the start of your rust journey, or using a complex unfamiliar API, you just look at the wonderful help text the compiler has given us, enumerating all the concrete types that implement the `Pattern` trait - the exact list that we want!
 
-Unsuprisingly, it's all strings and character-related types.
+Unsurprisingly, it's all strings and character-related types.
 Now, let's try it:
 
 ---
@@ -691,18 +741,16 @@ fn count_words(input: String) -> usize {
 }
 ```
 
-```rust[]
+```rust[1,7,8]
 error[E0308]: mismatched types
   --> src/main.rs:20:2
-   |
-19 | fn count_words(input: String) -> usize {
-   |                                  ----- expected `usize` because of return type
-20 |     input.split(" ")
-   |     ^^^^^^^^^^^^^^^^ expected `usize`, found `Split<'_, &str>`
-   |
-   = note expected type `usize`
-            found struct `std::str::Split<'_, &str>`
-
+ |
+ | fn count_words(input: String) -> usize {
+ |           because of return type ----- 
+ |  
+ |     input.split(" ")
+ |     ^^^^^^^^^^^^^^^^ expected usize, found Split
+ |
 ```
 
 notes:
@@ -711,13 +759,13 @@ ah, another error, but the final one for this example.
 
 Rust, like recent versions of python and many other languages, is built on iterators.
 
-The return value of the `.split()` method isn't a static array or a list, it is an iterator, with all of the mapping, filtering, and other iterator methods available on it.
+The return value of the `split()` method isn't a static array or a list, it is an iterator, with all of the mapping, filtering, and parallel iteration methods available on it.
 
-For the sake of time, I happen to know you can simply count the number of items in an iterator with `.count()`, and we will make our example go green by supplying it
+For the sake of time, I happen to know you can simply count the number of items in an iterator with the `count()` method, and we will make our example go green by supplying it
 
 ---
 
-# Final version
+## Final version
 
 ```rust[]
 fn count_words(input: String) -> usize {
@@ -729,8 +777,8 @@ notes:
 
 The compiler is happy, and if the compiler is happy, I am happy.
 
-But there's a cherry on top of CDD, in Rust.
-The Compiler statically analysing our code is all very well, but that's not the only compile-time analysis we can do.
+But there's a cherry on top of simple CDD, in Rust.
+The Compiler statically analysing our code is all very well, but that's not the only compile-time analysis that we can do.
 
 Let's set clippy on our code.
 
@@ -759,9 +807,9 @@ error: single-character string constant used as pattern
 ```
 
 notes:
-See my other videos or the markdown script for this one, for my recommended ways to set up clippy.
-Here, we're using the huge lint groups, `pedantic` and `nursery` to get HUGE insights into our code.
+Here, we're using the lint groups, `pedantic` and `nursery` to get HUGE insights into our code.
 As the names suggest they are annoying and pre-release, respectively, but I love them both!
+See my other videos or the markdown script for this one, for my recommended ways to set up clippy.
 
 Clippy has told us, quite rightly that it would be more flexible to use a string slice, not a string, and that if we're using a single space character as a pattern for splitting, we should use single quotes to make it a character literal, not a string of length 1.
 
@@ -769,528 +817,283 @@ I literally learned the second optimisation while I was writing this video - cli
 
 ---
 
-# You know when you're done with CDD
+![[attachments/cdd-mermaid-40-compiler-driven-development.excalidraw]]
 
-- [ ] A network diagram with path travelling to a local maximum error
-- [ ] TDD and CDD let you know when you're done, but also give you more confidcence you have explored much more of the state space.
-
-notes:
-
-Just as in TDD, we can have enormous confidence that we've done the right thing with CDD, by proving
-
----
-
----
-
-![300](attachments/tri-hex-moon-white-transparent.png)
-
-# Thank You
-
-## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
+> Compile error? Improve the code.
+>
+> Compiled OK? Improve the model.
 
 notes:
 
-# OUTRO
+## CDD Diagram
 
-If you would like to support my channel, get early ad-free and tracking-free videos, vip discord access or 1:1 mentoring, head to patreon.com/noboilerplate.
+Heres's the flowchart that you should tattoo inside your eyelids:
 
-If you're interested in transhumanism and hopepunk stories, please check out my weekly sci-fi podcast, Lost Terminal.
+Remember, just as in TDD where we'd get to green by improving the code, and we'd get to red by improving the test;
 
-Or if urban fantasy is more your bag, do listen to a strange and beautiful podcast I produce every full moon called Modem Prometheus.
+In CDD we get to green by improving the code, still, but to get to red we must improve our model using the type system.
 
-Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
+The previous simple example modelled our code with simple types.
 
-Thank you so much for watching, talk to you on Discord.
-
----
----
----
----
-
-# Rejected sections
-
-- [ ] Old part 2:
-
-# Part 2: The Rich Type System
-
-<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
-Show me your flowcharts and conceal your tables, and I shall continue to be mystified. Show me your tables, and I won't usually need your flowcharts; they'll be obvious.
-
-&mdash; Fred Brooks, "The Mythical Man-Month"
-
-notes:
-
-Just as good data design can make runtime errors impossible, good program design in Rust can extend that
-
-==4:20==
+When you use CDD in Rust, you use the alien magic of the type system to improve your model so much that you have no choice but to improve your code, to satisfy the compiler.
 
 ---
 
-## No documentation thanks
-
-# I'm a rustacean
-
-notes:
-
-I'll talk about some patterns to model enormous parts of your code later on, but first, let's see what compiler-driven development can do for us.
-
-We'll start by making it much less necessary to read human-readable documentation.
-
-Self-documenting code is a joke in other languages, it's a reality in Rust:
-
 ---
 
-![axum-readme-github.png](attachments/axum-readme-github.png)
+## Patreon bonus
 
-<https://github.com/tokio-rs/axum>
-
-notes:
-
-This is the readme of Axum, the most popular Rust web framework, with 3.4M downloads a month.
-
-Reading documentation is for nerds and principle engineers, we're going to reproduce the example in the read me and start hacking, using only the rust compiler, no LSP tricks here.
-
----
-
-%%
-
-axum boilerplate:
-
-```rust[]
-use axum::{
-    routing::{get, post},
-    http::StatusCode,
-    Json, Router,
-};
-use serde::{Deserialize, Serialize};
-use tokio::net::TcpListener;
-```
-
-%%
-
-```rust[]
-#[tokio::main]
-async fn axum_server() {
-    let app = Router::new()
-        .route("/",      get(root))
-		.route("/users", post(create_user));
-		
-	let listener = TcpListener::bind("0.0.0.0:8080")
-		.await.unwrap();
-		
-    axum::serve(listener, app).await.unwrap();
-}
-```
-
-%%
-
-```rust[]
-println!("serving...");
-axum_server();
-```
-
-%%
-
-notes:
-
-Here's the main function. It creates two routes, and serves them on port 8080.
-Simple enough, but what are those two routes?
-
----
-
-```rust[]
-async fn root() -> &'static str {
-    "Hello, World!"
-}
-```
-
-```shell[]
-$ curl localhost:8080
-Hello, World!
-```
-
-notes:
-The first one serves a simple static string. OK great.
-
----
-
-```rust[]
-async fn create_user(Json(payload): Json<CreateUser>) 
-    -> (StatusCode, Json<User>) {
-    
-    let user = User {
-        id: 1337,
-        username: payload.username,
-    };
-
-    (StatusCode::CREATED, Json(user))
-}
-```
-
-notes:
-
-The second is more interesting, a post handler creating a user from a validated payload of json, and returning the new user as json.
-BOTH input and ouput of this handler are documented and their enforced by the type signature.
-
-OK, let's break this, what status codes have we got?
-
----
-
-![40-clippy-no-item-destroyed.png](40-clippy-no-item-destroyed.png)
-
-notes:
-
-Looks like there's an opening for a new status code.
-
-Now this is interesting. Instead of giving us some options of what valid codes are available, which it would if we'd mispelled one
-
----
-
-## LIVE Block
-
-```rust[]
-async fn create_user(Json(payload): Json<CreateUser>) 
-    -> (StatusCode, Json<User>) {
-    
-    let user = User {
-        id: 1337,
-        username: payload.username,
-    };
-
-    (StatusCode::DELETED, Json(user))
-}
-```
-
----
-
-```rust[9]
-async fn test1(Json(payload): Json<CreateUser>) 
-    -> (StatusCode, Json<User>) {
-    
-    let user = User {
-        id: 1337,
-        username: payload.username,
-    };
-
-    (StatusCode::from_u16(201).unwrap(), Json(user))
-}
-```
-
----
-
-```rust[]
-#[derive(Deserialize)]
-struct CreateUser {
-    username: String,
-}
-#[derive(Serialize)]
-struct User {
-    id: u64,
-    username: String,
-}
-```
-
-notes:
-
-# Axum demo
-
----
-
-```rust
-enum FlightState {
-	Boarding,
-	Taxiing,
-	Takeoff,
-	Cruising,
-	Landing,
-	Deboarding,
-} 
-```
-
-```rust
-fn takeoff(flight: FlightState) -> FlightState {
-	match flight {
-		FlightState::Taxiing => FlightState::Takeoff,
-		_ => flight
-	}
-}
-```
-
----
-
-# Rust is the opposite of Perl. Perl Makes Easy Things Easy and Hard Things Possible, Rust Makes Easy Things Possible and Hard Things Easy
-
-<https://devclass.com/2023/03/20/microsofts-visual-basic-why-it-won-and-why-it-had-to-die/>
-
-<https://www.amazon.com/Learning-Perl-Making-Things-Possible/dp/1491954329>
-
-_You know how it's hard to learn something you can't see the point of?
-
-I think this is why senior developers, particularly, flock to Rust.
-We've been in the trenches, we've been paged at 4am, we've debugged the same missing semicolon or bad indentation errors a thousand times.
-
-You tell me that with just a bit more syntax, Rust can fix my PTSD? I say SIGN ME UP! ![🎉](https://web.telegram.org/a/img-apple-64/1f389.png) 
-
-A junior developer, the sweet summer child, only wants things to be easy NOW.
-
-Rust isn't optimised for easy NOW.
-It's optimised for easy FOREVER."_
-
----
-
-# Compiler-Driven Development
-
-notes:
-
-how to start with CDD in Rust is the same as with TDD, test driven development, but the tests are already written for you.
-
-Red.
-Green.
-Refactor.
-- [ ] check these colours.
-
-- [ ] debugging steps
-    - [ ] is the signature correct
-    - [ ] make it compile with dummy body
-    - [ ] break it
-    - [ ] red/green/refactor
-    - [ ] do a commit when the build succeeds - automate this
-
----
-
-- Write a some basic tests for the new feature. This upfront testing requires you to focus on test requirements before starting hacking
-- Add one test from the list
-- Run all tests, watch the new test fail
-- write the simplest code that makes the new code pass
-	- hardcoding acceptible
-- watch the new test pass
-- improve the test so hardcoding doesn't cut it, and watch it fail
-- improve the code to make it pass.
-
----
-
-Autocomitting on `cargo build` ok
-
----
-
-# Amortized Complexity
-
- - first run slow, subsequent runs fast
- - like rust compile times
- - like life
-
----
-"Writing a compiler that would accept all of the valid programs is not possible, thus we're left with the next best thing: a compiler that will reject all invalid programs at a cost of being overly strict."
-- [ ] who said this?
-
-Rust forces you to fix all your future bugs before you deploy. This causes the steeper learning curve, but given that all future bugs are crammed into the first compile, it's a suprisingly flat curve!
-
----
-
-# Optimise for Readability
-
-notes:
-As you know, languages are read far more often than they are written.
-But there's another part to the story here.
-Your programs, if you're lucky and doing your job right, will be used by orders of magnatude more people than those who read the code.
-So it follows that some small sacrifice of readability is valid, if it benefits you.
-
----
-
-# Parse Dont Validate
-
-<https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/>
-
-is this the same as [The Typestate Pattern in Rust](The%20Typestate%20Pattern%20in%20Rust)
-
----
-
-# Typestate Pattern
-
-## States
-
-```rust[]
-struct Light<State> {
-    state: State,
-}
-
-#[derive(PartialEq)]
-struct On {}
-
-
-#[derive(PartialEq)]
-struct Off {}
-
-```
-
-## Transitions
-
-```rust[]
-impl Light<Off> {
-    fn turn_on(self) -> Light<On> {
-        Light {
-            state: On {},
-        }
-    }
-}
-impl Light<On> {
-    fn turn_off(self) -> Light<Off> {
-        Light {
-            state: Off {},
-        }
-    }
-}
-impl<State: PartialEq> Light<State> {
-    fn flip<T>(self) -> Light<T> {
-        if self.state == (On {}) {
-	        Light { state: Off {} }
-        } else {
-	        Light { state: On {} }
-        }
-    }
-}
-```
-
----
-
-## Correct Transitions
-
-```rust[]
-fn correct_transitions() {
-	let bedroom_light = Light {
-		state: Off {},
-	};
-	bedroom_light.turn_on().turn_off().turn_on();
-}
-```
-
----
-
-## Incorrect Transitions
-
-```rust[2]
-let bedroom_light = Light { state: Off {} };
-bedroom_light.turn_on().turn_on(); // can't call twice 
-```
-
-```sql
-error[E0599]: no method named `turn_on` found 
-for struct `Light<On>` in the current scope
-   |
-9  | struct Light<State> {
-   | ------------------- method `turn_on` not found
-...
-41 |     start_state.turn_on().turn_on();
-   |     -----------           ^^^^^^^
-   |     |
-   |     method `turn_on` is available on Light<Off>
-```
-
-notes:
-
-- [ ] replace this with a screenshot of the error
----
-
-# Typestate Pattern With Traits
-
-## States
-
-```rust[]
-fn correct_transitions() {
-    let bedroom_light = Light {
-        state: Off
-    };
-    bedroom_light.turn_on().turn_off().turn_on();
-}
-
-// Primary stuct
-struct Light<State: ResponseState> {
-    state: State,
-}
-
-
-// States
-struct On;
-struct Off;
-
-
-
-// Trait wiring for Start and Headers,
-trait ResponseState {}
-impl ResponseState for On {}
-impl ResponseState for Off{}
-
-```
-
-## Transitions
-
-```rust[]
-
-// Methods availabe only in the Start state
-impl Light<Off> {
-    fn turn_on(self) -> Light<On> {
-        Light { state: On }
-    }
-}
-
-// Methods availabe only in the Headers state
-impl Light<On> {
-    fn turn_off(&self) -> Light<Off> {
-        Light { state: Off }
-    }
-}
-
-
-//impl<T, S> Transformable<T, S> for SomeStruct<T> {
-//    type Output = SomeStruct<S>;
-
-//impl<State: PartialEq> Light<State> {
-//    fn flip<T>(self) -> Light<T> {
-// Methods availabe in any state
-impl<State: ResponseState> Light<State> {
-
-    fn transition() -> Light<State> {
-        Light {
-            state: State
-        }
-    }
-
-    /*
-    pub fn tst(self) -> Light<On> {
-        Light::transition()
-    }
-    */
-
-/*
-    fn flip(self) -> Self {
-	    match self {
-			Light { state: (On {}) } => Light { state: (Off {}) }
-	    }
-    }
-*/
-
-
-}
-```
-
----
-
-# Auto-commit Passing Builds
+#### Auto-commit Passing Builds
 
 > If debugging is the process of removing software bugs, then programming must be the process of putting them in.
 
 &mdash; Dijkstra
 
 notes:
+
+Look, I'm keeping this between us because I don't know if this is a good idea or a bad one.
+
+---
+
+notes:
+
 the commit message is
 
 > Fixes [previous error]
 
 ---
 
-# Designing at Compile Time
+## Compile-time where possible
 
-build a whole system with just they type system
+```rust[]
+fn send_packet(node: &ID) {
+  match node {
+    ID::V4(..) | ID::V6(..) => ip_packet(node),
+    ID::Mac(..)             => ethernet_frame(node),
+    ID::FreqHz(..)          => aprs_broadcast(node),
+    ID::Coord{..}           => geocach(node),
+    ID::Uuid(..)            => store(node)
+  }
+}
+```
 
-show how prototyping at compile time can give real predictions
-maybe use dependent types, or at least fake dependent types with custom new()
+notes:
+
+Let's look at this example code.
+
+This doesn't quite spark joy for me, that match arm, though kept safe by the model of our code is doing despatch logic at runtime, rather than compile time.
+
+We can do much better with a little rust magic, and I've saved the best till last!
+
+---
+
+## Example 2/2
+
+## The
+
+###### (extremely cool)
+
+## Typestate Pattern
+
+_(see:
+<https://cliffle.com/blog/rust-typestate/>)_
+
+notes:
+
+The Typestate pattern encodes information about the runtime state of an object in its compile-time type.
+
+This is a simple idea that has far-reaching implications.
+
+I first became aware of this pattern after seeing some WEIRD stuff in the rust standard library that I didn't know how to interpret, falling down a rabbit hole, and ended up at Cliff Biffle's fantastic 2019 article.
+
+The typestate pattern is annoying to implement in other popular languages, you may have never seen it used for this reason, but it's extremely ergonomic in Rust.
+
+---
+
+### Let there be light
+
+```rust
+struct Light<State> {
+	state: State,
+}
+struct On;
+struct Off;
+```
+
+```rust
+impl Light<Off> {
+	fn turn_on(self) -> Light<On> {
+		Light { state: On }
+	}
+}
+impl Light<On> {
+	fn turn_off(self) -> Light<Off> {
+		Light { state: Off }
+	}
+}
+```
+
+notes:
+
+Here I'm modelling a light switch with two states, on and off, and transition methods to move between them.
+You can't turn on a light that is already on, and I want the compiler to not allow such a transition at compile-time.
+
+The Typestate pattern allows us to model:
+
+- Functions that are only available when the struct is in certain states, and
+- A way of encoding these states at the type level, so that attempts to use functions in the wrong state fail to compile, enforcing that functions in previous states are no longer possible.
+
+In short, this is an extremely powerful way to make invalid states unrepresentable.
+
+---
+
+## Correct transitions
+
+```rust
+fn correct_transitions() {
+
+	let bedroom_light = Light { state: Off };
+	let bedroom_light = bedroom_light
+		.turn_on()
+		.turn_off()
+		.turn_on();
+	
+}
+```
+
+notes:
+
+Here is the usage of our Light struct.
+The builder pattern lets us abstract away all of the intermediate states into a simple, compile-guarenteed, interface.
+
+Now, let's try to turn on a light that is already on -
+
+---
+
+## Incorrect Transitions
+
+```rust[3-4]
+let bedroom_light = Light { state: Off };
+let bedroom_light= bedroom_light
+	.turn_on()
+	.turn_on();
+```
+
+```rust[1,8,10,11]
+no method named `turn_on` found for struct Light<On>
+|
+| struct Light<State> {
+|
+|     bedroom_light.turn_on().turn_on();
+|     -------------           ^^^^^^^
+|     |
+|     method `turn_on` is available on `Light<Off>`
+|
+help: there is a method `turn_off` with a similar name
+|     bedroom_light.turn_on().turn_off();
+|                             ~~~~~~~~
+```
+
+notes:
+
+Not only is it a compiler error, but it tells us what states we should be in if we want to use the `turn_on` transition: only Lights in the off state are valid for this.
+
+GLORIOUS!
+
+---
+
+##### Methods available multiple states
+
+```rust
+impl Light<Off> {
+  fn flip(self) -> Light<On> { Light { state: On } }
+}
+impl Light<On> {
+  fn flip(self) -> Light<Off> { Light { state: Off } }
+}
+impl<State> Light<State> {
+  fn example(self) -> i32 { todo!("read the post") }
+}
+```
+
+```rust
+fn testit() {
+	let bedroom_light = Light { state: Off };
+	bedroom_light.flip().flip().flip(); //easy does it
+}
+```
+
+notes:
+
+You can, of course, write methods that work in any state, either simply by specifying the behaviour in different states, like with the flip method here, or by using rust's generics.
+
+There's more detail here, such as restricting behaviour to GROUPS of states using traits, do read Cliff Biffle's article for all the flexible options here.
+
+---
+
+#### You know when you're done with CDD
+
+![](attachments/clippy-ok.png)
+
+## The compiler tells you
+
+notes:
+
+However you model your application logic with the type system: structs, enums, the typestate pattern, you can enrich the conversation between you and the compiler to improve your development experience using CDD.
+
+The goal with modelling in Rust, and languages like it, is to make run-time behaviour, compile-time guarenteed.
+
+Just as in TDD, we can have enormous confidence that we've done the right thing with CDD, by getting the compiler to pull its weight and do some work for us, turning it from a pedantic fusspot, to a superpowered pair programmer.
+
+---
+
+# Thank You
+
+Especially to my Producer and Sponsor patrons:
+
+%%
+
+```rust
+fn credits() {
+```
+
+%%
+
+```rust
+let producers: [&str; 0] = [];
+let sponsors = [
+	"Jaycee", "Gregory Taylor", "Ything LLC"
+];
+```
+
+%%
+
+```rust
+}
+```
+
+%%
+
+### [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
+
+### [ko-fi.com/noboilerplate](https://ko-fi.com/noboilerplate)
+
+notes:
+
+# OUTRO
+
+I have a few announcements, firstly, thank you to everyone who suggested setting up ko-fi, I have now done so, with the same tiers and benefits as Patreon.
+
+Additionally, I'll start crediting producer and sponsor tier patrons from all platforms on the endscreen of all future videos, as you can see here.
+
+Thank you all so much!
+
+If you would like to support my channel, get early ad-free and tracking-free videos, your name in the credits or 1:1 mentoring, head to my patreon or ko-fi.
+
+If you're interested in transhumanism and hopepunk, please check out my weekly sci-fi audiofiction podcast, Lost Terminal.
+
+Or if urban fantasy is more your bag, do listen to a strange and beautiful podcast I produce every full moon called Modem Prometheus.
+
+Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
+
+Thank you so much for watching, talk to you on Discord.
