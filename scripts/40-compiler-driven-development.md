@@ -78,6 +78,12 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 Today I'm going to explain the alien magic of Compiler-Driven Development by analogy to Test-Driven Development, demo two examples in Rust, and make some recommendations.
 
+When I write a new Rust program, I don't start with functions or methods or any runtime code. I start with the model of my application, expressed with Rust's rich type system.
+
+Interacting with the real-world, on disk or through the network is too slow for me, at first, I need to iterate faster than that, to sketch out my ideas, unconstrained by the outside world.
+
+_This compile-checked whiteboarding I call_ **_Compiler-Driven Development._**
+
 ---
 
 ### Don't just run your code, Model it
@@ -166,7 +172,7 @@ This is exactly what Rust's more complex syntax and comprehensive type system ca
 | ------------------------------- | ------------------------------- |
 | Removed before deploy           | Removed before deploy           |
 | Improve your code with feedback | Improve your code with feedback |
-| Can be enforced in CI           | Enforced eveywhere              |
+| Can be enforced in CI           | Enforced everywhere             |
 
 notes:
 
@@ -552,11 +558,10 @@ CDD operates on the same Red/Green/Refactor pattern as TDD, except you can entir
 
 - 100% code coverage
 - No invalid syntax
-- Guarenteed thread safety
-- Business modelling structures/nums
+- Guaranteed thread safety
+- Business modelling structs/enums
 
 notes:
-
 In CDD You don't check that your code works in the way you expect by calling your functions or modules and examining their output or behaviour in a unit test.
 You trust the compiler to prove the model of your system, across ALL possible paths through your code.
 
@@ -586,7 +591,7 @@ say we want to write a function to count the number of words in a string, by sim
 
 Just as in TDD, I recommend you start by hardcoding values to get your code to compile.
 
-The goal here is to go green. This psudocode does not quite get us there, but unlike in TDD, we don't just get error output, we get FIXES!
+The goal here is to go green. This pseudocode does not quite get us there, but unlike in TDD, we don't just get error output, we get FIXES!
 
 ---
 
@@ -615,7 +620,6 @@ help: if this is a parameter name, give it a type
 ```
 
 notes:
-- [ ] pin to RMR
 
 The helpful compiler error tells us to fill in a few types, and with a short conversion of trying out a type or two, saving, watching the output from the compiler, and following its advice, we can get to green quickly.
 
@@ -813,7 +817,7 @@ See my other videos or the markdown script for this one, for my recommended ways
 
 Clippy has told us, quite rightly that it would be more flexible to use a string slice, not a string, and that if we're using a single space character as a pattern for splitting, we should use single quotes to make it a character literal, not a string of length 1.
 
-I literally learned the second optimisation while I was writing this video - clippy has singlehandedly taught me more rust than any book. Run it in a terminal with the `bacon` test runner whenever you write Rust!
+I literally learned the second optimisation while I was writing this video - clippy has single-handedly taught me more rust than any book. Run it in a terminal with the `bacon` test runner whenever you write Rust!
 
 ---
 
@@ -827,7 +831,7 @@ notes:
 
 ## CDD Diagram
 
-Heres's the flowchart that you should tattoo inside your eyelids:
+Here's's the flowchart that you should tattoo inside your eyelids:
 
 Remember, just as in TDD where we'd get to green by improving the code, and we'd get to red by improving the test;
 
@@ -836,30 +840,6 @@ In CDD we get to green by improving the code, still, but to get to red we must i
 The previous simple example modelled our code with simple types.
 
 When you use CDD in Rust, you use the alien magic of the type system to improve your model so much that you have no choice but to improve your code, to satisfy the compiler.
-
----
-
----
-
-## Patreon bonus
-
-#### Auto-commit Passing Builds
-
-> If debugging is the process of removing software bugs, then programming must be the process of putting them in.
-
-&mdash; Dijkstra
-
-notes:
-
-Look, I'm keeping this between us because I don't know if this is a good idea or a bad one.
-
----
-
-notes:
-
-the commit message is
-
-> Fixes [previous error]
 
 ---
 
@@ -1041,7 +1021,7 @@ notes:
 
 However you model your application logic with the type system: structs, enums, the typestate pattern, you can enrich the conversation between you and the compiler to improve your development experience using CDD.
 
-The goal with modelling in Rust, and languages like it, is to make run-time behaviour, compile-time guarenteed.
+The goal with modelling in Rust, and languages like it, is to make run-time behaviour, compile-time guaranteed.
 
 Just as in TDD, we can have enormous confidence that we've done the right thing with CDD, by getting the compiler to pull its weight and do some work for us, turning it from a pedantic fusspot, to a superpowered pair programmer.
 
