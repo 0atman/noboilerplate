@@ -43,7 +43,7 @@ These lints make clippy less noisy when I'm building the video
 
 ```rust
 #![allow(dead_code, unused_variables)]
-#![allow(clippy::items_after_statements, clippy::no_effect, unused_must_use, clippy::must_use_candidate, clippy::unused_self, clippy::missing_const_for_fn)]
+#![allow(clippy::items_after_statements, clippy::no_effect, unused_must_use, clippy::must_use_candidate, clippy::unused_self, clippy::missing_const_for_fn, clippy::use_self)]
 ```
 
 # Imports
@@ -78,7 +78,8 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 Today I'm going to explain the alien magic of Compiler-Driven Development by analogy to Test-Driven Development, demo two examples in Rust, and make some recommendations.
 
-When I write a new Rust program, I don't start with functions or methods or any runtime code. I start with the model of my application, expressed with Rust's rich type system.
+When I begin a new Rust program, I don't start with functions or methods or any runtime code:
+I start with the model of my application, expressed with Rust's rich type system.
 
 Interacting with the real-world, on disk or through the network is too slow for me, at first, I need to iterate faster than that, to sketch out my ideas, unconstrained by the outside world.
 
@@ -108,11 +109,6 @@ impl ResponseState for Metadata {}
 [cliffle.com/blog/rust-typestate/](https://cliffle.com/blog/rust-typestate/) (stay tuned for demo)
 
 notes:
-When I write a new Rust program, I don't start with functions or methods or any runtime code.
-I start with the model of my application, expressed with Rust's rich type system.
-
-Interacting with the real-world, on disk or through the network is too slow for me, at first, I need to iterate faster than that, to sketch out my ideas, unconstrained by the outside world.
-
 You may be familiar with repl-driven development, or the fast feedback of testing out your code in the browser with hot code reloading.
 
 The compiler is faster than these methods, to be fair because it's doing less.
@@ -571,125 +567,119 @@ Because the rich type system models so much of your logic that would otherwise r
 - No insecure memory usage, everything is safe to pass between concurrent processes, if it's not the compiler won't let you do it
 - And my favourite, the Rust type system allows encoding much of your application's logic inside the types themselves, far more than simple objects or classes do in other popular languages.
 
-Let's look at two CDD examples to illustrate this:
+Let's look at two CDD examples to illustrate this
 
 ---
 
 ## Example 1/2
 
-##### Build something that compiles
+#### CDD With Rich Modelling
 
 ```rust[]
-fn count_words(input) {
-	1
+enum ID {
+	V4(u8, u8, u8, u8),
+	V6(u16, u16, u16, u16, u16, u16, u16, u16),
+	Mac(u8, u8, u8, u8, u8, u8),
 }
 ```
 
 notes:
 
-say we want to write a function to count the number of words in a string, by simply splitting on spaces.
+CDD works better the more the compiler knows about your code, modelled in the type system, which extends out to much of the language.
 
-Just as in TDD, I recommend you start by hardcoding values to get your code to compile.
+Here's a simple Rust enum modelling three different kinds of network ID: IP addresses of both flavours, and a MAC address.
 
-The goal here is to go green. This pseudocode does not quite get us there, but unlike in TDD, we don't just get error output, we get FIXES!
+---
+
+%%
+
+```rust
+fn container_for_ids() {
+```
+
+%%
+
+```rust
+let v6 = ID::V6(0, 0, 0, 0, 0, 0, 0xc00a, 0x2ff);
+let v4 = ID::V4(127, 0, 0, 1);
+let mac = ID::Mac(0x22, 0,  0x7C, 0xEE, 0x0C, 0xA5);
+```
+
+%%
+
+```rust
+} // end of container_for_ids
+```
+
+%%
+
+```rust[]
+fn send_packet(node: &ID) {
+  match node {
+    ID::V4(..) | ID::V6(..) => ip_packet(node),
+    ID::Mac(..)             => ethernet_frame(node),
+  }
+}
+```
+
+notes:
+
+This is how you'd use this enum, and below, a function that might use them to dispatch certain behaviour depending on what kind of ID we have been given.
+
+Wonderful!
+
+But, perhaps the customer has added a requirement for our application to handle more ids than this short list, no problem, we can fearlessly improve our model with this new information by adding a few more variants.
 
 ---
 
 ## 🔴 RED
 
-###### ~~means recording~~
+##### ~~means recording~~
 
-```rust[]
-fn count_words(input) {
-	1
+```rust
+enum ID {
+	V4(u8, u8, u8, u8),
+	V6(u16, u16, u16, u16, u16, u16, u16, u16),
+	Mac(u8, u8, u8, u8, u8, u8),
+	// New varients:
+	FreqHz(u64),
+	Coord { lat: f64, lon: f64 },
+	Uuid([u8; 16]),
 }
 ```
 
-```js[7-10]
-error: expected one of `:`, `@`, or `|`, found `)`
-  --> src/main.rs:19:21
- |
- | fn count_words(input) {
- |                     ^ expected `:`, `@`, or `|`
- |
-help: if this is a parameter name, give it a type
- |
- | fn count_words(input: TypeName) {
- |                     ++++++++++
+%%
 
+```rust
+fn container_for_new_ids() {
 ```
 
-notes:
+%%
 
-The helpful compiler error tells us to fill in a few types, and with a short conversion of trying out a type or two, saving, watching the output from the compiler, and following its advice, we can get to green quickly.
+```rust
+let frequency = ID::FreqHz(2_400_000_000);
+let place = ID::Coord { lat: 51.507_222, lon: -0.1275 };
+let uuid = ID::Uuid([0; 16]);
+```
 
-(For more details on how the compiler output coaches you, see my video, "How to Speak Rust")
+%%
 
----
-
-## 🟢 GREEN
-
-```rust[1]
-fn count_words(input: String) -> usize {
-	1
+```rust
 }
 ```
 
-notes:
-
-Just as in TDD, I recommend hardcoding first.
-This first naive version of our function compiles, and if it compiles we know many things are proved in the entire codebase, as I mentioned just now.
-
-When you're writing Rust, you must strive to get to a compiling state as soon as you can, until you do all bets are off:
-- LSP or your editor may act strangely
-- Clippy can't suggest advanced features to use, and
-- CDD can't work
-- Let alone your team's runtime test suite.
-
-Breaking the code, getting to a RED state is an important transition. Don't stay there for very long, break up big new features into atomic, compilable chunks, and iterate upwards from compiling states.
-
-RIGHT: Let's keep going, I don't see any refactoring needed yet, so we'll skip that and go back to red.
-
-Let's continue:
-
----
-
-## 🔴 RED
-
-```rust[2]
-fn count_words(input: String) -> usize {
-	input.split() //input.split(" ") //probably this?
-}
-```
-
-```rust[6-7]
---> src/main.rs:20:8
-
-     input.split()
-           ^^^^^ an argument is missing
-
-help: method defined here:
- pub fn split<'a, P: Pattern<'a>>(&'a self, pat: P) ...
-        ^^^^^
-help: provide the argument
-```
-
-_(error edited to fit)_
+%%
 
 notes:
 
-I've made what I think is a reasonable guess about the name of the method to split a string, and compiled again.
-However, I've deliberately not added the string parameter that `split()` almost certainly wants.
+We've now added radio frequency, coordinates, and a UUID.
+we've improved the model of our code, adding the new ID variants, and our compiler goes red.
 
-I've done this to make sure we're not staying green.
-Sure, the compiler remaining happy is PROBABLY good, but you'll KNOW it if it goes red, then back to green again.
-Same as in TDD, don't skip steps.
+This is good: If this change silently broke our app, that would be terrifying! But this is Rust, the compiler is keeping us safe.
 
-So what does `split()` require? Most of us would guess, correctly, that it wants a string. But how would we confirm that? The method definition here is a bit cryptic, referencing the `Pattern` trait, but not telling us the concrete types we can use.
+We're back to red, compile error, we've improved the model, and so we now must improve the code.
 
-In other languages you might reach for the documentation of `String::split()`, or use your IDE's autocomplete to get the same, perhaps google the error, or start hacking around.
-
-You can do all these in Rust, but we can also get the compiler to tell us exactly what it wants.
+Let's look at the error to see what code is now broken, and unlike in TDD, we don't just get an error output, the compiler tells us exactly what it wants:
 
 ---
 
@@ -702,122 +692,76 @@ And you know what you have to do when the compiler tells you what it wants!
 
 ---
 
-```rust[2]
-fn count_words(input: String) -> usize {
-	input.split(1)
-}
+```rust[1,3,11]
+error[E0004]: non-exhaustive patterns:
+|     match node {
+|           ^^^^ FreqHz, Coord, Uuid not covered
+| enum ID {
+|     FreqHz(u64),
+|     ------ not covered
+|     Coord { lat: f64, lon: f64 },
+|     ----- not covered
+|     Uuid([u8; 16]),
+|     ---- not covered
+help: ensure that all possible cases are being handled
 ```
 
-```rust[7-14]
-trait bound {integer}: Pattern<'_> is not satisfied
- |
- |     input.split(1)
- |           |
- |           required by this call
- |
- help: the following types implement trait Pattern<'a>
-           &'b [char; N]
-           &'b [char]
-           &'b std::string::String
-           &'b str
-           &'c &'b str
-           [char; N]
-           char
+```rust[3-5]
+fn send_packet(node: &ID) {
+  match node {
+    ID::V4(..) | ID::V6(..) => ip_packet(node),
+    ID::Mac(..)             => ethernet_frame(node),
+    // Problem: Some varients of ID are unhandled
+  }
+}
 ```
 
 notes:
 
-To find out what type `String::split()` accepts, a trick is to introduce a type error deliberately. Splitting a string on a number doesn't make much sense, and the compiler knows it.
-Here's the error when you do.
+The rich compiler error tells us that we are not handling all cases:
 
-The full error was much larger than this, and a bit more scary, traits often are, but you don't have to understand it if you are at the start of your rust journey, or using a complex unfamiliar API, you just look at the wonderful help text the compiler has given us, enumerating all the concrete types that implement the `Pattern` trait - the exact list that we want!
-
-Unsurprisingly, it's all strings and character-related types.
-Now, let's try it:
+Right! That makes sense: We have added new kinds of IDs, so we must update the code to take this into account, the match expression has kept us safe.
+This is why I prefer using match to if, wherever it makes sense to do so.
 
 ---
 
-## 🔴 RED
+## 🟢 GREEN
 
-```rust[2]
-fn count_words(input: String) -> usize {
-	input.split(" ")
-}
+%%
+
+```rust
+fn ip_packet(node: &ID) {}
+fn ethernet_frame(node: &ID) {}
+fn aprs_broadcast(node: &ID) {}
+fn geocach(node: &ID) {}
+fn store(node: &ID) {}
 ```
 
-```rust[1,7,8]
-error[E0308]: mismatched types
-  --> src/main.rs:20:2
- |
- | fn count_words(input: String) -> usize {
- |           because of return type ----- 
- |  
- |     input.split(" ")
- |     ^^^^^^^^^^^^^^^^ expected usize, found Split
- |
-```
+%%
 
-notes:
-
-ah, another error, but the final one for this example.
-
-Rust, like recent versions of python and many other languages, is built on iterators.
-
-The return value of the `split()` method isn't a static array or a list, it is an iterator, with all of the mapping, filtering, and parallel iteration methods available on it.
-
-For the sake of time, I happen to know you can simply count the number of items in an iterator with the `count()` method, and we will make our example go green by supplying it
-
----
-
-## Final version
-
-```rust[]
-fn count_words(input: String) -> usize {
-	input.split(" ").count()
+```rust
+fn send_packet(node: &ID) {
+  match node {
+    ID::V4(..) | ID::V6(..) => ip_packet(node),
+    ID::Mac(..)             => ethernet_frame(node),
+    ID::FreqHz(..)          => aprs_broadcast(node),
+    ID::Coord{..}           => geocach(node),
+    ID::Uuid(..)            => store(node)
+  }
 }
 ```
 
 notes:
-
+Handling the three new variants in our match expression brings us back to green.
 The compiler is happy, and if the compiler is happy, I am happy.
 
-But there's a cherry on top of simple CDD, in Rust.
-The Compiler statically analysing our code is all very well, but that's not the only compile-time analysis that we can do.
+When you're writing Rust, you must strive to get to a compiling state as soon as you can, until you do all bets are off:
+- LSP or your editor may act strangely
+- Clippy can't suggest advanced features to use, and
+- CDD can't work
+- Let alone your team's runtime test suite.
 
-Let's set clippy on our code.
-
----
-
-###### `$ cargo clippy -- -D clippy::pedantic -W clippy::nursery`
-
-```rust[]
-error: this argument is passed by value,
-but not consumed in the function body
-  --> src/main.rs:19:23
-   |
-19 | fn count_words(input: String) -> usize {
-   |                       ^^^^^^
-   |      help: consider changing the type to: `&str`
-   |
-```
-
-```rust[]
-error: single-character string constant used as pattern
-  --> src/main.rs:20:14
-   |
-20 |     input.split(" ").count()
-   |                 ^^^
-   |               help: consider using a `char`: `' '`
-```
-
-notes:
-Here, we're using the lint groups, `pedantic` and `nursery` to get HUGE insights into our code.
-As the names suggest they are annoying and pre-release, respectively, but I love them both!
-See my other videos or the markdown script for this one, for my recommended ways to set up clippy.
-
-Clippy has told us, quite rightly that it would be more flexible to use a string slice, not a string, and that if we're using a single space character as a pattern for splitting, we should use single quotes to make it a character literal, not a string of length 1.
-
-I literally learned the second optimisation while I was writing this video - clippy has single-handedly taught me more rust than any book. Run it in a terminal with the `bacon` test runner whenever you write Rust!
+Breaking the code, getting to a RED state is an important transition. Don't stay there for very long, break up big new features into atomic, compilable chunks, and iterate upwards from compiling states.
 
 ---
 
@@ -859,9 +803,9 @@ fn send_packet(node: &ID) {
 
 notes:
 
-Let's look at this example code.
+HOWEVER. Let's look again at this previous function.
 
-This doesn't quite spark joy for me, that match arm, though kept safe by the model of our code is doing despatch logic at runtime, rather than compile time.
+This doesn't quite spark joy for me, that match arm, though kept safe by the model of our code, does not encode as much of our business logic as I'd like.
 
 We can do much better with a little rust magic, and I've saved the best till last!
 
@@ -902,9 +846,8 @@ struct Off;
 
 ```rust
 impl Light<Off> {
-	fn turn_on(self) -> Light<On> {
-		Light { state: On }
-	}
+	fn new()         -> Self      { Light { state: Off} }
+	fn turn_on(self) -> Light<On> { Light { state: On } }
 }
 impl Light<On> {
 	fn turn_off(self) -> Light<Off> {
@@ -915,7 +858,7 @@ impl Light<On> {
 
 notes:
 
-Here I'm modelling a light switch with two states, on and off, and transition methods to move between them.
+Here I'm modelling a light switch with two states, on and off, and transition methods to move between them, including the `New()` method pattern on the off state.
 You can't turn on a light that is already on, and I want the compiler to not allow such a transition at compile-time.
 
 The Typestate pattern allows us to model:
@@ -932,7 +875,7 @@ In short, this is an extremely powerful way to make invalid states unrepresentab
 ```rust
 fn correct_transitions() {
 
-	let bedroom_light = Light { state: Off };
+	let bedroom_light = Light::new();
 	let bedroom_light = bedroom_light
 		.turn_on()
 		.turn_off()
@@ -953,7 +896,7 @@ Now, let's try to turn on a light that is already on -
 ## Incorrect Transitions
 
 ```rust[3-4]
-let bedroom_light = Light { state: Off };
+let bedroom_light = Light::new();
 let bedroom_light= bedroom_light
 	.turn_on()
 	.turn_on();
@@ -997,7 +940,7 @@ impl<State> Light<State> {
 ```
 
 ```rust
-fn testit() {
+fn test_it() {
 	let bedroom_light = Light { state: Off };
 	bedroom_light.flip().flip().flip(); //easy does it
 }
@@ -1019,11 +962,11 @@ There's more detail here, such as restricting behaviour to GROUPS of states usin
 
 notes:
 
-However you model your application logic with the type system: structs, enums, the typestate pattern, you can enrich the conversation between you and the compiler to improve your development experience using CDD.
-
-The goal with modelling in Rust, and languages like it, is to make run-time behaviour, compile-time guaranteed.
+However you model your application logic with the Rust type system: structs, enums, the typestate pattern, or dozens more advanced methods, you can enrich the conversation between you and the compiler to improve your development experience using CDD.
 
 Just as in TDD, we can have enormous confidence that we've done the right thing with CDD, by getting the compiler to pull its weight and do some work for us, turning it from a pedantic fusspot, to a superpowered pair programmer.
+
+The goal when modelling in Rust, and languages like it, is to move run-time behaviour, to compile-time guarantes.
 
 ---
 
@@ -1077,3 +1020,9 @@ Or if urban fantasy is more your bag, do listen to a strange and beautiful podca
 Transcripts and compile-checked markdown sourcecode are available on github, links in the description, and corrections are in the pinned ERRATA comment.
 
 Thank you so much for watching, talk to you on Discord.
+
+---
+
+# Tasks
+
+- [ ] re-take slides and re-record lines according to `git diff`
