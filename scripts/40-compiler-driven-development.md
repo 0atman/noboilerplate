@@ -59,12 +59,9 @@ fn main() {
 }
 ```
 
+some new lines
+
 %%
-
-# Subtitle ideas
-
-- Compiler-checked whiteboarding
-- Don't run your code
 
 ---
 
@@ -111,8 +108,8 @@ impl ResponseState for Metadata {}
 notes:
 You may be familiar with repl-driven development, or the fast feedback of testing out your code in the browser with hot code reloading.
 
-The compiler is faster than these methods, to be fair because it's doing less.
-Pure model code, the heart of the plumbing of your app, doesn't have to deal with rendering a UI, making network connections, setting up databases, none of that unimportant boilerplate.
+The compiler is faster than all these methods, but to be fair, and balenced, it's because it's doing less.
+Pure model code, the heart of the plumbing of your app, doesn't have to deal with rendering a UI, making network connections, or setting up databases - none of that unimportant boilerplate.
 
 And nor should you, at first.
 
@@ -154,7 +151,7 @@ Compiler-driven development is like compiler-checked whiteboarding.
 notes:
 
 Whatever language you code in,
-Javascript, Python, Java, Go, even HTML and CSS (to a certain extent), we developers all live at compile time.
+JavaScript, Python, Java, Go, (even HTML and CSS, to a certain extent), we developers all live at compile time.
 
 The time when our code is actually executing on the CPU or in-browser, plays a very small part of our days.
 
@@ -164,11 +161,11 @@ This is exactly what Rust's more complex syntax and comprehensive type system ca
 
 ---
 
-| Tests                           | Types                           |
-| ------------------------------- | ------------------------------- |
-| Removed before deploy           | Removed before deploy           |
-| Improve your code with feedback | Improve your code with feedback |
-| Can be enforced in CI           | Enforced everywhere             |
+| Tests                               | Types                               |
+| ----------------------------------- | ----------------------------------- |
+| Improve your code with feedback     | Improve your code with feedback     |
+| Not deployed (stripped from bundle) | Not deployed (stripped from binary) |
+| Can be enforced in CI               | Enforced by the compiler everywhere |
 
 notes:
 
@@ -193,15 +190,17 @@ notes:
 
 # CDD: Compiler-Driven Development in Rust
 
-If your language has an advanced compiler, like Rust, you no longer need to wonder if the contractor you've hired has run your test suite, or if a junior developer has made what they think is a tiny change, DIRECTLY on github, without ever running the code.
+If your language has an advanced compiler, like Rust, you can sleep easy at night:
+- You no longer need to wonder if the contractor you've hired has skipped running your test suite,
+- Nor worry if a junior developer has made what they think is a tiny change, DIRECTLY on github, without ever running the code.
 
-- Normal coding requires constant executing and checking to verify that you've done the right thing.
-- TDD just requires running tests to know, and
-- CDD only requires compiling the code to know that you're right.
+- Unstructured programming requires you to constantly execute your code to verify that you've done the right thing.
+- TDD just requires running tests to be sure, but  
+- CDD only requires compiling the code to know that the model is sound.
 
 Rust's superpowers are the direct result of being a language where the compiler can reason about as much of the code as you can.
 
-Programming inside this rich compile-time environment, means you might not run your program for most of your work day, yet when you do run it, it works first time.
+Programming inside this rich compile-time environment, means you might not execute your actual program for most of your workday, but when you do, you find "if it compiles, it works!"
 
 This magical way of coding is called
 **"Compiler-Driven Development"**
@@ -217,7 +216,7 @@ This magical way of coding is called
 (for all [blue links]() read my scripts here ⬆)
 
 notes:
-My videos are dedicated to the public domain.
+My video scripts are dedicated to the public domain.
 
 Everything you see here: script, links, and images are part of a markdown document available freely on GitHub at the above address.
 
@@ -540,7 +539,7 @@ My thanks to quadratic for their support of this channel.
 <i class="fas fa-quote-left fa-2x fa-pull-left"></i>
 _Show me your flowcharts and conceal your tables, and I shall continue to be mystified. Show me your tables, and I won't usually need your flowcharts; they'll be obvious._
 
-&mdash; Fred Brooks, "The Mythical Man-Month"
+&mdash; **Fred Brooks**, "The Mythical Man-Month"
 
 notes:
 
@@ -585,7 +584,7 @@ enum ID {
 
 notes:
 
-CDD works better the more the compiler knows about your code, modelled in the type system, which extends out to much of the language.
+CDD works better, the more the compiler knows about your code, modelled in the type system, which extends out to much of the language.
 
 Here's a simple Rust enum modelling three different kinds of network ID: IP addresses of both flavours, and a MAC address.
 
@@ -624,11 +623,11 @@ fn send_packet(node: &ID) {
 
 notes:
 
-This is how you'd use this enum, and below, a function that might use them to dispatch certain behaviour depending on what kind of ID we have been given.
+Here is how you'd use this enum, and below, a function that might use them to dispatch certain behaviour depending on what kind of ID we have been given.
 
 Wonderful!
 
-But, perhaps the customer has added a requirement for our application to handle more ids than this short list, no problem, we can fearlessly improve our model with this new information by adding a few more variants.
+But, perhaps the customer adds a requirement for our application to handle more IDs than this short list, no problem, we can fearlessly improve our model with this new information by adding a few more variants.
 
 ---
 
@@ -675,11 +674,11 @@ notes:
 We've now added radio frequency, coordinates, and a UUID.
 we've improved the model of our code, adding the new ID variants, and our compiler goes red.
 
-This is good: If this change silently broke our app, that would be terrifying! But this is Rust, the compiler is keeping us safe.
+This is good: If this change silently broke our app, that would be terrifying! But this is Rust, and we're modelling correctly - the compiler is keeping us safe.
 
 We're back to red, compile error, we've improved the model, and so we now must improve the code.
 
-Let's look at the error to see what code is now broken, and unlike in TDD, we don't just get an error output, the compiler tells us exactly what it wants:
+Unlike in TDD, we don't just get an error output, the compiler tells us exactly what it wants:
 
 ---
 
@@ -718,10 +717,10 @@ fn send_packet(node: &ID) {
 
 notes:
 
-The rich compiler error tells us that we are not handling all cases:
+This friendly compiler error tells us that we are not handling all cases:
 
 Right! That makes sense: We have added new kinds of IDs, so we must update the code to take this into account, the match expression has kept us safe.
-This is why I prefer using match to if, wherever it makes sense to do so.
+This is why, in Rust, I prefer using `match` to `if`, wherever it makes sense to do so.
 
 ---
 
@@ -828,7 +827,7 @@ The Typestate pattern encodes information about the runtime state of an object i
 
 This is a simple idea that has far-reaching implications.
 
-I first became aware of this pattern after seeing some WEIRD stuff in the rust standard library that I didn't know how to interpret, falling down a rabbit hole, and ended up at Cliff Biffle's fantastic 2019 article.
+I first became aware of this pattern after seeing some interesting syntax in the rust standard library that I didn't know how to interpret, falling down a rabbit hole, and ended up at Cliff Biffle's fantastic 2019 article.
 
 The typestate pattern is annoying to implement in other popular languages, you may have never seen it used for this reason, but it's extremely ergonomic in Rust.
 
@@ -962,11 +961,11 @@ There's more detail here, such as restricting behaviour to GROUPS of states usin
 
 notes:
 
-However you model your application logic with the Rust type system: structs, enums, the typestate pattern, or dozens more advanced methods, you can enrich the conversation between you and the compiler to improve your development experience using CDD.
+However you model your application logic with the Rust type system: structs, enums, the typestate pattern, or dozens more advanced methods, you can enrich the conversation between you and the compiler using Compiler-Driven Development.
 
-Just as in TDD, we can have enormous confidence that we've done the right thing with CDD, by getting the compiler to pull its weight and do some work for us, turning it from a pedantic fusspot, to a superpowered pair programmer.
+Just as in TDD, we can have enormous confidence that we've done the right thing with CDD, by getting the compiler to pull its weight and do some work for us.
 
-The goal when modelling in Rust, and languages like it, is to move run-time behaviour, to compile-time guarantes.
+The goal when modelling in Rust, and languages like it, is to move run-time behaviour, to compile-time guarantees.
 
 ---
 
