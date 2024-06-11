@@ -80,7 +80,7 @@ I start with the model of my application, expressed with Rust's rich type system
 
 Interacting with the real-world, on disk or through the network is too slow for me, at first, I need to iterate faster than that, to sketch out my ideas, unconstrained by the outside world.
 
-_This compile-checked whiteboarding I call_ **_Compiler-Driven Development._**
+_This compile-checked whiteboarding is called **_Compiler-Driven Development._**
 
 ---
 
@@ -175,7 +175,7 @@ Tests and types are quite similar in a few ways:
 - types and syntax don't get shipped, but they improve our code with feedback, too
 - You don't deploy your test suite into production, nor bundle it onto the user's device
 - and compilers, by definition, do the same, they compile out all the advanced types when building the executable
-- neither tests no types remain in the code that you ship to the user
+- neither tests nor types remain in the code that you ship to the user
 
 - you don't HAVE to write tests, I'm sure you know a few cowboys and girls who proudly say they don't test their code
 
@@ -196,7 +196,7 @@ If your language has an advanced compiler, like Rust, you can sleep easy at nigh
 
 - Unstructured programming requires you to constantly execute your code to verify that you've done the right thing.
 - TDD just requires running tests to be sure, but  
-- CDD only requires compiling the code to know that the model is sound.
+- CDD only requires compiling the code to know that the model remains sound.
 
 Rust's superpowers are the direct result of being a language where the compiler can reason about as much of the code as you can.
 
@@ -274,7 +274,7 @@ notes:
 The core method of TDD is to write a simple test before writing any other code, then watch it fail, to "go red", thus proving that your test suite works.
 Then you write the minimum application code to make the test pass, making it green again.
 
-You then refactor if needed and then improve the test, making it stricter or more precise than before, watch the test fail again, and make it pass by improving the code.
+You refactor if needed and then improve the test, making it stricter or more precise than before, watch the test fail again, and make it pass by improving the code.
 
 This constant tick-tocking between Red and Green states for your test keeps you honest, focussed, and engaged with the question we're all trying to answer:
 
