@@ -924,7 +924,7 @@ GLORIOUS!
 
 ---
 
-##### Methods available multiple states
+#### Methods available In multiple states
 
 ```rust
 impl Light<Off> {
