@@ -144,11 +144,12 @@ Compiler-driven development is like compiler-checked whiteboarding.
 
 ---
 
-![|600](attachments/illustration-dev-whiteboard.png)
-
+![|600](attachments/whiteboarding-html.jpg)
 #### Developers Live at Compile time
 
 notes:
+
+(Photo by Christina Morillo: https://www.pexels.com/photo/person-holding-marker-1181537/)
 
 Whatever language you code in,
 JavaScript, Python, Java, Go, (even HTML and CSS, to a certain extent), we developers all live at compile time.
