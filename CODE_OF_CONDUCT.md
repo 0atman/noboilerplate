@@ -20,7 +20,7 @@ The NoBoilerplate Code of Conduct applies equally to all members of the communit
 4. If you see something against the rules or something that makes you feel unsafe, report it to Modmail.
 5. No age-restricted or obscene content (outside of the #mature-themes-lt channel). This includes text, images or links featuring nudity, sex, hard violence or other disturbing graphic content.
 6. Stay on topic: Please take heated argument with little chance of resolution (such as politics or emacs vs vim!) to a thread in #⁠the-forum.
-7. Posting Malware, Viruses, Fork/Zip Bombs etc., even for educational purposes. Linking to them with a disclaimer is fine.
+7. Posting Malware, Viruses, Fork/Zip Bombs etc. is forbidden, even for educational purposes. Linking to them with a disclaimer is fine.
 8. Don't be a dick.
 
 ## Unwanted Opinions and Ideologies
