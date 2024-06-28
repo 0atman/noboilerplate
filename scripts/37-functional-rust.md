@@ -565,7 +565,7 @@ Javascript, Go, Python, and Ruby all have most of these.
 
 ### Rust's Functional Features
 
-1. Cofigurable Closures (move or borrow)
+1. Configurable Closures (move or borrow)
 2. Dataclasses (Enums)
 3. Lazy Evaluation (limited with iterators, unlimited with macros)
 4. Tail call recursion (with the `tailcall` crate, and in the future `become` keyword)
@@ -662,7 +662,7 @@ $ cargo clippy
 The fix:
 
 ```rust
-const fn faddone(x: i32) -> i32 { x + 1 }
+const fn addone(x: i32) -> i32 { x + 1 }
 ```
 
 notes:
