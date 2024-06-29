@@ -66,9 +66,9 @@ fn main() {
 
 %%
 
-![[rust-logo.png]]
+![logo|400](attachments/tri-hex-moon-white-transparent.png)
 
-# RUST: TITLE
+# TITLE
 
 notes:
 %%
@@ -80,16 +80,18 @@ Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technic
 
 ---
 
-![[cc-logo.png]]
+![300|400](attachments/cc-zero-2k.png)
 
 ## Public Domain Videos
 
 [https://github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
 
-(for all [links]() read my scripts here ⬆)
+(for all [blue links]() read my scripts here ⬆)
 
 notes:
-Everything you see in this video: script, links, and images are part of a markdown document available freely on GitHub under a public domain licence.
+My video scripts are dedicated to the public domain.
+
+Everything you see here: script, links, and images are part of a markdown document available freely on GitHub at the above address.
 
 ---
 
@@ -97,19 +99,46 @@ Everything you see in this video: script, links, and images are part of a markdo
 
 ---
 
-![[tri-hex-moon-white-transparent.png|300]]
-
 # Thank You
 
-## [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
+Especially to my Producer and Sponsor patrons:
+
+%%
+
+```rust
+fn credits() {
+```
+
+%%
+
+```rust
+let producers: [&str; 0] = [];
+let sponsors = [
+	"Jaycee", "Gregory Taylor", "Ything LLC"
+];
+```
+
+%%
+
+```rust
+}
+```
+
+%%
+
+### [Patreon.com/NoBoilerplate](http://www.patreon.com/noboilerplate)
+
+### [ko-fi.com/noboilerplate](https://ko-fi.com/noboilerplate)
 
 notes:
 
 # OUTRO
 
-If you would like to support my channel, get early ad-free and tracking-free videos, vip discord access or 1:1 mentoring, head to patreon.com/noboilerplate.
+Thank you.
 
-If you're interested in transhumanism and hopepunk stories, please check out my weekly sci-fi podcast, Lost Terminal.
+If you would like to support my channel, get early ad-free and tracking-free videos, your name in the credits or 1:1 mentoring, head to my patreon or ko-fi.
+
+If you're interested in transhumanism and hopepunk, please check out my weekly sci-fi audiofiction podcast, Lost Terminal.
 
 Or if urban fantasy is more your bag, do listen to a strange and beautiful podcast I produce every full moon called Modem Prometheus.
 
