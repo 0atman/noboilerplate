@@ -1,6 +1,3 @@
----
-audience:
----
 <style>
 :root {--r-code-font: "FiraCode Nerd Font";}
 .reveal .hljs {min-height: 50%;}

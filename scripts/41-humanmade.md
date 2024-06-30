@@ -1,24 +1,27 @@
 ---
-audience: humans
+bg: "[[attachments/4kbadge.svg]]"
 ---
-<style>
-:root {--r-code-font: "FiraCode Nerd Font";}
-.reveal .hljs {min-height: 50%;}
-</style>
-
-![](attachments/humanmade-logo.png)
+<!-- slide bg="" data-background-opacity="0" -->
+![logo|800](attachments/white-logo.svg)
 
 notes:
-Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
+Hi friends, my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
 Today I'd like to introduce you to a small project I've recently published.
 
-This "Humanmade" mark is something I will be attaching to any works of mine that were mostly made by humans, not by AI tools like GPT.
+This "Humanmade" mark, here, is something I will be attaching to any works of mine that were mostly made by me or my friends, not by AI tools like GPT.
 
-I've built a small website at <http://humanmademark.com> with high-resolution black or white versions of the mark available there to download and attach to your own projects, if you would like to.
+I've built a small website at <http://humanmademark.com> with high-resolution black or white versions of the logo available for download and attaching to your own projects if you'd like to.
 
 I want to be clear in this video about my reasoning for building this:
-I don't hate AIs, I love humans.
+
+---
+
+# I don't hate AI
+
+# I love humans
+
+notes:
 
 ---
 
@@ -37,35 +40,55 @@ Everything you see here: script, links, and images are part of a markdown docume
 
 ---
 
+![video|800](attachments/nb-gpt-video.png)
+
 notes:
 
-## Story Time
+# Story Time
 
-I've been thinking about this topic since my GPT & AI video, where I described the current crop of Large Language Models as "1000 interns"
+I've been thinking about this topic since my GPT & AI video, last year, where I described the current crop of Large Language Models as giving everyone "1000 interns".
 
-I don't hate AI-generated content, but I am kinda disappointed when I find out something cool was ai generated.
+> And just like interns, they are not always right, but they ARE enthusiastic and confident when delivering their work.
+
+-- I said.
+
+I don't hate AI-generated content, but It's kinda disappointing when you find out something cool was AI-made, right?
 
 ---
 
 ![](attachments/weird-art-acide-bridget-post.png)
 notes:
 
-The root of this is, as Bridget here pointed out on mastodon last month, because, even if the output looks/reads/sounds the same, there's something really nice about knowing another **human** made the artwork.
+The root of this, as Bridget pointed out on mastodon last month, is because, even if the output looks/reads/sounds the same, there's something really GOOD about knowing another **human** made the artwork.
 
-LLMs certainly have huge ethical concerns at the moment, but that's not the root problem for me, forever.
+LLMs certainly have huge ethical concerns, but that's not the root problem for me, forever.
 
 ---
 
-# We're Human,
-# We're Family
+![alice|500](alice-earthquake-gpt.png)
+(Pause and read all this, this was ChatGPT YESTERDAY)
 
 notes:
 
-When (not if) ethical models are built, and powered by 100% solar power, I still want to hear your dumb-ass poems, and listen to your nasty beats.
+# Take care
 
-> there is nothing in the most stygian depths of the darkest sea that is not our beloved brother compared to the horrors of the Abominations.
+They also don't really work very well?
 
-https://www.reddit.com/r/AskScienceFiction/comments/1zwhxf/comment/cfxmqcz/
+---
+
+## We're Human, We're Family
+
+<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
+_there is nothing in the most stygian depths of the darkest sea that is not our beloved brother compared to the horrors of the Abominations._
+
+(This quote from [r/AskScienceFiction](https://www.reddit.com/r/AskScienceFiction/comments/1zwhxf/comment/cfxmqcz/) is about Cthulhu, but I think it's ALSO about AI art)
+
+notes:
+
+When (not if) ethical models are built, and powered by 100% solar power,
+- I still want to hear your dumb-ass poems,
+- read your embarrassing fanfic,
+- and listen to your nasty beats.
 
 ---
 
@@ -76,7 +99,7 @@ https://www.reddit.com/r/AskScienceFiction/comments/1zwhxf/comment/cfxmqcz/
 ![norobots|200](https://no-ai-icon.com/wp-content/uploads/2023/02/no-ai-icon-03.svg)
 ![noai|200](https://no-ai-icon.com/wp-content/uploads/2023/02/no-ai-icon-01.svg)
 
-![100pchuman|200](https://no-ai-icon.com/wp-content/uploads/2023/02/MADE-BY-HUMANS-icon-1.svg)
+![100human|200](https://no-ai-icon.com/wp-content/uploads/2023/02/no-ai-icon-04.svg)
 
 </split>
 
@@ -86,25 +109,22 @@ notes:
 
 I'm a software developer, I'll re-use 100 libraries to avoid writing 10 lines of code - standing on the shoulders of giants is the only way I know how I get around.
 
-But I've looked for a way to mark my work as being made by humans, not AI, and I can't find one that works in the way I want.
+But I've looked for a way to mark my videos as being made by humans, not AI, and I can't find one that works in exactly the way I want.
 
-these icons are typical of the projects I've seen [https://no-ai-icon.com/](https://no-ai-icon.com/ "https://no-ai-icon.com/")
+These icons here are typical of the projects I've seen [https://no-ai-icon.com/](https://no-ai-icon.com/ "https://no-ai-icon.com/")
 
-I don't want "NO AI USED", signposts that are negative and, judgemental, nor a 100% human made" guarantee - what does that even MEAN?
+I don't want "NO AI USED", signposts that are negative and judgemental, nor a "100% human made" guarantee - what would that even MEAN these days?
 
 I want a positive mark.
 
-There are lots of problems i have with the options I've seen so far, from having multiple marks (which is confusing) to the fixation on AI being inherently evil (this will not always be the case)
+There are lots of problems I have with the options I've seen so far, from having multiple logos (which is confusing) to the fixation on AI being inherently evil (this will not always be the case).
 
-The root problem with these methods is they are negative.
-"Ai=bad" . But the correct way to present this is "human=good" I love knowing a human made the artwork I'm consuming. There's something there, something trancendant and magical.
+My root concern with these methods is that they are negative.
+`AI = bad`.
+But I think the correct way to present this is `human = good`
+I love knowing a human made the artwork I'm consuming.
 
----
-
-<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
-_If you didn't bother to make it, why should I bother to watch it?_
-
-notes:
+There's *something* there, something transcendent and magical.
 
 I _like_ that you tried hard, _that's part of the experience._
 
@@ -117,11 +137,11 @@ notes:
 
 I'm not a human supremacist, either!
 
-I write about AIs, REAL AIs (and by that I mean fictional AIs), AGIs, every single day for my speculative scifi show, Lost Terminal.
+I write about AIs, _REAL AIs_ (and by that, I mean fictional AIs), AGIs, every single day for my speculative sci-fi show, Lost Terminal.
 
-When real artificial intelligence are created, I'll have to retire my mark!
+When real artificial intelligence is created, I'll have to retire my mark!
 
-In the timeline of my story, it happens in about 50 years, so we've got a bit of time still.
+In the timeline of my story, it happens in about 50 years, so I've got a bit of time left.
 
 ---
 
@@ -129,45 +149,45 @@ In the timeline of my story, it happens in about 50 years, so we've got a bit of
 
 notes:
 
-Text-based Large Language Models are autocorrect enough complexity to pass the Turing test.
-That's pretty incredible.
-We've figured out natural language i/o in such a grand way that it's easy to misinterpret for actual intelligence.
+Text-based Large Language Models are autocorrect trained on the entire internet, with enough complexity to pass the Turing test.
 
-Yes, there's some investor-baiting going on with using AI in places where it doesn't seem useful, but there is use in these models.
+Nothing more, nothing less.
 
-I don't want my doctor to be using
+That's pretty incredible! We've brute forced natural language i/o in such a grand way that it's easy to misinterpret for actual intelligence.
+
+Yes, there's some investor-baiting going on with using AI in places it doesn't belong, nonetheless there is plenty of utility in these models, so it's foolish to demonise the technology itself.
 
 ---
 
-![alice|600](alice-earthquake-gpt.png)
+## The art isn't the art
 
-Oh no.
+### The art is never the art
 
 notes:
-# Take care
+As I've said before on this channel.
+
+> Smash the pots! Burn the paintings!
+> The art isn't the art.
+> The art is never the art.
+> The art is the thing that happens inside you when you make it and the feeling in the heart of the beholder.
+
+- I LIKE writing my bad poetry, and I LIKE reading your great poetry and hearing how your life influenced it
+- I LIKE making my mediocre music, and I LIKE listening to your great music, and figuring how to imitate it and make my own cover versions
+- I didn't used like how my voice sounds on a recording, but with practice, and copying others, I do now!
 
 ---
 
-## The Artwork is not the Art
+## Good Artists Copy
 
-### The Art is the Art
+## Great Artists Steal
 
-As I've said before on this channel.
+notes:
 
-Smash the pots! Burn the paintings!
-The art isn't the art.
-The art is never the art.
-The art is the thing that happens inside you when you make it and the feeling in the heart of the beholder.
--- COD
+Good artists copy, great artists steal.
+I sure hope this is true!
 
-- I LIKE writing my bad poetry, and I LIKE reading your great poetry and hearing how your life influenced it
-- I LIKE making my mediocre music, and I LIKE listening to your great music, and figuring how to imitate it and make my own cover version
-	- trying to figure out how you did it.
-- I didn't like how my voice sounds, but with practice, and paying attention to where I can be better, I do now!
-
-## Good Artists Copy, Great Artists Steal
-
-### (I Sure Hope This is true!)
+Don't let OpenAI steal the art for you:
+Steal the damn work for yourself, and we'll all learn something.
 
 ---
 
@@ -209,6 +229,8 @@ notes:
 Thank you.
 
 If you would like to support my channel, get early ad-free and tracking-free videos, your name in the credits or 1:1 mentoring, head to my patreon or ko-fi.
+
+I've got a new fiction Podcast out called The Phosphene Catalogue, if you like mysteries and art, check it out!
 
 If you're interested in transhumanism and hopepunk, please check out my weekly sci-fi audiofiction podcast, Lost Terminal.
 
