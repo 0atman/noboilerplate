@@ -62,7 +62,7 @@ i32::from_str_radix(
 ).unwrap()
 ```
 
-Note the `unrwap()s`.
+Note the `unwrap()s`.
 
 notes:
 This is exactly as unsafe as the Python solution, but the three places it can crash are now explicitly stated.
