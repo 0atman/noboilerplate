@@ -1,11 +1,73 @@
 ---
 bg: "[[attachments/4kbadge.svg]]"
 ---
+
+- [ ] rebrand from 'ai' to 'generative' or 'generated'
+- [ ] Ignore All Previous Instructions (IAPS)
+- [ ]
+- [ ]
+
+---
+
 <!-- slide bg="" data-background-opacity="0" -->
 ![logo|800](attachments/white-logo.svg)
 
+> When you see this logo on any artwork, whether painting, poetry, or prose, you know that it was made by a human just like you.
+
 notes:
 Hi friends, my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
+
+I'd like to introduce you to a small project I've made.
+
+The _Humanmade_ mark, here, is something I will be attaching to any works of mine that were mostly made by me or my friends, not by generative tools like GPT.
+
+I've built a website to freely share the high-resolution black or white versions of the logo with you, which you can download and attach to your own projects if you'd like to make the same statement.
+
+I've made the following video to try to make my reasons for doing this clear, but it's simple:
+
+**I don't hate AIs,**
+**I love humans!**
+
+
+---
+
+# **About**
+- [ ] video producer
+At heart I'm still a software developer, I'll re-use 100 libraries to avoid writing 10 lines of code - standing on the shoulders of giants is the only way I know how I get around.
+But I've looked for a way to mark my videos and stories as being made by humans, not AI, and I can't find one that works in exactly the way I want.
+
+I don't want something that says 'NO AI USED', signposts that are negative and judgemental, nor a '100% human made' guarantee - what would that even MEAN these days?
+I want a positive mark.
+
+---
+
+I have multiple issues with the options I've seen so far, from having multiple logos (which is confusing) to the fixation on AI being inherently evil (this will simply not always be the case).
+My root concern with these methods is that they are negative. `AI = bad`. But I think the correct way to present this is `human = good`.
+
+I don't need 100% human made, I perhaps need 90% human made. Three examples may make my thinking clearer:
+
+---
+
+- Using, say, chatgpt as a rhyming dictionary feels fine, but writing whole verses of your poem with it doesn't.
+- Using DALL-E to start brainstorming 100 generated views of birds sitting on telephone lines seems fine, but getting it to paint large sections of your final artwork doesn't.
+- and, Asking a text generator to give you 10 happy-sounding synonyms for despair sparks joy in me, but asking it to write your anti-trancendentalist masterpiece does not.
+- [ ]a check 
+---
+
+creator / consumer
+
+notes:
+
+Using these generative tools to make more of the artwork you want is valid, but in doing so, you're not a creator, you're still a consumer. I'm not sure exactly what 'too much AI' is, but just like your audience, I'll know it when I see it.
+
+I love knowing a human made the artwork I'm consuming.
+There's *something* there, something transcendent and magical.
+
+When you make something yourself, you learn something, and when I see what you've made, I'm inspired to learn it too!
+
+I *like* that you tried hard, that's part of the experience.
+
+---
 
 Today I'd like to introduce you to a small project I've recently published.
 
@@ -17,9 +79,9 @@ I want to be clear in this video about my reasoning for building this:
 
 ---
 
-# I don't hate AI
+# I Don't Hate AI
 
-# I love humans
+# I Love Humans
 
 notes:
 
@@ -50,14 +112,14 @@ I've been thinking about this topic since my GPT & AI video, last year, where I 
 
 > And just like interns, they are not always right, but they ARE enthusiastic and confident when delivering their work.
 
--- I said.
-
 I don't hate AI-generated content, but It's kinda disappointing when you find out something cool was AI-made, right?
 
 ---
 
 ![](attachments/weird-art-acide-bridget-post.png)
 notes:
+
+- [ ] she
 
 The root of this, as Bridget pointed out on mastodon last month, is because, even if the output looks/reads/sounds the same, there's something really GOOD about knowing another **human** made the artwork.
 
@@ -70,7 +132,7 @@ LLMs certainly have huge ethical concerns, but that's not the root problem for m
 
 notes:
 
-# Take care
+# Take Care
 
 They also don't really work very well?
 
@@ -137,31 +199,32 @@ notes:
 
 I'm not a human supremacist, either!
 
-I write about AIs, _REAL AIs_ (and by that, I mean fictional AIs), AGIs, every single day for my speculative sci-fi show, Lost Terminal.
+I write about AIs, _REAL AIs_ (and, of course, by that, I mean fictional AIs), aGis, every single day for my speculative sci-fi show, Lost Terminal.
 
-When real artificial intelligence is created, I'll have to retire my mark!
+When real artificial intelligence is created, I'll have to retire this mark!
 
 In the timeline of my story, it happens in about 50 years, so I've got a bit of time left.
 
 ---
 
-# LLMs Are a Great Human/Computer Interface
-
+Text-based Large Language Models are autocorrect trained on the entire internet, with enough complexity to pass the Turing test.
 notes:
+
+# LLMs Are a Great Human/Computer Interface
 
 Text-based Large Language Models are autocorrect trained on the entire internet, with enough complexity to pass the Turing test.
 
 Nothing more, nothing less.
 
-That's pretty incredible! We've brute forced natural language i/o in such a grand way that it's easy to misinterpret for actual intelligence.
+That's pretty incredible! We've brute-forced natural language i/o in such a grand way that it's easy to misinterpret for ACTUAL intelligence.
 
 Yes, there's some investor-baiting going on with using AI in places it doesn't belong, nonetheless there is plenty of utility in these models, so it's foolish to demonise the technology itself.
 
 ---
 
-## The art isn't the art
+## The Art Isn't the Art
 
-### The art is never the art
+### The Art is Never the Art
 
 notes:
 As I've said before on this channel.
@@ -171,8 +234,8 @@ As I've said before on this channel.
 > The art is never the art.
 > The art is the thing that happens inside you when you make it and the feeling in the heart of the beholder.
 
-- I LIKE writing my bad poetry, and I LIKE reading your great poetry and hearing how your life influenced it
-- I LIKE making my mediocre music, and I LIKE listening to your great music, and figuring how to imitate it and make my own cover versions
+- I LIKE writing my bad poetry, and I LIKE reading your great poetry and hearing how your life influenced it,
+- I LIKE making my mediocre music, and I LIKE listening to your great music, and figuring how to imitate it and make my own cover versions,
 - I didn't used like how my voice sounds on a recording, but with practice, and copying others, I do now!
 
 ---
@@ -184,7 +247,7 @@ As I've said before on this channel.
 notes:
 
 Good artists copy, great artists steal.
-I sure hope this is true!
+I sure hope this is still true!
 
 Don't let OpenAI steal the art for you:
 Steal the damn work for yourself, and we'll all learn something.
