@@ -2,80 +2,19 @@
 bg: "[[attachments/4kbadge.svg]]"
 ---
 
-- [ ] rebrand from 'ai' to 'generative' or 'generated'
-- [ ] Ignore All Previous Instructions (IAPS)
-- [ ]
-- [ ]
-
----
-
 <!-- slide bg="" data-background-opacity="0" -->
 ![logo|800](attachments/white-logo.svg)
-
-> When you see this logo on any artwork, whether painting, poetry, or prose, you know that it was made by a human just like you.
 
 notes:
 Hi friends, my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
-I'd like to introduce you to a small project I've made.
-
-The _Humanmade_ mark, here, is something I will be attaching to any works of mine that were mostly made by me or my friends, not by generative tools like GPT.
-
-I've built a website to freely share the high-resolution black or white versions of the logo with you, which you can download and attach to your own projects if you'd like to make the same statement.
-
-I've made the following video to try to make my reasons for doing this clear, but it's simple:
-
-**I don't hate AIs,**
-**I love humans!**
-
-
----
-
-# **About**
-- [ ] video producer
-At heart I'm still a software developer, I'll re-use 100 libraries to avoid writing 10 lines of code - standing on the shoulders of giants is the only way I know how I get around.
-But I've looked for a way to mark my videos and stories as being made by humans, not AI, and I can't find one that works in exactly the way I want.
-
-I don't want something that says 'NO AI USED', signposts that are negative and judgemental, nor a '100% human made' guarantee - what would that even MEAN these days?
-I want a positive mark.
-
----
-
-I have multiple issues with the options I've seen so far, from having multiple logos (which is confusing) to the fixation on AI being inherently evil (this will simply not always be the case).
-My root concern with these methods is that they are negative. `AI = bad`. But I think the correct way to present this is `human = good`.
-
-I don't need 100% human made, I perhaps need 90% human made. Three examples may make my thinking clearer:
-
----
-
-- Using, say, chatgpt as a rhyming dictionary feels fine, but writing whole verses of your poem with it doesn't.
-- Using DALL-E to start brainstorming 100 generated views of birds sitting on telephone lines seems fine, but getting it to paint large sections of your final artwork doesn't.
-- and, Asking a text generator to give you 10 happy-sounding synonyms for despair sparks joy in me, but asking it to write your anti-trancendentalist masterpiece does not.
-- [ ]a check 
----
-
-creator / consumer
-
-notes:
-
-Using these generative tools to make more of the artwork you want is valid, but in doing so, you're not a creator, you're still a consumer. I'm not sure exactly what 'too much AI' is, but just like your audience, I'll know it when I see it.
-
-I love knowing a human made the artwork I'm consuming.
-There's *something* there, something transcendent and magical.
-
-When you make something yourself, you learn something, and when I see what you've made, I'm inspired to learn it too!
-
-I *like* that you tried hard, that's part of the experience.
-
----
-
 Today I'd like to introduce you to a small project I've recently published.
 
-This "Humanmade" mark, here, is something I will be attaching to any works of mine that were mostly made by me or my friends, not by AI tools like GPT.
+This "Human Made" mark, here, is something I will be attaching to any works of mine that were mostly made by me or my friends, not by generative or AI tools like GPT.
 
 I've built a small website at <http://humanmademark.com> with high-resolution black or white versions of the logo available for download and attaching to your own projects if you'd like to.
 
-I want to be clear in this video about my reasoning for building this:
+I want to be clear today about my reasoning for building this:
 
 ---
 
@@ -84,6 +23,9 @@ I want to be clear in this video about my reasoning for building this:
 # I Love Humans
 
 notes:
+
+**I don't hate AIs,**
+**I love humans!**
 
 ---
 
@@ -108,27 +50,26 @@ notes:
 
 # Story Time
 
-I've been thinking about this topic since my GPT & AI video, last year, where I described the current crop of Large Language Models as giving everyone "1000 interns".
+I've been thinking about this topic since my GPT & AI video, in 2023 , where I described the current crop of Large Language Models as giving everyone "1000 interns".
 
 > And just like interns, they are not always right, but they ARE enthusiastic and confident when delivering their work.
 
-I don't hate AI-generated content, but It's kinda disappointing when you find out something cool was AI-made, right?
+I don't hate AI-generated content, but it's kinda disappointing when you find out something cool was AI-made, right?
 
 ---
 
 ![](attachments/weird-art-acide-bridget-post.png)
 notes:
 
-- [ ] she
+I saw this post from Bridget on mastodon last month, and I get the feeling that she and I would agree on this point:
 
-The root of this, as Bridget pointed out on mastodon last month, is because, even if the output looks/reads/sounds the same, there's something really GOOD about knowing another **human** made the artwork.
-
+Even if the artistic output looks/reads/sounds the same, there's something really... GOOD about knowing another **human** made it.
 LLMs certainly have huge ethical concerns, but that's not the root problem for me, forever.
 
 ---
 
-![alice|500](alice-earthquake-gpt.png)
 (Pause and read all this, this was ChatGPT YESTERDAY)
+![alice|500](alice-earthquake-gpt.png)
 
 notes:
 
@@ -169,26 +110,52 @@ When (not if) ethical models are built, and powered by 100% solar power,
 
 notes:
 
-I'm a software developer, I'll re-use 100 libraries to avoid writing 10 lines of code - standing on the shoulders of giants is the only way I know how I get around.
+Though these days I'm a video and audio producer, at heart I'm still a software developer:
+I'll re-use 100 libraries to avoid writing 10 lines of code - standing on the shoulders of giants is the only way I know how I get around.
 
-But I've looked for a way to mark my videos as being made by humans, not AI, and I can't find one that works in exactly the way I want.
+But I've looked for a way to mark my videos and stories as being made by humans, not AI, and I couldn't find one that worked in exactly the way I want.
 
-These icons here are typical of the projects I've seen [https://no-ai-icon.com/](https://no-ai-icon.com/ "https://no-ai-icon.com/")
+I have many issues with the options I've seen so far, from having multiple logos (which is confusing) to the fixation on AI being inherently evil (this will simply not always be the case).
+My root concern with these methods is that they are negative. `AI = bad`.
+But I think the correct way to present this is `human = good`.
 
-I don't want "NO AI USED", signposts that are negative and judgemental, nor a "100% human made" guarantee - what would that even MEAN these days?
+I don't need 100% human made (what would that even MEAN these days?), I perhaps need 90% human made. Three examples may make my thinking clearer:
 
-I want a positive mark.
+---
 
-There are lots of problems I have with the options I've seen so far, from having multiple logos (which is confusing) to the fixation on AI being inherently evil (this will not always be the case).
+## 1. ChatGPT dictionary
 
-My root concern with these methods is that they are negative.
-`AI = bad`.
-But I think the correct way to present this is `human = good`
+## 2. DALL-E brainstorming
+
+## 3. LLAMA Vocabulary Boost
+
+notes:
+
+- Using, say, chatgpt as a rhyming dictionary feels fine, but writing whole verses of your poem with it doesn't.
+- Using DALL-E to start brainstorming 100 generated views of birds sitting on telephone lines seems fine, but getting it to paint large sections of your final artwork doesn't.
+- and, asking a text generator to give you 10 happy-sounding synonyms for despair does spark joy in me, but asking it to write your anti-transcendentalist masterpiece does not.
+
+---
+
+# 🎨 Creator
+
+### or
+
+# Consumer 📺
+
+notes:
+
+Using these generative tools to make more of the artwork you want is valid, but in doing so, you've not become a creator, you're still a consumer:
+You've tuned in to the "chatgpt channel" and searched for what you want, and that's just what we do on youtube!
+
+I'm not sure exactly what 'too much AI' is, but just like your audience, I'll know it when I see it.
+
 I love knowing a human made the artwork I'm consuming.
-
 There's *something* there, something transcendent and magical.
 
-I _like_ that you tried hard, _that's part of the experience._
+When you make something yourself, you learn something, and when I see what you've made, I'm inspired to learn it too!
+
+I *like* that you tried hard, that's part of the experience.
 
 ---
 
@@ -199,15 +166,20 @@ notes:
 
 I'm not a human supremacist, either!
 
-I write about AIs, _REAL AIs_ (and, of course, by that, I mean fictional AIs), aGis, every single day for my speculative sci-fi show, Lost Terminal.
+I write about AIs, _REAL AIs_ (and, of course, by that, I mean _fictional_ AIs), aGis, every single day for my speculative sci-fi show, Lost Terminal.
 
 When real artificial intelligence is created, I'll have to retire this mark!
 
-In the timeline of my story, it happens in about 50 years, so I've got a bit of time left.
+In the timeline of my story, it happens in about 50 years, so we've all got a bit of time left.
 
 ---
 
-Text-based Large Language Models are autocorrect trained on the entire internet, with enough complexity to pass the Turing test.
+<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
+
+### "Text-based Large Language Models are autocorrect trained on the entire internet, with enough complexity to pass the Turing test"
+
+_&mdash; Me desperately explaining to the CEO why integrating "AI" into our project won't solve all our problems._
+
 notes:
 
 # LLMs Are a Great Human/Computer Interface
@@ -219,6 +191,8 @@ Nothing more, nothing less.
 That's pretty incredible! We've brute-forced natural language i/o in such a grand way that it's easy to misinterpret for ACTUAL intelligence.
 
 Yes, there's some investor-baiting going on with using AI in places it doesn't belong, nonetheless there is plenty of utility in these models, so it's foolish to demonise the technology itself.
+
+I hope the Human Made mark emphasises this goal.
 
 ---
 
@@ -232,7 +206,7 @@ As I've said before on this channel.
 > Smash the pots! Burn the paintings!
 > The art isn't the art.
 > The art is never the art.
-> The art is the thing that happens inside you when you make it and the feeling in the heart of the beholder.
+> The art is the thing that happens inside you when you make it, and the feeling in the heart of the beholder.
 
 - I LIKE writing my bad poetry, and I LIKE reading your great poetry and hearing how your life influenced it,
 - I LIKE making my mediocre music, and I LIKE listening to your great music, and figuring how to imitate it and make my own cover versions,
