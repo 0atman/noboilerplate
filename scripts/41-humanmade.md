@@ -10,7 +10,7 @@ Hi friends, my name is Tris and this is No Boilerplate, focusing on fast, techni
 
 Today I'd like to introduce you to a small project I've recently published.
 
-This "Humanmademan Made" mark, here, is something I will be attaching to any works of mine that were mostly made by me or my friends, not by generative or AI tools like GPT.
+This "Humanmade" Mark, here, is something I will be attaching to any works of mine that were mostly made by me or my friends, not by generative or AI tools like GPT.
 
 I've built a small website at <http://humanmademark.com> with high-resolution black or white versions of the logo available for download and attaching to your own projects if you'd like to.
 
