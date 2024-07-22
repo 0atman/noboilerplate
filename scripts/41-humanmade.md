@@ -10,7 +10,7 @@ Hi friends, my name is Tris and this is No Boilerplate, focusing on fast, techni
 
 Today I'd like to introduce you to a small project I've recently published.
 
-This "Human Made" mark, here, is something I will be attaching to any works of mine that were mostly made by me or my friends, not by generative or AI tools like GPT.
+This "Humanmademan Made" mark, here, is something I will be attaching to any works of mine that were mostly made by me or my friends, not by generative or AI tools like GPT.
 
 I've built a small website at <http://humanmademark.com> with high-resolution black or white versions of the logo available for download and attaching to your own projects if you'd like to.
 
@@ -192,7 +192,7 @@ That's pretty incredible! We've brute-forced natural language i/o in such a gran
 
 Yes, there's some investor-baiting going on with using AI in places it doesn't belong, nonetheless there is plenty of utility in these models, so it's foolish to demonise the technology itself.
 
-I hope the Human Made mark emphasises this goal.
+I hope the Humanmade mark emphasises this goal.
 
 ---
 
