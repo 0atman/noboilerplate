@@ -111,7 +111,7 @@ fn credits() {
 ```rust
 let producers: [&str; 0] = [];
 let sponsors = [
-	"Jaycee", "Gregory Taylor", "Ything LLC"
+	"Jaycee", "Gregory Taylor", "Ything LLC", "Taylor Dolezal"
 ];
 ```
 
