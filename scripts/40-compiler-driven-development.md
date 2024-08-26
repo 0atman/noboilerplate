@@ -89,7 +89,7 @@ _This compile-checked whiteboarding is called **_Compiler-Driven Development._**
 ```rust
 pub enum StatusCode {
     Ok = 200,
-	NotFound = 404 // etc
+    NotFound = 404 // etc
 }
 struct Metadata {
     status: StatusCode,
@@ -641,7 +641,7 @@ enum ID {
 	V4(u8, u8, u8, u8),
 	V6(u16, u16, u16, u16, u16, u16, u16, u16),
 	Mac(u8, u8, u8, u8, u8, u8),
-	// New varients:
+	// New variants:
 	FreqHz(u64),
 	Coord { lat: f64, lon: f64 },
 	Uuid([u8; 16]),
@@ -711,7 +711,7 @@ fn send_packet(node: &ID) {
   match node {
     ID::V4(..) | ID::V6(..) => ip_packet(node),
     ID::Mac(..)             => ethernet_frame(node),
-    // Problem: Some varients of ID are unhandled
+    // Problem: Some variants of ID are unhandled
   }
 }
 ```
