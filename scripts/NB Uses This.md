@@ -117,10 +117,10 @@ I adore the AUDACITY of the swaywm developers.
 
 notes:
 
-  - If you're running linux, you should be running AMD GPUs, nVidia seem to hate linux, for some reason?
-  - I used to think hardware accellerated graphics and games sucked on linux, or required lots of manual tweaking.
-  - but after trying my first non-nvidia card, I now realise that it's actually a closed-source driver vendor problem, not an O/S problem.
-  - I also realised my monitor supported HDR, something that the nvidia drivers just didn't enable!
+- If you're running linux, you should be running AMD GPUs, nVidia seem to hate linux, for some reason?
+- I used to think hardware accellerated graphics and games sucked on linux, or required lots of manual tweaking.
+- but after trying my first non-nvidia card, I now realise that it's actually a closed-source driver vendor problem, not an O/S problem.
+- I also realised my monitor supported HDR, something that the nvidia drivers just didn't enable!
 - Anyway, the parts for this supercomputer that will last me another half-decade, cost less than $500, which it always does.
 
 ---
@@ -348,14 +348,3 @@ Thanks to my standardisation on linux and mostly open source tools, I am not hel
 I could do all my coding and production on a raspberry pi powered by a solar panel.
 
 As someone who now pays the bills by my creative output, this allows me to sleep at night very, very soundly.
-
----
-
-## 📌 Where to Find Me
-
-- Blog - [0atman.com]()
-- Mastodon - [@<0atman@mastodon.social>]()
-- My Music - [namtao.com]()
-- Fast technical videos: No Boilerplate
-
-notes:
