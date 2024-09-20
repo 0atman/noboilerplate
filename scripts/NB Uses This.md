@@ -7,16 +7,8 @@ f7f7f7 background slide colour
 or maybe 191919
 %%
 
-%%
-Brief from Pavel
+#### Part 1
 
-> ask Linux Youtubers about the software and gear they use, including the camera setup, editing software of choice, which distro is installed on the production machine, etc.
->
-> The main goal of this video is to show how much value Linux Youtubers actually pour into their content and also to inspire a new generation of creators by showing them what they can create on Linux using both free and proprietary software.
-
-*********Only Software, Gear, Camera, Editing software, Distro: INSPIRE LINUX CREATORS!**
-%%
-#### Part 1:
 # ALL ABOARD THE GEAR TRAIN! 🚋
 
 <sup>
@@ -24,8 +16,6 @@ Brief from Pavel
 </sup>
 
 notes:
-
-Thanks Pavel!
 
 Hi friends my name is Tris. Every day I write electronic music, fast technical videos, and produce podcasts all on linux on whatever hardware is within reach.
 
@@ -67,7 +57,7 @@ However, after a year, I discovered Obsidian, thanks to CGP Grey and Myke Hurley
 
 ![obsidian-lt-12](attachments/obsidian-lt-12.png)
 
-My video: [youtube.com/watch?v=DbsAQSIKQXk](https://www.youtube.com/watch?v=DbsAQSIKQXk) &nbsp; <sup>(Thanks Pavel! 😁)</sup>
+My video: [youtube.com/watch?v=DbsAQSIKQXk](https://www.youtube.com/watch?v=DbsAQSIKQXk) &nbsp;
 
 notes:
 
@@ -81,7 +71,7 @@ Obsidian is incredible: I made the slides you're looking at right now using it.
 
 ---
 
-# Part 2:
+# Part 2
 
 # Hardware
 
@@ -272,7 +262,7 @@ When in this morning writing mode, I wear Sony XM4 noise-cancelling headphones, 
 
 ---
 
-# Part 3:
+# Part 3
 
 # Software
 
@@ -306,13 +296,11 @@ But ideally, I'd like both. Maybe when Logseq is good enough.
 
 ![bitwig-screenshot-pianoteq](attachments/bitwig-screenshot-pianoteq.png)
 
-
 #### bitwig.com
 
 notes:
 For music I use Bitwig, an Ableton Live clone, which launched in 2014 with linux support and allowed me in a single stroke to finally leave music production on windows behind me.
 I have happily paid the license every year since then - companies building professional-grade software for linux get my money!
-
 
 ---
 
@@ -361,8 +349,6 @@ I could do all my coding and production on a raspberry pi powered by a solar pan
 
 As someone who now pays the bills by my creative output, this allows me to sleep at night very, very soundly.
 
-Thanks Pavel!
-
 ---
 
 ## 📌 Where to Find Me
@@ -373,5 +359,3 @@ Thanks Pavel!
 - Fast technical videos: No Boilerplate
 
 notes:
-
-Cheers Pavel!
