@@ -17,9 +17,90 @@ or maybe 191919
 
 notes:
 
-Hi friends my name is Tris. Every day I write electronic music, fast technical videos, and produce podcasts all on linux on whatever hardware is within reach.
+Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
 
-If there is one thing I do all day and every day, it's Write.
+Every day I write electronic music, fast technical videos, and podcasts, all produced on linux on whatever hardware is within reach.
+
+Today I'm going to show you my whole process, from hardware, through to software, processes, and even a little on my philosophy of creation.
+
+We'll start with the history lesson:
+
+---
+
+![300|400](attachments/cc-zero-2k.png)
+
+## Public Domain Videos
+
+[https://github.com/0atman/noboilerplate/](https://github.com/0atman/noboilerplate/)
+
+(for all [blue links]() read my scripts here ⬆)
+
+notes:
+My video scripts are dedicated to the public domain.
+
+Everything you see here: script, links, and images are part of a markdown document available freely on GitHub at the above address.
+
+---
+
+# Part 0
+
+# Who *is* This Guy?
+
+notes:
+
+Part 0: Who is this guy?
+
+---
+
+# PROGRAMMING
+
+notes:
+
+I was set on my path to professional programming at age 16 by my father. I asked him, at the time, if I should be a teacher, like him, or be a programmer, and he said,
+
+> If you are a programmer, you'll be able to teach in your spare time, but if you are a teacher, you'll never have spare time ever again!
+
+Now look at me, teaching on Youtube!
+
+So I went to university and did an undergraduate in Computer Systems and Networks, thinking I would be a systems administrator.
+After 4 years I realised I didn't want to be installing printer drivers my whole life, so I did a masters in software engineering.
+
+---
+
+# Rust Era
+
+notes:
+
+That was 15 years ago!
+Since then, I've mostly worked as a Python web developer in and around the vibrant London startup scene.
+My final job was at the extremely well-regarded Government Digital Service, which I broke all my personal records by staying there for 4 years. The people and projects were fantastic, and I'd have likely stayed there if it weren't for all the meetings and slack.
+
+In my final year there, I wanted to demo to my team this incredible new language I'd learned about, called Rust.
+A few people couldn't make it at the time I ran the 10 minute presentation, so I recorded it for them and uploaded it to youtube here <https://www.youtube.com/watch?v=Q3AhzHq8ogs>
+All was quiet for a few weeks, then one sleepy sunday my email stopped loading. I'd had over 1000 comments overnight as the video had gone viral, and my life was to change forever.
+
+Now nearly all my programming is for my explainer videos, or building the websites for my projects!
+
+---
+
+# MUSIC
+
+notes:
+
+I've been a musician my whole life, I was classically trained on first trumpet than piano. After being fired by my piano teacher at age 16, I found a jazz piano teacher in my town and have loved jazz and blues ever since.
+This naturally expanded my musical interest into other instruments, guitar, bass, drums, - the usual suspects that a teenager might play in a band - and then into sax and flute, and others.
+As a music producer (someone who records music for others to listen to, rather than a music performer, who plays the music that others listen to) I use music software all the time, which makes a midi keyboard my most commonly used instrument.
+
+---
+
+ - [ ] The Cursed Cello
+
+notes:
+
+Like with language learning, I can quite easily pick up whatever instruments are needed for my latest project, as each new one is easier than the last, due to existing transferable skills.
+The exception to this, I have discovered, is non-discrete instruments, by which I mean ones without keys or frets - violin, trombone, fretless bass, and, I guess, the Theramin.
+If you play 10 instruments, you build 1/10th of the muscle memory that you would have, had you specialised on just 1:
+This is the curse of the multinstrumentalist!
 
 ---
 
@@ -28,7 +109,11 @@ notes:
 
 Ever since discovering The Hitchhiker's Guide to the Galaxy books as a boy, I have wanted to be a writer.
 
-But It was not until 2020, listening to Joseph Fink and Jeffery Craner's podcast "Start With This" that I realised I didn't need to write a book, I could write a podcast.
+I wrote here and there for my blog, 0atman.com, but nothing regular.
+
+I tried Nanowrimo every year, even once finishing the month-long 50,000 word challenge! But nothing came of that book.
+
+It was not until 2020, listening to Joseph Fink and Jeffery Craner's podcast "Start With This" that I realised I didn't need to write a book, I could write a podcast.
 
 I lasted 5 episodes of SWT before I had to stop listening and start writing the pilot of my first podcast, Lost Terminal!
 
@@ -41,6 +126,8 @@ I lasted 5 episodes of SWT before I had to stop listening and start writing the 
 notes:
 
 I produced it in a fever dream over the course of a few evenings, got my partner to read the credits, and to promise that "Lost Terminal will return next week". After that public commitment, there was no going back. I'm writing season 17 now.
+
+> I produced it in a fever dream over the course of a few evenings, got my partner to read the credits, and to promise that "Lost Terminal will return next week". After that public commitment, there was no going back. I'm writing season 17 now.
 
 ---
 
@@ -68,6 +155,12 @@ here's the link, but you don't currently need it, just search youtube for obsidi
 I don't know how that happened!
 
 Obsidian is incredible: I made the slides you're looking at right now using it.
+
+---
+
+# My Creation Philosophy
+
+notes:
 
 ---
 
@@ -236,6 +329,31 @@ Yamaha AG06 usb interface for connecting wierd cheap ebay synths to, and a Launc
 
 ---
 
+# Radios
+
+notes:
+
+I got into Amateur Radio in a weird way.
+Well.
+Weirder than usual.
+
+After writing 2 years of Lost Terminal scripts, about 8 seasons, a fan emailed me to thank me for being so true to the science. In their words "we amateurs understand that if the internet collapses today, we'll build a new one based with radio tomorrow".
+After realising that actual experts were listening to my show, I threw myself in a panic into learning about radios, antennas, and atmospheric propogation. After a few months, I realised I had learned more than enough to pass the Amateur Radio Operator Foundation License, which I did, authorising me for world-wide transmission.
+I've since passed the Intermediate exam, and am learning Morse Code in anticipation of studying for the Full UK license one day!
+
+It's a really fun augmentation to my other outdoor and network-based hobbies!
+
+I have gone through a lot of radio hardware, but my current main rig is an Icom IC-705, which is an all-mode, all-band swiss army knife for radio experimentation.
+My latest portable radio is the tiny QRP Labs QMX, a Morse-only tranciever for ultra portable operation.
+
+The other side of the radio hobby is antennas.
+
+On the roof of my house I have a 3m high tri-band fiberglass vertical antenna, covering my favourite band of 50Mhz. If you listen to Lost Terminal, you'll know why!
+
+2E1OAT 73
+
+---
+
 ![thinkpad-laptop-train|600](attachments/thinkpad-laptop-train.jpg)
 
 ##### Thinkpad X13 Yoga Gen 3
@@ -284,6 +402,12 @@ I am a sort of 'open source pragmatist' in this regard:
 notes:
 I run as much Open Source as I can, but I also don't lose sight of practicality, or interoperability and longevity of my data.
 An example: I run my life on the Obsidian.md knowledge platform, despite the core of it being closed source because the data it operates on is simple, plain-text Markdown.
+
+---
+
+- [ ] joplin screenshot here
+
+notes:
 
 Let's compare this to, say, Joplin, an open-source desktop note-taking tool that runs a sqlite database behind the scenes.
 If (and when) Obsidian is abandoned by its two developers, I still have all my data in markdown and can continue using it in standard text editors.
@@ -337,6 +461,49 @@ When pair programming I have found nothing better than vscode liveshare combined
 
 ---
 
+# Contexts & nix
+
+notes:
+
+---
+
+# heading
+
+## My Dream Setup?
+
+notes:
+
+I am not held back by my hardware or software. I could do all my coding and production on raspberry pi powered by a solar panel.
+This allows me to sleep at night very, very soundly.
+
+The only reason I would like to change my setup is for ergonomic reasons.
+
+Digital minimalism is weird - it kinda requires you to normalise your smartphone's homescreen applications into an EDC bag of separate physical devices:
+- a Camera
+- a Dictaphone
+- eink notetaking tablet
+- Digital typewriter, I guess?
+- even An actual TV (remember those?)
+
+I'm always trying to find a balance between the convienient comprimises of a smartphone, and the bulk of carrying around a load of better, but bulkier alternatives.
+
+Like everyone, I dream of more space. Wrangling my audio recording sessions in the same room that my wife is in sprint planning meetings is a challenge!
+
+I'd love an office with four walls painted different colours, with 4 identical machines set up for my different modes of:
+- Writing
+- Editing
+- Research
+- Production
+
+Maybe for the last one, I'd build a Threadripper-based machine so video exports and Rust compilation can go brrrrrr?
+
+This all seems like a physical meatspace constraint, though.
+
+I really like VR and AR, and I think the hardware is already there, it just requires software to catch up to what we want to use them for:
+Standalone headsets running android are cheap, powerful and the technology is mature, in its 4th iteration, we can already run 3 sideloaded android apps simultaneously, just let me run, like, more. 9 would be fine! We're not limited by desk space here...
+
+---
+
 # Open Source Production
 
 # _Rules!_
@@ -348,3 +515,9 @@ Thanks to my standardisation on linux and mostly open source tools, I am not hel
 I could do all my coding and production on a raspberry pi powered by a solar panel.
 
 As someone who now pays the bills by my creative output, this allows me to sleep at night very, very soundly.
+
+But, after all...I don't think I need any MORE stuff or space, actually, but perhaps a DIFFERENT space:
+
+The space I'd like, whatever STUFF is in it, should be full of artists, musicians, writers, and friends.
+
+That's what's really important!
