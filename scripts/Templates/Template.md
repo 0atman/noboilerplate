@@ -68,7 +68,7 @@ fn main() {
 # TITLE
 
 notes:
-Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
+Hi friends my name is Tris and this is No Boilerplate, where I make fast, technical videos.
 
 ---
 
