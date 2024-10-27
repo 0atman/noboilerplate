@@ -68,12 +68,7 @@ fn main() {
 # TITLE
 
 notes:
-%%
-- Tell them what you're going to tell them
-- Tell them
-- Tell them what you told them
-%%
-Hi friends my name is Tris and this is No Boilerplate, focusing on fast, technical videos.
+Hi friends my name is Tris and this is No Boilerplate, where I make fast, technical videos.
 
 ---
 
