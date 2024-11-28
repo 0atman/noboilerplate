@@ -63,7 +63,7 @@ fn main() {
 
 %%
 
-![logo|400](attachments/tri-hex-moon-white-transparent.png)
+![[attachments/tri-hex-moon-white-transparent.png|300]]
 
 # TITLE
 
@@ -72,7 +72,7 @@ Hi friends my name is Tris and this is No Boilerplate, where I make fast, techni
 
 ---
 
-![300|400](attachments/cc-zero-2k.png)
+![[attachments/cc-zero-2k.png|300]]
 
 ## Public Domain Videos
 
@@ -93,7 +93,7 @@ Everything you see here: script, links, and images are part of a markdown docume
 
 # Thank You
 
-Especially to my Producer and Sponsor patrons:
+To all my patrons, you make this possible!
 
 %%
 
@@ -106,8 +106,9 @@ fn credits() {
 ```rust
 let producers: [&str; 0] = [];
 let sponsors = [
-	"Jaycee", "Gregory Taylor", "Ything LLC", "Taylor Dolezal"
+	"Jaycee", "Gregory Taylor", "Ything LLC" 
 ];
+let patrons: [&str; 478];
 ```
 
 %%
