@@ -346,7 +346,7 @@ notes:
 
 ---
 
-# Hypothosis:
+# Hypothesis:
 
 ## Maybe wealthy investors shouldn't be able to fsck up my notifications
 
