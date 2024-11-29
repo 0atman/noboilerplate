@@ -168,7 +168,7 @@ notes:
 
 I ADORE Haskell. In my 'how to learn rust' video, I recommended learning the basics to teach you functional programming quickly.
 
-The language has many incredible features that give me similar confidence to using Formal Methods, and the one I'll hightlight today is functional purity, which is a term you might be familiar with.
+The language has many incredible features that give me similar confidence to using Formal Methods, and the one I'll highlight today is functional purity, which is a term you might be familiar with.
 
 In Haskell, and maybe, kinda, Rust, it's a first-class feature.
 

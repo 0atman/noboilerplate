@@ -108,7 +108,7 @@ sccache re-uses already-compiled artifices to skip redundant compilation. and in
 
 When you're installing system tools that very often are built by people that always use the stable version of a dependency, you might unnecessarily re-compile that dependency very often.
 
-With sccache, you wont.
+With sccache, you won't.
 
 ---
 
@@ -145,7 +145,7 @@ Nu is a shell built around the language of the same name.
 
 ---
 
-## Nu's Structured Pipelins
+## Nu's Structured Pipelines
 
 ![[nu-post-httpbin.png]]
 notes:
@@ -366,7 +366,7 @@ notes:
 
 > Bob is a cross-platform and easy-to-use Neovim version manager, allowing for switching between versions right from the command line.
 
-I found it after discovering that the ubuntu repos did not have neovim verion 0.8, which is the minimum version that my preferred distribution, astronvim, supports.
+I found it after discovering that the ubuntu repos did not have neovim version 0.8, which is the minimum version that my preferred distribution, astronvim, supports.
 
 Though the neovim team build comprehensive packages and installers for every system, I try not to do in a web browser what I can do on the command line.
 A theme you will see more of today.

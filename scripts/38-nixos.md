@@ -408,7 +408,7 @@ This can't happen to me any more. Or if it does, I roll back, keep working, and 
 
 notes:
 
-Here are the most important tips I've found along the way, through trial and error, as I have tumbled down the NixOS rabit hole.
+Here are the most important tips I've found along the way, through trial and error, as I have tumbled down the NixOS rabbit hole.
 
 If you want me to teach you them personally, that is possible through my Patreon.
 
@@ -529,7 +529,7 @@ Running the script opens my config in my editor, I use vim but you could just as
 After adding it into my package list, I save and quit vim, and the script then continues.
 - First, autoformatting the config with alejandra,
 - Then displaying a condensed git diff, reminding me what I've changed across my nix files, it's simple in this case, of course
-- Then it kicks off a rebuild of my nixos config, throwing away most of stdout, I just don't care what's happening, as long as it's going fine - I've already tabbed back to what I was supposed to be doing before I fell down a system configuration rabit hole.
+- Then it kicks off a rebuild of my nixos config, throwing away most of stdout, I just don't care what's happening, as long as it's going fine - I've already tabbed back to what I was supposed to be doing before I fell down a system configuration rabbit hole.
 - If successfully built, the config is then committed to git with the current generation's metadata as the commit message.
 - Here we just built generation 160
 

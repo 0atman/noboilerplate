@@ -129,11 +129,11 @@ notes:
 
 So let's talk about what we're NOT going to be doing, with a counter example.
 web.py is one of the many gifts the late, great Aaron Swartz gave us.
-It's elegant in its simplicity, but we are not building simple tools, today we are building guarenteed correct tools.
+It's elegant in its simplicity, but we are not building simple tools, today we are building guaranteed correct tools.
 
-Python, and by virtue, web.py can't give you these guarnetees, lots of things are just strings, and the language can't help you with compile time checking very much.
+Python, and by virtue, web.py can't give you these guarantees, lots of things are just strings, and the language can't help you with compile time checking very much.
 
-Luckly we have Rust.
+Luckily we have Rust.
 
 ---
 
@@ -446,7 +446,7 @@ Binding your database and rest interface together AT COMPILE TIME allows us to h
 
 This is a SUPER POWER: if you define your API in rust structs, the COMPILER will stop you from breaking the contract with your api clients.
 
-Not only that, but if you don't see a PR where the structs change, your colleagues and collaborators havn't broken the contract EITHER.
+Not only that, but if you don't see a PR where the structs change, your colleagues and collaborators haven't broken the contract EITHER.
 
 Huge!
 
