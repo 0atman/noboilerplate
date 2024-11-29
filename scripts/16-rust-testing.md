@@ -89,7 +89,7 @@ For the remainder of the bugs that ARE possible to express, you will indeed need
 
 | Happy Path   | Comprehensive | Probabilistic |
 | ------------ | ------------- | ------------- |
-| Assertions | Black Box     | QuickCheck    |
+| Assertions   | Black Box     | QuickCheck    |
 | Doctests     | White Box     | Proptest      |
 | Examples     |               | Fuzzing       |
 
