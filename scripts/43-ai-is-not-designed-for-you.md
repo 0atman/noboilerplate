@@ -35,9 +35,11 @@
 notes:
 
 ## Tasks
-
+- [ ] who is this video for?
+- [ ] lose the crypto and tesla diversions
 - [ ] colour code parts
 - [ ] brainmade logo
+- [ ] a lot of people think theres value because they don't have the knowledge to see theres no value
 
 ---
 ![](attachments/apple%20intelligence%20presentation.png)
@@ -265,7 +267,7 @@ notes:
 
 ---
 
-# Hypothosis:
+# Hypothesis:
 
 ## Maybe wealthy investors shouldn't be able to fsck up my notifications
 
@@ -280,6 +282,8 @@ What I remind myself to do, whenever I see these bazaar products that no-one nee
 # Thank You
 
 To all my patrons, you make this possible!
+
+And to `@laund` for telling me to buck up and believe in myself.
 
 %%
 
