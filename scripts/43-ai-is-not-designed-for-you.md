@@ -103,76 +103,13 @@ Everything you see here: script, links, and images are part of a markdown docume
 
 # Part 1:
 
-## WHO IS FLYING THIS THING?
+## The Magic Beans don't Work
 
 notes:
+- [ ] add a new colour
 To understand what is happening with AI, it's useful to look at two other examples of tech that had HUGE hype but fell short of expectations.
 
----
-
-# ₿itcoin
-
-![[Excalidraw/timeline-web-vs-bitcoin.svg]]
-
-notes:
-
-We'll start with the fact that Bitcoin, the first decentralized blockchain, is now 15 years old.
-
-To put that in perspective:
-The web started in 1991. 15 years later, in 2006, we had youtube, twitter, amazon, ebay - the world was unrecognisable.
-
-What have we got in that timeframe from #blockchain?
-Ashes.
-
----
-
-<i class="fas fa-quote-left fa-2x fa-pull-left"></i>
-*"A thriving market for magic beans doesn't make the magic beanstalk real."*
-
-&mdash; [lib.rs/cryptography/cryptocurrencies](https://lib.rs/cryptography/cryptocurrencies)
-
-notes:
-
-I agree with this, but you CAN sell something that is not real, you just have to promise it will be at some point...
-
-Blockchain technology isn't new, Cryptographer David Chaum first proposed a blockchain-like protocol in his 1982 dissertation.
-("Computer Systems Established, Maintained, and Trusted by Mutually Suspicious Groups")
-
-but, no real-world use was found until Bitcoin, in 2006, as people realised they could make money with it, or make it into money, perhaps.
-
-Since then, the only blockchain success stories are
-- the occasional flickers of alternate coins, like mayflies living and dying in a single night,
-- and startups with no products but a lot of promises.
-
-The promises, just like with AI, I think, are the point.
-
----
-
-<split even>
-![[attachments/tesla-cybercab-3-1-1024x768.jpg|400]]
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-
-![[attachments/tesla-optimus-robot.jpeg|400]]
-</split>
-
-&nbsp;
-
-### The Cybertaxi & Optimus
-
-notes:
-
-The second and final example I'll contrast AI with, is Tesla's recent cybertaxi/robot event.
-This was WEIRD right? was this supposed to impressed us?
-- Disney has been operating autonomous cars on a closed track for decades
-	- (they call them RIDES)
-- the fancy robots were not autonomous, they were driven by remote human operators
-	- We've seen this forever, too, from Hitachi to Boston Dynamics
-
-With AI and blockchain and self-driving cars, all this tech we're bombarded with these days, it feel like they are all kindof falling short, doesn't it?
+With AI and all this tech we're bombarded with these days, it feel like they are all kindof falling short, doesn't it?
 
 There's a reason for that:
 
@@ -180,9 +117,9 @@ There's a reason for that:
 
 # Part 2:
 
-### These Magic Beans don't Work
+#### The Magic Beans don't Work
 
-### Because they don't have to
+## Because they don't have to
 
 notes:
 - [ ] add a new colour
@@ -253,30 +190,14 @@ AI companies can't fulfil their promises.
 
 ---
 
-# another day, another blockchain
-
-notes:
-
-We hear so much about new blockchain tech and nothing about new blockchain products (other than more scam coins or nfts).
-
-I think this is because, from my software engineer's perspective, when you actually try to use blockchain tech, you discover that it's far cheaper to make a simple server with an API to hold your data, rather than implement an entire decentralised network to hold your data.
-
-Because, OF COURSE, it is.
-When bills need to be paid, practicality beats purity every day.
-
-Blockchain companies CAN'T fulfil their promises either.
-
-What is happening here?
-
----
-
 # Part 3:
 
 ## We are not the audience
 
 notes:
 
-All These Flashy Announcements Seem Weird and confusing, until You Realise We're not the Audience for Them
+- [ ] add a new colour
+This dissonence between hype and reality seem confusing, until You Realise We're not the Audience for Them
 
 If you scratch the surface, these technologies don't work.
 And things that don't work can't solve problems.
@@ -298,8 +219,6 @@ notes:
 It's because the real decision-makers in these companies are their wealthy investors.
 
 - mediocre AI tools (that we all hate) have been crammed into everything we use - now even our notifications - because the companies have to impress investors with AI features, even if they don't work well
-- Implementing a vapourware "blockchain strategy" isn't a feature that will help us, the users and customers, but it will help the company get investment.
-- the tesla cybertaxi/robot event wasn't for us to get a look at actual future products, it was to generate hype for investors to see
 
 ---
 
