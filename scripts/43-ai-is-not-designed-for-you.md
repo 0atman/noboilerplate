@@ -225,7 +225,8 @@ It's very confident, but often inaccurate.
 notes:
 This trend exists across all the GPT tools I have tested, from cloud providers such as OpenAI to running and tweaking my own local models with ollama.
 
-But that's fine! There's SO much value on the left of this graph, for initial research and shallow exploration, you can ABSOLUTELY use a GPT tool to quickly find areas you want to look into deeper for yourself.
+But that's fine! There's SO much value on the left of this graph!
+For initial research and shallow exploration, you can ABSOLUTELY use a GPT tool to quickly find areas you want to look into deeper for yourself.
 
 However, there are real limits in these generative techniques that you come up against very soon after you start using them for complex work.
 
@@ -233,7 +234,7 @@ Lets talk about where these limits come from, and how to avoid them.
 
 ---
 
-<!-- slide bg="[[attachments/tri-hex-moon-white-transparent.png]]" data-background-size="40%" data-background-opacity="0.1" -->
+<!-- slide bg="[[attachments/tri-hex-moon-white-transparent.png]]" data-background-size="35%" data-background-opacity="0.1" -->
 
 <br/>
 ![[patreon.png|200]]
@@ -291,7 +292,7 @@ but Language ability, as we learned in Star Wars, does not equal Intelligence
 
 notes:
 
-The problem is that we are extremely language-centred creatures, and we mistake language proficiency for intelligence, which causes us to misuse this technology.
+The problem is that we are extremely language-centric creatures, and we mistake language proficiency for intelligence, which causes us to misuse this technology.
 Or for this technology to misuse us.
 
 You're not chatting to an intelligent agent, it's autocompleting your questions, like a sociopath getting under your skin by saying what it thinks you want to hear.
