@@ -44,7 +44,7 @@ fn template(inner: Node) -> Node {
                                 <a href="https://discord.gg/mCY2bBmDKZ" class="block lg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">
                                     Chat on Discord
                                 </a>
-                                <a href="https://www.teepublic.com/stores/no-boilerplate?ref_id=33332" class="block lg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">
+                                <a href="https://noboilerplate.dashery.com/" class="block lg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">
                                     Store
                                 </a>
                                 <a href="https://www.patreon.com/noboilerplate/posts" class="bg-gradient-to-r from-indigo-500 block lg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">
