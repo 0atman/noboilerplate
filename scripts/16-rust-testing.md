@@ -89,7 +89,7 @@ For the remainder of the bugs that ARE possible to express, you will indeed need
 
 | Happy Path   | Comprehensive | Probabilistic |
 | ------------ | ------------- | ------------- |
-| Assertations | Black Box     | QuickCheck    |
+| Assertions   | Black Box     | QuickCheck    |
 | Doctests     | White Box     | Proptest      |
 | Examples     |               | Fuzzing       |
 
@@ -497,7 +497,7 @@ def hello(name):
 ```
 
 notes:
-Probabalistic testing is a great way to shine a light into the dusty corners of our app that we may have forgotten about.
+Probabilistic testing is a great way to shine a light into the dusty corners of our app that we may have forgotten about.
 
 However, in other languages, it often requires boilerplate code.
 

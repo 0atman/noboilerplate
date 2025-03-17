@@ -295,7 +295,7 @@ async fn main() -> Result<(), Error> {
 
 ---
 
-## Lambda Http Hander
+## Lambda Http Handler
 
 ```toml
 lambda_http = "0.6.1"
@@ -317,7 +317,7 @@ notes:
 
 Here is an http hello world lambda handler in Rust using the official aws sdk, which contains all functions and types for interacting with the aws cloud.
 
-This compiles, the comipler throws up no errors, which means we can be confident about a lot of things without any extra testing.
+This compiles, the compiler throws up no errors, which means we can be confident about a lot of things without any extra testing.
 
 ---
 
@@ -564,7 +564,7 @@ def fib(n: int) -> Iterator[int]:
 notes:
 
 In fact the opposite is true.
-The larger and more complex your codebase is the more guarantees you want to build-in to your compilers your linter, and your tests.
+The larger and more complex your codebase is the more guarantees you want to built-in to your compilers your linter, and your tests.
 
 Everyone loves typescript (almost as much as they love rust) and with good reason. It has some of the syntax that javascript is missing that developers are crying out for.
 and the python world is slowly embracing static typing, since type annotations were added in Python 3.

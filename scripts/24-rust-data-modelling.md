@@ -755,7 +755,7 @@ notes:
 
 And here's our little state machine in action!
 
-In other languages, we'd have to do a lot of testing to prove we'd written our arbitary if statements correctly, and not missed a case, or written unreachable cases.
+In other languages, we'd have to do a lot of testing to prove we'd written our arbitrary if statements correctly, and not missed a case, or written unreachable cases.
 Gross.
 
 There are no edge cases here, I only have to scrutinise the match expression to ensure the business logic is implemented correctly, and when I need to change the states, perhaps in Super Mario 64, it's easy, and the compiler will tell us what match statements need updating.

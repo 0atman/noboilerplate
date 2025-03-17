@@ -115,7 +115,7 @@ notes:
 If you've heard of CB radio, and you're thinking "oh this sounds similar".
 You're getting there, but Amateur radio is so much more.
 
-A short list of things you can do with amatuer radio include but are not limited to:
+A short list of things you can do with amateur radio include but are not limited to:
 
 ---
 
@@ -507,7 +507,7 @@ It's a clever idea, and one that Amateur Radio operators were experimenting with
 
 There are repeaters EVERYWHERE, no matter where you live.
 
-In decending order of my youtube audience , here are the repeater maps for -
+In descending order of my youtube audience , here are the repeater maps for -
 
 ---
 
@@ -570,7 +570,7 @@ Wherever there are towns and cities there are repeaters!
 If you want access to this world, it's cheap and easy, but like driving a car, there's a test and a license.
 And just like driving a car it augments any outdoor activity you might want to do.
 
-I've not even talked about the lower frequencies, where you can get worldwide propogation without using repeaters!
+I've not even talked about the lower frequencies, where you can get worldwide propagation without using repeaters!
 
 ---
 
@@ -619,7 +619,7 @@ notes:
 When you talk to someone on radio without a repeater, you are talking directly to them at the speed of light, from your microphone to their speaker, with no intermediaries.
 Using the right frequency and antenna, this can be local in your city, or transcontinental, bouncing off the atmosphere or ground.
 
-This direct communication feels much more personal - your voice is being mixed with a radio carrier signal or similar and broadcast in an analogue signal, then the reciever reverses the process to demodulate your voice.
+This direct communication feels much more personal - your voice is being mixed with a radio carrier signal or similar and broadcast in an analogue signal, then the receiver reverses the process to demodulate your voice.
 
 It's analogue all the way, no bits, no bytes.
 
