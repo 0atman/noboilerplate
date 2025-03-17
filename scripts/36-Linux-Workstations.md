@@ -532,11 +532,11 @@ notes:
 
 ---
 
-| **GOOD FOR THEM**            | **GOOD FOR YOU**                          |
+| **GOOD FOR THEM**                      | **GOOD FOR YOU**                      |
 |:-------------------------------------- | ------------------------------------- |
 | No upgradability                       | Upgradability                         |
-| One kind of machine for everyone       | Customisable machines for everyone           |
-| Closed control of software environment | Open options for software envinroment |
+| One kind of machine for everyone       | Customisable machines for everyone    |
+| Closed control of software environment | Open options for software environment |
 | Your data on their servers             | Your data on your computer            |
 
 notes:
