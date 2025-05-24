@@ -425,7 +425,7 @@ Rust is flexible, and doesn't force you to write in a functional style. Haskell,
 notes:
 
 Have a look at either Learn You A Haskell or Real World Haskell or both.
-Again, you can mostly read through these quickly. Your package manger will have the haskell repl, which is called GHCI, and any version it installs will be fine for experimentation.
+Again, you can mostly read through these quickly. Your package manager will have the haskell repl, which is called GHCI, and any version it installs will be fine for experimentation.
 
 Learning Haskell will teach you about mapping, filtering, folding, currying, matching, and many other words to describe your algorithms in rust, which are abandoned in other languages that just use for loops and if statements.
 

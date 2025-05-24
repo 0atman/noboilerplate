@@ -108,7 +108,7 @@ impl ResponseState for Metadata {}
 notes:
 You may be familiar with repl-driven development, or the fast feedback of testing out your code in the browser with hot code reloading.
 
-The compiler is faster than all these methods, but to be fair, and balenced, it's because it's doing less.
+The compiler is faster than all these methods, but to be fair, and balanced, it's because it's doing less.
 Pure model code, the heart of the plumbing of your app, doesn't have to deal with rendering a UI, making network connections, or setting up databases - none of that unimportant boilerplate.
 
 And nor should you, at first.

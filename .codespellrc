@@ -1,0 +1,7 @@
+[codespell]
+# Ref: https://github.com/codespell-project/codespell#using-a-config-file
+skip = .git*,*.svg,.codespellrc,*.html
+check-hidden = true
+# Some case sensitive names and too long "words" without spaces (usually some encodings)
+ignore-regex = \b(Carin|Shure)\b|[^ \t]{50,}
+ignore-words-list = crate

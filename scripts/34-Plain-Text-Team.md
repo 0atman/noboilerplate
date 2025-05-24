@@ -97,7 +97,7 @@ In the Odyssey, Odysseus (confusingly called Ulysses in English literature) had 
 This was a well-understood problem in his world.
 Sailors would simply solve this by putting wax in their ears, so the sirens' tempting song wouldn't lure them to their deaths.
 
-But Odysseus had a challenge: He WANTED to hear the Sirens' beautiful song. He certainly didn't want to drown, so he ordered his crew to tie him to the mast of the ship, and to ignore any of his pleas to let him go, until safety.
+But Odysseus had a challenge: He WANTED to hear the Sirens' beautiful song. He certainly didn't want to drown, so he ordered his crew to tie him to the mast of the ship, and to ignore any of his please to let him go, until safety.
 
 This way, he was able to guard against future bad decisions he knew he would make by setting up a framework to control his future self.
 
