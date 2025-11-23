@@ -21,7 +21,8 @@ The NoBoilerplate Code of Conduct applies equally to all members of the communit
 5. No age-restricted or obscene content (outside of the #mature-themes-lt channel). This includes text, images or links featuring nudity, sex, hard violence or other disturbing graphic content.
 6. Stay on topic: Please take heated argument with little chance of resolution (such as politics or emacs vs vim!) to a thread in #⁠the-forum.
 7. Posting Malware, Viruses, Fork/Zip Bombs etc. is forbidden, even for educational purposes. Linking to them with a disclaimer is fine.
-8. Don't be a dick.
+8. Please keep conversations in public spaces open to all. Conversations exclusively between friends/friend groups should be kept to DMs or private spaces.
+9. Don't be a dick.
 
 ## Unwanted Opinions and Ideologies
 The following ideologies or opinions are not welcome.
@@ -74,6 +75,32 @@ This community is explicitly a safe space for the following people:
 -   Responding with “RTFM”, "just google it” or similar phrases in response to help requests. Instead, explain how to find the result.
 -   Other conduct which could reasonably be considered inappropriate
 
+
+---
+
+## Mental Health Discussion Guidelines
+
+The mental health channel is a space in our server to discuss topics related to mental health and to share useful resources. To ensure the channel is an effective and productive space within the community there are some important restrictions to keep in mind:
+
+### What we want to see
+
+- High-level discussion of mental health topics, such as those brought up in Lost Terminal episodes.
+- Sharing of resources that can help people improve their mental health, such as grounding techniques or coping strategies.
+- Seeking and sharing specific actionable advice for mental health struggles.
+- An understanding that a lack of a response doesn't imply a lack of care or that you're being ignored, as mental health topics can be challenging to respond to and many people arent available or prepared to do so.
+
+### What we don't want to see
+
+- Venting or ranting about personal mental health struggles.
+- Self-deprecating comments or general complaints about mental health without seeking solutions.
+- Sharing of unverified or potentially harmful mental health advice.
+- Anything that invalidates or dismisses others' mental health experiences, or which suggests there is only one possible way to approach mental health.
+- Messages that elicit responses from individuals instead of the community as a whole, as this can put pressure on them to reply when they're not in a position or headspace to do so.
+- Conversations which require established knowledge about you which others might not know. This is a public channel, please use DMs for talking to friends.
+
+### Why we have specific guidelines for this channel
+
+Discussions surrounding mental health are extremely delicate and can have a significant impact on individuals. While we want to do as much as we can to facilitate discussions about it, we also need to ensure that they remain healthy, constructive, and possible to moderate. Venting, ranting, and spiralling discussions quickly lead to situations that are harmful for those involved, and make it difficult to get out of repeating negative thought patterns. It's also very difficult for moderators to step in without potentially causing a further negative impact, which is something we want to avoid at all costs.
 
 ---
 
