@@ -21,7 +21,8 @@ The NoBoilerplate Code of Conduct applies equally to all members of the communit
 5. No age-restricted or obscene content (outside of the #mature-themes-lt channel). This includes text, images or links featuring nudity, sex, hard violence or other disturbing graphic content.
 6. Stay on topic: Please take heated argument with little chance of resolution (such as politics or emacs vs vim!) to a thread in #⁠the-forum.
 7. Posting Malware, Viruses, Fork/Zip Bombs etc. is forbidden, even for educational purposes. Linking to them with a disclaimer is fine.
-8. Don't be a dick.
+8. Please keep conversations in public spaces open to all. Conversations exclusively between friends/friend groups should be kept to DMs or private spaces.
+9. Don't be a dick.
 
 ## Unwanted Opinions and Ideologies
 The following ideologies or opinions are not welcome.
@@ -86,7 +87,7 @@ The mental health channel is a space in our server to discuss topics related to 
 - High-level discussion of mental health topics, such as those brought up in Lost Terminal episodes.
 - Sharing of resources that can help people improve their mental health, such as grounding techniques or coping strategies.
 - Seeking and sharing specific actionable advice for mental health struggles.
-- An understanding that a lack of a response doesn't imply a lack or care or that you're being ignored, as mental health topics can be challenging to respond to and many people arent available or prepared to do so.
+- An understanding that a lack of a response doesn't imply a lack of care or that you're being ignored, as mental health topics can be challenging to respond to and many people arent available or prepared to do so.
 
 ### What we don't want to see
 
