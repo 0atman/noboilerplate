@@ -359,10 +359,10 @@ notes:
 
 Here's a simple rocket.rs demo of shuttle persist.
 
-The persist struct that is passed in inside our MyState wrapper can load and save ANY serde serialisable struct trasparently. 
+The persist struct that is passed in inside our MyState wrapper can load and save ANY serde serialisable struct transparently. 
 
-Behind the scenes, shuttle have told me that this is implemented with a persistant docker volume attached to your project.
-This is a genius simple persistance option for when managing a database is overkill.
+Behind the scenes, shuttle have told me that this is implemented with a persistent docker volume attached to your project.
+This is a genius simple persistence option for when managing a database is overkill.
 
 
 ---
@@ -422,7 +422,7 @@ Support and community organising is over on their Discord, where I immediately f
 # Shuttle Launchpad
 
 A Rust course written by Stefan Baumgartner
-(organiser of [Rust Linz](https://rust-linz.at/))
+(organiser of [Rust Lines](https://rust-linz.at/))
 
 https://www.shuttle.rs/launchpad
 
@@ -440,7 +440,7 @@ Axum + DB + Static files demo
 
 notes:
 
-A hello world is all very well, but let's build something with persistance showing how to use the shuttle infrastructure from code principles.
+A hello world is all very well, but let's build something with persistence showing how to use the shuttle infrastructure from code principles.
 
 ---
 

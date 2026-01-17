@@ -87,7 +87,7 @@ The mental health channel is a space in our server to discuss topics related to 
 - High-level discussion of mental health topics, such as those brought up in Lost Terminal episodes.
 - Sharing of resources that can help people improve their mental health, such as grounding techniques or coping strategies.
 - Seeking and sharing specific actionable advice for mental health struggles.
-- An understanding that a lack of a response doesn't imply a lack of care or that you're being ignored, as mental health topics can be challenging to respond to and many people arent available or prepared to do so.
+- An understanding that a lack of a response doesn't imply a lack of care or that you're being ignored, as mental health topics can be challenging to respond to and many people aren't available or prepared to do so.
 
 ### What we don't want to see
 

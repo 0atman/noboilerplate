@@ -220,7 +220,7 @@ The semi-colon marks the end of a statement.
 notes:
 
 The semi-colon marks the end of a statement.
-Unlike in other langauges, semicolons are not just mandatory whitespace.
+Unlike in other languages, semicolons are not just mandatory whitespace.
 
 ---
 
