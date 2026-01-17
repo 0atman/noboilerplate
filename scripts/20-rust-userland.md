@@ -104,7 +104,7 @@ notes:
 
 Actually before you install all this you should use sccache to dramatically reduce your compile times.
 
-sccache re-uses already-compiled artifices to skip redundant compilation. and in production can use a cloud-backed cache.
+sccache reuses already-compiled artifices to skip redundant compilation. and in production can use a cloud-backed cache.
 
 When you're installing system tools that very often are built by people that always use the stable version of a dependency, you might unnecessarily re-compile that dependency very often.
 

@@ -836,7 +836,7 @@ notes:
 There are a few more things to become familiar with, but you can do that while you learn your new system.
 - Nix flakes are a modern feature of nix, allowing exact reproducibility and much richer configuration
 - Home manager is a very popular nix-powered dotfiles manager that integrates well into the nix ecosystem. I'm not sold on this yet, but everyone loves it, I imagine I'll use it soon.
-- An important implementation note is that all packages get their own dependencies, they are not shared. This uses more disk space, but NixOS is clever about re-using files and there's garbage collection options available.
+- An important implementation note is that all packages get their own dependencies, they are not shared. This uses more disk space, but NixOS is clever about reusing files and there's garbage collection options available.
 - Nix, the underlying system, is perfect for building your dev environment per-project, too. This is how repl.it can support every language and every package without containers or VMs.
 
 ---

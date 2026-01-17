@@ -559,7 +559,7 @@ struct Image(String);
 
 notes:
 
-We've now got the structs in normal form, the data is split up into sensible structs, with data like author and image loosely coupled so multiple authors can write multiple posts, and images can be re-used.
+We've now got the structs in normal form, the data is split up into sensible structs, with data like author and image loosely coupled so multiple authors can write multiple posts, and images can be reused.
 
 depending on how relational the data is in your program, you may want to drop the ids, or inline a linking table.
 
