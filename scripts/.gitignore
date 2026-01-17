@@ -2,7 +2,7 @@ src/
 Cargo.lock
 Cargo.toml
 private/
-
+FiraCode.ttf
 
 # Ignore Smart Connections folder because embeddings file is large and updated frequently
 .smart-connections

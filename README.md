@@ -1,8 +1,14 @@
-Scripts for my talks on the No Boilerplate channel are in `scripts/`, you can read them here on github by clicking through into the folder, or download the whole lot to your computer and read offline by clicking the green "code" button then "download zip".
 
-I build these using [obsidian.md](https://obsidian.md/) and the [advanced-slides plugin](https://github.com/MSzturc/obsidian-advanced-slides): I take each slide, printscreen it, and splice it with my audio using [reaper.fm](http://reaper.fm/).
+
+# MOVED: All future videos are hosted on the Namtao.com site's [main repo](https://github.com/NamtaoProductions/namtao-com/tree/main/src/site/notes), and published at [namtao.com/nb/](https://www.namtao.com/nb/).
+
+This repo contains old scripts for my talks on the No Boilerplate channel, up until video 43, in [scripts/](https://github.com/0atman/noboilerplate/tree/main/scripts).
 
 ---
+
+I build these using [obsidian.md](https://obsidian.md/) and [presenterm](https://github.com/mfontanini/presenterm): I take each slide, printscreen it, and splice it with my audio using [reaper.fm](http://reaper.fm/).
+
+
 
 [![Screenshot from 2022-07-13 17-49-52](https://user-images.githubusercontent.com/114097/178788174-86a6e745-a5cb-4d0c-820f-85cedfe9618d.png)](https://www.youtube.com/c/NoBoilerplate)
 
