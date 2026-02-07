@@ -36,4 +36,4 @@ https://discord.gg/mCY2bBmDKZ
 
 Have fun, and good luck!
 
-<a rel="me" href="https://namtao.com/@noboilerplate">Mastodon</a>
+<a rel="me" href="https://namtao.com/@noboilerplate">Find me on Mastodon</a>
