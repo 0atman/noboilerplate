@@ -35,3 +35,5 @@ https://www.youtube.com/watch?v=ifaLk5v3W90&list=PLZaoyhMXgBzoM9bfb5pyUOT3zjnaDd
 https://discord.gg/mCY2bBmDKZ
 
 Have fun, and good luck!
+
+<a rel="me" href="https://namtao.com/@noboilerplate">Mastodon</a>
