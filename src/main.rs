@@ -38,7 +38,7 @@ fn template(inner: Node) -> Node {
                                 <a href="https://www.youtube.com/watch?v=oY0XwMOSzq4&list=PLZaoyhMXgBzpr9Czgxj953GcUDkGlwa-Y" class="block lg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">
                                     Watch on YouTube
                                 </a>
-                                <a href="https://tech.lgbt/@noboilerplate" class="blocklg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">
+                                <a rel="me" href="https://namtao.com/@noboilerplate" class="blocklg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">
                                     Follow on Mastodon
                                 </a>
                                 <a href="https://discord.gg/mCY2bBmDKZ" class="block lg:inline-block lg:mt-0 text-black-200 hover:text-white mr-4">

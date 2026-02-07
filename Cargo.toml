@@ -8,7 +8,6 @@ edition = "2021"
 [dependencies]
 yate = "0.1.2"
 color-eyre = "*"
-leptos = { version = "0.6.6", features = ["csr", "nightly"] }
 console_error_panic_hook = "0.1.7"
 html-node = { version = "0.4.0", features = ["typed"] }
 rstml = "*"
