@@ -547,7 +547,7 @@ The rust compiler doesn't need to treat threaded code as a special case to maint
 
 notes:
 
-Read the erorr again, thank you!
+Read the error again, thank you!
 
 ---
 

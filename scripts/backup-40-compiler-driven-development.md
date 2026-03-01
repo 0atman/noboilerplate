@@ -239,7 +239,7 @@ async fn create_user(Json(payload): Json<CreateUser>)
 notes:
 
 The second is more interesting, a post handler creating a user from a validated payload of json, and returning the new user as json.
-BOTH input and ouput of this handler are documented and their enforced by the type signature. 
+BOTH input and output of this handler are documented and their enforced by the type signature. 
 
 OK, let's break this, what status codes have we got?
 
@@ -251,7 +251,7 @@ notes:
 
 Looks like there's an opening for a new status code.
 
-Now this is interesting. Instead of giving us some options of what valid codes are available, which it would if we'd mispelled one
+Now this is interesting. Instead of giving us some options of what valid codes are available, which it would if we'd misspelled one
 
 ---
 
@@ -371,7 +371,7 @@ Refactor.
 "Writing a compiler that would accept all of the valid programs is not possible, thus we're left with the next best thing: a compiler that will reject all invalid programs at a cost of being overly strict."
 - [x] who said this?
 
-Rust forces you to fix all your future bugs before you deploy. This causes the steeper learning curve, but given that all future bugs are crammed into the first compile, it's a suprisingly flat curve!
+Rust forces you to fix all your future bugs before you deploy. This causes the steeper learning curve, but given that all future bugs are crammed into the first compile, it's a surprisingly flat curve!
 
 ---
 
@@ -380,7 +380,7 @@ Rust forces you to fix all your future bugs before you deploy. This causes the s
 notes:
 As you know, languages are read far more often than they are written.
 But there's another part to the story here.
-Your programs, if you're lucky and doing your job right, will be used by orders of magnatude more people than those who read the code.
+Your programs, if you're lucky and doing your job right, will be used by orders of magnitude more people than those who read the code.
 So it follows that some small sacrifice of readability is valid, if it benefits you.
 
 ---
@@ -491,7 +491,7 @@ fn correct_transitions() {
     bedroom_light.turn_on().turn_off().turn_on();
 }
 
-// Primary stuct
+// Primary struct
 struct Light<State: ResponseState> {
     state: State,
 }
@@ -514,14 +514,14 @@ impl ResponseState for Off{}
 
 ```rust[]
 
-// Methods availabe only in the Start state
+// Methods available only in the Start state
 impl Light<Off> {
     fn turn_on(self) -> Light<On> {
         Light { state: On }
     }
 }
 
-// Methods availabe only in the Headers state
+// Methods available only in the Headers state
 impl Light<On> {
     fn turn_off(&self) -> Light<Off> {
         Light { state: Off }
@@ -534,7 +534,7 @@ impl Light<On> {
 
 //impl<State: PartialEq> Light<State> {
 //    fn flip<T>(self) -> Light<T> {
-// Methods availabe in any state
+// Methods available in any state
 impl<State: ResponseState> Light<State> {
 
     fn transition() -> Light<State> {

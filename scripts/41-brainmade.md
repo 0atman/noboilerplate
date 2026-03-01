@@ -106,7 +106,7 @@ When (not if) ethical models are built, and powered by 100% solar power,
 notes:
 
 Though these days I'm a video and audio producer, at heart I'm still a software developer:
-I'll re-use 100 libraries to avoid writing 10 lines of code - standing on the shoulders of giants is the only way I know how I get around.
+I'll reuse 100 libraries to avoid writing 10 lines of code - standing on the shoulders of giants is the only way I know how I get around.
 
 But I've looked for a way to mark my videos and stories as being made by humans, not AI, and I couldn't find one that worked in exactly the way I want.
 

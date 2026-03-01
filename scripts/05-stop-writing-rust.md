@@ -151,7 +151,7 @@ Backwards compatibility and correctness.
 notes:
 
 In previous videos I said that there will be no Rust 2.0 due to the macro system. Now, I talked with a Rust maintainer, and they said this actually misses the point:
-Code written today will be compileable in 5, 10, 40 years because of the Rust team's commitment to perfect backwards compatibility.
+Code written today will be compilable in 5, 10, 40 years because of the Rust team's commitment to perfect backwards compatibility.
 Code you write today, will always compile in all future versions of rust.
 The side effect of this is that code you build today benefits from ALL FUTURE OPTIMISATIONS that the rust toolchain will receive.
 With no modification by you, your build times and deployed code will get FASTER.
@@ -273,7 +273,7 @@ notes:
 You can either quickly tell the compiler that you KNOW the result might be a failure, and use .unwrap(), just to get something working now, optionally enriching the crash with an error message with .expect(), or you can handle the error comprehensively.
 
 When writing rust, .unwrap() is for prototyping code, so we don't have the annoyance of heavyweight error handling when we just want to get going. 
-This is why most code exmaples you will see use .unwrap().
+This is why most code examples you will see use .unwrap().
 They're not trying to teach you error handling, they're just showing you how to open a file.
 In other languages these kinds of runtime pitfalls are hidden, at best by an exception that you have to catch, or worst, with no visible indication that the code may crash at all.
 
@@ -346,7 +346,7 @@ I will talk about three.
 ```
 
 ```rust
-     > "javscript"
+     > "javascript"
 ```
 
 ```rust
@@ -451,7 +451,7 @@ It's not just possible to write perfect safe code with Rust. It's actually easy.
 
 ---
 
-## WERID ANALOGY TIME
+## WEIRD ANALOGY TIME
 
 notes:
 Let me finish with a real-life analogy of what it feels like to me to deploy Rust 

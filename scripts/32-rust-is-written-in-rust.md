@@ -690,7 +690,7 @@ let my_unit = Unit;
 ```rust[]
 enum Infallible {}
 
-// compile error, no varients = can't instantiate
+// compile error, no variants = can't instantiate
 let impossible = Infallible::no_varients_found;
 ```
 

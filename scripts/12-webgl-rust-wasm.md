@@ -212,7 +212,7 @@ And when we stop thinking about 'web apps' as 'web pages' and start thinking of 
 
 notes:
 
-Every week we hear about new, faster javascript frameworks coming out, offering more and more dom manipulations per second. Svelt compared to React, for instance.
+Every week we hear about new, faster javascript frameworks coming out, offering more and more dom manipulations per second. Svelte compared to React, for instance.
 
 They're useful for a DOM-constrained app, but we have access to native UI speeds, no latency, and 60fps with webgl.
 

@@ -142,10 +142,10 @@ We're here to talk about making perfect software.
 I'm TIRED of trawling error logs for it to tell me: 
 - `"unexpected ; in query"`, or 
 - `json decoding error on line 1`
-- `NullPointerException` (or `NoneType has no atribute`)
+- `NullPointerException` (or `NoneType has no attribute`)
 
 notes:
-I've been searching for many years for systems, frameworks and methods to make my code more reliable, or guarenteed.
+I've been searching for many years for systems, frameworks and methods to make my code more reliable, or guaranteed.
 We as developers accept that our lives are governed by errors.
 Often bullshit errors like these.
 
@@ -304,7 +304,7 @@ This may be a new way of programming for you, but it's such a good pattern that 
 notes:
 Rust has a best-in-class package manager, solving all the dependency nightmares we face day-to-day.
 
-This is what you get when you have a community focussed on corectness.
+This is what you get when you have a community focussed on correctness.
 
 ---
 
@@ -404,7 +404,7 @@ Lets reason about this short piece of code.
 
 It's still using the Rocket web framework, by the way, think of it as an Express, Sinatra, or Flask equivalent.
 
-If our program compiles we know many things are guarenteed:
+If our program compiles we know many things are guaranteed:
 - `id` will be a valid UUID, from a valid http path
 - The return json will ALWAYS be in the schema we designed,  named FormResponse, with defined values acting as the contract we can never break with our API clients.
 - sqlx actually runs that query on my local dev database with a valid test input (generated on the type) in a rolled-back transaction at compile time. If it is invalid, my code doesn't compile.

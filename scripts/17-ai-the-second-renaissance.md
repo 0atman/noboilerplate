@@ -135,7 +135,7 @@ notes:
 
 The first coffeehouses in [Constantinople](https://en.wikipedia.org/wiki/Constantinople "Constantinople") were opened in 1475
 
-While better historians than me will tell you the myriad causes of the European Rennaisance, the factor that I really like is that it happened just after Europeans stopped daydrinking beer as their only safe option.
+While better historians than me will tell you the myriad causes of the European Renaissance, the factor that I really like is that it happened just after Europeans stopped daydrinking beer as their only safe option.
 
 ---
 

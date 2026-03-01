@@ -481,7 +481,7 @@ Let's look at compile-time execution.
 
 ---
 
-# Arbitary Compile-time Execution
+# Arbitrary Compile-time Execution
 
 ```rust[]
 // let mut conn = <impl sqlx::Executor>;
@@ -506,7 +506,7 @@ Though it has normal functions for querying the database, it also has the query!
 
 At runtime, this is just the same as any other string-based sql querying library.
 It sends that string query along to the db through the connection.
-But at compiletime, the query!() macro does some magic.
+But at compile time, the query!() macro does some magic.
 
 SQLx leverages the power of Rust's macros AND rich type system to fill in the string query with test data and execute it on your local dev database at compile time.
 

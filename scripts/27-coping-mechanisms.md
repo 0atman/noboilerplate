@@ -375,7 +375,7 @@ HOWEVER negative emotions are not ENTIRELY un-useful!
 Remember that girl I mentioned earlier? You'll stay with her because you're minimising the negative emotions you're feeling.
 That's not good.
 
-You're not a robot, I know, but throuhg practice you can choose what to feel, and what to notice. 
+You're not a robot, I know, but through practice you can choose what to feel, and what to notice. 
 Notice the negatives, but feel the positives.
 
 You have to FOCUS.
